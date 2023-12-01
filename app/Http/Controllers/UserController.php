@@ -70,4 +70,33 @@ class UserController extends Controller
             'loginError'=>'The provided credentials do not match our records.',
         ]);
     }
+
+
+    //Display all users
+    public function manage(){
+        if(auth()->user()->role != 'admin'){
+            abort(403);
+        }
+        $users = User::all();
+        return view('users.manage',compact('users'));
+    }
+    //Display Single User
+    public function userDetails($id){
+        if(auth()->user()->id != $id){
+            abort(403);
+        }elseif(auth()->user()->role != 'admin'){
+            abort(403);
+        }
+        $user = User::findOrFail($id);
+        return view('users.userDetails',compact('user'));
+    }
+
+    public function destroy($id){
+        if(auth()->user()->role != 'admin'){
+            abort(403);
+        }
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect('/users')->with('message','User deleted!');
+    }
 }

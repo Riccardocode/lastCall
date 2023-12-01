@@ -21,3 +21,14 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 //log user in
 Route::post('/login', [UserController::class, 'authenticate'])->middleware('guest');
+
+//manage and display all users
+Route::get('/users',[UserController::class, 'manage'])->middleware('auth');
+
+//Display Single User
+Route::get('/users/{id}',[UserController::class, 'userDetails'])
+    ->where('id', '[0-9]+')->middleware('auth');
+
+//Delete user
+Route::delete('/users/{id}',[UserController::class, 'destroy'])
+    ->where('id', '[0-9]+')->middleware('auth');
