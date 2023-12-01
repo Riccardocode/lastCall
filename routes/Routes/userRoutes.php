@@ -29,6 +29,16 @@ Route::get('/users',[UserController::class, 'manage'])->middleware('auth');
 Route::get('/users/{id}',[UserController::class, 'userDetails'])
     ->where('id', '[0-9]+')->middleware('auth');
 
+//Show edit form
+Route::get('/users/{id}/edit',[UserController::class, 'edit'])
+->where('id', '[0-9]+')
+->middleware('auth');
+
+//Update User
+Route::put('/users/{id}', [UserController::class, 'update'])
+    ->where('id', '[0-9]+')
+    ->middleware('auth');
+
 //Delete user
 Route::delete('/users/{id}',[UserController::class, 'destroy'])
     ->where('id', '[0-9]+')->middleware('auth');

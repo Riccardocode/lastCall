@@ -1,0 +1,15 @@
+01/12/23
+Created user_migration
+created UserController 
+created routes for user [login,logout,register] and temporary views
+Page to manage the user (for admin)
+Delete route, Controller function and temporary views
+Edit route, controller function and temporary views
+update profile with controller function
+
+
+To be created:
+- Reset password procedure (possibly by clicking a button on the user edit page)
+- Profile Picture
+    
+    

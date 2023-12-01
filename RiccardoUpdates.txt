@@ -1,8 +1,0 @@
-01/12/23
-Created user_migration
-created UserController
-created routes for user [login,logout,register]
-
-To be created:
-    -Page to manage the user (for admin)
-    

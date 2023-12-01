@@ -82,9 +82,7 @@ class UserController extends Controller
     }
     //Display Single User
     public function userDetails($id){
-        if(auth()->user()->id != $id){
-            abort(403);
-        }elseif(auth()->user()->role != 'admin'){
+        if(!(auth()->user()->role == 'admin' || auth()->user()->id == $id)){
             abort(403);
         }
         $user = User::findOrFail($id);
@@ -98,5 +96,37 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
         return redirect('/users')->with('message','User deleted!');
+    }
+
+    public function edit($id){
+        if(!(auth()->user()->role == 'admin' || auth()->user()->id == $id)){
+            abort(403);
+        }
+        $user = User::findOrFail($id);
+        return view('users.edit',compact('user'));
+    }
+
+    public function update(Request $request, $id){
+        if(!(auth()->user()->role == 'admin' || auth()->user()->id == $id)){
+            abort(403);
+        }
+        $formFields=$request->validate([
+            'firstname'=>'required',
+            'lastname'=>'required',
+            'phone'=>'required',
+            'role'=>'required',
+            // 'password' => ['required',Password::min(8)
+            //                             ->mixedCase()
+            //                             ->letters()
+            //                             ->numbers()
+            //                             ->symbols()
+            //                             ->uncompromised(2),'confirmed'],
+            // // 'password'=>['required','min:8','confirmed'],
+        ]);
+        //encrypt password
+        // $formFields['password']=bcrypt($formFields['password']);
+        $user = User::findOrFail($id);
+        $user->update($formFields);
+        return redirect('/users')->with('message','User updated!');
     }
 }
