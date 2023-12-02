@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+//Routes for users management (In case of Routing Issues with users, Refer to Riccardo)
 require __DIR__.'/Routes/userRoutes.php';
 
-// include ('/Routes/userRoutes.php');
+//Routes for Products management (In case of Routing Issues with users, Refer to Brandon)
+require __DIR__."/Routes/productRoutes.php";
