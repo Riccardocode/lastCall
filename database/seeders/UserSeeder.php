@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
                 'lastname' => 'lastCall',
                 'email' => 'ric@lastcall.lu',
                 'password' => Hash::make('password'),
-                'phone' => '3333333333',
+                'phonenumber' => '3333333333',
                 'role' => 'admin',
             ],
             [
@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
                 'lastname' => 'lastCall',
                 'email' => 'lu@lastcall.lu',
                 'password' => Hash::make('password'),
-                'phone' => '3333333333',
+                'phonenumber' => '3333333333',
                 'role' => 'admin',
             ],
             [
@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
                 'lastname' => 'lastCall',
                 'email' => 'bran@lastcall.lu',
                 'password' => Hash::make('password'),
-                'phone' => '3333333333',
+                'phonenumber' => '3333333333',
                 'role' => 'admin',
             ],
             [
@@ -44,7 +44,7 @@ class UserSeeder extends Seeder
                 'lastname' => 'lastCall',
                 'email' => 'ant@lastcall.lu',
                 'password' => Hash::make('password'),
-                'phone' => '3333333333',
+                'phonenumber' => '3333333333',
                 'role' => 'admin',
             ],
             [
@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
                 'lastname' => 'lastCall',
                 'email' => 'dan@lastcall.lu',
                 'password' => Hash::make('password'),
-                'phone' => '3333333333',
+                'phonenumber' => '3333333333',
                 'role' => 'admin',
             ],
 

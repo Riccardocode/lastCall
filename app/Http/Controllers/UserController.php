@@ -15,7 +15,8 @@ class UserController extends Controller
     //add user to database
     public function store(Request $request){
         $formFields=$request->validate([
-            'name'=>'required',
+            'firstname'=>'required',
+            'lastname'=>'required',
             'email'=>['required','email',Rule::unique('users','email')],
             'password' => ['required',Password::min(8)
                                         ->mixedCase()
@@ -23,8 +24,13 @@ class UserController extends Controller
                                         ->numbers()
                                         ->symbols()
                                         ->uncompromised(2),'confirmed'],
-            // 'password'=>['required','min:8','confirmed'],
+            
+
         ]);
+        if($request->hasFile('profileImg'))
+        {
+            $formFields['profileImg'] = $request->file('profileImg')->store('profileImages', 'public');
+        }
         //encrypt password
         $formFields['password']=bcrypt($formFields['password']);
         $user = User::create($formFields);
@@ -113,8 +119,10 @@ class UserController extends Controller
         $formFields=$request->validate([
             'firstname'=>'required',
             'lastname'=>'required',
-            'phone'=>'required',
             'role'=>'required',
+            'phonenumber'=>'',
+            'email'=>['required','email',Rule::unique('users','email')->ignore($id)],
+           
             // 'password' => ['required',Password::min(8)
             //                             ->mixedCase()
             //                             ->letters()
@@ -123,6 +131,10 @@ class UserController extends Controller
             //                             ->uncompromised(2),'confirmed'],
             // // 'password'=>['required','min:8','confirmed'],
         ]);
+        if($request->hasFile('profileImg'))
+        {
+            $formFields['profileImg'] = $request->file('profileImg')->store('profileImages', 'public');
+        }
         //encrypt password
         // $formFields['password']=bcrypt($formFields['password']);
         $user = User::findOrFail($id);

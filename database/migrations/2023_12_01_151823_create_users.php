@@ -17,8 +17,9 @@ return new class extends Migration
             $table->string('lastname', 50)->nullable(false);
             $table->string('email', 50)->nullable(false)->unique();
             $table->string('password', 255)->nullable(false);
-            $table->string('phone', 50)->nullable(false);
+            $table->string('phonenumber', 50)->nullable();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('profileImg')->nullable();
             $table->enum('role', ['admin', 'user', 'restaurantManager'])->default('user');
             $table->timestamps();
 

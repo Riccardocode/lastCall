@@ -12,8 +12,19 @@
     <form action="/users/{{ $user->id }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-            
+
         {{-- Update Firstname --}}
+        <div class="mb-6">
+            @if ($user->profileImg)
+                <img class="w-24" src="/storage/{{ $user->profileImg }}" alt="">
+            @else
+                <img class="w-24" src="/storage/profileImages/default.png" alt="">
+            @endif
+            <input type="file" name='profileImg'>
+            @error('profileImg')
+                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
         <div class="mb-6">
             <label for="firstname" class="inline-block text-lg mb-2">First Name</label>
             <input type="text" value="{{ $user->firstname }}" class="border border-gray-200 rounded p-2 w-full"
@@ -22,7 +33,7 @@
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
         </div>
-            
+
         {{-- Update Lastname --}}
         <div class="mb-6">
             <label for="lastname" class="inline-block text-lg mb-2">Last Name</label>
@@ -45,10 +56,10 @@
 
         {{-- Update phone --}}
         <div class="mb-6">
-            <label for="phone" class="inline-block text-lg mb-2">Phone Number</label>
-            <input type="text" value="{{ $user->phone }}" class="border border-gray-200 rounded p-2 w-full"
-                name="phone" />
-            @error('phone')
+            <label for="phonenumber" class="inline-block text-lg mb-2">Phone Number</label>
+            <input type="text" value="{{ $user->phonenumber }}" class="border border-gray-200 rounded p-2 w-full"
+                name="phonenumber" />
+            @error('phonenumber')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
         </div>
@@ -70,8 +81,8 @@
                 @enderror
             </div>
         @endif
-            
-            {{-- Update Password
+
+        {{-- Update Password
                 Make a reset password procedure    
             --}}
 
