@@ -11,5 +11,7 @@ update profile with controller function
 To be created:
 - Reset password procedure (possibly by clicking a button on the user edit page)
 - Profile Picture
+- create userDetails page
+
     
     
