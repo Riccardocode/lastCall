@@ -18,3 +18,6 @@ require __DIR__.'/Routes/userRoutes.php';
 
 //Routes for Products management (In case of Routing Issues with users, Refer to Brandon)
 require __DIR__."/Routes/productRoutes.php";
+
+//Routes for order management
+require __DIR__."/Routes/orderRoutes.php";
