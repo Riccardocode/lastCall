@@ -21,3 +21,8 @@ require __DIR__."/Routes/productRoutes.php";
 
 //Routes for order management
 require __DIR__."/Routes/orderRoutes.php";
+
+//Routes for business management
+require __DIR__.'/Routes/businessRoutes.php';
+
+
