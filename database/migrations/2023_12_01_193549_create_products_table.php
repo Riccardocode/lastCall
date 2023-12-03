@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("ingredientString");
             $table->string("allergyString");
             $table->string("picture")->nullable();
-            // $table->foreignId("business_id")->constrained()->onDelete("cascade");
+            $table->foreignId("business_id")->constrained('business')->onDelete("cascade");
             $table->timestamps();
         });
     }
