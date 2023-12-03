@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('address');
-            $table->foreignId('manager_id')->unique();
-            $table->foreignId('category_id');
+            // $table->foreignId('manager_id')->unique();
+            // $table->foreignId('category_id');
             $table->timestamps();
         });
     }
