@@ -33,6 +33,7 @@ class BusinessController extends Controller
             "address" => "required",
         ]);
 
+        
         Business::create($formFields);
 
         return redirect("/");
