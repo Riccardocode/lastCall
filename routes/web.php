@@ -25,8 +25,8 @@ require __DIR__."/Routes/orderRoutes.php";
 //Routes for business management
 require __DIR__.'/Routes/businessRoutes.php';
 
-
-
-
 //Routes for category management
 require __DIR__.'/Routes/categoryRoutes.php';
+
+//Route for manage the Sales Lot (Refer to Riccardo)
+require __DIR__.'/Routes/salesLotRoutes.php';
