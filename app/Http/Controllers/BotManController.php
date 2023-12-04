@@ -28,4 +28,8 @@ class BotManController extends Controller
             $this->say('Nice to Meet you '.$name);
         });
     }
+
+    public function about(){
+        
+    }
 }
