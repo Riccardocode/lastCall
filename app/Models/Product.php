@@ -18,4 +18,8 @@ class Product extends Model
         "picture",
         "business_id"
     ];
+
+    public function order_items(){
+        return $this->hasMany(OrderItem::class);
+    }
 }

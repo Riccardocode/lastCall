@@ -16,11 +16,12 @@ class OrderItem extends Model
     ];
 
 
-    public function order(){
+    public function orders(){
         $this->belongsTo(Order::class);
     }
 
-    public function product(){
+    public function products(){
         $this->belongsTo(Product::class);
     }
+
 }
