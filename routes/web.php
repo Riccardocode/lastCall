@@ -30,3 +30,6 @@ require __DIR__.'/Routes/businessRoutes.php';
 
 //Routes for category management
 require __DIR__.'/Routes/categoryRoutes.php';
+
+//Routes for category management
+require __DIR__.'/Routes/chatbotRoutes.php';
