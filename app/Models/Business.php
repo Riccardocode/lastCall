@@ -12,4 +12,12 @@ class Business extends Model
     public function products(){
         return $this->hasMany(Product::class);
     }
+
+    public function manager(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -22,4 +22,7 @@ class Product extends Model
     public function order_items(){
         return $this->hasMany(OrderItem::class);
     }
+    public function business(){
+        return $this->belongsTo(Business::class);
+    }
 }

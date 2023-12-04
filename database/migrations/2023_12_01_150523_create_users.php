@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Schema to define users table
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('firstname', 50)->nullable(false);
@@ -22,7 +23,6 @@ return new class extends Migration
             $table->string('profileImg')->nullable();
             $table->enum('role', ['admin', 'user', 'restaurantManager'])->default('user');
             $table->timestamps();
-
         });
     }
 

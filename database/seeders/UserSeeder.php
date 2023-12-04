@@ -55,6 +55,38 @@ class UserSeeder extends Seeder
                 'phonenumber' => '3333333333',
                 'role' => 'admin',
             ],
+            [
+                'firstname' => 'Alfio',
+                'lastname' => 'Marconi',
+                'email' => 'alfio@pizzahut.lu',
+                'password' => Hash::make('password'),
+                'phonenumber' => '3333333333',
+                'role' => 'restaurantManager',
+            ],
+            [
+                'firstname' => 'Mario',
+                'lastname' => 'Marconi',
+                'email' => 'mario@specialpizza.lu',
+                'password' => Hash::make('password'),
+                'phonenumber' => '3333333333',
+                'role' => 'restaurantManager',
+            ],
+            [
+                'firstname' => 'Betty',
+                'lastname' => 'bettoni',
+                'email' => 'betty@crazycake.lu',
+                'password' => Hash::make('password'),
+                'phonenumber' => '3333333333',
+                'role' => 'restaurantManager',
+            ],
+            [
+                'firstname' => 'Kelly',
+                'lastname' => 'kelloni',
+                'email' => 'kario@anguillasushi.lu',
+                'password' => Hash::make('password'),
+                'phonenumber' => '3333333333',
+                'role' => 'restaurantManager',
+            ],
 
         ]);
     }

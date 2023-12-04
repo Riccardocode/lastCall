@@ -24,4 +24,8 @@ class Order extends Model
     public function business(){
         return $this->belongsTo(Business::class);
     }
+
+    public function order_items(){
+        return $this->hasMany(OrderItem::class);
+    }
 }
