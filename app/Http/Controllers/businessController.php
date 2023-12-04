@@ -9,21 +9,21 @@ class BusinessController extends Controller
 {
     
     public function index(){
-        return view("businesses.index", [
-            "businesses" => Business::all()
+        return view("business.index", [
+            "business" => Business::all()
         ]);
     }
 
     
     public function show($id){
-        return view("businesses.show", [
+        return view("business.show", [
             "business" => Business::find($id)
         ]);
     }
 
     
     public function create(){
-        return view("businesses.create");
+        return view("business.create");
     }
 
     
@@ -47,7 +47,7 @@ class BusinessController extends Controller
             abort(403, "Unauthorized action");
         }
 
-        return view("businesses.edit", [
+        return view("business.edit", [
             "business" => $business
         ]);
     }
