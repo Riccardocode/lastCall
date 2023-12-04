@@ -7,26 +7,26 @@ use Illuminate\Http\Request;
 
 class BusinessController extends Controller
 {
-    
+    //Show all Businesses
     public function index(){
         return view("businesses.index", [
             "businesses" => Business::all()
         ]);
     }
 
-    
+    //Show specific Business
     public function show($id){
         return view("businesses.show", [
             "business" => Business::find($id)
         ]);
     }
 
-    
+    //show form to create business
     public function create(){
         return view("businesses.create");
     }
 
-    
+    //add business to database
     public function store(Request $request){
         $formFields = $request->validate([
             "name" => "required",
@@ -39,7 +39,7 @@ class BusinessController extends Controller
         return redirect("/");
     }
 
-    
+    //show edit Form
     public function edit($id){
         $business = Business::find($id);
 
@@ -52,7 +52,7 @@ class BusinessController extends Controller
         ]);
     }
 
-    
+    //update business
     public function update(Request $request, $id){
         $business = Business::find($id);
 
@@ -71,7 +71,7 @@ class BusinessController extends Controller
         return redirect("/");
     }
 
-    
+    //delete business
     public function destroy($id){
         $business = Business::find($id);
         if($business->manager_id != auth()->user()->id ){
