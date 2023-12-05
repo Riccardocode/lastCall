@@ -13,6 +13,8 @@ class Business extends Model
     protected $fillable = [
         "name",
         "address",
+        "manager_id",
+        "category_id",
     ];
 
     // realtion to products
