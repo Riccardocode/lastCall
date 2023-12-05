@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -63,5 +63,56 @@
 
     <x-flash-message />
 
+</body>
+</html> --}}
+{{-- *layout for the front-end team --}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <title>last call to order your food</title>
+</head>
+<body>
+    {{-- Header layout --}}
+    <header>
+        <img src="" alt="LastCall logo">
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">About us</a>
+                </li>
+                @auth
+                <li>
+                    <span >
+                        Welcome {{ auth()->user()->firstname }}
+                    </span>
+                </li>
+                <li>
+                    <form method="POST" action="/logout">
+                        @csrf
+                        <button>Logout</button>
+                    </form>
+                </li>
+                @else
+                <li>
+                    <a href="/register">Register</a>
+                </li>
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+            @endauth
+            </ul>
+        </nav>
+    </header>
+    {{-- main for every pages --}}
+    <main>
+        @yield('content')
+    </main>
+
+    <x-flash-message />
 </body>
 </html>

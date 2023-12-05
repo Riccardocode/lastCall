@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,CAAC,CAAA;EACG,eAAe,EAAE,IAAI;EACrB,OAAO,EAAE,QAAQ;EACjB,gBAAgB,EAAE,GAAG;EACrB,KAAK,EAAE,KAAK;EACZ,aAAa,EAAE,GAAG;EAClB,UAAU,EAAG,0CACS;CACzB",
-    "sources": [
-        "button.scss"
-    ],
-    "names": [],
-    "file": "button.css"
-}
+{"version":3,"sources":["button.scss","button.css"],"names":[],"mappings":"AACA;EACI,qBAAA;EACA,iBAAA;EACA,qBAAA;EACA,YAAA;EACA,kBAAA;EACA,sDAAA;ACAJ","file":"button.css"}

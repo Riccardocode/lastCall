@@ -1,0 +1,45 @@
+#homeSection h1, #homeSection #homePageP, #homeSection #homeSearch {
+  text-align: center;
+}
+#homeSection h1 {
+  font-size: 60px;
+}
+#homeSection #homePageP {
+  margin: 20px 0px;
+  font-size: 25px;
+}
+#homeSection #homeSearch {
+  margin-bottom: 100px;
+}
+#homeSection #homeSearch input {
+  padding: 5px 10% 5px 15px;
+  border: none;
+  border-radius: 15px;
+}
+
+#homeArticle {
+  text-align: center;
+  margin: 0px 25%;
+}
+#homeArticle div {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0px;
+  gap: 20%;
+}
+#homeArticle div a {
+  text-decoration: none;
+  padding: 4px 35px;
+  background-color: red;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+#homeArticle div #buttonSell {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+}
+#homeArticle p {
+  padding: 0px 20px 100px 20px;
+}/*# sourceMappingURL=homePage.css.map */
