@@ -16,6 +16,10 @@ use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 class BotManController extends Controller
 {
 
+    public function testDump(){
+        dd(Category::find('1')->businesses);
+    }
+
     public function about($botman)
     {
         $botman->hears('{message}', function ($botman, $message) {
@@ -75,16 +79,8 @@ class BotManController extends Controller
         // $botman = app('botman');
         $botman = BotManFactory::create(['driver' => 'web'], new LaravelCache());
         $botman->hears('{message}', function ($botman, $message) {
-            // if (str_contains($message, 'about')) {
-            //     $this->test($botman);
-            // } else if (str_contains($message, 'recommendation')) {
-            //     $botman->reply('success');
-            //     $this->askRecommendation($botman);
-            // }else{
-            //     $botman->reply('error');
-            // }
 
-            $number = $this->check($message); // Replace this with the actual number you want to switch on
+            $number = $this->check($message); 
 
             switch ($number) {
                 case 1:
@@ -92,7 +88,6 @@ class BotManController extends Controller
                     break;
 
                 case 2:
-                    $botman->reply('correct Switch');
                     $botman->startConversation(new RecommendationConversation());
                     // $this->askRecommendation($botman,$this->catArr());
                     break;
