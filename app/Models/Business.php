@@ -15,6 +15,8 @@ class Business extends Model
         "address",
         "manager_id",
         "category_id",
+        "lat",
+        "lon"
     ];
 
     // realtion to products
