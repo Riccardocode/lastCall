@@ -2,16 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Business;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
     //all products
     public function index(){
         return view("products.index", [
-            "products" => Product::all()
+            "products" => Product::with(["business"])->get()
+        ]);
+    }
+
+    public function businessIndex($id){
+        $business = Business::find($id);
+        return view("products.businessIndex", [
+            "products" => Product::where("business_id", $id)->get(),
+            "business" => $business,
+            "category" => $business->category->name
         ]);
     }
 
