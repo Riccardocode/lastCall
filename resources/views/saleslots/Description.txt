@@ -1,0 +1,7 @@
+From a specific product it is possible to create a sales slot.
+
+Eg. the product is lasagna.
+I create a sales slot for lasagna, in a specific day with starting time and end time,
+specific quantity and price and discount.
+
+clients can order the lasagna from the specific sale slot

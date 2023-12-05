@@ -1,0 +1,27 @@
+// GENERAL CSS FOR ALL PAGES
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    // border: 1px solid red; //helps to see all the boxes correctly in the page
+}
+ul{         //Delete the ° list
+    list-style: none;
+}
+        //LAYOUT HEADER
+header{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 10%;
+    nav{
+        ul{
+            display: flex;
+            gap: 20px;
+        }
+    }
+}
+        //MAIN
+main{
+    //MAIN HOME PAGE CSS
+    @import 'homePage/homePage.scss'; 
+}
