@@ -8,8 +8,10 @@
 
 5. Variations of the restaurant cards created.
 
-5. Creating components for the page structure:
+6. Creating components for the page structure:
   
    - cards
    - navigation bar
    - footer
+
+7. The Choosing Page design is done
