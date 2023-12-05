@@ -1,0 +1,17 @@
+1. Drafting a basic sructure.
+
+2. Lo-FI Prototypes created.
+
+3. Logo variations.
+
+4. HI-FI Prototypes created.
+
+5. Variations of the restaurant cards created.
+
+6. Creating components for the page structure:
+  
+   - cards
+   - navigation bar
+   - footer
+
+7. The Choosing Page design is done/
