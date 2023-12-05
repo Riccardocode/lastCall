@@ -14,4 +14,4 @@
    - navigation bar
    - footer
 
-7. The Choosing Page design is done
+7. The Choosing Page design is done/
