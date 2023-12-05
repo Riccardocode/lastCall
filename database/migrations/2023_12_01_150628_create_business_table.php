@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('address');
             $table->foreignId('manager_id')->unique();
             $table->foreignId('category_id');
+            $table->double("lat")->nullable();
+            $table->double("lon")->nullable();
             $table->timestamps();
         });
     }

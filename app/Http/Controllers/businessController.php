@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Business;
 use App\Models\Category;
+use App\Domain\Map\CustomMap;
 use Illuminate\Http\Request;
+
 
 class BusinessController extends Controller
 {
@@ -71,6 +73,9 @@ class BusinessController extends Controller
 
         ]);
 
+        $response = CustomMap::addressToCoords($formFields["address"]);
+        $formFields["lat"]=$response[0]["lat"];
+        $formFields["lon"]=$response[0]["lon"];
         $formFields["manager_id"] = auth()->user()->id;
         Business::create($formFields);
 
