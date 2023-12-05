@@ -17,22 +17,22 @@ class OrderItemSeeder extends Seeder
             [
                 'quantity'=> 2,
                 'order_id'=> 1,
-                'product_id'=> 1,
+                'sales_lots_id'=> 1,
             ],
             [
                 'quantity'=> 3,
                 'order_id'=> 1,
-                'product_id'=> 1,
+                'sales_lots_id'=> 1,
             ],
             [
                 'quantity'=> 2,
                 'order_id'=> 2,
-                'product_id'=> 2,
+                'sales_lots_id'=> 2,
             ],
             [
                 'quantity'=> 2,
                 'order_id'=> 1,
-                'product_id'=> 3,
+                'sales_lots_id'=> 2,
             ],
         ]);
     }

@@ -2,37 +2,54 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Business;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
     //all products
     public function index(){
         return view("products.index", [
-            "products" => Product::all()
+            "products" => Product::with(["business"])->get()
+        ]);
+    }
+
+    public function businessIndex($business_id){
+        $business = Business::find($business_id);
+        return view("products.businessIndex", [
+            "products" => Product::where("business_id", $business_id)->get(),
+            "business" => $business,
+            
         ]);
     }
 
     //product by id
-    public function show($id){
+    public function show($business_id,$product_id){
         return view("products.show", [
-            "product" => Product::find($id)
+            "product" => Product::find($product_id),
+            "business_id" => $business_id,
         ]);
     }
 
     //show form to create product
-    public function create(){
-        return view("products.create");
+    public function create($business_id){
+        $business = Business::find($business_id);
+        if(auth()->user()->role != "restaurantManager" and auth()->user()->role != "admin" and auth()->user()->id != $business->manager_id){
+            abort(403, "Unauthorized action");
+        }
+        return view("products.create",
+        [
+            "business_id" => $business_id,
+        ]);
     }
 
     //add product to database
-    public function store(Request $request){
+    public function store(Request $request,$business_id){
         $formFields = $request->validate([
             "name" => "required",
             "category" => "required",
-            "quantity" => ["required","numeric","integer","gt:0"],
             "ingredientString" => "required",
             "allergyString" => "required",
             "picture" => ["image","mimes:png,jpg,jpeg","max:2048"]
@@ -43,40 +60,45 @@ class ProductController extends Controller
         }
 
         //! need to fetch business not sure yet how this works since business not available yet
-        $formFields["business_id"] = auth()->user()->business_id;
+        $formFields["business_id"] = $business_id;
+      
 
         Product::create($formFields);
 
-        return redirect("/manage")->with("message", "Product created Successfully!");
+        return redirect("/business/{$business_id}/products")->with("message", "Product created Successfully!");
     }
 
     //show edit form
-    public function edit($id){
-        $product = Product::find($id);
+    public function edit($business_id, $product_id){
+        $product = Product::find($product_id);
+        $business = Business::find($product->business_id);
 
         //! not sure yet how to call business id
-        if($product->business_id != auth()->user()->business_id ){
+        if($business->manager_id != auth()->user()->id and !(auth()->user()->role == 'admin')){
             abort(403, "Unauthorized action");
         }
 
         return view("products.edit", [
-            "product" => $product
+            "product" => $product,
+            "business_id" => $business_id,
+            "product_id" => $product_id,
         ]);
     }
 
     //update product in db
-    public function update(Request $request, $id){
-        $product = Product::find($id);
+    public function update(Request $request, $business_id, $product_id){
+        $product = Product::find($product_id);
+        $business = Business::find($product->business_id);
 
         //! not sure yet how to call business id
-        if($product->business_id != auth()->user()->business_id ){
+        if($business->manager_id != auth()->user()->id and !(auth()->user()->role == 'admin')){
             abort(403, "Unauthorized action");
         }
 
         $formFields = $request->validate([
             "name" => "required",
             "category" => "required",
-            "quantity" => ["required","numeric","integer","gt:0"],
+           
             "ingredientString" => "required",
             "allergyString" => "required",
             "picture" => ["image","mimes:png,jpg,jpeg","max:2048"]
@@ -85,28 +107,30 @@ class ProductController extends Controller
         if($request->hasFile("picture")){
             $formFields["picture"] = $request->file("picture")->store("productPictures", "public");
         }
+        $formFields["business_id"] = $product->business_id;
+       
 
         $product->update($formFields);
 
-        return redirect("/products/". $product->id)->with("message", "Updated Successfully!");
+        return redirect("/business/{$business_id}/products")->with("message", "Updated Successfully!");
     }
 
     //delete product from the db
-    public function destroy($id){
-        $product = Product::find($id);
+    public function destroy($business_id,$product_id){
+        $product = Product::find($product_id);
 
         //! not sure yet how to call business id
-        if($product->business_id != auth()->user()->business_id ){
+        if($product->business->manager_id != auth()->user()->id and !(auth()->user()->role == 'admin')){
             abort(403, "Unauthorized action");
         }
 
         $product->delete();
 
-        return redirect("/products/manage")->with("message","Product deleted successfully!");
+        return redirect("/business/{$business_id}/products")->with("message","Product deleted successfully!");
     }
 
     //show all Products of a user
-    public function manage(){
+    public function manage($business_id){
         //! not sure yet since no business 
         return view("products.manage",[
             "products" => auth()->user()->products
