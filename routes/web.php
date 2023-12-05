@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/home', function () {
+    return view('home');
+});
 //Routes for users management (In case of Routing Issues with users, Refer to Riccardo)
 require __DIR__.'/Routes/userRoutes.php';
 
