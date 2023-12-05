@@ -41,7 +41,7 @@ class BusinessSeeder extends Seeder
             [
                 'name' => 'Clairefontaine',
                 'address' => '2 Rue de Clairefontaine, 1631 Luxembourg, Luxembourg',
-                'manager_id' => 19,
+                'manager_id' => 20,
                 'category_id' => 3,
                 "lat" => "49.61012782279831",
                 "lon" => "6.132115167895016"
@@ -49,7 +49,7 @@ class BusinessSeeder extends Seeder
             [
                 'name' => 'Restaurant Um Plateau',
                 'address' => '19 Rue du Brill, 4435 Esch-sur-Alzette, Luxembourg',
-                'manager_id' => 20,
+                'manager_id' => 21,
                 'category_id' => 3,
                 "lat" =>"49.469700",
                 "lon" => "5.994700"
@@ -57,7 +57,7 @@ class BusinessSeeder extends Seeder
             [
                 'name' => 'Brasserie du Parc',
                 'address' => '3 Rue du Parc, 4435 Esch-sur-Alzette, Luxembourg',
-                'manager_id' => 21,
+                'manager_id' => 22,
                 'category_id' => 3,
                 "lat" =>"49.469500",
                 "lon" =>"5.997200"
@@ -65,7 +65,7 @@ class BusinessSeeder extends Seeder
             [
                 'name' => 'La Table d\'Adrien',
                 'address' => '7 Rue du Brill, 4435 Esch-sur-Alzette, Luxembourg',
-                'manager_id' => 22,
+                'manager_id' => 23,
                 'category_id' => 3,
                 "lat" => "49.469800",
                 "lon" =>"5.994800"
@@ -73,7 +73,7 @@ class BusinessSeeder extends Seeder
             [
                 'name' => 'Restaurant Le Chapiteau',
                 'address' => '16 Avenue de la Libération, 4435 Esch-sur-Alzette, Luxembourg',
-                'manager_id' => 23,
+                'manager_id' => 24,
                 'category_id' => 3,
                 "lat" => "49.474200",
                 "lon" =>"5.995300"

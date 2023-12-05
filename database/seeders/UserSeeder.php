@@ -87,6 +87,97 @@ class UserSeeder extends Seeder
                 'phonenumber' => '3333333333',
                 'role' => 'restaurantManager',
             ],
+            [
+                'firstname' => 'John',
+                'lastname' => 'Doe',
+                'email' => 'john@example.com',
+                'password' => Hash::make('password'),
+                'phonenumber' => '5555555555',
+                'role' => 'restaurantManager',
+            ],
+            
+            [
+                'firstname' => 'Alice',
+                'lastname' => 'Smith',
+                'email' => 'alice@example.com',
+                'password' => Hash::make('password'),
+                'phonenumber' => '6666666666',
+                'role' => 'restaurantManager',
+            ],
+            
+            [
+                'firstname' => 'Michael',
+                'lastname' => 'Johnson',
+                'email' => 'michael@example.com',
+                'password' => Hash::make('password'),
+                'phonenumber' => '7777777777',
+                'role' => 'restaurantManager',
+            ],
+            
+            [
+                'firstname' => 'Sarah',
+                'lastname' => 'Wilson',
+                'email' => 'sarah@example.com',
+                'password' => Hash::make('password'),
+                'phonenumber' => '8888888888',
+                'role' => 'restaurantManager',
+            ],
+            
+            [
+                'firstname' => 'David',
+                'lastname' => 'Brown',
+                'email' => 'david@example.com',
+                'password' => Hash::make('password'),
+                'phonenumber' => '9999999999',
+                'role' => 'restaurantManager',
+            ],
+            
+            [
+                'firstname' => 'Emily',
+                'lastname' => 'Lee',
+                'email' => 'emily@example.com',
+                'password' => Hash::make('password'),
+                'phonenumber' => '1111111111',
+                'role' => 'restaurantManager',
+            ],
+            
+            [
+                'firstname' => 'James',
+                'lastname' => 'Wilson',
+                'email' => 'james@example.com',
+                'password' => Hash::make('password'),
+                'phonenumber' => '2222222222',
+                'role' => 'restaurantManager',
+            ],
+            
+            [
+                'firstname' => 'Olivia',
+                'lastname' => 'Smith',
+                'email' => 'olivia@example.com',
+                'password' => Hash::make('password'),
+                'phonenumber' => '3333333333',
+                'role' => 'restaurantManager',
+            ],
+            
+            [
+                'firstname' => 'Daniel',
+                'lastname' => 'Davis',
+                'email' => 'daniel@example.com',
+                'password' => Hash::make('password'),
+                'phonenumber' => '4444444444',
+                'role' => 'restaurantManager',
+            ],
+            
+            [
+                'firstname' => 'Sophia',
+                'lastname' => 'Miller',
+                'email' => 'sophia@example.com',
+                'password' => Hash::make('password'),
+                'phonenumber' => '5555555555',
+                'role' => 'restaurantManager',
+            ],
+            
+            
 
         ]);
     }
