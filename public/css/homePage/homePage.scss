@@ -1,0 +1,40 @@
+//MAN FOR THE HOME PAGE
+#homeSection{
+    h1, #homePageP, #homeSearch{
+        text-align: center;
+    }
+    h1{
+        font-size: 60px;
+    }
+    #homePageP{
+        margin: 20px 0px;
+        font-size: 25px;
+    }
+    #homeSearch{
+        margin-bottom: 100px;
+        input{
+            padding: 5px 10% 5px 15px;
+            border: none;
+            border-radius: 15px;   
+        }
+    }
+}
+#homeArticle{
+    text-align: center;
+    margin: 0px 25%;
+    div{
+        display: flex;
+        justify-content: center;
+        padding: 30px 0px;
+        gap: 20%;
+        @import '../aDesign/button/button.scss';  // globale button
+        #buttonSell{
+            background-color: white;
+            color: red;
+            border: 1px solid red;
+        } 
+    }
+    p{
+        padding: 0px 20px 100px 20px;
+    }
+}
