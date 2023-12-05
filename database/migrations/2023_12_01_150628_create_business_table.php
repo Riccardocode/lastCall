@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
+        
         Schema::create('business', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('address');
-            $table->foreignId('manager_id')->unique();
-            $table->foreignId('category_id');
+            $table->foreignId('manager_id')->unique()->constrained(table:'users')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained(table:'category')->onDelete('cascade');
             $table->timestamps();
         });
     }

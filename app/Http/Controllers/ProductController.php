@@ -50,8 +50,6 @@ class ProductController extends Controller
         $formFields = $request->validate([
             "name" => "required",
             "category" => "required",
-            //quantity to be removed
-            // "quantity" => ["required","numeric","integer","gt:0"],
             "ingredientString" => "required",
             "allergyString" => "required",
             "picture" => ["image","mimes:png,jpg,jpeg","max:2048"]
@@ -63,8 +61,7 @@ class ProductController extends Controller
 
         //! need to fetch business not sure yet how this works since business not available yet
         $formFields["business_id"] = $business_id;
-        //this quantity will be removed
-        $formFields["quantity"] = 0; //default quantity
+      
 
         Product::create($formFields);
 
@@ -101,7 +98,7 @@ class ProductController extends Controller
         $formFields = $request->validate([
             "name" => "required",
             "category" => "required",
-            // "quantity" => ["required","numeric","integer","gt:0"],
+           
             "ingredientString" => "required",
             "allergyString" => "required",
             "picture" => ["image","mimes:png,jpg,jpeg","max:2048"]
@@ -111,7 +108,7 @@ class ProductController extends Controller
             $formFields["picture"] = $request->file("picture")->store("productPictures", "public");
         }
         $formFields["business_id"] = $product->business_id;
-        $formFields["quantity"] = 0;
+       
 
         $product->update($formFields);
 

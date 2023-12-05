@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->string("category");
-            $table->integer("quantity");
+            
             $table->string("ingredientString");
             $table->string("allergyString");
             $table->string("picture")->nullable();
-            $table->foreignId("business_id")->constrained('business')->onDelete("cascade");
+            $table->foreignId("business_id")->constrained(table:'business')->onDelete("cascade");
             $table->timestamps();
         });
     }
