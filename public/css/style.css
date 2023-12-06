@@ -19,16 +19,21 @@ header {
   align-items: center;
   margin: 10px 10%;
 }
+header .logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+header .logo a {
+  color: #FFF;
+}
 header img {
   width: 20%;
 }
 header nav ul {
   display: flex;
   gap: 20px;
-}
-header nav ul .about-us {
-  display: flex;
-  justify-content: left;
+  align-items: center;
 }
 header nav ul .welcome {
   color: #FFF;
@@ -38,6 +43,17 @@ header nav ul a {
   font-size: 20px;
   color: #FFF;
   font-weight: bold;
+}
+header nav button {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  padding: 0.4rem 1rem;
+  background-color: rgba(0, 0, 0, 0.76);
+  color: #FFF;
+  border-radius: 4px;
+  transition: 0.4s;
+  border: none;
+  font-size: 1rem;
 }
 
 main {

@@ -23,22 +23,29 @@ header{
     align-items: center;
     margin: 10px 10%;
 
-    img{
+.logo { // the container with the logo image and About Us link
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+a {
+    color:$textColorWhite;
+    }
+}
+
+    img{ // logo image
         width: 20%;
     }
     nav{
         ul{
             display: flex;
             gap: 20px;
-
-.about-us {
-    display: flex;
-    justify-content: left;
-}
+            align-items: center;
 
             .welcome {
-                color:$textColorWhite;
+                color: $textColorWhite
             }
+
             a{
                 font-family: $primaryFont;
                 font-size: 20px;
@@ -46,7 +53,18 @@ header{
                 font-weight: bold; 
             }
         }
-  
+
+        button {  // Logout Button
+                text-decoration: none;
+                font-family: $primaryFont;
+                padding: .4rem 1rem;
+                background-color: rgba(0, 0, 0, 0.76);
+                color:  $textColorWhite;
+                border-radius: 4px;
+                transition: 0.4s;
+                border:none;
+                font-size: 1rem;
+        }
     }
 }
         //MAINS

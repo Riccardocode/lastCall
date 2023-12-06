@@ -80,14 +80,17 @@
 <body>
     {{-- Header layout --}}
     <header>
+               <div class="logo">  
         <img src="{{asset('images/logo.png')}}" alt="LastCall logo">
+
+        <div class="about-us">
+         <a href="/">About us</a>
+         </div>
+            </div>
+
+        
         <nav>
             <ul>
-                <div class="about-us">
-                <li>
-                    <a href="/">About us</a>
-                </li>
-                </div>
                 @auth
                 <li>
                     <span class="welcome">
