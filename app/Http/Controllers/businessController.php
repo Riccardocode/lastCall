@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Business;
 use App\Models\Category;
 use App\Domain\Map\CustomMap;
+use App\Domain\Map\CustomRouting;
 use Illuminate\Http\Request;
 
 
@@ -135,5 +136,11 @@ class BusinessController extends Controller
 
         $business->delete();
         return redirect("/");
+    }
+
+    public function getBy2kmRadius(){
+        $businesses = CustomRouting::filterByAddress("Rue St Ulric, 2651 Luxembourg",Business::all());
+        dd($businesses);
+        
     }
 }
