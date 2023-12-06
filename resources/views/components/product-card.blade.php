@@ -1,10 +1,10 @@
 @props(['product'])
 {{-- !to check if it works  --}}
-<a href="/business/{{$products->business_id}}">
-    <article>
-    {{-- imge as a background  --}}
+{{-- <a href="/business/{{$product->business_id}}"> --}}
+    <article style="background-image: url('{{ asset("storage/$product->picture") }}');">
+    
         <section>
-            <h4>{{$products->name}}</h4>
+            <h4>{{$product->name}}</h4>
             <p>Star stuff</p>
             <button>Add</button>
             <div>

@@ -12,9 +12,9 @@ class ProductController extends Controller
     //all products
     public function index(){
         return view("products.index", [
-            "products" => Product::with(["business"])->get()
+            "products" => Product::with(["business"])->get(),
         ]);
-    }
+    } 
 
     public function businessIndex($business_id){
         $business = Business::find($business_id);

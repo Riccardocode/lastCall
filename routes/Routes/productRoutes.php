@@ -3,9 +3,6 @@
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 //See all products regardless of the user
 Route::get("/business/products", [ProductController::class, "index"]);
