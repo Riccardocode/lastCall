@@ -1,0 +1,83 @@
+    // COLORS
+@import '../aDesign/colors/colors.scss'; 
+    //FONT
+@import '../aDesign/typography/fonts.scss'; 
+
+.businessClientView{
+    display: flex;
+    padding: 12.5% 50px 0px 50px;
+    justify-content: space-between;
+        //Restaurant image | left side of the page
+    .logoAdd{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 10%;
+        .imgDiv{  
+            width: 400px;
+            height: 300px;
+            position: relative;
+            text-align: center;
+            .nameRest{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: $textColorWhite;
+                font-size: 35px;
+            }
+            .logoRest{
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+        //Right side of the page
+    .businessProduts{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .productClientViewS{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: $textColorBlack;
+            flex-basis: 100px;
+            a{
+                text-decoration: none;
+                color: $textColorBlack;     
+                width: 150px;
+                height: 100px;
+            }
+            h2{
+                max-width: 100px;
+                font-size: 16px;
+            }
+            div{
+                max-width: 200px;
+                text-align: center;
+                h3{
+                    font-size: 14px;
+                }
+                h4{
+                    font-size: 12px;
+                }
+            }
+            button{
+                background-color: $primaryColor;
+                font-size: 20px;
+                padding: 10px;
+                transition: 0.4s;
+                border: none;
+                border-radius: 4px;
+                box-shadow:  2px 2px 5px #918c83,
+                -2px -2px 5px #f4f4f5; 
+            }
+            button:hover{
+                box-shadow: 0 0 5px 2.5px #00000033;
+                transform: translate(-5px, -5px);
+            } 
+        }
+    }
+}
