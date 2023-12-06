@@ -79,6 +79,10 @@ class BusinessController extends Controller
             "category_id" => "required",
 
         ]);
+        if($request->hasFile('businessImg'))
+        {
+            $formFields['businessImg'] = $request->file('businessImg')->store('businessImages', 'public');
+        }
 
         $response = CustomMap::addressToCoords($formFields["address"]);
         $formFields["lat"]=$response[0]["lat"];
@@ -123,12 +127,18 @@ class BusinessController extends Controller
             "address" => "required",
             "category_id" => "required",
         ]);
+        if($request->hasFile('businessImg'))
+        {
+            $formFields['businessImg'] = $request->file('businessImg')->store('businessImages', 'public');
+        }
 
         $formFields["manager_id"] = $business->manager_id;
         
         $business->update($formFields);
 
-        return redirect("/");
+        //redirect previous page
+        return back()->with('message', 'Your Busines has been updated');
+        
     }
 
     //delete business

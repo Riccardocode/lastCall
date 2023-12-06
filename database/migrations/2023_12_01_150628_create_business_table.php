@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('address');
             $table->foreignId('manager_id')->unique()->constrained(table:'users')->onDelete('cascade');
             $table->foreignId('category_id')->constrained(table:'category')->onDelete('cascade');
-
+            $table->string('businessImg')->nullable();
             $table->double("lat")->nullable();
             $table->double("lon")->nullable();
             $table->timestamps();

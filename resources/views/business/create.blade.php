@@ -12,6 +12,15 @@
 
         @csrf
         <div class="mb-6">
+            <label for="businessImg" class="inline-block text-lg mb-2">
+                Business Image
+            </label>
+            <input type="file" class="border border-gray-200 rounded p-2 w-full" name="businessImg" />
+            @error('businessImg')
+                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
+        <div class="mb-6">
             <label for="name" class="inline-block text-lg mb-2">Business Name</label>
             <input type="text" value="{{ old('name') ? old('name') : '' }}"
                 class="border border-gray-200 rounded p-2 w-full" name="name" />

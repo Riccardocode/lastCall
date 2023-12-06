@@ -13,6 +13,17 @@
         @csrf
         @method('PUT')
         <div class="mb-6">
+            @if ($business->businessImg)
+                <img class="w-24" src="/storage/{{ $business->businessImg }}" alt="">
+            @else
+                <img class="w-24" src="/storage/businessImages/restaurantGeneral.png" alt="">
+            @endif
+            <input type="file" name='businessImg'>
+            @error('businessImg')
+                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
+        <div class="mb-6">
             <label for="name" class="inline-block text-lg mb-2">Business Name</label>
             <input type="text" value="{{ $business->name }}" class="border border-gray-200 rounded p-2 w-full"
                 name="name" />
@@ -49,7 +60,7 @@
                 Update Business
             </button>
 
-            <a href="/" class="text-black ml-4"> Back </a>
+            <a href="/business/{{$business->id}}" class="text-black ml-4"> Back </a>
         </div>
     </form>
 @endsection
