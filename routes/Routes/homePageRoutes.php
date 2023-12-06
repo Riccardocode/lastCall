@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 Route::get("/", [HomePageController::class, "home"]);
 
 //Route for the choosing page
-Route::get("/choosing", [HomePageController::class, "choosing"])->middleware("auth");
+Route::get("/choosing", [HomePageController::class, "choosing"]);
+
+Route::get("/choosing/sell", [HomePageController::class, "sellPath"]);
 
 

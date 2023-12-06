@@ -20,5 +20,23 @@ class HomePageController extends Controller
             "products" => Product::latest()->paginate(5),
         ]); 
     }
+
+    public function sellPath()
+    {
+        if (auth()->user() && auth()->user()->role == 'admin') {
+            return redirect('/business');
+        }
+        if (auth()->user() && auth()->user()->role == 'restaurantManager') {
+            $business = Business::where('manager_id', auth()->user()->id)->first();
+            return redirect('/business/' . $business->id);
+        }
+        if (auth()->user() && auth()->user()->role == 'user') {
+            return view('users.becomeManager',[
+                'user_id'=>auth()->user()->id,
+                'registerAsManager'=>true,
+            ]);       
+        }
+        
+    }
      
 }

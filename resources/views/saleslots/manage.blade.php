@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout2')
 
 @section('content')
     <div class="max-w-6xl mx-auto py-6">

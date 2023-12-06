@@ -1,6 +1,6 @@
 {{-- This file is the view for all the products within a business --}}
 
-@extends('layout')
+@extends('layout2')
 
 @section('content')
     <div class="container mx-auto px-4 py-6">

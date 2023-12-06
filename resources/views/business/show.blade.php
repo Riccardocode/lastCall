@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout2')
 
 @section('content')
     <div class="container mx-auto px-4 py-6">
@@ -25,6 +25,8 @@
                 @method('DELETE')
                 <button type="submit" class="text-red-500 hover:text-red-700 font-medium">Delete</button>
             </form>
+
+            <a class="text-green-500 hover:text-green-700 font-medium" href="/business/{{ $business_id }}/products">Products</a>
 
             @if (auth()->user()->role == 'admin')
                 <a href="/business">Back</a>

@@ -13,7 +13,7 @@
         <article>
             <div>
                 <a href="/choosing">Buy</a>
-                <a href="/" id="buttonSell">Sell</a>
+                <a href="/choosing/sell" id="buttonSell">Sell</a>
             </div>
             <p>
                 LastCall is a revolutionary website that enables users to enjoy a delicious dining experience while promoting sustainability and reducing food waste.

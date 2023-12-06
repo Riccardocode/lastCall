@@ -55,7 +55,9 @@ class UserController extends Controller
 
     public function login()
     {
+        
         return view('users.login');
+       
     }
 
     public function authenticate(Request $request)
@@ -140,5 +142,25 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->update($formFields);
         return redirect('/users')->with('message','User updated!');
+    }
+
+    public function becomeManager(){
+        if(auth()->user()->role != 'user'){
+            abort(403);
+        }
+        return view('users.becomeManager',
+        [
+            'user_id'=>auth()->user()->id,
+        ]
+    );
+    }
+    public function updateBecomeManager(){
+        if(auth()->user()->role != 'user'){
+            abort(403);
+        }
+        $user = User::findOrFail(auth()->user()->id);
+        $user->role = 'restaurantManager';
+        $user->save();
+        return redirect()->back()->with('message','User updated!');
     }
 }
