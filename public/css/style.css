@@ -26,6 +26,13 @@ header nav ul {
   display: flex;
   gap: 20px;
 }
+header nav ul .about-us {
+  display: flex;
+  justify-content: left;
+}
+header nav ul .welcome {
+  color: #FFF;
+}
 header nav ul a {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
@@ -78,7 +85,7 @@ main #homeSection #homeSearch input {
 main #homeSection #homeSearch button {
   background: transparent;
   position: absolute;
-  top: 1px;
+  top: 10px;
   right: 5px;
   color: #D63030;
   border: none;
@@ -125,4 +132,32 @@ main #homeArticle article p {
   padding: 10px 5% 100px 5%;
   font-family: "Roboto", sans-serif;
   font-size: 17px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f8f7f2;
+  color: rgba(0, 0, 0, 0.747);
+  padding: 1rem;
+  line-height: 1.4;
+}
+footer a {
+  text-decoration: none;
+  color: #F97316;
+}
+footer a span {
+  color: rgba(0, 0, 0, 0.747);
+}
+footer a :hover {
+  text-decoration: underline;
+}
+
+.credentials {
+  text-align: center;
+  padding-top: 1rem;
+  background-color: #f8f7f2;
+  color: rgba(0, 0, 0, 0.52);
 }/*# sourceMappingURL=style.css.map */
