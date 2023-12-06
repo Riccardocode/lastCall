@@ -19,18 +19,41 @@ header {
   align-items: center;
   margin: 10px 10%;
 }
+header .logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+header .logo a {
+  color: #FFF;
+}
 header img {
   width: 20%;
 }
 header nav ul {
   display: flex;
   gap: 20px;
+  align-items: center;
+}
+header nav ul .welcome {
+  color: #FFF;
 }
 header nav ul a {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   color: #FFF;
   font-weight: bold;
+}
+header nav button {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  padding: 0.4rem 1rem;
+  background-color: rgba(0, 0, 0, 0.76);
+  color: #FFF;
+  border-radius: 4px;
+  transition: 0.4s;
+  border: none;
+  font-size: 1rem;
 }
 
 main {
@@ -127,78 +150,31 @@ main #homeArticle article p {
   font-family: "Roboto", sans-serif;
   font-size: 17px;
 }
-main .businessClientView {
+
+footer {
   display: flex;
-  padding: 12.5% 50px 0px 50px;
-  justify-content: space-between;
-}
-main .businessClientView .logoAdd {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  gap: 10%;
-}
-main .businessClientView .logoAdd .imgDiv {
-  width: 400px;
-  height: 300px;
-  position: relative;
-  text-align: center;
-}
-main .businessClientView .logoAdd .imgDiv .nameRest {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #FFF;
-  font-size: 35px;
-}
-main .businessClientView .logoAdd .imgDiv .logoRest {
-  height: 100%;
-  width: 100%;
-}
-main .businessClientView .businessProduts {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-main .businessClientView .businessProduts .productClientViewS {
-  display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  color: #0E0000;
-  flex-basis: 100px;
+  background-color: #f8f7f2;
+  color: rgba(0, 0, 0, 0.747);
+  padding: 1rem;
+  line-height: 1.4;
 }
-main .businessClientView .businessProduts .productClientViewS a {
+footer a {
   text-decoration: none;
-  color: #0E0000;
-  width: 150px;
-  height: 100px;
+  color: #F97316;
 }
-main .businessClientView .businessProduts .productClientViewS h2 {
-  max-width: 100px;
-  font-size: 16px;
+footer a span {
+  color: rgba(0, 0, 0, 0.747);
 }
-main .businessClientView .businessProduts .productClientViewS div {
-  max-width: 200px;
+footer a :hover {
+  text-decoration: underline;
+}
+
+.credentials {
   text-align: center;
-}
-main .businessClientView .businessProduts .productClientViewS div h3 {
-  font-size: 14px;
-}
-main .businessClientView .businessProduts .productClientViewS div h4 {
-  font-size: 12px;
-}
-main .businessClientView .businessProduts .productClientViewS button {
-  background-color: #F97316;
-  font-size: 20px;
-  padding: 10px;
-  transition: 0.4s;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
-}
-main .businessClientView .businessProduts .productClientViewS button:hover {
-  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
-  transform: translate(-5px, -5px);
+  padding-top: 1rem;
+  background-color: #f8f7f2;
+  color: rgba(0, 0, 0, 0.52);
 }/*# sourceMappingURL=style.css.map */
