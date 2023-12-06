@@ -1,4 +1,8 @@
-// GENERAL CSS FOR ALL PAGES
+//COLORS
+@import "../css/aDesign/colors/colors.scss";
+//FONT
+@import "../css/aDesign/typography/fonts.scss";
+       // GENERAL CSS FOR ALL PAGES
 *{
     box-sizing: border-box;
     padding: 0;
@@ -10,45 +14,33 @@ ul{         //Delete the ° list
 }
         //LAYOUT HEADER
 header{
+    position: absolute;   //to keep the header inside the main in the top 
+    top: 0;
+    left: 0;
+    width: 80%;
     display: flex;
     justify-content: space-between;
-    margin: 50px 10%;
+    align-items: center;
+    margin: 10px 10%;
+    img{
+        width: 20%;
+    }
     nav{
         ul{
             display: flex;
             gap: 20px;
+            a{
+                font-family: $primaryFont;
+                font-size: 20px;
+                color: $textColorWhite;
+                font-weight: bold; 
+            }
         }
     }
 }
-        //MAIN
+        //MAINS
 main{
     //MAIN HOME PAGE CSS
-    @import 'homePage/homePage.scss'; 
+    @import 'homePage/homePage.scss';      
 }
-        // GENERAL CSS FOR ALL PAGES
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    // border: 1px solid red; //helps to see all the boxes correctly in the page
-}
-ul{         //Delete the ° list
-    list-style: none;
-}
-        //LAYOUT HEADER
-header{
-    display: flex;
-    justify-content: space-between;
-    margin: 50px 10%;
-    nav{
-        ul{
-            display: flex;
-            gap: 20px;
-        }
-    }
-}
-        //MAIN
-main{
-    //MAIN HOME PAGE CSS
-    @import 'homePage/homePage.scss'; 
-}
+
