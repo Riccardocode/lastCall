@@ -18,12 +18,14 @@ class UserController extends Controller
             'firstname'=>'required',
             'lastname'=>'required',
             'email'=>['required','email',Rule::unique('users','email')],
-            'password' => ['required',Password::min(8)
-                                        ->mixedCase()
-                                        ->letters()
-                                        ->numbers()
-                                        ->symbols()
-                                        ->uncompromised(2),'confirmed'],
+            //Revert the password verification
+            // 'password' => ['required',Password::min(8)
+            //                             ->mixedCase()
+            //                             ->letters()
+            //                             ->numbers()
+            //                             ->symbols()
+            //                             ->uncompromised(2),'confirmed'],
+            'password' => ['required',Password::min(8),'confirmed'],
             
 
         ]);
@@ -161,6 +163,6 @@ class UserController extends Controller
         $user = User::findOrFail(auth()->user()->id);
         $user->role = 'restaurantManager';
         $user->save();
-        return redirect()->back()->with('message','User updated!');
+        return redirect('/business/create')->with('message','User updated! Create your restaurant');
     }
 }

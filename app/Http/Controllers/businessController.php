@@ -50,6 +50,13 @@ class BusinessController extends Controller
         if (auth()->user()->role !== 'restaurantManager' and !(auth()->user()->role == 'admin')) {
             abort(403, 'Unauthorized action.');
         }
+        //if the user is a manager and already has a business, redirect to the business page
+        if (auth()->user()->role=='restaurantManager'){
+            $business=Business::where('manager_id',auth()->user()->id)->first();
+            if($business){
+                return redirect('/business/'.$business->id);
+            }
+        }
         return view(
             "business.create",
             [
@@ -78,8 +85,8 @@ class BusinessController extends Controller
         $formFields["lon"]=$response[0]["lon"];
         $formFields["manager_id"] = auth()->user()->id;
         Business::create($formFields);
-
-        return redirect("/");
+        $business=Business::where('manager_id',auth()->user()->id)->first();
+        return redirect("/business/".$business->id);
     }
 
     //show edit Form

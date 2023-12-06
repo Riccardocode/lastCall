@@ -36,6 +36,7 @@ class HomePageController extends Controller
                 'registerAsManager'=>true,
             ]);       
         }
+        return (view('homePage.sellPath'));
         
     }
      
