@@ -33,3 +33,7 @@ require __DIR__.'/Routes/categoryRoutes.php';
 
 //Route for manage the Sales Lot (Refer to Riccardo)
 require __DIR__.'/Routes/salesLotRoutes.php';
+
+
+
+require __DIR__."/Routes/mapRoutes.php";
