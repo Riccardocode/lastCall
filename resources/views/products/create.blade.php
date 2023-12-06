@@ -5,7 +5,7 @@
 
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
-                Create a new Product
+                Create a new Product 
             </h2>
         </header>
 

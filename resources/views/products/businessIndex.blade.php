@@ -58,7 +58,6 @@
                             <a href="/business/{{ $business->id }}/products/{{ $product->id }}/saleslot/create">
                                 {{-- new sales lot --}}
                                 <i class="fa-solid fa-tags"></i>
-
                             </a>
                         @else
                             <p>price <i class="fa-solid fa-dollar-sign"></i>

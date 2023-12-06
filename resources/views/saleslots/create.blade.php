@@ -5,11 +5,11 @@
 
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
-                Create a new salesLot
+                Create a new salesLot for {{$product_name}}
             </h2>
         </header>
 
-    <form action="/products/{{$product_id}}/saleslot" method="post" enctype="multipart/form-data" >
+    <form action="/business/{{$business_id}}/products/{{$product_id}}/saleslot" method="post" enctype="multipart/form-data" >
       
         @csrf
         <div class="mb-6">
