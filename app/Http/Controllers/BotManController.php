@@ -13,15 +13,33 @@ use BotMan\BotMan\Messages\Outgoing\Question;
 use App\Domain\BotMan\RecommendationConversation;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 
+use function PHPUnit\Framework\isEmpty;
+
 class BotManController extends Controller
 {
+    protected static $isError = -1;
 
-    public function testDump(){
-        dd(Category::find('1')->businesses);
+    public function changeIsError($value){
+        $file = file_get_contents('variables.txt');
+        dd($file);
+        if(isEmpty(file_get_contents('variables.txt'))){
+            file_put_contents('variables.txt',"isError=".$value.",\r",FILE_APPEND);
+        }else{
+            // $file = file_get_contents('variables.txt');
+            if(str_contains($file, 'isError')){
+                dd($file);
+            }
+        }
+        
     }
 
-    public function about($botman)
-    {
+    public function testDump(){
+        $test = new RecommendationConversation(3);
+        dd(Category::find('1')->business->take(3));
+        // dd($test);
+    }
+
+    public function about($botman){
         $botman->hears('{message}', function ($botman, $message) {
             if (str_contains($message, 'about')) {
                 $botman->reply("The Mission of this Website is to reduce waste by selling the food that has been cooked by Businesses but not sold.");
@@ -29,17 +47,6 @@ class BotManController extends Controller
                 $botman->reply("Did not hear about");
             }
         });
-
-        $botman->listen();
-    }
-
-    public function handle()
-    {
-        $botman = app('botman');
-
-        $botman->about($botman);
-
-
 
         $botman->listen();
     }
@@ -52,53 +59,54 @@ class BotManController extends Controller
         });
     }
 
-    public function test($botman)
-    {
+    public function test($botman){
         $botman->reply("The Mission of this Website is to reduce waste by selling the food that has been cooked by Businesses but not sold.");
     }
 
-    public function check($message)
-    {
+    public function check($message){
         if (str_contains($message, 'about')) {
-            // $this->test($botman);
             return 1;
         } else if (str_contains($message, 'reco')) {
-            // $botman->reply('success');
-            // $this->askRecommendation($botman);
             return 2;
         } else {
-            // $botman->reply('error');
             return -1;
         }
     }
 
-    
-
-    public function input()
-    {
-        // $botman = app('botman');
+    public function input(){
         $botman = BotManFactory::create(['driver' => 'web'], new LaravelCache());
         $botman->hears('{message}', function ($botman, $message) {
-
             $number = $this->check($message); 
-
             switch ($number) {
                 case 1:
                     $this->test($botman);
                     break;
-
                 case 2:
                     $botman->startConversation(new RecommendationConversation());
-                    // $this->askRecommendation($botman,$this->catArr());
                     break;
-
                 default:
                     $botman->reply('error');
             }
         });
-
         $botman->listen();
     }
 
     
+
+    public function inputTest(){
+        
+        $botman = BotManFactory::create(['driver' => 'web'], new LaravelCache());
+        $pattern1 = '.*\b(?:about|mission|about us|intention).*\?';
+        $botman->hears($pattern1, function ($botman) {
+            // $this->changeIsError(1);
+            $this->test($botman);
+        });
+        $pattern2 = '.*\b(?:recommendation|reco|recom|recommend)\b.*(\d+).*\?';
+        $botman->hears($pattern2, function ($botman, $number) {
+            // $this->changeIsError(1);
+            $botman->startConversation(new RecommendationConversation($number));
+        });
+        // dd($this::$isError);
+        $botman->listen();
+    }
 }

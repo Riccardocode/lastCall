@@ -11,6 +11,12 @@ use BotMan\BotMan\Messages\Conversations\Conversation;
 
 class RecommendationConversation extends Conversation
 {
+    protected $amount;
+    public function __construct($amount = 10)
+    {
+        $this->amount = $amount;
+    }
+
     public function catArr(){
 
         $category = Category::all();
@@ -27,11 +33,14 @@ class RecommendationConversation extends Conversation
 
         $this->ask($question, function (Answer $answer) {
             if ($answer->isInteractiveMessageReply()) {
-                $response = Category::find($answer->getValue())->business;
+                $response = Category::find($answer->getValue())->business->take($this->amount);
+                // $ans = "These are the best Places that I would recommend!\n";
                 $this->say('These are the best Places that I would recommend!');
                 foreach ($response as $res) {
                     $this->say($res->name);
+                    // $ans . $res->name . "\n";
                 }
+                // $this->say($ans);
             }
         });
     }
