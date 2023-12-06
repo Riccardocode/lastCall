@@ -3,21 +3,33 @@
 @extends('layout')
 
 @section('content')
-    <div class="container mx-auto px-4 py-6">
-        <h1 class="text-3xl font-semibold text-gray-800 mb-4">
-            You are viewing all the products for the business {{ $business->name }} with id: {{ $business->id }}
-        </h1>
+    <div class="businessClientView">
+        <section class="logoAdd">
+            <div class="imgDiv">
+                <img class="logoRest" src="{{asset('images/generalProfile.png')}}" alt=""> {{-- ! restaurant image --}}
+                <h1 class="nameRest">{{ $business->name }}</h1>
+            </div>
+            <div>
+                Some Stuff, we have to think about this
+            </div>
+        </section>
 
-        @foreach ($products as $product)
-            <a href="/business/{{ $business->id }}/products/{{ $product->id }}">
-                <div class="bg-white shadow-lg rounded-lg p-4 mb-6">
-                    <h2 class="text-xl font-bold text-gray-700 mb-2">Name of the product: {{ $product->name }}</h2>
-                    <h3 class="text-lg text-gray-600 mb-2">Category of the product: {{ $product->category }}</h3>
-                    <h4 class="text-md text-gray-500 mb-2">Ingredients: {{ $product->ingredientString }}</h4>
-                    <h4 class="text-md text-gray-500 mb-2">Allergies: {{ $product->allergyString }}</h4>
-                    <img src="{{ $product->picture }}" alt="image for {{ $product->name }}" class="w-full h-auto rounded-md">
-                </div>
-        @endforeach
+        <section class="businessProduts">
+            @foreach ($products as $product)
+                <section class="productClientViewS">
+                    <a href="/business/{{ $business->id }}/products/{{ $product->id }}">
+                        <img src="{{ $product->picture }}" alt="image for {{ $product->name }}" class="w-full h-auto rounded-md">
+                    </a>
+                    <h2>{{ $product->name }}</h2>
+                    <div>
+                        <h3>{{ $product->category }}</h3>
+                        <h4>Ingredients: {{ $product->ingredientString }}</h4>
+                        <h4 >Allergies: {{ $product->allergyString }}</h4>
+                    </div>
+                    <p>price <i></i></p>{{-- Dear back-end friend fix this :) --}}
+                    <button>Add <i class="fa-solid fa-cart-arrow-down"></i></button>
+                </section>
+            @endforeach
+        </section>
     </div>
-    </a>
 @endsection
