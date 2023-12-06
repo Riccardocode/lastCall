@@ -33,3 +33,6 @@ require __DIR__.'/Routes/salesLotRoutes.php';
 
 //Routes for the mainPage and its functions
 require __DIR__.'/Routes/homePageRoutes.php';
+
+//Routes for the map page and its functions
+require __DIR__."/Routes/mapRoutes.php";
