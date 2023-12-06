@@ -1,6 +1,6 @@
 @props(['busines'])
 {{-- !to check if it works  --}}
-<a href="/business/{id}">
+<a href="/business/{{$business->id}}/produtcs">
     <article>
         <h3>{{$busines->name}} </h3>
         <div>
