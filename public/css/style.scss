@@ -75,11 +75,11 @@ main{
     @import 'homePage/homePage.scss';
         //MAIN BUSINESS CLIENT VIEW CSS
     @import 'businessClientView/businessClientView.scss'; 
-        //MAIN CHOOSING PAGE CSS
-    @import 'choosing/choosing.scss'; 
-    
+       
+        // MAIN LOGIN PAGE
     @import 'loginPage/loginPage.scss';
-
+        // MAIN REGISTER PAGE
+    @import 'registerPage/registerPage.scss';
 }
 
 // FOOTER
@@ -109,5 +109,4 @@ footer {
     background-color: $backgroundColor;
     color: $palceholdersColor;
 }
-
 
