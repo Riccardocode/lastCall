@@ -16,10 +16,8 @@
 @endphp
 <body>
 
-    <div style="display: flex; justify-content-center; margin:auto;width:800px;height:800px">
-        {{-- map container --}}
-        <div id="map" style="width: 600px; height: 700px"></div>
-    </div>
+    {{-- map container --}}
+    <div id="map" style="width: 100%; height: 100vh"></div>
 
 
     {{-- Leaflet js library --}}
@@ -43,7 +41,7 @@
                 console.log(businesses); 
                 for (const business of businesses) {
                     let marker = L.marker([business["lat"],business["lon"]]).addTo(map);
-                    marker.bindPopup("<b>"+business["name"]+"</b><br>"+business["address"]);
+                    marker.bindPopup("<img style='width:250px;height:150px' src ='/storage/"+business["businessImg"]+"' ></br>"+"<a href='/business/"+business["id"]+"/products'><b>"+business["name"]+"</b></a><br>"+business["address"]);
                 }
             });
 
