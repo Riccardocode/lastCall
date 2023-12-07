@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Product;
 use App\Models\Business;
 use App\Models\Category;
+use Illuminate\Http\Request;
 use App\Domain\Map\CustomMap;
 use App\Domain\Map\CustomRouting;
-use Illuminate\Http\Request;
 
 
 class BusinessController extends Controller
@@ -138,9 +139,15 @@ class BusinessController extends Controller
         return redirect("/");
     }
 
-    public function getBy2kmRadius(){
-        $businesses = CustomRouting::filterByAddress("Rue St Ulric, 2651 Luxembourg",Business::all());
-        dd($businesses);
-        
+    public function getBy2kmRadius(Request $request){
+        $address = $request->validate([
+            "address" => "required"
+        ]);
+        $businesses = CustomRouting::filterByAddress($address["address"],Business::all());
+        CustomRouting::walkingTime($address["address"],$businesses);
+        return view('homePage.choosing', [
+            "businesses" => Business::latest()->paginate(5),
+            "products" => Product::latest()->paginate(5),
+        ]);
     }
 }

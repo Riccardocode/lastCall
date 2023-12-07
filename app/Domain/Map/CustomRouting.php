@@ -3,6 +3,7 @@
 namespace App\Domain\Map;
 
 use App\Domain\Map\CustomMap;
+use Illuminate\Support\Facades\Http;
 
 class CustomRouting{
     public static function filterByAddress(string $address, $businesses){
@@ -19,8 +20,19 @@ class CustomRouting{
         return $businesses;
     }
 
-    public static function walkingTime(){
-        
+    public static function walkingTime(string $address, $businesses){
+        $coords = CustomMap::addressToCoords($address);
+        $lat1 = $coords[0]["lat"];
+        $lon1 = $coords[0]["lon"];
+
+        $nearbyBusiness = [];
+
+        foreach($businesses as $business){
+            $geoData = Http::get("http://localhost:8080/ors/v2/directions/foot-walking?start=$lon1,$lat1&end=$business->lon,$business->lat")->json();
+            $nearbyBusiness[$business->id] = ["duration" => $geoData["features"][0]["properties"]["summary"]["duration"]];
+        }
+        asort($nearbyBusiness);
+        session()->put("nearbyBusiness",$nearbyBusiness);
     }
 
     public static function haversineDistance($lat1, $lon1, $lat2, $lon2) {
