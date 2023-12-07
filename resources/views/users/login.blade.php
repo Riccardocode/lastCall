@@ -1,47 +1,57 @@
-<header class="text-center">
-    <h2 class="text-2xl font-bold uppercase mb-1">
+@extends('layout') 
+@section('content')
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+</head>
+<body>
+    
+</body>
+</html>
+<section class="loginSection">
+<form class="form" action="/login" method="POST">
+    @csrf
+    @error('loginError')
+        <p>{{ $message }}</p>
+    @enderror
+  <h2>
         Login
     </h2>
-    <p class="mb-4">Log into your account to post jobs</p>
-</header>
-<form action="/login" method="POST">
-    @csrf
-
-    @error('loginError')
-        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-    @enderror
-
-    <div class="mb-6">
-        <label for="email" class="inline-block text-lg mb-2">Email</label>
-        <input type="email" class="border border-gray-200 rounded p-2 w-full" name="email"
-            value="{{ old('email') }}" />
+      <p>Log into your account to post jobs</p>
+        {{-- <label for="email">Email</label> --}}
+        <input type="email" name="email"
+            value="{{ old('email') }}" placeholder="Your Email"/>
         @error('email')
-            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+            <p >{{ $message }}</p>
         @enderror
-    </div>
-
-    <div class="mb-6">
-        <label for="password" class="inline-block text-lg mb-2">
+  
+        {{-- <label for="password">
             Password
-        </label>
-        <input type="password" class="border border-gray-200 rounded p-2 w-full" name="password"
-            value="{{ old('password') }}" />
+        </label> --}}
+        <input type="password" name="password"
+            value="{{ old('password') }}" placeholder="Password"/>
         @error('password')
-            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+            <p>{{ $message }}</p>
         @enderror
-    </div>
 
-    <div class="mb-6">
-        <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
+        <button class="loginBtn">
             Sign In
         </button>
-    </div>
+ 
+</form>
 
-    <div class="mt-8">
+ <div id="register">
         <p>
             Don't have an account?
             <a href="/register" class="text-laravel">Register</a>
         </p>
     </div>
 
-</form>
+    </section>
+
+@endsection

@@ -17,11 +17,13 @@ header{
     position: absolute;   //to keep the header inside the main in the top 
     top: 0;
     left: 0;
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 10%;
+    margin: 0;
+    padding: 0.3rem 1.5rem;
+      background: rgba(0, 0, 0, 0.185);
 
 .logo { // the container with the logo image and About Us link
     display: flex;
@@ -36,6 +38,7 @@ header{
         width: 100%;
     }
     nav{
+       
         ul{
             display: flex;
             gap: 20px;
@@ -74,9 +77,10 @@ main{
     @import 'businessClientView/businessClientView.scss'; 
         //MAIN CHOOSING PAGE CSS
     @import 'choosing/choosing.scss'; 
+    
+    @import 'loginPage/loginPage.scss';
 
 }
-
 
 // FOOTER
 footer {
@@ -99,10 +103,11 @@ footer {
         }
     }
 }
-
 .credentials {
     text-align: center;
     padding-top: 1rem;
     background-color: $backgroundColor;
     color: $palceholdersColor;
 }
+
+
