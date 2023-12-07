@@ -27,14 +27,13 @@ header{
     display: flex;
     justify-content: left;
     align-items: center;
-
-a {
-    color:$textColorWhite;
+    a{
+        color:$textColorWhite;
+        width: 20%;
     }
 }
-
     img{ // logo image
-        width: 20%;
+        width: 100%;
     }
     nav{
         ul{
@@ -69,9 +68,13 @@ a {
 }
         //MAINS
 main{
-    //MAIN HOME PAGE CSS
+        //MAIN HOME PAGE CSS
     @import 'homePage/homePage.scss';
+        //MAIN BUSINESS CLIENT VIEW CSS
     @import 'businessClientView/businessClientView.scss'; 
+        //MAIN CHOOSING PAGE CSS
+    @import 'choosing/choosing.scss'; 
+
 }
 
 
@@ -82,28 +85,24 @@ footer {
     justify-content: space-around;
     align-items: center;
     background-color: $backgroundColor;
-   color: rgba(0, 0, 0, 0.747);
+    color: rgba(0, 0, 0, 0.747);
     padding: 1rem;
     line-height: 1.4;
- 
-a {
-    text-decoration: none;
-color:$primaryColor;
-
-span {
-    color: rgba(0, 0, 0, 0.747);
-}
-
-    :hover {
-        text-decoration: underline;
+    a {
+        text-decoration: none;
+        color:$primaryColor;
+        span {
+            color: rgba(0, 0, 0, 0.747);
+        }
+        :hover {
+            text-decoration: underline;
+        }
     }
-}
-
 }
 
 .credentials {
     text-align: center;
     padding-top: 1rem;
     background-color: $backgroundColor;
-     color: $palceholdersColor;
+    color: $palceholdersColor;
 }
