@@ -18,5 +18,6 @@ $inputBackgroundColor: #F9F9F9; // background color for the inputs
 //  GRADIENTS:
 
 $overlayColorMainPage: rgba(0, 0, 0, 0.28); // overlay color for the main page
-$overlayBlackGradientCards: linear-gradient(180deg, rgba(0, 0, 0, 0.83) 41.91%, rgba(8, 8, 8, 0.30) 58.58%, rgba(99, 96, 96, 0.04) 79.93%); // overlay gradient for the cards
+$overlayBlackGradientCards: linear-gradient(0deg, rgba(0, 0, 0, 0.83) 41.91%, rgba(8, 8, 8, 0.30) 58.58%, rgba(99, 96, 96, 0.04) 79.93%); // overlay gradient for the cards
 $overlayWhiteGradientcards:linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, #F8F5F2 28.65%); // apply blur(2) filter
+$overlayColorLogin: rgba(255, 255, 255, 0.137); // overlay color for the main page

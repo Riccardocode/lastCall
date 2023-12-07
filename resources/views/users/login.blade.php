@@ -15,42 +15,37 @@
 </html>
 <section class="loginSection">
     <header>
-    <h2>
-        Login
-    </h2>
-    <p>Log into your account to post jobs</p>
+    
 </header>
 <form class="form" action="/login" method="POST">
     @csrf
     @error('loginError')
         <p>{{ $message }}</p>
     @enderror
-
-    <div class="emailInput">
-        <label for="email">Email</label>
+  <h2>
+        Login
+    </h2>
+      <p>Log into your account to post jobs</p>
+        {{-- <label for="email">Email</label> --}}
         <input type="email" name="email"
-            value="{{ old('email') }}" />
+            value="{{ old('email') }}" placeholder="Your Email"/>
         @error('email')
             <p >{{ $message }}</p>
         @enderror
-    </div>
-
-    <div class="passwordInput">
-        <label for="password">
+  
+        {{-- <label for="password">
             Password
-        </label>
+        </label> --}}
         <input type="password" name="password"
-            value="{{ old('password') }}" />
+            value="{{ old('password') }}" placeholder="Password"/>
         @error('password')
             <p>{{ $message }}</p>
         @enderror
-    </div>
 
-    <div class="loginBtn">
-        <button>
+        <button class="loginBtn">
             Sign In
         </button>
-    </div>
+ 
 </form>
 
  <div id="register">

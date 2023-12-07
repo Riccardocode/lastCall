@@ -5,57 +5,88 @@
 
 
 .loginSection {
-    background: url("../../images/backgroundImage.png");
+   background: linear-gradient($overlayColorLogin, $overlayColorLogin), url("../../images/backgroundImage.png");
      background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-color:$backgroundColor;
     height: 100vh;
     width: 100vw;
-    opacity:0.7;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-   
+ 
 
 .form { // the login form with the inputs
-    border: 1px solid black;
-    width: 50%;
+    width: 30%;
     height:auto;
-    border: 5px solid $primaryColor;
+    border: 3px solid #f97416d5;
     background-color: white;
-    padding: 1rem;
+    padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: left;
+    border-radius: 5px;
 
- 
+    h2 { //login form heading
+        margin-left:1rem;
+        color: $textColorBlack;
+        font-family: $primaryFont;
     }
 
-    #register {
-        display: flex;
-        justify-content: flex-start;
+    p {
+       margin:1rem 1rem .5rem;
+        color: rgba(0, 0, 0, 0.568);
+        font-family: $primaryFont; 
     }
 
    
-
-.emailInput {
-    width:100%;
-
-    // label {
-    //     width: 10%;
-    // }
-
-    input[type="email"] {
+    input[type="email"], [type="password"] { // styloings for the inputs
       font-size: 1rem;
       padding:.5rem;
-      margin:.5rem;  
-      width:100%;
+      margin: 1rem;  
+      width:90%;
+     justify-self: right;
+     background-color: $backgroundColor;
+     outline:none;
+     border: 1.5px solid $palceholdersColor;
+     border-radius:5px;
+
+     &:focus { // the inputs' outline color changes when the input is clicked
+           border: 1.5px solid $primaryColor; 
+     }
     }
+
+    .loginBtn { // login button styling
+        background-color: #f97416d5;
+        padding: .7rem;
+        font-size: 1rem;
+        color: $textColorWhite;
+        font-family: $primaryFont bold;
+        width:20%;
+        border: none;
+        border-radius: 10px;
+        margin: 1rem;
+
+        &:hover {
+              background-color: $primaryColor; 
+        }
+    } 
 }
 
+ #register { // register option text
+        display: flex;
+        justify-content: flex-start;
+    color: rgba(0, 0, 0, 0.856);
+    font-size: 1rem;
+    font-family: $primaryFont;
+    margin-top: 1rem; 
 
+    a {
+        color: $primaryColor;
+    }
+    }
 }
 
