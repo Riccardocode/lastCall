@@ -91,22 +91,52 @@ class BotManController extends Controller
         $botman->listen();
     }
 
-    
+    public function returnRegex($cats){
+        $res = '.*\b(?:';
+        foreach ($cats as $cat) {
+            $res = $res . $cat->name . '|';
+        }
+        $res = $res . ').*\?';
+        return $res;
+    }
 
+    public function loopHear($botman){
+        $cats = Category::all();
+        $ans = '';
+        foreach ($cats as $cat) {
+            $res = '.*\b(?:'.$cat->name.').*\?';
+            $botman->hears($res, function ($botman) {
+                $message = $botman->getMessage()->getPayload()["message"];
+            });
+        }
+    }
     public function inputTest(){
         
         $botman = BotManFactory::create(['driver' => 'web'], new LaravelCache());
+        $cats = Category::all();
+        $pattern4 = $this->returnRegex($cats);
+        // dd($pattern4);
         $pattern1 = '.*\b(?:about|mission|about us|intention).*\?';
         $botman->hears($pattern1, function ($botman) {
-            // $this->changeIsError(1);
             $this->test($botman);
         });
-        $pattern2 = '.*\b(?:recommendation|reco|recom|recommend)\b.*(\d+).*\?';
+        $pattern3 = '.*(?:recommendation|reco|recom|recommend).*\?';
+        $botman->hears($pattern3, function ($botman) {
+            $botman->reply('pattern3');
+            $botman->startConversation(new RecommendationConversation());
+        });
+        $pattern2 = '.*(?:recommendation|reco|recom|recommend).*(\d+).*\?';
         $botman->hears($pattern2, function ($botman, $number) {
-            // $this->changeIsError(1);
+            $botman->reply('pattern2');
             $botman->startConversation(new RecommendationConversation($number));
         });
-        // dd($this::$isError);
+        // $botman->hears($pattern4, function ($botman, $message) {
+        //     $botman->reply('You said: ' . $message->getText());
+        //     $botman->reply('test');
+        //     // $botman->startConversation(new RecommendationConversation($number));
+        // });
+        $this->loopHear($botman);
+        
         $botman->listen();
     }
 }

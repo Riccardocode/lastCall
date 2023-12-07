@@ -27,7 +27,7 @@ class RecommendationConversation extends Conversation
     }
 
     public function askRecommendation($btns){
-        $question = Question::create('Select a category:')
+        $question = Question::create('What type of Food are you craving for?')
             ->fallback('Error')
             ->addButtons($btns);
 
