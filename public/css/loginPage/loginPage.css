@@ -5,15 +5,15 @@
   background-size: cover;
   background-position: center;
   background-color: #f8f7f2;
-  height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 200px 100px;
 }
 .loginSection .form {
-  width: 30%;
+  width: 40%;
   height: auto;
   border: 3px solid rgba(249, 116, 22, 0.8352941176);
   background-color: white;
@@ -34,7 +34,7 @@
   color: rgba(0, 0, 0, 0.568);
   font-family: "Roboto", sans-serif;
 }
-.loginSection .form input[type=email], .loginSection .form [type=password] {
+.loginSection .form input {
   font-size: 1rem;
   padding: 0.5rem;
   margin: 1rem;
@@ -45,7 +45,7 @@
   border: 1.5px solid rgba(0, 0, 0, 0.52);
   border-radius: 5px;
 }
-.loginSection .form input[type=email]:focus, .loginSection .form [type=password]:focus {
+.loginSection .form input:focus {
   border: 1.5px solid #F97316;
 }
 .loginSection .form .loginBtn {

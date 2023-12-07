@@ -10,55 +10,48 @@
     background-size: cover;
     background-position: center;
     background-color:$backgroundColor;
-    height: 100vh;
+    // height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
- 
-
-.form { // the login form with the inputs
-    width: 30%;
-    height:auto;
-    border: 3px solid #f97416d5;
-    background-color: white;
-    padding: 2rem 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: left;
-    border-radius: 5px;
-
-    h2 { //login form heading
-        margin-left:1rem;
-        color: $textColorBlack;
-        font-family: $primaryFont;
-    }
-
-    p {
-       margin:1rem 1rem .5rem;
-        color: rgba(0, 0, 0, 0.568);
-        font-family: $primaryFont; 
-    }
-
-   
-    input[type="email"], [type="password"] { // styloings for the inputs
-      font-size: 1rem;
-      padding:.5rem;
-      margin: 1rem;  
-      width:90%;
-     justify-self: right;
-     background-color: $backgroundColor;
-     outline:none;
-     border: 1.5px solid $palceholdersColor;
-     border-radius:5px;
-
-     &:focus { // the inputs' outline color changes when the input is clicked
-           border: 1.5px solid $primaryColor; 
-     }
-    }
-
+    padding: 200px 100px; 
+    .form { // the login form with the inputs
+        width: 40%;
+        height:auto;
+        border: 3px solid #f97416d5;
+        background-color: white;
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: left;
+        border-radius: 5px;
+        h2 { //login form heading
+            margin-left:1rem;
+            color: $textColorBlack;
+            font-family: $primaryFont;
+        }
+        p {
+        margin:1rem 1rem .5rem;
+            color: rgba(0, 0, 0, 0.568);
+            font-family: $primaryFont; 
+        }
+        input{ // stylings for the inputs
+        font-size: 1rem;
+        padding:.5rem;
+        margin: 1rem;  
+        width:90%;
+        justify-self: right;
+        background-color: $backgroundColor;
+        outline:none;
+        border: 1.5px solid $palceholdersColor;
+        border-radius:5px;
+        &:focus { // the inputs' outline color changes when the input is clicked
+            border: 1.5px solid $primaryColor; 
+            }   
+        }
     .loginBtn { // login button styling
         background-color: #f97416d5;
         padding: .7rem;
