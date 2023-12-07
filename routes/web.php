@@ -36,3 +36,6 @@ require __DIR__.'/Routes/homePageRoutes.php';
 
 //Routes for the map page and its functions
 require __DIR__."/Routes/mapRoutes.php";
+
+//Routes for category management
+require __DIR__.'/Routes/chatbotRoutes.php';

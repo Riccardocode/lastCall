@@ -841,14 +841,14 @@
                         <i class="fa-solid fa-door-closed"></i> Logout
                     </button>
                 </form>
-                @if(auth()->user()->role == 'admin')
-                <a href="/users">Go to Manage User page</a>
+                @if (auth()->user()->role == 'admin')
+                    <a href="/users">Go to Manage User page</a>
                 @endif
             </div>
         @else
             No user is currently logged in.
             <a href="/login">Login</a>
-          
+
         @endif
     </div>
 </body>
