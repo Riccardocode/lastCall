@@ -34,14 +34,14 @@
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
         </div>
-
-        <div class="mb-6">
+        {{-- no need to add the current quantity. It will be taken from initial quantity --}}
+        {{-- <div class="mb-6">
             <label for="current_quantity" class="inline-block text-lg mb-2">Sales Lot Current Quantity</label>
             <input type="text" value="{{old('current_quantity')? old('current_quantity'):0}}" class="border border-gray-200 rounded p-2 w-full" name="current_quantity" />
             @error('current_quantity')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
-        </div>
+        </div> --}}
 
         <div>
             <label for ="discount" class="inline-block text-lg mb-2">Sales Lot Discount</label>

@@ -52,13 +52,12 @@ class SalesLotController extends Controller
         $formFields = $request->validate([
             'description' => ['required', 'string', 'max:255'],
             "initial_quantity" => ["required", "numeric", "integer", "gt:0"],
-            "current_quantity" => ["required", "numeric", "integer", "gt:0"],
             'discount' => ['required', 'numeric', 'integer', 'min:0', 'max:100'],
             'start_date' => ['required', 'date', 'after_or_equal:today'],
             'end_date' => ['required', 'date', 'after:start_date'],
             "price" => ["required", "numeric", "gt:0"],
         ]);
-
+        $formFields["current_quantity"] = $formFields["initial_quantity"];
         $formFields["product_id"] = $product_id;
 
         SalesLot::create($formFields);
