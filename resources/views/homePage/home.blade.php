@@ -21,4 +21,5 @@
              </p>
         </article>
     </section>
+    @include('partials._chatbot')
 @endsection
