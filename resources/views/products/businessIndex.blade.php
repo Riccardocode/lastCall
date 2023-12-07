@@ -123,21 +123,31 @@
                                 </a>
                             </div>
                         {{-- if user or not logged in --}}
-                        @else
-                      
-                            {{-- if there is a saleslot --}}
-                            @if ($product->saleslots->count() > 0)
-                                <p>
-                                    price 
-                                    <i class="fa-solid fa-euro-sign"></i>
-                                    {{ $product->saleslots->last()->price }}
-                                </p>
-                                <button>Add <i class="fa-solid fa-cart-arrow-down"></i></button>
-                            @else
-                            
-                                <h4>product not available</h4>
-                            @endif
-                        @endif
+@else
+
+{{-- if there is a saleslot --}}
+@if ($product->saleslots->count() > 0)
+    <form action="/orders" method="POST">
+        @csrf
+        <p>
+            Price: <i class="fa-solid fa-euro-sign"></i> {{ $product->saleslots[0]->price }}
+        </p>
+        <div class="quantity-controls">
+            {{-- <button type="button" class="quantity-decrease">-</button> --}}
+            <input style="width:50px;" type="number" name="quantity" class="quantity-input" value="1" min="1" max={{$product->saleslots[0]->current_quantity}}>
+            {{-- <button type="button" class="quantity-increase">+</button> --}}
+        </div>
+        <input type="hidden" name="salesLotId" value="{{ $product->saleslots[0]->id }}">
+        <input type="hidden" name="userId" value="{{ auth()->user()->id }}">
+        <input type="hidden" name="price" value="{{ $product->saleslots[0]->price}}">
+        <button type="submit" class="add-to-cart">Add <i class="fa-solid fa-cart-arrow-down"></i></button>
+    </form>
+@else
+    <h4>Product not available</h4>
+@endif
+
+@endif
+
                     </section>
                 @endforeach
             @endif
