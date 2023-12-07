@@ -14,7 +14,7 @@
     {{-- Header layout --}}
     <header>
         <div class="logo">
-            <a href="/"> 
+            <a href="/">
                 <img src="{{ asset('images/logo.png') }}" alt="LastCall logo">
             </a>
 
@@ -55,7 +55,7 @@
     </main>
 
     <x-flash-message />
-   {{-- FOOTER for every pages --}}
+    {{-- FOOTER for every pages --}}
     <footer>
 
         <div class="left-side">
@@ -92,5 +92,6 @@
 
     </div>
 </body>
+
 
 </html>
