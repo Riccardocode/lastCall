@@ -15,6 +15,7 @@
 #loginSection .form {
   border: 1px solid black;
   width: 50%;
+  height: auto;
   border: 5px solid #F97316;
   background-color: white;
   padding: 1rem;
