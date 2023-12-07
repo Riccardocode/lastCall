@@ -5,7 +5,7 @@
         <h3>{{$business->name}} </h3>
         <div>
             {{-- !to fix --}}
-            <img src="{{$business->image}}" alt="restaurant">
+            <img src="/storage/businessImages/restaurantGeneral.png" alt="restaurant">
         </div>
     </article>
 </a>
