@@ -231,15 +231,6 @@ main .businessClientView .businessProduts .productClientViewS button:hover {
   box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
   transform: translate(-5px, -5px);
 }
-main .choosingSection {
-  background-image: url("../../images/backgroundDots.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
-main .choosingSection a {
-  text-decoration: none;
-}
 main .choosingSection .chooPt1 {
   padding: 50px;
 }
@@ -247,9 +238,6 @@ main .choosingSection .chooPt1 h2 {
   font-weight: bold;
   font-size: 24px;
   padding: 30px 0px;
-}
-main .choosingSection .chooSearch form {
-  padding: 50px;
 }
 
 footer {
