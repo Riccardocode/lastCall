@@ -11,9 +11,9 @@
             @foreach ($businesses as $business)
                 <x-business-card :business="$business"/>
             @endforeach
-            <div >
+            {{-- <div >
                 {{$businesses->links()}}
-            </div>
+            </div> --}}
         </section>
         {{-- search abr --}}
         <section class="chooSearch">
@@ -26,9 +26,9 @@
             @foreach ($products as $product)
                 <x-product-card :product="$product"/>
             @endforeach
-            <div>
+            {{-- <div>
                 {{$products->links()}}
-            </div>
+            </div> --}}
         </section>      
     </div>
     
