@@ -14,9 +14,6 @@
 </body>
 </html>
 <section class="loginSection">
-    <header>
-    
-</header>
 <form class="form" action="/login" method="POST">
     @csrf
     @error('loginError')
