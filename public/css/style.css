@@ -58,6 +58,7 @@ header nav button {
 
 main {
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 }
 main #homeSection {
   background: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)), url("../../images/heroImage.jpeg");
@@ -148,6 +149,26 @@ main #homeArticle article p {
   padding: 10px 5% 100px 5%;
   font-family: "Roboto", sans-serif;
   font-size: 17px;
+}
+main #loginSection {
+  background: url("../../images/backgroundImage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #f8f7f2;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #loginSection .form {
+  border: 1px solid black;
+  width: 50%;
+  border: 5px solid #F97316;
+  background-color: white;
+  padding: 1rem;
 }
 
 footer {

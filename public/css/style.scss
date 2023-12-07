@@ -70,9 +70,11 @@ a {
         //MAINS
 main{
     //MAIN HOME PAGE CSS
-    @import 'homePage/homePage.scss';      
+    @import 'homePage/homePage.scss';   
+    
+    // LOGIN PAGE CSS
+    @import 'loginPage/loginPage.scss';
 }
-
 
 // FOOTER
 footer {
@@ -92,17 +94,17 @@ color:$primaryColor;
 span {
     color: rgba(0, 0, 0, 0.747);
 }
-
     :hover {
         text-decoration: underline;
+         }
     }
 }
-
-}
-
 .credentials {
     text-align: center;
     padding-top: 1rem;
     background-color: $backgroundColor;
      color: $palceholdersColor;
 }
+
+
+
