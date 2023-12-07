@@ -12,9 +12,9 @@
                     <x-business-card :business="$business"/>
                 @endforeach
             </section>
-            <div >
+            {{-- <div >
                 {{$businesses->links()}}
-            </div>
+            </div> --}}
         </section>
         {{-- search abr --}}
         @include('partials._searchChoosing')
@@ -27,9 +27,9 @@
                     <x-product-card :product="$product"/>
                 @endforeach
             </section>
-            <div>
+            {{-- <div>
                 {{$products->links()}}
-            </div>
+            </div> --}}
         </section>      
     </div>
     

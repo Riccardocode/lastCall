@@ -5,6 +5,14 @@
   margin: 0;
 }
 
+html {
+  line-height: 1.2 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600 !important;
+}
+
 ul {
   list-style: none;
 }
@@ -242,7 +250,6 @@ main .loginSection {
   background-size: cover;
   background-position: center;
   background-color: #f8f7f2;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -322,9 +329,10 @@ main .choosingSection .chooPt1 h2 {
   font-family: "Roboto", sans-serif;
   font-size: 24px;
   padding-bottom: 50px;
-  font-weight: normal;
+  font-weight: normal !important;
 }
 main .choosingSection .chooPt1 .chooBuis, main .choosingSection .chooPt1 .chooPro {
+  font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -424,6 +432,7 @@ main .choosingSection #chooSearch input {
   font-size: 14px;
 }
 main .choosingSection #chooSearch input, main .choosingSection #chooSearch select, main .choosingSection #chooSearch button {
+  color: lightgray;
   padding: 20px;
   outline: none;
   border: 0.5px solid lightgray;

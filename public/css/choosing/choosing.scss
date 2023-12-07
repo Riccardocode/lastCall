@@ -16,10 +16,11 @@
             font-family: $primaryFont;
             font-size: 24px;
             padding-bottom: 50px;
-            font-weight: normal;
+            font-weight: normal !important;
         }
         // design for all cards
         .chooBuis, .chooPro{
+            font-family: $primaryFont;
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
@@ -120,7 +121,6 @@
     }
     // form section
     #chooSearch{
-        color: lightgray;
         margin: 50px 10px;
         box-shadow:  2px 2px 5px #292826,
         -2px -2px 5px white; 
@@ -134,6 +134,7 @@
             font-size: 14px;
         }
         input, select, button{
+            color: lightgray;
             padding: 20px;
             outline: none; 
             border: 0.5px solid lightgray;

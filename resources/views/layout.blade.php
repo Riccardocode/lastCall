@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <script src="https://kit.fontawesome.com/9823a17fbf.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/9823a17fbf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <title>last call to order your food</title>
 </head>
@@ -24,7 +24,6 @@
                 <a href="/">About us</a>
             </div>
         </div>
-
 
         <nav>
             <ul>
@@ -74,7 +73,6 @@
                     <a href=""><i class="fa-brands fa-linkedin"></i> &nbsp; <span>LinkedIn</span></a>
                 </li>
             </ul>
-
         </div>
         <div class="footer">
             <div class="right-side">
@@ -85,14 +83,14 @@
                     <li>lastcall@example.com</li>
                 </ul>
             </div>
-
+        </div>
     </footer>
     <div class="credentials">
         <p>LastCall 2023&copy;</p>
         <p>The website coded by 11111</p>
     </div>
 
-    </div>
+
 </body>
 
 

@@ -8,7 +8,18 @@
     padding: 0;
     margin: 0;
     // border: 1px solid red; //helps to see all the boxes correctly in the page
+}   
+//.......................
+//COUNTER TAILWIND !!!!
+html{
+    line-height: 1.2 !important;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-weight:600 !important;
+} 
+//........................
+
+
 ul{         //Delete the ° list
     list-style: none;
 }
@@ -38,16 +49,13 @@ header{
         width: 100%;
     }
     nav{
-       
         ul{
             display: flex;
             gap: 20px;
             align-items: center;
-
             .welcome {
                 color: $textColorWhite
             }
-
             a{
                 font-family: $primaryFont;
                 font-size: 20px;
@@ -55,17 +63,16 @@ header{
                 font-weight: bold; 
             }
         }
-
         button {  // Logout Button
-                text-decoration: none;
-                font-family: $primaryFont;
-                padding: .4rem 1rem;
-                background-color: rgba(0, 0, 0, 0.76);
-                color:  $textColorWhite;
-                border-radius: 4px;
-                transition: 0.4s;
-                border:none;
-                font-size: 1rem;
+            text-decoration: none;
+            font-family: $primaryFont;
+            padding: .4rem 1rem;
+            background-color: rgba(0, 0, 0, 0.76);
+            color:  $textColorWhite;
+            border-radius: 4px;
+            transition: 0.4s;
+            border:none;
+            font-size: 1rem;
         }
     }
 }
@@ -74,13 +81,11 @@ main{
         //MAIN HOME PAGE CSS
     @import 'homePage/homePage.scss';
         //MAIN BUSINESS CLIENT VIEW CSS
-    @import 'businessClientView/businessClientView.scss'; 
-       
+    @import 'businessClientView/businessClientView.scss';   
         // MAIN LOGIN PAGE
     @import 'loginPage/loginPage.scss';
         // MAIN REGISTER PAGE
     @import 'registerPage/registerPage.scss';
-
         //MAIN CHOOSING PAGE CSS
     @import 'choosing/choosing.scss'; 
 }
@@ -112,4 +117,6 @@ footer {
     background-color: $backgroundColor;
     color: $palceholdersColor;
 }
+
+
 
