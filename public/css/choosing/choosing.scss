@@ -1,0 +1,21 @@
+    // COLORS
+@import '../aDesign/colors/colors.scss'; 
+    //FONT
+@import '../aDesign/typography/fonts.scss'; 
+
+.choosingSection{
+    a{
+        text-decoration: none;
+    }
+    .chooPt1{
+        padding: 50px;
+        h2{
+            font-weight: bold;
+            font-size: 24px;
+            padding: 30px 0px;
+        }
+    }
+    .chooSearch{
+
+    }
+}
