@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+#homeSection {
+  background: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)), url("../../images/heroImage.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 12.5% 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#homeSection h1 {
+  font-family: "Fugaz One", sans-serif;
+  font-size: 60px;
+  color: #FFF;
+}
+#homeSection #homePageP {
+  margin: 20px 0px 40px 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  color: #FFF;
+}
+#homeSection #homeSearch {
+  width: 100%;
+  max-width: 350px;
+  background-color: #F9F9F9;
+  position: relative;
+  opacity: 0.8;
+  padding: 5px;
+  border-radius: 15px;
+}
+#homeSection #homeSearch input {
+  padding: 3px 0px 3px 3px;
+  border: none;
+  background-color: #F9F9F9;
+  color: rgba(0, 0, 0, 0.52);
+  width: 95%;
+  outline: none;
+}
+#homeSection #homeSearch button {
+  background: transparent;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  color: #D63030;
+  border: none;
+}
+
+#homeArticle {
+  text-align: center;
+  background-image: url("../../images/backgroundPattern.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #f8f7f2;
+}
+#homeArticle article {
+  margin: 0px 25%;
+  background-color: #FFF;
+}
+#homeArticle article div {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0px;
+  gap: 20%;
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+#homeArticle article div a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  padding: 4px 35px;
+  background-color: #D63030;
+  color: #FFF;
+  border-radius: 4px;
+  transition: 0.4s;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+#homeArticle article div a:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  transform: translate(-5px, -5px);
+}
+#homeArticle article div #buttonSell {
+  background-color: #FFF;
+  color: #D63030;
+  border: 1px solid #D63030;
+}
+#homeArticle article p {
+  padding: 10px 5% 100px 5%;
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+}/*# sourceMappingURL=homePage.css.map */

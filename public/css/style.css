@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 10%;
+}
+header .logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+header .logo a {
+  color: #FFF;
+  width: 20%;
+}
+header img {
+  width: 100%;
+}
+header nav ul {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+header nav ul .welcome {
+  color: #FFF;
+}
+header nav ul a {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: #FFF;
+  font-weight: bold;
+}
+header nav button {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  padding: 0.4rem 1rem;
+  background-color: rgba(0, 0, 0, 0.76);
+  color: #FFF;
+  border-radius: 4px;
+  transition: 0.4s;
+  border: none;
+  font-size: 1rem;
+}
+
+main {
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+main #homeSection {
+  background: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)), url("../../images/heroImage.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 12.5% 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main #homeSection h1 {
+  font-family: "Fugaz One", sans-serif;
+  font-size: 60px;
+  color: #FFF;
+}
+main #homeSection #homePageP {
+  margin: 20px 0px 40px 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  color: #FFF;
+}
+main #homeSection #homeSearch {
+  width: 100%;
+  max-width: 350px;
+  background-color: #F9F9F9;
+  position: relative;
+  opacity: 0.8;
+  padding: 5px;
+  border-radius: 15px;
+}
+main #homeSection #homeSearch input {
+  padding: 3px 0px 3px 3px;
+  border: none;
+  background-color: #F9F9F9;
+  color: rgba(0, 0, 0, 0.52);
+  width: 95%;
+  outline: none;
+}
+main #homeSection #homeSearch button {
+  background: transparent;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  color: #D63030;
+  border: none;
+}
+main #homeArticle {
+  text-align: center;
+  background-image: url("../../images/backgroundPattern.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #f8f7f2;
+}
+main #homeArticle article {
+  margin: 0px 25%;
+  background-color: #FFF;
+}
+main #homeArticle article div {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0px;
+  gap: 20%;
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+main #homeArticle article div a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  padding: 4px 35px;
+  background-color: #D63030;
+  color: #FFF;
+  border-radius: 4px;
+  transition: 0.4s;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main #homeArticle article div a:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  transform: translate(-5px, -5px);
+}
+main #homeArticle article div #buttonSell {
+  background-color: #FFF;
+  color: #D63030;
+  border: 1px solid #D63030;
+}
+main #homeArticle article p {
+  padding: 10px 5% 100px 5%;
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+}
+main .businessClientView {
+  background-image: url("../../images/backgroundDots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #FFFDD9;
+  display: flex;
+  padding: 12.5% 50px 0px 50px;
+  justify-content: space-between;
+}
+main .businessClientView .logoAdd {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+}
+main .businessClientView .logoAdd .imgDiv {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  text-align: center;
+}
+main .businessClientView .logoAdd .imgDiv .nameRest {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFF;
+  font-size: 35px;
+}
+main .businessClientView .logoAdd .imgDiv .logoRest {
+  height: 100%;
+  width: 100%;
+}
+main .businessClientView .businessProduts {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main .businessClientView .businessProduts .productClientViewS {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0E0000;
+  flex-basis: 100px;
+}
+main .businessClientView .businessProduts .productClientViewS a {
+  text-decoration: none;
+  color: #0E0000;
+  width: 150px;
+  height: 100px;
+}
+main .businessClientView .businessProduts .productClientViewS h2 {
+  max-width: 100px;
+  font-size: 16px;
+}
+main .businessClientView .businessProduts .productClientViewS div {
+  max-width: 200px;
+  text-align: center;
+}
+main .businessClientView .businessProduts .productClientViewS div h3 {
+  font-size: 14px;
+}
+main .businessClientView .businessProduts .productClientViewS div h4 {
+  font-size: 12px;
+}
+main .businessClientView .businessProduts .productClientViewS button {
+  background-color: #F97316;
+  font-size: 20px;
+  padding: 10px;
+  transition: 0.4s;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main .businessClientView .businessProduts .productClientViewS button:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  transform: translate(-5px, -5px);
+}
+main .choosingSection {
+  background-image: url("../../images/backgroundDots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #FFFDD9;
+}
+main .choosingSection a {
+  text-decoration: none;
+}
+main .choosingSection .chooPt1 {
+  padding: 50px;
+}
+main .choosingSection .chooPt1 h2 {
+  font-weight: bold;
+  font-size: 24px;
+  padding: 30px 0px;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f8f7f2;
+  color: rgba(0, 0, 0, 0.747);
+  padding: 1rem;
+  line-height: 1.4;
+}
+footer a {
+  text-decoration: none;
+  color: #F97316;
+}
+footer a span {
+  color: rgba(0, 0, 0, 0.747);
+}
+footer a :hover {
+  text-decoration: underline;
+}
+
+.credentials {
+  text-align: center;
+  padding-top: 1rem;
+  background-color: #f8f7f2;
+  color: rgba(0, 0, 0, 0.52);
+}/*# sourceMappingURL=style.css.map */

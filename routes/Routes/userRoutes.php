@@ -2,9 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-Route::get('/', function () {
-    return view('welcome');
-});
 
 //Show register form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
@@ -41,4 +38,8 @@ Route::put('/users/{id}', [UserController::class, 'update'])
 
 //Delete user
 Route::delete('/users/{id}',[UserController::class, 'destroy'])
+    ->where('id', '[0-9]+')->middleware('auth');
+
+//Become manager
+Route::put('/users/{id}/becomeManager',[UserController::class, 'updateBecomeManager'])
     ->where('id', '[0-9]+')->middleware('auth');

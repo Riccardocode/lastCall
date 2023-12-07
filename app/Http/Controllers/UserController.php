@@ -18,12 +18,14 @@ class UserController extends Controller
             'firstname'=>'required',
             'lastname'=>'required',
             'email'=>['required','email',Rule::unique('users','email')],
-            'password' => ['required',Password::min(8)
-                                        ->mixedCase()
-                                        ->letters()
-                                        ->numbers()
-                                        ->symbols()
-                                        ->uncompromised(2),'confirmed'],
+            //Revert the password verification
+            // 'password' => ['required',Password::min(8)
+            //                             ->mixedCase()
+            //                             ->letters()
+            //                             ->numbers()
+            //                             ->symbols()
+            //                             ->uncompromised(2),'confirmed'],
+            'password' => ['required',Password::min(8),'confirmed'],
             
 
         ]);
@@ -55,7 +57,9 @@ class UserController extends Controller
 
     public function login()
     {
+        
         return view('users.login');
+       
     }
 
     public function authenticate(Request $request)
@@ -140,5 +144,25 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->update($formFields);
         return redirect('/users')->with('message','User updated!');
+    }
+
+    public function becomeManager(){
+        if(auth()->user()->role != 'user'){
+            abort(403);
+        }
+        return view('users.becomeManager',
+        [
+            'user_id'=>auth()->user()->id,
+        ]
+    );
+    }
+    public function updateBecomeManager(){
+        if(auth()->user()->role != 'user'){
+            abort(403);
+        }
+        $user = User::findOrFail(auth()->user()->id);
+        $user->role = 'restaurantManager';
+        $user->save();
+        return redirect('/business/create')->with('message','User updated! Create your restaurant');
     }
 }

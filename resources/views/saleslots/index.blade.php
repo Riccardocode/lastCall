@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout2')
 
 @section('content')
     <h1>Lista de lotes de venta</h1>

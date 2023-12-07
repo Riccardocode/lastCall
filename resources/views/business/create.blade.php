@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout2')
 
 
 @section('content')
@@ -11,6 +11,15 @@
     <form action="/business" method="post" enctype="multipart/form-data">
 
         @csrf
+        <div class="mb-6">
+            <label for="businessImg" class="inline-block text-lg mb-2">
+                Business Image
+            </label>
+            <input type="file" class="border border-gray-200 rounded p-2 w-full" name="businessImg" />
+            @error('businessImg')
+                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
         <div class="mb-6">
             <label for="name" class="inline-block text-lg mb-2">Business Name</label>
             <input type="text" value="{{ old('name') ? old('name') : '' }}"
@@ -43,7 +52,7 @@
 
         <div class="mb-6">
             <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
-                Create new Sales Lot
+                Create new Business
             </button>
 
             <a href="/" class="text-black ml-4"> Back </a>

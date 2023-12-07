@@ -16,8 +16,8 @@ return new class extends Migration
             $table->date("orderDate");
             $table->double("totalAmount");
             $table->string("status");
-            $table->foreignId("user_id")->constrained('users')->onDelete("cascade");
-            $table->foreignId("business_id")->constrained('business')->onDelete("cascade");
+            $table->foreignId("user_id")->constrained(table:'users')->onDelete("cascade");
+            $table->foreignId("business_id")->constrained(table:'business')->onDelete("cascade");
             $table->timestamps();
         });
     }

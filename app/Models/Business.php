@@ -13,8 +13,11 @@ class Business extends Model
     protected $fillable = [
         "name",
         "address",
+        "businessImg",
         "manager_id",
         "category_id",
+        "lat",
+        "lon"
     ];
 
     // realtion to products

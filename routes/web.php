@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Routes for users management (In case of Routing Issues with users, Refer to Riccardo)
+//Routes for Users and their functions
 require __DIR__.'/Routes/userRoutes.php';
 
-//Routes for Products management (In case of Routing Issues with users, Refer to Brandon)
+
 require __DIR__."/Routes/productRoutes.php";
 
 //Routes for order management
@@ -28,8 +28,14 @@ require __DIR__.'/Routes/businessRoutes.php';
 //Routes for category management
 require __DIR__.'/Routes/categoryRoutes.php';
 
-//Route for manage the Sales Lot (Refer to Riccardo)
+//Routes for the Sales Lots functions and pages
 require __DIR__.'/Routes/salesLotRoutes.php';
+
+//Routes for the mainPage and its functions
+require __DIR__.'/Routes/homePageRoutes.php';
+
+//Routes for the map page and its functions
+require __DIR__."/Routes/mapRoutes.php";
 
 //Routes for category management
 require __DIR__.'/Routes/chatbotRoutes.php';

@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Product;
 use App\Models\Business;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Domain\Map\CustomMap;
+use App\Domain\Map\CustomRouting;
+
 
 class BusinessController extends Controller
 {
@@ -48,6 +52,13 @@ class BusinessController extends Controller
         if (auth()->user()->role !== 'restaurantManager' and !(auth()->user()->role == 'admin')) {
             abort(403, 'Unauthorized action.');
         }
+        //if the user is a manager and already has a business, redirect to the business page
+        if (auth()->user()->role=='restaurantManager'){
+            $business=Business::where('manager_id',auth()->user()->id)->first();
+            if($business){
+                return redirect('/business/'.$business->id);
+            }
+        }
         return view(
             "business.create",
             [
@@ -70,11 +81,18 @@ class BusinessController extends Controller
             "category_id" => "required",
 
         ]);
+        if($request->hasFile('businessImg'))
+        {
+            $formFields['businessImg'] = $request->file('businessImg')->store('businessImages', 'public');
+        }
 
+        $response = CustomMap::addressToCoords($formFields["address"]);
+        $formFields["lat"]=$response[0]["lat"];
+        $formFields["lon"]=$response[0]["lon"];
         $formFields["manager_id"] = auth()->user()->id;
         Business::create($formFields);
-
-        return redirect("/");
+        $business=Business::where('manager_id',auth()->user()->id)->first();
+        return redirect("/business/".$business->id);
     }
 
     //show edit Form
@@ -111,12 +129,18 @@ class BusinessController extends Controller
             "address" => "required",
             "category_id" => "required",
         ]);
+        if($request->hasFile('businessImg'))
+        {
+            $formFields['businessImg'] = $request->file('businessImg')->store('businessImages', 'public');
+        }
 
         $formFields["manager_id"] = $business->manager_id;
         
         $business->update($formFields);
 
-        return redirect("/");
+        //redirect previous page
+        return back()->with('message', 'Your Busines has been updated');
+        
     }
 
     //delete business
@@ -130,5 +154,17 @@ class BusinessController extends Controller
 
         $business->delete();
         return redirect("/");
+    }
+
+    public function getBy2kmRadius(Request $request){
+        $address = $request->validate([
+            "address" => "required"
+        ]);
+        $businesses = CustomRouting::filterByAddress($address["address"],Business::all());
+        CustomRouting::walkingTime($address["address"],$businesses);
+        return view('homePage.choosing', [
+            "businesses" => Business::latest()->paginate(5),
+            "products" => Product::latest()->paginate(5),
+        ]);
     }
 }

@@ -22,14 +22,14 @@ use Illuminate\Support\Facades\Route;
 
 
 // - Manage Sales Lot (CRUD)
-// - Show all Sales Lot of a product (sales history product)
+// - Show all Sales Lot of a product (sales history product) TOFIX
 Route::get("/products/{product_id}/saleslot", [SalesLotController::class, "index"]);
 
 // - Create a new Sales Lot (this is related to a specific product)
-Route::get("/products/{product_id}/saleslot/create", [SalesLotController::class, "create"])->middleware("auth");
+Route::get("business/{business_id}/products/{product_id}/saleslot/create", [SalesLotController::class, "create"])->where("business_id","[0-9]+")->where("product_id","[0-9]+")->middleware("auth");
 
 // - Add a new Sales Lot (this is related to a specific product)
-Route::post('/products/{product_id}/saleslot', [SalesLotController::class, 'store'])->middleware('auth');
+Route::post('/business/{business_id}/products/{product_id}/saleslot', [SalesLotController::class, 'store'])->where("business_id","[0-9]+")->where("product_id","[0-9]+")->middleware('auth');
 
 // - Edit a Sales Lot (this is related to a specific product. Only if the Sales Lot is active)
 Route::get("/products/{product_id}/saleslot/{salesLot_id}/edit", [SalesLotController::class, "edit"])->middleware("auth");

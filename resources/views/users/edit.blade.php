@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout2')
 
 
 @section('content')
@@ -13,7 +13,7 @@
         @csrf
         @method('PUT')
 
-        {{-- Update Firstname --}}
+        
         <div class="mb-6">
             @if ($user->profileImg)
                 <img class="w-24" src="/storage/{{ $user->profileImg }}" alt="">
@@ -25,6 +25,7 @@
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
         </div>
+        {{-- Update Firstname --}}
         <div class="mb-6">
             <label for="firstname" class="inline-block text-lg mb-2">First Name</label>
             <input type="text" value="{{ $user->firstname }}" class="border border-gray-200 rounded p-2 w-full"
