@@ -4,6 +4,11 @@
 @import '../aDesign/typography/fonts.scss'; 
 
 .choosingSection{
+    background-image: url("../../images/backgroundDots.svg"); ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
     a{
         text-decoration: none;
     }
@@ -16,6 +21,8 @@
         }
     }
     .chooSearch{
-
+        form{
+            padding: 50px;
+        }
     }
 }

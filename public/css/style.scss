@@ -66,6 +66,7 @@ header{
         }
     }
 }
+
         //MAINS
 main{
         //MAIN HOME PAGE CSS
@@ -74,8 +75,8 @@ main{
     @import 'businessClientView/businessClientView.scss'; 
         //MAIN CHOOSING PAGE CSS
     @import 'choosing/choosing.scss'; 
-
 }
+
 
 
 // FOOTER
@@ -106,3 +107,4 @@ footer {
     background-color: $backgroundColor;
     color: $palceholdersColor;
 }
+
