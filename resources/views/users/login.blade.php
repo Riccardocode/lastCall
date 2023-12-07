@@ -13,7 +13,7 @@
     
 </body>
 </html>
-<section id="loginSection">
+<section class="loginSection">
     <header>
     <h2>
         Login
@@ -26,7 +26,7 @@
         <p>{{ $message }}</p>
     @enderror
 
-    <div>
+    <div class="emailInput">
         <label for="email">Email</label>
         <input type="email" name="email"
             value="{{ old('email') }}" />
@@ -35,7 +35,7 @@
         @enderror
     </div>
 
-    <div>
+    <div class="passwordInput">
         <label for="password">
             Password
         </label>
@@ -46,14 +46,14 @@
         @enderror
     </div>
 
-    <div>
+    <div class="loginBtn">
         <button>
             Sign In
         </button>
     </div>
 </form>
 
- <div>
+ <div id="register">
         <p>
             Don't have an account?
             <a href="/register" class="text-laravel">Register</a>

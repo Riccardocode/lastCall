@@ -4,7 +4,7 @@
 @import '../aDesign/typography/fonts.scss'; 
 
 
-#loginSection {
+.loginSection {
     background: url("../../images/backgroundImage.png");
      background-repeat: no-repeat;
     background-size: cover;
@@ -16,13 +16,46 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+   
 
-.form {
+.form { // the login form with the inputs
     border: 1px solid black;
     width: 50%;
     height:auto;
     border: 5px solid $primaryColor;
     background-color: white;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: left;
+
+ 
+    }
+
+    #register {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+   
+
+.emailInput {
+    width:100%;
+
+    // label {
+    //     width: 10%;
+    // }
+
+    input[type="email"] {
+      font-size: 1rem;
+      padding:.5rem;
+      margin:.5rem;  
+      width:100%;
     }
 }
+
+
+}
+

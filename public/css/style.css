@@ -150,7 +150,7 @@ main #homeArticle article p {
   font-family: "Roboto", sans-serif;
   font-size: 17px;
 }
-main #loginSection {
+main .loginSection {
   background: url("../../images/backgroundImage.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -162,13 +162,32 @@ main #loginSection {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-main #loginSection .form {
+main .loginSection .form {
   border: 1px solid black;
   width: 50%;
+  height: auto;
   border: 5px solid #F97316;
   background-color: white;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: left;
+}
+main .loginSection #register {
+  display: flex;
+  justify-content: flex-start;
+}
+main .loginSection .emailInput {
+  width: 100%;
+}
+main .loginSection .emailInput input[type=email] {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  width: 100%;
 }
 
 footer {
