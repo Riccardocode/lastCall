@@ -11,6 +11,7 @@ use BotMan\BotMan\Cache\LaravelCache;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Question;
 use App\Domain\BotMan\RecommendationConversation;
+use App\Domain\BotMan\SpecificFoodConversation;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 
 use function PHPUnit\Framework\isEmpty;
@@ -100,14 +101,12 @@ class BotManController extends Controller
         return $res;
     }
 
-    public function loopHear($botman){
+    public function loopHear($botman, $message){
         $cats = Category::all();
-        $ans = '';
         foreach ($cats as $cat) {
-            $res = '.*\b(?:'.$cat->name.').*\?';
-            $botman->hears($res, function ($botman) {
-                $message = $botman->getMessage()->getPayload()["message"];
-            });
+            if(str_contains(strtolower($message), strtolower($cat->name))){
+                $botman->startConversation(new SpecificFoodConversation($cat->name));
+            }
         }
     }
     public function inputTest(){
@@ -130,12 +129,10 @@ class BotManController extends Controller
             $botman->reply('pattern2');
             $botman->startConversation(new RecommendationConversation($number));
         });
-        // $botman->hears($pattern4, function ($botman, $message) {
-        //     $botman->reply('You said: ' . $message->getText());
-        //     $botman->reply('test');
-        //     // $botman->startConversation(new RecommendationConversation($number));
-        // });
-        $this->loopHear($botman);
+        $botman->hears($pattern4, function ($botman) {
+            $this->loopHear($botman, $botman->getMessage()->getPayload()["message"]);
+        });
+        // $this->loopHear($botman);
         
         $botman->listen();
     }

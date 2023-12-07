@@ -34,13 +34,10 @@ class RecommendationConversation extends Conversation
         $this->ask($question, function (Answer $answer) {
             if ($answer->isInteractiveMessageReply()) {
                 $response = Category::find($answer->getValue())->business->take($this->amount);
-                // $ans = "These are the best Places that I would recommend!\n";
                 $this->say('These are the best Places that I would recommend!');
                 foreach ($response as $res) {
                     $this->say($res->name);
-                    // $ans . $res->name . "\n";
                 }
-                // $this->say($ans);
             }
         });
     }
