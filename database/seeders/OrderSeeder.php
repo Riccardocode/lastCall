@@ -18,7 +18,7 @@ class OrderSeeder extends Seeder
             [
                 'orderDate' => now(),
                 'totalAmount' => 25,
-                'status' => 'pending',
+                'status' => 'cart',
                 'user_id' => 6,
                 'Business_id' =>1,
                 'created_at' => now(),
@@ -27,7 +27,7 @@ class OrderSeeder extends Seeder
             [
                 'orderDate' => now(),
                 'totalAmount' => 30,
-                'status' => 'pending',
+                'status' => 'cart',
                 'user_id' => 7,
                 'Business_id' =>1,
                 'created_at' => now(),
@@ -36,7 +36,7 @@ class OrderSeeder extends Seeder
             [
                 'orderDate' => now(),
                 'totalAmount' => 40,
-                'status' => 'pending',
+                'status' => 'cart',
                 'user_id' => 7,
                 'Business_id' =>1,
                 'created_at' => now(),
@@ -45,7 +45,7 @@ class OrderSeeder extends Seeder
             [
                 'orderDate' => now(),
                 'totalAmount' => 40,
-                'status' => 'pending',
+                'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>2,
                 'created_at' => now(),
@@ -54,7 +54,7 @@ class OrderSeeder extends Seeder
             [
                 'orderDate' => now(),
                 'totalAmount' => 40,
-                'status' => 'pending',
+                'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>2,
                 'created_at' => now(),
@@ -63,7 +63,7 @@ class OrderSeeder extends Seeder
             [
                 'orderDate' => now(),
                 'totalAmount' => 25,
-                'status' => 'pending',
+                'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>2,
                 'created_at' => now(),
@@ -72,7 +72,7 @@ class OrderSeeder extends Seeder
             [
                 'orderDate' => now(),
                 'totalAmount' => 45,
-                'status' => 'pending',
+                'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>2,
                 'created_at' => now(),
@@ -81,7 +81,7 @@ class OrderSeeder extends Seeder
             [
                 'orderDate' => now(),
                 'totalAmount' => 50,
-                'status' => 'pending',
+                'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>2,
                 'created_at' => now(),
@@ -90,7 +90,7 @@ class OrderSeeder extends Seeder
             [
                 'orderDate' => now(),
                 'totalAmount' => 45,
-                'status' => 'pending',
+                'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>3,
                 'created_at' => now(),
@@ -99,7 +99,7 @@ class OrderSeeder extends Seeder
             [
                 'orderDate' => now(),
                 'totalAmount' => 45,
-                'status' => 'pending',
+                'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>3,
                 'created_at' => now(),
