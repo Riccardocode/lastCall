@@ -16,8 +16,9 @@
 .choosingSection .chooPt1 .chooBuis, .choosingSection .chooPt1 .chooPro {
   font-family: "Roboto", sans-serif;
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  gap: 20px;
 }
 .choosingSection .chooPt1 .chooBuis a, .choosingSection .chooPt1 .chooPro a {
   gap: 20px;

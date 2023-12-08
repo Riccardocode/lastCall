@@ -17,4 +17,4 @@ Route::put("/business/{id}", [BusinessController::class, "update"])->where("id",
 
 Route::delete("/business/{id}", [BusinessController::class, "destroy"])->where("id","[0-9]+");
 
-Route::post("/business2km", [BusinessController::class, "getBy2kmRadius"]);
+Route::post("/choosing", [BusinessController::class, "getBy2kmRadius"]);

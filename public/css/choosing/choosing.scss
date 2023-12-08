@@ -22,8 +22,10 @@
         .chooBuis, .chooPro{
             font-family: $primaryFont;
             display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
+            // justify-content: space-evenly;
+            flex-wrap: nowrap;
+            overflow-y: hidden;
+            gap: 20px;
             a{
                 gap: 20px;
                 margin-bottom: 30px;
