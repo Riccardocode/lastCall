@@ -29,6 +29,9 @@ header {
   padding: 0.3rem 1.5rem;
   background: rgba(0, 0, 0, 0.185);
 }
+header .navLink:hover {
+  text-decoration: underline;
+}
 header .logo {
   display: flex;
   justify-content: left;
@@ -62,9 +65,13 @@ header nav button {
   background-color: rgba(0, 0, 0, 0.76);
   color: #FFF;
   border-radius: 4px;
-  transition: 0.4s;
+  transition: 1s;
   border: none;
   font-size: 1rem;
+}
+header nav button:hover {
+  background-color: #FFF;
+  color: rgba(0, 0, 0, 0.76);
 }
 
 main {
@@ -255,6 +262,12 @@ main .loginSection {
   align-items: center;
   flex-direction: column;
   padding: 200px 100px;
+}
+main .loginSection h2 {
+  font-size: 25px;
+}
+main .loginSection h3 {
+  font-size: 16px;
 }
 main .loginSection .form {
   width: 40%;

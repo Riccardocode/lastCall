@@ -34,17 +34,19 @@ header{
     align-items: center;
     margin: 0;
     padding: 0.3rem 1.5rem;
-      background: rgba(0, 0, 0, 0.185);
-
-.logo { // the container with the logo image and About Us link
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    a{
-        color:$textColorWhite;
-        width: 20%;
+    background: rgba(0, 0, 0, 0.185);
+    .navLink:hover{
+        text-decoration: underline;
     }
-}
+    .logo { // the container with the logo image and About Us link
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        a{
+            color:$textColorWhite;
+            width: 20%;
+        }
+    }
     img{ // logo image
         width: 100%;
     }
@@ -70,9 +72,14 @@ header{
             background-color: rgba(0, 0, 0, 0.76);
             color:  $textColorWhite;
             border-radius: 4px;
-            transition: 0.4s;
+            transition: 1s;
             border:none;
             font-size: 1rem;
+        }
+        button:hover{
+            background-color: $textColorWhite;
+            color:  rgba(0, 0, 0, 0.76);
+
         }
     }
 }
@@ -117,4 +124,5 @@ footer {
     background-color: $backgroundColor;
     color: $palceholdersColor;
 }
+
 

@@ -14,7 +14,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 200px 100px; 
+    padding: 200px 100px;
+    h2{
+        font-size: 25px;
+    } 
+    h3{
+        font-size: 16px;
+    }
     .form { // the login form with the inputs
         width: 40%;
         height:auto;
@@ -31,6 +37,7 @@
             color: $textColorBlack;
             font-family: $primaryFont;
         }
+
         p {
         margin:1rem 1rem .5rem;
             color: rgba(0, 0, 0, 0.568);

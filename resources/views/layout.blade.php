@@ -21,7 +21,7 @@
             </a>
 
             <div class="about-us">
-                <a href="/">About us</a>
+                <a class="navLink" href="/">About us</a>
             </div>
         </div>
 
@@ -41,10 +41,10 @@
                     </li>
                 @else
                     <li>
-                        <a href="/register">Register</a>
+                        <a  class="navLink" href="/register">Register</a>
                     </li>
                     <li>
-                        <a href="/login">Login</a>
+                        <a  class="navLink" href="/login">Login</a>
                     </li>
                 @endauth
             </ul>
