@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Choosing\ChoosingLogic;
 use App\Models\Product;
 use App\Models\Business;
 use Illuminate\Http\Request;
+use App\Domain\Map\CustomRouting;
+
 
 class HomePageController extends Controller
 {
@@ -15,12 +18,25 @@ class HomePageController extends Controller
     
     public function choosing()
     {
+        
         return view('homePage.choosing', [
-            "businesses" => Business::latest()->paginate(5),
+            "businesses" => ChoosingLogic::orderBusinessesbyProximity(),
             "products" => Product::latest()->paginate(5),
         ]); 
     }
 
+    public function getBy2kmRadius(Request $request){
+        $address = $request->validate([
+            "address" => "required"
+        ]);
+        $businesses = CustomRouting::filterByAddress($address["address"],Business::all());
+        CustomRouting::walkingTime($businesses);
+        
+        return redirect("/choosing");
+
+        // {{-- @dd($businesses->first(function($business) use($key) {return $business->id == $key;})); --}}
+    }
+    
     public function sellPath()
     {
         if (auth()->user() && auth()->user()->role == 'admin') {

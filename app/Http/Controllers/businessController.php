@@ -3,13 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Product;
 use App\Models\Business;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Domain\Map\CustomMap;
-use App\Domain\Map\CustomRouting;
-use Illuminate\Database\Eloquent\Collection;
+
 
 class BusinessController extends Controller
 {
@@ -156,35 +154,4 @@ class BusinessController extends Controller
         return redirect("/");
     }
 
-    public function getBy2kmRadius(Request $request){
-        $address = $request->validate([
-            "address" => "required"
-        ]);
-        $businesses = CustomRouting::filterByAddress($address["address"],Business::all());
-        CustomRouting::walkingTime($address["address"],$businesses);
-        $nearById = session()->get("nearbyBusiness");
-        $all = Business::all();
-        $businesses = new Collection();
-        foreach ($nearById as $key => $duration){
-            $nearby = Business::find($key);
-            $businesses->push($nearby);
-            foreach ($all as $key => $business){
-                if($business->id == $nearby->id ){
-                    $all->forget($key);
-                    break;
-                }
-            }
-        }
-        foreach($all as $business){
-            $businesses->push($business);
-        }
-
-        //add return redirect(/choosing) + move above logic to general choosing controller + extra file
-        
-        return view('homePage.choosing', [
-            "businesses" => $businesses,
-            "products" => Product::latest()->paginate(5),
-        ]);
-        // {{-- @dd($businesses->first(function($business) use($key) {return $business->id == $key;})); --}}
-    }
 }
