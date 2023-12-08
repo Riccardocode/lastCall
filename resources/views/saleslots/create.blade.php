@@ -1,4 +1,4 @@
-@extends('layout2')
+@extends('layout')
 
 
 @section('content')
@@ -19,8 +19,8 @@
             @error('price')
                 <p>{{ $message }}</p>
             @enderror
-            <input type="text" value="{{ old('initial_quantity') ? old('initial_quantity') : 0 }}"
-                placeholder="Sales Lot Initial Quantity" name="initial_quantity" />
+            <input type="text" value="{{ old('initial_quantity') ? old('initial_quantity') :  ''}}"
+                placeholder="Quantity" name="initial_quantity" />
             @error('initial_quantity')
                 <p>{{ $message }}</p>
             @enderror

@@ -17,6 +17,9 @@
 .loginSection h3 {
   font-size: 16px;
 }
+.loginSection .formFlex {
+  display: flex;
+}
 .loginSection .form {
   width: 40%;
   height: auto;
@@ -50,7 +53,7 @@
   font-size: 1rem;
   padding: 0.5rem;
   margin: 1rem;
-  width: 90%;
+  width: 94%;
   justify-self: right;
   background-color: #f8f7f2;
   outline: none;

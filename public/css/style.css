@@ -269,6 +269,9 @@ main .loginSection h2 {
 main .loginSection h3 {
   font-size: 16px;
 }
+main .loginSection .formFlex {
+  display: flex;
+}
 main .loginSection .form {
   width: 40%;
   height: auto;
@@ -302,7 +305,7 @@ main .loginSection .form input, main .loginSection .form select {
   font-size: 1rem;
   padding: 0.5rem;
   margin: 1rem;
-  width: 90%;
+  width: 94%;
   justify-self: right;
   background-color: #f8f7f2;
   outline: none;

@@ -21,6 +21,9 @@
     h3{
         font-size: 16px;
     }
+    .formFlex{
+        display: flex;
+    }
     .form { // the login form with the inputs
         width: 40%;
         height:auto;
@@ -55,7 +58,7 @@
         font-size: 1rem;
         padding:.5rem;
         margin: 1rem;  
-        width:90%;
+        width:94%;
         justify-self: right;
         background-color: $backgroundColor;
         outline:none;
