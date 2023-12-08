@@ -23,18 +23,19 @@ class OrderController extends Controller
         $userId = $request['userId'];
         $salesLotId = $request['salesLotId'];
         $quantity = $request['quantity'];
-        $price = $request['price'];
+        $price = $request['discountedPrice'];
         $salesLot = SalesLot::find($salesLotId);
         // Check for SalesLot validity
         if (!$salesLot || $salesLot->current_quantity < $quantity || $salesLot->end_date < now()) {
             // Handle invalid SalesLot
+            return redirect()->back()->with('error', 'Unable to add item to cart.');
         }
 
         $businessId = $salesLot->product->business_id; // Assuming SalesLot is related to Product which is related to Business
 
         // Using firstOrCreate with business_id included
         $order = Order::firstOrCreate(
-            ['user_id' => $userId, 'status' => 'cart', 'business_id' => $businessId, 'totalAmount'=>$quantity * $price],
+            ['user_id' => $userId, 'status' => 'cart', 'business_id' => $businessId],
             ['orderDate' => now() /* other default attributes */]
         );
 
@@ -42,12 +43,52 @@ class OrderController extends Controller
             'order_id' => $order->id,
             'quantity' => $quantity,
             'sales_lots_id' => $salesLotId, // Link the order item with the sales lot
+            'discounted_price' => $price
             /* other attributes */
         ]);
 
         // Update SalesLot quantity
         $salesLot->decrement('current_quantity', $quantity);
+        return redirect()->back()->with('message', 'Item added to cart');
     }
+
+    public function viewCart()
+    {
+        $userId = auth()->id(); // Assuming the user is authenticated
+
+        // Retrieve the user's cart
+        $carts = Order::with(['order_items.saleslot.product'])
+        ->where('user_id', $userId)
+        ->where('status', 'cart')
+        ->get();
+        
+        // dd($cart);
+        
+
+        
+
+        if ($carts) {
+            foreach($carts as $cart){
+
+           
+            // Calculate the total amount
+            $totalAmountArray = [];
+            $totalAmount = 0;
+            foreach ($cart->order_items as $item) {
+                $totalAmount += $item->quantity * $item->discounted_price; // Assuming discounted_price is in OrderItem
+            }
+            $cart['totalAmount'] = $totalAmount;
+        }
+
+            // Pass the cart and total amount to the view
+            return view('orders.viewCart', ['carts' => $carts]);
+        } else {
+            // Handle the case where there is no active cart
+            return view('orders.emptyCart');
+        }
+    }
+
+
     public function removeFromCart($userId, $orderItemId)
     {
         $orderItem = OrderItem::find($orderItemId);

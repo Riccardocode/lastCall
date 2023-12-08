@@ -139,7 +139,7 @@
         </div>
         <input type="hidden" name="salesLotId" value="{{ $product->saleslots[0]->id }}">
         <input type="hidden" name="userId" value="{{ auth()->user()->id }}">
-        <input type="hidden" name="price" value="{{ $product->saleslots[0]->price}}">
+        <input type="hidden" name="discountedPrice" value="{{ $product->saleslots[0]->price - (($product->saleslots[0]->price*$product->saleslots[0]->discount)/100)}}">
         <button type="submit" class="add-to-cart">Add <i class="fa-solid fa-cart-arrow-down"></i></button>
     </form>
 @else

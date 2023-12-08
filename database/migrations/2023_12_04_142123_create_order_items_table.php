@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('order_items', function (Blueprint $table) {
             $table->id();
             $table->integer("quantity");
+            // decimal with 10 digits and 2 decimals
+            $table->decimal("discounted_price",8,2);
             $table->foreignId("order_id")->constrained(table:'orders')->onDelete("cascade");
             $table->foreignId("sales_lots_id")->constrained(table:'sales_lots')->onDelete("cascade");
             $table->timestamps();

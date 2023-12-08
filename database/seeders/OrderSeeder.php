@@ -17,7 +17,7 @@ class OrderSeeder extends Seeder
         DB::table('orders')->insert([
             [
                 'orderDate' => now(),
-                'totalAmount' => 25,
+            
                 'status' => 'cart',
                 'user_id' => 6,
                 'Business_id' =>1,
@@ -26,7 +26,7 @@ class OrderSeeder extends Seeder
             ],
             [
                 'orderDate' => now(),
-                'totalAmount' => 30,
+           
                 'status' => 'cart',
                 'user_id' => 7,
                 'Business_id' =>1,
@@ -35,7 +35,6 @@ class OrderSeeder extends Seeder
             ],
             [
                 'orderDate' => now(),
-                'totalAmount' => 40,
                 'status' => 'cart',
                 'user_id' => 7,
                 'Business_id' =>1,
@@ -44,7 +43,6 @@ class OrderSeeder extends Seeder
             ],
             [
                 'orderDate' => now(),
-                'totalAmount' => 40,
                 'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>2,
@@ -53,7 +51,6 @@ class OrderSeeder extends Seeder
             ],
             [
                 'orderDate' => now(),
-                'totalAmount' => 40,
                 'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>2,
@@ -62,7 +59,6 @@ class OrderSeeder extends Seeder
             ],
             [
                 'orderDate' => now(),
-                'totalAmount' => 25,
                 'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>2,
@@ -71,7 +67,6 @@ class OrderSeeder extends Seeder
             ],
             [
                 'orderDate' => now(),
-                'totalAmount' => 45,
                 'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>2,
@@ -80,7 +75,7 @@ class OrderSeeder extends Seeder
             ],
             [
                 'orderDate' => now(),
-                'totalAmount' => 50,
+
                 'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>2,
@@ -89,7 +84,7 @@ class OrderSeeder extends Seeder
             ],
             [
                 'orderDate' => now(),
-                'totalAmount' => 45,
+
                 'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>3,
@@ -98,7 +93,7 @@ class OrderSeeder extends Seeder
             ],
             [
                 'orderDate' => now(),
-                'totalAmount' => 45,
+
                 'status' => 'cart',
                 'user_id' => 8,
                 'Business_id' =>3,

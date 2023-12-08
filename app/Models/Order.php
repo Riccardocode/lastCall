@@ -11,7 +11,6 @@ class Order extends Model
     
     protected $fillable = [
         "orderDate",
-        "totalAmount",
         "status",
         "user_id",
         "business_id",

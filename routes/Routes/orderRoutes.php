@@ -19,5 +19,7 @@ Route::get("/orders/{id}", [OrderController::class, "show"])->where("id", "[0-9]
 // Route::post("/orders", [OrderController::class, "store"])->middleware("auth");
 Route::post("/orders", [OrderController::class, "addToCart"])->middleware("auth");
 
+Route::get("/orders/cart", [OrderController::class, "viewCart"])->middleware("auth");
+
 //Show all orders of related to user
 Route::get("/myOrders", [OrderController::class, "orders"])->middleware("auth");

@@ -13,15 +13,16 @@ class OrderItem extends Model
         "quantity",
         "order_id",
         "sales_lots_id",
+        "discounted_price",
     ];
 
 
     public function order(){
-        $this->belongsTo(Order::class);
+        return $this->belongsTo(Order::class);
     }
 
     public function saleslot(){
-        $this->belongsTo(SalesLot::class);
+        return $this->belongsTo(SalesLot::class, 'sales_lots_id', 'id');
     }
 
 }
