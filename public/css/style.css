@@ -418,7 +418,6 @@ main .choosingSection .chooPt1 .chooPro a article .detailsPro button {
   box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
 }
 main .choosingSection #chooSearch {
-  color: lightgray;
   margin: 50px 10px;
   box-shadow: 2px 2px 5px #292826, -2px -2px 5px white;
   max-width: 100%;
