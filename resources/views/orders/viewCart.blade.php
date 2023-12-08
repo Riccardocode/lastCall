@@ -8,11 +8,20 @@
         <h1 class="text-3xl font-semibold">Cart id: {{ $cart->id }}</h1>
         @foreach ($cart->order_items as $order_item)
             <div class="my-4 p-4 bg-white rounded-lg shadow-md">
-                @if ($order_item->saleslot->product->picture)
+                <div>
+                  @if ($order_item->saleslot->product->picture)
                     <img style="width:250px" src="/storage/{{ $order_item->saleslot->product->picture }}" alt="">
                 @else
                     <img style="width:250px" src="/storage/productPictures/Z2uAYTQh4nUqT4HTSjbClgMvDu0F9Sw2kRlN3NcR.png" alt="">
-                @endif
+                @endif  
+                {{-- remove item from cart --}}
+                <form action="/orders/{{ $cart->id }}/{{ $order_item->id }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="text-red-500 hover:text-red-600">Remove item</button>
+                
+                </div>
+                
                 <h2 class="text-2xl font-semibold">Order item id: {{ $order_item->id }}</h2>
                 <div class="flex justify-between items-center mt-2">
                     <div class="flex items-center space-x-4">

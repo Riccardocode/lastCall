@@ -33,8 +33,13 @@
                         <div>
                             <h2>{{ $product->name }}</h2>
                             <a href="/business/{{ $business->id }}/products/{{ $product->id }}">
+                                @if($product->picture)
                                 <img src="/storage/{{ $product->picture }}" alt="image for {{ $product->name }}"
                                     class="w-full h-auto rounded-md">
+                                @else
+                                <img src="/storage/productPictures/Z2uAYTQh4nUqT4HTSjbClgMvDu0F9Sw2kRlN3NcR.png" alt="image for {{ $product->name }}"
+                                    class="w-full h-auto rounded-md">
+                                    @endif
                             </a>
 
                         </div>

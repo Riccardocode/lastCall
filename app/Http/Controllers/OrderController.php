@@ -72,7 +72,7 @@ class OrderController extends Controller
 
            
             // Calculate the total amount
-            $totalAmountArray = [];
+        
             $totalAmount = 0;
             foreach ($cart->order_items as $item) {
                 $totalAmount += $item->quantity * $item->discounted_price; // Assuming discounted_price is in OrderItem
@@ -89,9 +89,14 @@ class OrderController extends Controller
     }
 
 
-    public function removeFromCart($userId, $orderItemId)
+    public function removeFromCart($order_id, $order_item_id)
     {
-        $orderItem = OrderItem::find($orderItemId);
+        $userId = Order::find($order_id)->user_id;
+        if ($userId != auth()->user()->id) {
+            abort(403); // Unauthorized
+        }
+
+        $orderItem = OrderItem::find($order_item_id);
         if ($orderItem) {
             $order = Order::where('id', $orderItem->order_id)
                 ->where('user_id', $userId)
@@ -99,18 +104,19 @@ class OrderController extends Controller
                 ->first();
 
             if ($order) {
-                $salesLot = $orderItem->saleslot; // Assuming correct relationship naming
+                $salesLot = $orderItem->saleslot; 
                 $orderItem->delete();
 
                 // Update SalesLot quantity
                 $salesLot->increment('current_quantity', $orderItem->quantity);
 
                 // Check if the order has any other items left, if not, delete or update the order
-                if ($order->orderItems()->count() == 0) {
-                    $order->delete(); // or update status to indicate an empty cart
-                }
+                // if ($order->orderItems()->count() == 0) {
+                //     $order->delete(); // or update status to indicate an empty cart
+                // }
             }
         }
+        return redirect("/orders/cart")->with('message', 'Item removed from cart');
     }
 
     public function checkoutCart($userId)

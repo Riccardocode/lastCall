@@ -1,2 +1,2 @@
-<h1>The cart is empty</h1>
+<h1>The cart is empty :'(</h1>
 
