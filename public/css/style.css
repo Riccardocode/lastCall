@@ -29,6 +29,9 @@ header {
   padding: 0.3rem 1.5rem;
   background: rgba(0, 0, 0, 0.185);
 }
+header .navLink:hover {
+  text-decoration: underline;
+}
 header .logo {
   display: flex;
   justify-content: left;
@@ -62,9 +65,13 @@ header nav button {
   background-color: rgba(0, 0, 0, 0.76);
   color: #FFF;
   border-radius: 4px;
-  transition: 0.4s;
+  transition: 1s;
   border: none;
   font-size: 1rem;
+}
+header nav button:hover {
+  background-color: #FFF;
+  color: rgba(0, 0, 0, 0.76);
 }
 
 main {
@@ -256,6 +263,15 @@ main .loginSection {
   flex-direction: column;
   padding: 200px 100px;
 }
+main .loginSection h2 {
+  font-size: 25px;
+}
+main .loginSection h3 {
+  font-size: 16px;
+}
+main .loginSection .formFlex {
+  display: flex;
+}
 main .loginSection .form {
   width: 40%;
   height: auto;
@@ -278,18 +294,25 @@ main .loginSection .form p {
   color: rgba(0, 0, 0, 0.568);
   font-family: "Roboto", sans-serif;
 }
-main .loginSection .form input {
+main .loginSection .form img {
+  height: 150px;
+  width: 150px;
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #292826, -3px -3px 5px #f8f7f2;
+}
+main .loginSection .form input, main .loginSection .form select {
   font-size: 1rem;
   padding: 0.5rem;
   margin: 1rem;
-  width: 90%;
+  width: 94%;
   justify-self: right;
   background-color: #f8f7f2;
   outline: none;
   border: 1.5px solid rgba(0, 0, 0, 0.52);
   border-radius: 5px;
 }
-main .loginSection .form input:focus {
+main .loginSection .form input:focus, main .loginSection .form select:focus {
   border: 1.5px solid #F97316;
 }
 main .loginSection .form .loginBtn {
@@ -418,7 +441,6 @@ main .choosingSection .chooPt1 .chooPro a article .detailsPro button {
   box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
 }
 main .choosingSection #chooSearch {
-  color: lightgray;
   margin: 50px 10px;
   box-shadow: 2px 2px 5px #292826, -2px -2px 5px white;
   max-width: 100%;

@@ -1,18 +1,15 @@
-@extends('layout2')
+@extends('layout')
 
 
 @section('content')
-    <header class="text-center">
-        <h2 class="text-2xl font-bold uppercase mb-1">
-            Edit your Business
-        </h2>
-    </header>
+    <section class="loginSection">
+        <form class="form" action="/business/{{ $id }}" method="post" enctype="multipart/form-data">
 
-    <form action="/business/{{$id}}" method="post" enctype="multipart/form-data">
-
-        @csrf
-        @method('PUT')
-        <div class="mb-6">
+            @csrf
+            <h2>
+                Edit your Business
+            </h2>
+            @method('PUT')
             @if ($business->businessImg)
                 <img class="w-24" src="/storage/{{ $business->businessImg }}" alt="">
             @else
@@ -20,27 +17,16 @@
             @endif
             <input type="file" name='businessImg'>
             @error('businessImg')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                <p>{{ $message }}</p>
             @enderror
-        </div>
-        <div class="mb-6">
-            <label for="name" class="inline-block text-lg mb-2">Business Name</label>
-            <input type="text" value="{{ $business->name }}" class="border border-gray-200 rounded p-2 w-full"
-                name="name" />
+            <input type="text" value="{{ $business->name }}" name="name" />
             @error('address')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                <p>{{ $message }}</p>
             @enderror
-        </div>
-        <div class="mb-6">
-            <label for="address" class="inline-block text-lg mb-2">Business Address</label>
-            <input type="text" value="{{ $business->address }}" class="border border-gray-200 rounded p-2 w-full"
-                name="address" />
+            <input type="text" value="{{ $business->address }}" name="address" />
             @error('address')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                <p>{{ $message }}</p>
             @enderror
-        </div>
-        <div class="mb-6">
-            <label for="category_id" class="inline-block text-lg mb-2">Business Category</label>
             <select name="category_id" value="$business->category_id">
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}" {{ $business->category_id == $category->id ? 'selected' : '' }}>
@@ -50,17 +36,16 @@
             </select>
 
             @error('businessCategory')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                <p>{{ $message }}</p>
             @enderror
-        </div>
-
-
-        <div class="mb-6">
-            <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
+            <button class="loginBtn">
                 Update Business
             </button>
-
-            <a href="/business/{{$business->id}}" class="text-black ml-4"> Back </a>
+        </form>
+        <div id="register">
+            <p>
+                <a href="/business/{{ $business->id }}" class="text-laravel"> Back </a>
+            </p>
         </div>
-    </form>
+    </section>
 @endsection
