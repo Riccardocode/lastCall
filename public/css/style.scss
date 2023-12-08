@@ -82,7 +82,11 @@ main{
     @import 'registerPage/registerPage.scss';
 
         //MAIN CHOOSING PAGE CSS
-    @import 'choosing/choosing.scss'; 
+    @import 'choosing/choosing.scss';
+    
+    // ADMIN DASHBOARD
+
+    @import 'adminDashboard/adminDashboard.scss';
 }
 
 // FOOTER
@@ -112,4 +116,8 @@ footer {
     background-color: $backgroundColor;
     color: $palceholdersColor;
 }
+
+
+
+
 

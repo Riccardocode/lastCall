@@ -1,0 +1,18 @@
+    // COLORS
+@import '../aDesign/colors/colors.scss'; 
+    //FONT
+@import '../aDesign/typography/fonts.scss'; 
+
+section {
+    padding-top: 5rem;
+
+    .allCardsContainer {
+        background-color:$formsBackground;
+
+    .restCard {
+        background-color: $backgroundColor;
+    }    
+
+
+    }
+}
