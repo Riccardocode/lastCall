@@ -4,16 +4,9 @@
 
 @section('content')
     <div class="businessClientView">
-        <section class="logoAdd">
-            <div class="imgDiv">
-                {{-- <img class="logoRest" src="/storage/businessImages/{{ asset('images/generalProfile.png') }}" alt=""> ! restaurant image --}}
+        <section class="logoAdd" style="background-image: url('/storage/businessImages/restaurantGeneral.png');">
                 {{-- manage image in business --}}
-                <img class="logoRest" src="/storage/businessImages/restaurantGeneral.png" alt=""> {{-- ! restaurant image --}}
                 <h1 class="nameRest">{{ $business->name }}</h1>
-            </div>
-            <div>
-                Some Stuff, we have to think about this
-            </div>
         </section>
 
         <section class="businessProduts">
@@ -30,19 +23,15 @@
 
                 @foreach ($products as $product)
                     <section class="productClientViewS">
-                        <div>
-                            <h2>{{ $product->name }}</h2>
                             <a href="/business/{{ $business->id }}/products/{{ $product->id }}">
-                                @if($product->picture)
-                                <img src="/storage/{{ $product->picture }}" alt="image for {{ $product->name }}"
-                                    class="w-full h-auto rounded-md">
+                                @if ($product->picture)
+                                <img src="/storage/{{ $product->picture }}" alt="image for {{ $product->name }}">
                                 @else
-                                <img src="/storage/productPictures/Z2uAYTQh4nUqT4HTSjbClgMvDu0F9Sw2kRlN3NcR.png" alt="image for {{ $product->name }}"
-                                    class="w-full h-auto rounded-md">
-                                    @endif
+                                <img src="/storage/productPictures/Z2uAYTQh4nUqT4HTSjbClgMvDu0F9Sw2kRlN3NcR.png"
+                                alt="image for {{ $product->name }}">
+                                @endif
                             </a>
-
-                        </div>
+                        <h2>{{ $product->name }}</h2>
                         <div>
                             <h3>{{ $product->category }}</h3>
                             <h4>Ingredients: {{ $product->ingredientString }}</h4>
@@ -127,31 +116,33 @@
                                     <i class="fa-solid fa-tags"></i>
                                 </a>
                             </div>
-                        {{-- if user or not logged in --}}
-@else
-
-{{-- if there is a saleslot --}}
-@if ($product->saleslots->count() > 0)
-    <form action="/orders" method="POST">
-        @csrf
-        <p>
-            Price: <i class="fa-solid fa-euro-sign"></i> {{ $product->saleslots[0]->price }}
-        </p>
-        <div class="quantity-controls">
-            {{-- <button type="button" class="quantity-decrease">-</button> --}}
-            <input style="width:50px;" type="number" name="quantity" class="quantity-input" value="1" min="1" max={{$product->saleslots[0]->current_quantity}}>
-            {{-- <button type="button" class="quantity-increase">+</button> --}}
-        </div>
-        <input type="hidden" name="salesLotId" value="{{ $product->saleslots[0]->id }}">
-        <input type="hidden" name="userId" value="{{ auth()->user()->id }}">
-        <input type="hidden" name="discountedPrice" value="{{ $product->saleslots[0]->price - (($product->saleslots[0]->price*$product->saleslots[0]->discount)/100)}}">
-        <button type="submit" class="add-to-cart">Add <i class="fa-solid fa-cart-arrow-down"></i></button>
-    </form>
-@else
-    <h4>Product not available</h4>
-@endif
-
-@endif
+                            {{-- if user or not logged in --}}
+                        @else
+                            {{-- if there is a saleslot --}}
+                            @if ($product->saleslots->count() > 0)
+                                <form action="/orders" method="POST">
+                                    @csrf
+                                    <p>
+                                        Price: <i class="fa-solid fa-euro-sign"></i> {{ $product->saleslots[0]->price }}
+                                    </p>
+                                    <div class="quantity-controls">
+                                        {{-- <button type="button" class="quantity-decrease">-</button> --}}
+                                        <input style="width:50px;" type="number" name="quantity" class="quantity-input"
+                                            value="1" min="1"
+                                            max={{ $product->saleslots[0]->current_quantity }}>
+                                        {{-- <button type="button" class="quantity-increase">+</button> --}}
+                                    </div>
+                                    <input type="hidden" name="salesLotId" value="{{ $product->saleslots[0]->id }}">
+                                    <input type="hidden" name="userId" value="{{ auth()->user()->id }}">
+                                    <input type="hidden" name="discountedPrice"
+                                        value="{{ $product->saleslots[0]->price - ($product->saleslots[0]->price * $product->saleslots[0]->discount) / 100 }}">
+                                    <button type="submit" class="add-to-cart">Add <i
+                                            class="fa-solid fa-cart-arrow-down"></i></button>
+                                </form>
+                            @else
+                                <h4>Product not available</h4>
+                            @endif
+                        @endif
 
                     </section>
                 @endforeach
