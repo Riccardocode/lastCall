@@ -14,7 +14,16 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 200px 100px; 
+    padding: 200px 100px;
+    h2{
+        font-size: 25px;
+    } 
+    h3{
+        font-size: 16px;
+    }
+    .formFlex{
+        display: flex;
+    }
     .form { // the login form with the inputs
         width: 40%;
         height:auto;
@@ -31,16 +40,25 @@
             color: $textColorBlack;
             font-family: $primaryFont;
         }
+
         p {
         margin:1rem 1rem .5rem;
             color: rgba(0, 0, 0, 0.568);
             font-family: $primaryFont; 
         }
-        input{ // stylings for the inputs
+        img{
+            height: 150px;
+            width: 150px;
+            margin: 2rem auto;
+            border-radius: 10px;
+            box-shadow:  3px 3px 5px #292826,
+             -3px -3px 5px $backgroundColor; 
+        }
+        input, select{ // stylings for the inputs //styling the selcts tag with the option
         font-size: 1rem;
         padding:.5rem;
         margin: 1rem;  
-        width:90%;
+        width:94%;
         justify-self: right;
         background-color: $backgroundColor;
         outline:none;
@@ -50,6 +68,7 @@
             border: 1.5px solid $primaryColor; 
             }   
         }
+
         .loginBtn { // login button styling
             background-color: #f97416d5;
             padding: .7rem;
