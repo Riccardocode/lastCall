@@ -1,0 +1,3 @@
+
+Start the job scheduler
+php artisan schedule:work
