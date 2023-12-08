@@ -46,6 +46,10 @@ header{
             color:$textColorWhite;
             width: 20%;
         }
+        .about-us{
+            font-size: 20px;
+            font-weight: bold; 
+        }
     }
     img{ // logo image
         width: 100%;
@@ -124,4 +128,5 @@ footer {
     background-color: $backgroundColor;
     color: $palceholdersColor;
 }
+
 

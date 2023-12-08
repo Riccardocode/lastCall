@@ -1,0 +1,22 @@
+      //COLORS
+@import "../colors/colors.scss"; 
+      //FONT
+@import "../typography/fonts.scss";
+   //General css for links
+
+button{
+    background-color: transparent;
+    font-size: 20px;
+    padding: 10px;
+    transition: 0.5s;
+    border:1px solid $primaryColor;
+    color: $primaryColor;
+    border-radius: 4px;
+    box-shadow:  2px 2px 5px #918c83,
+    -2px -2px 5px #f4f4f5; 
+}
+button:hover{
+    box-shadow: 0 0 5px 2.5px #00000033;
+    background-color: $primaryColor;
+    color: $textColorBlack;
+} 

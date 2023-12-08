@@ -29,6 +29,9 @@
             <ul>
                 @auth
                     <li>
+                        <a  class="navLink" href="/orders/cart">Cart</a>
+                    </li>
+                    <li>
                         <span class="welcome">
                             Welcome {{ auth()->user()->firstname }}
                         </span>
