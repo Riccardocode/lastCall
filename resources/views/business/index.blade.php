@@ -28,8 +28,9 @@
     <div class="restCard">
         <ul>
             @foreach ($business as $bus)
-                <a href="/business/{{ $bus->id }}">
                     <li>
+                        <a href="/business/{{ $bus->id }}">
+                        <div>
                         @if ($bus->businessImg)
                             <img src="/storage/{{ $bus->businessImg }}" alt="{{ $bus->name }} image">
                         @else
@@ -38,18 +39,33 @@
                         @endif
                         <h2>Name: {{ $bus->name }}</h2>
                         <h3>Address: {{ $bus->address }}</h3>
-
                         <p>The manager is: {{ $bus->manager->firstname }}
                             {{ $bus->manager->lastname }}</p>
                         <p>The Category is: {{ $bus->category->name }}</p>
+                        </div>
+
+        {{-- Action buttons --}}
+                        <div class="iconsDashboard">  
+                        {{-- Edit button container --}}
+                            <div>
+                        <a href=""><i class="fa-solid fa-pen-to-square icon"></i>
+                        <br><span 
+                        class="iconLabel">Edit</span></a></div>
+
+                        {{-- View button container --}}
+                        <div>
+                        <a href=""><i class="fa-solid fa-eye icon"></i> <br><span class="iconLabel">View</span></a> </div>
+
+                        {{-- Delete button container --}}
+                        <div>
+                        <a href=""><i class="fa-solid fa-trash icon"></i> <br><span class="iconLabel">Delete</span></a></div>
+                        </div>
+                        </a>
                     </li>
-                </a>
+              
             @endforeach
         </ul>
-<div class="iconsDashboard">
 
-
-</div>
 
 
 

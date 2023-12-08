@@ -5,14 +5,40 @@
 
 section {
     padding-top: 5rem;
+    background-color: $backgroundColor;
 
-    .allCardsContainer {
-        background-color:$formsBackground;
+ul{
+        background-color: $formsBackground;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        grid-gap: 20px;
+        width: 100%;
+        padding: 2rem;
 
-    .restCard {
-        background-color: $backgroundColor;
-    }    
+    li {
+            background-color: $textColorWhite;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            height: 100%; 
+            aspect-ratio: 1/1;
+       
 
-
+        .iconsDashboard {
+            display: flex;
+            flex-direction: row;
+            gap:5px;
+            
+            .icon {
+                color: $textColorWhite;
+                background-color: $primaryColor;
+                font-size: 1.2rem;
+                padding: 0.5rem;
+                border-radius: 5px;
+                }
+            }
+        } 
     }
 }
+
