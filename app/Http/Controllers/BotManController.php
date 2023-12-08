@@ -18,122 +18,163 @@ use function PHPUnit\Framework\isEmpty;
 
 class BotManController extends Controller
 {
-    protected static $isError = -1;
 
-    public function changeIsError($value){
+    //* Checks if string exists inside file
+    public function checkFile($value){
+        if (str_contains(file_get_contents('variables.txt'), $value)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //* Replaces or Inserts string inside file 
+    public function fileTest($value){
         $file = file_get_contents('variables.txt');
-        dd($file);
-        if(isEmpty(file_get_contents('variables.txt'))){
-            file_put_contents('variables.txt',"isError=".$value.",\r",FILE_APPEND);
-        }else{
+        if (empty($file) || !str_contains($file, $value)) {
+            file_put_contents('variables.txt', $value, FILE_APPEND);
+            // dd(file_get_contents('variables.txt'));
+        } else {
             // $file = file_get_contents('variables.txt');
-            if(str_contains($file, 'isError')){
-                dd($file);
+            if (str_contains($file, $value)) {
+                // dd($file);
+                $file = str_replace($value, '', $file);
+                // dd($file);
+                file_put_contents('variables.txt', $file);
+                // dd($file);
+                // dd(file_get_contents('variables.txt'));
             }
         }
-        
+        // dd($file);
     }
 
-    public function testDump(){
+    //*Test
+    public function testDump()
+    {
         $test = new RecommendationConversation(3);
         dd(Category::find('1')->business->take(3));
-        // dd($test);
     }
 
-    public function about($botman){
-        $botman->hears('{message}', function ($botman, $message) {
-            if (str_contains($message, 'about')) {
-                $botman->reply("The Mission of this Website is to reduce waste by selling the food that has been cooked by Businesses but not sold.");
-            } else {
-                $botman->reply("Did not hear about");
-            }
-        });
-
-        $botman->listen();
-    }
-
-    public function askName($botman)
-    {
-        $botman->ask('Hello! What is your Name?', function (Answer $answer) {
-            $name = $answer->getText();
-            $this->say('Nice to Meet you ' . $name);
-        });
-    }
-
+    //* Displays Message about Website
     public function test($botman){
         $botman->reply("The Mission of this Website is to reduce waste by selling the food that has been cooked by Businesses but not sold.");
     }
 
-    public function check($message){
-        if (str_contains($message, 'about')) {
-            return 1;
-        } else if (str_contains($message, 'reco')) {
-            return 2;
-        } else {
-            return -1;
-        }
-    }
-
-    public function input(){
-        $botman = BotManFactory::create(['driver' => 'web'], new LaravelCache());
-        $botman->hears('{message}', function ($botman, $message) {
-            $number = $this->check($message); 
-            switch ($number) {
-                case 1:
-                    $this->test($botman);
-                    break;
-                case 2:
-                    $botman->startConversation(new RecommendationConversation());
-                    break;
-                default:
-                    $botman->reply('error');
-            }
-        });
-        $botman->listen();
-    }
-
+    //* Creates dynamic Regex for Categories
     public function returnRegex($cats){
-        $res = '.*\b(?:';
+        $res = '\b(?:';
         foreach ($cats as $cat) {
-            $res = $res . $cat->name . '|';
+            $res = $res . strtolower($cat->name) . '|';
         }
-        $res = $res . ').*\?';
-        return $res;
+        $trimmed = substr($res, 0, strlen($res) - 1);
+        $trimmed = $trimmed . ')\b.*\?';
+        return $trimmed;
     }
 
+    //* Checks if string contains dish category
     public function loopHear($botman, $message){
         $cats = Category::all();
         foreach ($cats as $cat) {
-            if(str_contains(strtolower($message), strtolower($cat->name))){
+            if (str_contains(strtolower($message), strtolower($cat->name))) {
                 $botman->startConversation(new SpecificFoodConversation($cat->name));
             }
         }
     }
-    public function inputTest(){
-        
-        $botman = BotManFactory::create(['driver' => 'web'], new LaravelCache());
-        $cats = Category::all();
-        $pattern4 = $this->returnRegex($cats);
-        // dd($pattern4);
-        $pattern1 = '.*\b(?:about|mission|about us|intention).*\?';
+
+    //* Talk about Website Logic
+    public function talkAboutWebsite($botman){
+        $pattern1 = '.*\b(?:about|mission|about us|intention)\b.*\?';
         $botman->hears($pattern1, function ($botman) {
+            $this->fileTest("Command");
+            $this->fileTest("Error");
+            // $this->dummy($botman);
             $this->test($botman);
         });
+    }
+
+    //*Recommendation without Amount Logic
+    public function singleRecommend($botman){
         $pattern3 = '.*(?:recommendation|reco|recom|recommend).*\?';
         $botman->hears($pattern3, function ($botman) {
-            $botman->reply('pattern3');
+            $this->fileTest("Command");
+            $this->fileTest("Error");
+            // $this->dummy($botman);
             $botman->startConversation(new RecommendationConversation());
         });
+    }
+
+    //*Recommendation with Amount Logic
+    public function recommendMultiple($botman){
         $pattern2 = '.*(?:recommendation|reco|recom|recommend).*(\d+).*\?';
         $botman->hears($pattern2, function ($botman, $number) {
-            $botman->reply('pattern2');
+            $this->fileTest("Command");
+            $this->fileTest("Error");
+            // $this->dummy($botman);
             $botman->startConversation(new RecommendationConversation($number));
         });
+    }
+
+    //*Recommendation Dish Logic
+    public function recommendDish($botman){
+        $cats = Category::all();
+        $pattern4 = $this->returnRegex($cats);
         $botman->hears($pattern4, function ($botman) {
+            $this->fileTest("Command");
+            $this->fileTest("Error");
+            // $this->dummy($botman);
             $this->loopHear($botman, $botman->getMessage()->getPayload()["message"]);
         });
-        // $this->loopHear($botman);
+    }
+
+    //* Listens for Misinput and Apologizes
+    public function displayError($botman){
+        $botman->hears('.*', function ($botman) {
+            if ($this->checkFile("Error")) {
+                $botman->reply("Sorry did not understand the Command");
+            }
+        });
+    }
+
+    //* Resets file to initial Value
+    public function resetFile(){
+        $f = fopen('variables.txt', 'w');
+        fwrite($f, 'ErrorCommand');
+        //close the file in write mode
+        fclose($f);
+    }
+
+    //* Check file Content
+    public function dummy($botman){
+        $botman->reply("File = " . file_get_contents('variables.txt'));
+    }
+
+    public function inputTest()
+    {
+        $botman = BotManFactory::create(['driver' => 'web'], new LaravelCache());
+        $this->resetFile();
+        //* Talk about the website
+        if ($this->checkFile("Command")) {
+            $this->talkAboutWebsite($botman);
+        }
+        //* Recommendation of specific Dish
+        if ($this->checkFile("Command")) {
+            $this->recommendDish($botman);
+        }
+        //* Recommendation with amount
+        if ($this->checkFile("Command")) {
+            $this->recommendMultiple($botman);
+        }
+        //* Single Recommendation
+        if ($this->checkFile("Command")) {
+            $this->singleRecommend($botman);
+        }
         
+        // * Check for Misinput
+        if ($this->checkFile("Error")) {
+            $this->displayError($botman);
+        }
+
+        $this->resetFile();
         $botman->listen();
     }
 }
