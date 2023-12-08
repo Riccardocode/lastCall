@@ -36,7 +36,15 @@
             color: rgba(0, 0, 0, 0.568);
             font-family: $primaryFont; 
         }
-        input{ // stylings for the inputs
+        img{
+            height: 150px;
+            width: 150px;
+            margin: 2rem auto;
+            border-radius: 10px;
+            box-shadow:  3px 3px 5px #292826,
+             -3px -3px 5px $backgroundColor; 
+        }
+        input, select{ // stylings for the inputs //styling the selcts tag with the option
         font-size: 1rem;
         padding:.5rem;
         margin: 1rem;  
@@ -50,6 +58,7 @@
             border: 1.5px solid $primaryColor; 
             }   
         }
+
         .loginBtn { // login button styling
             background-color: #f97416d5;
             padding: .7rem;

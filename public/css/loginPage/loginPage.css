@@ -33,7 +33,14 @@
   color: rgba(0, 0, 0, 0.568);
   font-family: "Roboto", sans-serif;
 }
-.loginSection .form input {
+.loginSection .form img {
+  height: 150px;
+  width: 150px;
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #292826, -3px -3px 5px #f8f7f2;
+}
+.loginSection .form input, .loginSection .form select {
   font-size: 1rem;
   padding: 0.5rem;
   margin: 1rem;
@@ -44,7 +51,7 @@
   border: 1.5px solid rgba(0, 0, 0, 0.52);
   border-radius: 5px;
 }
-.loginSection .form input:focus {
+.loginSection .form input:focus, .loginSection .form select:focus {
   border: 1.5px solid #F97316;
 }
 .loginSection .form .loginBtn {
