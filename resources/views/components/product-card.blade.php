@@ -1,5 +1,4 @@
 @props(['product'])
-{{-- !to check if it works  --}}
 <a href="/business/{{ $product->business_id }}">
     <article style="background-image: url('{{ asset("storage/$product->picture") }}');">
         <div class="reduction">
