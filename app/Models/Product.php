@@ -20,7 +20,7 @@ class Product extends Model
     ];
 
     public function saleslots(){
-        return $this->hasMany(SalesLot::class, "product_id", "id");
+        return $this->hasMany(SalesLot::class);
     }
     public function business(){
         return $this->belongsTo(Business::class);
