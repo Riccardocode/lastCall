@@ -4,6 +4,7 @@ namespace App\Domain\BotMan;
 
 use App\Models\Business;
 use App\Models\Category;
+use Illuminate\Support\Facades\Log;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Question;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
@@ -44,6 +45,7 @@ class RecommendationConversation extends Conversation
 
     public function run()
     {
+        Log::info("Inside Recommendation Conversation");
         $this->askRecommendation($this->catArr());
     }
 }

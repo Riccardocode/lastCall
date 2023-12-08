@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Domain\BotMan\Middle;
 use App\Models\Category;
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;
+use App\Domain\BotMan\Middle;
 use BotMan\BotMan\BotManFactory;
+use Illuminate\Support\Facades\Log;
 use BotMan\BotMan\Cache\LaravelCache;
+use function PHPUnit\Framework\isEmpty;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Question;
-use App\Domain\BotMan\RecommendationConversation;
 use App\Domain\BotMan\SpecificFoodConversation;
-use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 
-use function PHPUnit\Framework\isEmpty;
+use App\Domain\BotMan\RecommendationConversation;
+use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 
 class BotManController extends Controller
 {
@@ -83,46 +84,78 @@ class BotManController extends Controller
 
     //* Talk about Website Logic
     public function talkAboutWebsite($botman){
+        Log::info("Before Pattern Hear About");
         $pattern1 = '.*\b(?:about|mission|about us|intention)\b.*\?';
         $botman->hears($pattern1, function ($botman) {
-            $this->fileTest("Command");
-            $this->fileTest("Error");
-            // $this->dummy($botman);
-            $this->test($botman);
+            if ($this->checkFile("Command")){
+
+                Log::info("Inside Hear About");
+                $this->fileTest("Command");
+                $this->fileTest("Error");
+                // $this->dummy($botman);
+                $this->test($botman);
+            }
         });
     }
 
     //*Recommendation without Amount Logic
     public function singleRecommend($botman){
-        $pattern3 = '.*(?:recommendation|reco|recom|recommend).*\?';
+        Log::info("Before Pattern Hear rec without amount");
+        $pattern3 = '\b(?:recommendation|reco|recom|recommend)(?:(?!pizza|dessert|sushi|burger|pasta|salad|sandwich|drink|other).)*\?';
         $botman->hears($pattern3, function ($botman) {
-            $this->fileTest("Command");
-            $this->fileTest("Error");
-            // $this->dummy($botman);
-            $botman->startConversation(new RecommendationConversation());
+            if ($this->checkFile("Command")){
+
+                Log::info("Inside Hear rec without amount");
+                $this->fileTest("Command");
+                $this->fileTest("Error");
+                // $this->dummy($botman);
+                $botman->startConversation(new RecommendationConversation());
+            }
         });
     }
 
     //*Recommendation with Amount Logic
     public function recommendMultiple($botman){
-        $pattern2 = '.*(?:recommendation|reco|recom|recommend).*(\d+).*\?';
-        $botman->hears($pattern2, function ($botman, $number) {
-            $this->fileTest("Command");
-            $this->fileTest("Error");
-            // $this->dummy($botman);
-            $botman->startConversation(new RecommendationConversation($number));
+        Log::info("Before Pattern Hear rec with amount");
+        $pattern21 = '.*(?:recommendation|reco|recom|recommend).*(\d+).*\?';
+        $pattern22 = '.*(\d+).*(?:recommendation|reco|recom|recommend).*\?';
+        $botman->hears($pattern21, function ($botman, $number) {
+            if ($this->checkFile("Command")){
+
+                Log::info("Inside Hear rec with amount 1");
+                $this->fileTest("Command");
+                $this->fileTest("Error");
+                // $this->dummy($botman);
+                $botman->startConversation(new RecommendationConversation($number));
+            }
+        });
+        $botman->hears($pattern22, function ($botman, $number) {
+            if ($this->checkFile("Command")){
+
+                Log::info("Inside Hear rec with amount 2");
+                $this->fileTest("Command");
+                $this->fileTest("Error");
+                // $this->dummy($botman);
+                $botman->startConversation(new RecommendationConversation($number));
+            }
         });
     }
 
     //*Recommendation Dish Logic
     public function recommendDish($botman){
+        Log::info("Before Pattern Hear dish");
         $cats = Category::all();
         $pattern4 = $this->returnRegex($cats);
+        // dd($pattern4);
         $botman->hears($pattern4, function ($botman) {
-            $this->fileTest("Command");
-            $this->fileTest("Error");
-            // $this->dummy($botman);
-            $this->loopHear($botman, $botman->getMessage()->getPayload()["message"]);
+            if ($this->checkFile("Command")){
+
+                Log::info("Inside Hear dish");
+                $this->fileTest("Command");
+                $this->fileTest("Error");
+                // $this->dummy($botman);
+                $this->loopHear($botman, $botman->getMessage()->getPayload()["message"]);
+            }
         });
     }
 
@@ -130,7 +163,7 @@ class BotManController extends Controller
     public function displayError($botman){
         $botman->hears('.*', function ($botman) {
             if ($this->checkFile("Error")) {
-                $botman->reply("Sorry did not understand the Command");
+                $botman->reply("Sorry did not understand the Command. Write 'help' to get a display of all the functionality");
             }
         });
     }
@@ -151,24 +184,33 @@ class BotManController extends Controller
     public function inputTest()
     {
         $botman = BotManFactory::create(['driver' => 'web'], new LaravelCache());
+        Log::info("Input Start");
         $this->resetFile();
         //* Talk about the website
         if ($this->checkFile("Command")) {
+            Log::info("Command Talk About Website");
+            // $botman->reply('test');
             $this->talkAboutWebsite($botman);
         }
-        //* Recommendation of specific Dish
-        if ($this->checkFile("Command")) {
-            $this->recommendDish($botman);
-        }
+        
         //* Recommendation with amount
         if ($this->checkFile("Command")) {
+            Log::info("Command Recommend With Amount");
+            // $botman->reply('test');
             $this->recommendMultiple($botman);
         }
         //* Single Recommendation
         if ($this->checkFile("Command")) {
+            Log::info("Command Recommend Alone");
+            // $botman->reply('test');
             $this->singleRecommend($botman);
         }
-        
+        //* Recommendation of specific Dish
+        if ($this->checkFile("Command")) {
+            Log::info("Command Recommed Dish");
+            // $botman->reply('test');
+            $this->recommendDish($botman);
+        }
         // * Check for Misinput
         if ($this->checkFile("Error")) {
             $this->displayError($botman);
