@@ -66,7 +66,7 @@
                                     <div>
                                         
                                         <a href="/business/{{$product->business_id}}/products/{{$product->id}}/saleslot/{{$product->saleslots[0]->id}}/edit">Edit</a>
-                                        <a href="">Delete</a>
+                                        {{-- <a href="">Delete</a> --}}
                                         <a href="">End-Sales</a>
                                     </div>
                                 @endif

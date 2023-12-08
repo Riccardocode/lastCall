@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Business;
 use App\Models\SalesLot;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
@@ -58,28 +59,24 @@ class OrderController extends Controller
 
         // Retrieve the user's cart
         $carts = Order::with(['order_items.saleslot.product'])
-        ->where('user_id', $userId)
-        ->where('status', 'cart')
-        ->get();
-        
-        // dd($cart);
-        
+            ->where('user_id', $userId)
+            ->where('status', 'cart')
+            ->get();
 
-        
+        // dd($carts);
 
         if ($carts) {
-            foreach($carts as $cart){
+            foreach ($carts as $cart) {
+                // Calculate the total amount for each cart
+                $totalAmount = 0;
 
-           
-            // Calculate the total amount
-        
-            $totalAmount = 0;
-            foreach ($cart->order_items as $item) {
-                $totalAmount += $item->quantity * $item->discounted_price; // Assuming discounted_price is in OrderItem
+                foreach ($cart->order_items as $item) {
+                    $totalAmount += $item->quantity * $item->discounted_price; // Assuming discounted_price is in OrderItem
+                }
+                $cart['totalAmount'] = $totalAmount;
+                $cart['businessName'] = Business::find($cart->business_id)->name;
             }
-            $cart['totalAmount'] = $totalAmount;
-        }
-
+            
             // Pass the cart and total amount to the view
             return view('orders.viewCart', ['carts' => $carts]);
         } else {
@@ -104,16 +101,16 @@ class OrderController extends Controller
                 ->first();
 
             if ($order) {
-                $salesLot = $orderItem->saleslot; 
+                $salesLot = $orderItem->saleslot;
                 $orderItem->delete();
 
                 // Update SalesLot quantity
                 $salesLot->increment('current_quantity', $orderItem->quantity);
 
                 // Check if the order has any other items left, if not, delete or update the order
-                // if ($order->orderItems()->count() == 0) {
-                //     $order->delete(); // or update status to indicate an empty cart
-                // }
+                if ($order->order_items()->count() == 0) {
+                    $order->delete(); // or update status to indicate an empty cart
+                }
             }
         }
         return redirect("/orders/cart")->with('message', 'Item removed from cart');
