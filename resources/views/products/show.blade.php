@@ -20,19 +20,21 @@
         </div>
 
         <div class='flex gap-10'>
-            @if ($product->business->manager->id == auth()->user()->id || auth()->user()->role == 'admin')
-                <a href="/business/{{ $product->business->id }}/products/create"
-                    class="text-blue-500 hover:text-blue-700 font-medium">Add a new product</a>
+            @if (auth()->check() && $product->business && $product->business->manager && auth()->user())
+                @if ($product->business->manager->id == auth()->user()->id || auth()->user()->role == 'admin')
+                    <a href="/business/{{ $product->business->id }}/products/create"
+                        class="text-blue-500 hover:text-blue-700 font-medium">Add a new product</a>
+
+                    <a href="/business/{{ $product->business->id }}/products/{{ $product->id }}/edit"
+                        class="text-blue-500 hover:text-blue-700 font-medium">Edit</a>
+
+                    <form action="/business/{{ $product->business->id }}/products/{{ $product->id }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-red-500 hover:text-red-700 font-medium">Delete</button>
+                    </form>
+                @endif
             @endif
-            <a href="/business/{{ $product->business->id }}/products/{{ $product->id }}/edit"
-                class="text-blue-500 hover:text-blue-700 font-medium">Edit</a>
-
-            <form action="/business/{{ $product->business->id }}/products/{{ $product->id }}" method="post">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="text-red-500 hover:text-red-700 font-medium">Delete</button>
-            </form>
-
 
             <a href="/business/{{ $product->business->id }}/products">Back</a>
 
