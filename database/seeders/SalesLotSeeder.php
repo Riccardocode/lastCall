@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -22,7 +23,7 @@ class SalesLotSeeder extends Seeder
                 'current_quantity' => 10,
                 'discount'=>10,
                 'start_date'=>now(),
-                'end_date'=>now()->addDays(1),
+                'end_date'=>now()->addHours(5),
             ],
             [
                 'product_id' => 2,
@@ -32,7 +33,7 @@ class SalesLotSeeder extends Seeder
                 'current_quantity' => 10,
                 'discount'=>10,
                 'start_date'=>now(),
-                'end_date'=>now()->addDays(1),
+                'end_date'=>now()->addHours(5),
             ]
         ]);
     }
