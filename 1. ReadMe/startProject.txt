@@ -1,0 +1,10 @@
+Start your server and database with XAMP
+
+To serve the project
+Open one terminal and run 
+php artisan serve
+
+To start the job scheduler (required to periodically remove the item from the orders)
+open another terminal and run 
+php artisan schedule:work
+
