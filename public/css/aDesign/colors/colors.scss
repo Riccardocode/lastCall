@@ -1,0 +1,26 @@
+// COLORS:
+
+$textColorBlack: #0E0000; // text color dark
+$textColorWhite: #FFF; // text color light
+
+$backgroundColor: #f8f7f2; // the background color for all the pages
+
+
+$primaryColor:#F97316; // color for all the buttons and links
+$actionColor: #D63030; // color for the main action button (buy, location and search buttons)
+$labelsColor: #FFFDD9; // color for the labels
+$formsBackground: #F973163B; // background color for the forms
+
+
+
+
+$palceholdersColor: rgba(0, 0, 0, 0.52); // color for all input placeholders
+$inputBackgroundColor: #F9F9F9; // background color for the inputs
+
+
+//  GRADIENTS:
+
+$overlayColorMainPage: rgba(0, 0, 0, 0.28); // overlay color for the main page
+$overlayBlackGradientCards: linear-gradient(0deg, rgba(0, 0, 0, 0.83) 41.91%, rgba(8, 8, 8, 0.30) 58.58%, rgba(99, 96, 96, 0.04) 79.93%); // overlay gradient for the cards
+$overlayWhiteGradientcards:linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, #F8F5F2 28.65%); // apply blur(2) filter
+$overlayColorLogin: rgba(255, 255, 255, 0.664); // overlay color for the main page

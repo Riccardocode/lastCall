@@ -1,0 +1,83 @@
+    // COLORS
+@import '../aDesign/colors/colors.scss'; 
+    //FONT
+@import '../aDesign/typography/fonts.scss'; 
+
+//MAN FOR THE HOME PAGE
+#homeSection{
+    background: linear-gradient($overlayColorMainPage, $overlayColorMainPage), url("../../images/heroImage.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 12.5% 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1{
+        font-family: $logoFont;
+        font-size: 60px;
+        color: $textColorWhite;
+    }
+    #homePageP{
+        margin: 20px 0px 40px 0px;
+        font-family: $primaryFont;
+        font-size: 25px;
+        color: $textColorWhite;
+
+    }
+    #homeSearch{
+        width: 100%;
+        max-width: 350px;
+        background-color: $inputBackgroundColor;  
+        position: relative;
+        opacity: 0.8;
+        padding: 5px;
+        border-radius: 15px;
+        input{
+            padding: 3px 0px 3px 3px;
+            border: none;
+            background-color: $inputBackgroundColor;  
+            color: $palceholdersColor; 
+            width: 95%;
+            outline: none; 
+        }
+        button{
+            background: transparent;
+            position: absolute;
+            top: 10px;
+            right: 5px;
+            color:  $actionColor; 
+            border: none;
+        }
+    }
+}
+#homeArticle{
+    text-align: center;
+    background-image: url("../../images/backgroundPattern.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: $backgroundColor;
+    article{
+        margin: 0px 25%;
+        background-color: $textColorWhite;
+        div{
+            display: flex;
+            justify-content: center;
+            padding: 30px 0px;
+            gap: 20%;
+            @import '../aDesign/link-button/link-button.scss';  // globale button
+            #buttonSell{
+                background-color: $textColorWhite;
+                color: $actionColor;
+                border: 1px solid $actionColor;
+            } 
+        }
+        p{
+            padding: 10px 5% 100px 5%;
+            font-family: $primaryFont;
+            font-size: 17px;
+        }
+    }
+}

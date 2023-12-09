@@ -1,0 +1,168 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Password;
+
+class UserController extends Controller
+{
+    public function create(){
+        return view('users.register');
+    }
+    //add user to database
+    public function store(Request $request){
+        $formFields=$request->validate([
+            'firstname'=>'required',
+            'lastname'=>'required',
+            'email'=>['required','email',Rule::unique('users','email')],
+            //Revert the password verification
+            // 'password' => ['required',Password::min(8)
+            //                             ->mixedCase()
+            //                             ->letters()
+            //                             ->numbers()
+            //                             ->symbols()
+            //                             ->uncompromised(2),'confirmed'],
+            'password' => ['required',Password::min(8),'confirmed'],
+            
+
+        ]);
+        if($request->hasFile('profileImg'))
+        {
+            $formFields['profileImg'] = $request->file('profileImg')->store('profileImages', 'public');
+        }
+        //encrypt password
+        $formFields['password']=bcrypt($formFields['password']);
+        $user = User::create($formFields);
+
+        //required to login the user after registration
+        auth()->login($user);
+
+        //redirect to home page
+        return redirect('/')->with('message','Thanks for registering, user logged in!');
+    }
+
+    public function logout(Request $request){
+
+        auth()->logout();
+
+        //This will remove the session data
+        $request->session()->invalidate();
+        //This will regenerate a new session id for security purposes?
+        $request->session()->regenerateToken();
+        return redirect('/')->with('message','User logged out!');
+    }
+
+    public function login()
+    {
+        
+        return view('users.login');
+       
+    }
+
+    public function authenticate(Request $request)
+    {
+        $formFields=$request->validate([
+            'email'=>['required','email'],
+            'password' => ['required'],
+        ]);
+
+        //Attempt() tries to match the content of the $formFields to a user in our users table
+        //If it finds a match, it will log the user in and return true
+        if(auth()->attempt($formFields)){
+            $request->session()->regenerate();
+            return redirect('/')->with('message','User logged in!');
+        }
+        //if does not match, return back with error message
+        return back()->withErrors([
+            'loginError'=>'The provided credentials do not match our records.',
+        ]);
+    }
+
+
+    //Display all users
+    public function manage(){
+        if(auth()->user()->role != 'admin'){
+            abort(403);
+        }
+        $users = User::all();
+        return view('users.manage',compact('users'));
+    }
+    //Display Single User
+    public function userDetails($id){
+        if(!(auth()->user()->role == 'admin' || auth()->user()->id == $id)){
+            abort(403);
+        }
+        $user = User::findOrFail($id);
+        return view('users.userDetails',compact('user'));
+    }
+
+    public function destroy($id){
+        if(auth()->user()->role != 'admin'){
+            abort(403);
+        }
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect('/users')->with('message','User deleted!');
+    }
+
+    public function edit($id){
+        if(!(auth()->user()->role == 'admin' || auth()->user()->id == $id)){
+            abort(403);
+        }
+        $user = User::findOrFail($id);
+        return view('users.edit',compact('user'));
+    }
+
+    public function update(Request $request, $id){
+        if(!(auth()->user()->role == 'admin' || auth()->user()->id == $id)){
+            abort(403);
+        }
+        $formFields=$request->validate([
+            'firstname'=>'required',
+            'lastname'=>'required',
+            'role'=>'required',
+            'phonenumber'=>'',
+            'email'=>['required','email',Rule::unique('users','email')->ignore($id)],
+           
+            // 'password' => ['required',Password::min(8)
+            //                             ->mixedCase()
+            //                             ->letters()
+            //                             ->numbers()
+            //                             ->symbols()
+            //                             ->uncompromised(2),'confirmed'],
+            // // 'password'=>['required','min:8','confirmed'],
+        ]);
+        if($request->hasFile('profileImg'))
+        {
+            $formFields['profileImg'] = $request->file('profileImg')->store('profileImages', 'public');
+        }
+        //encrypt password
+        // $formFields['password']=bcrypt($formFields['password']);
+        $user = User::findOrFail($id);
+        $user->update($formFields);
+        return redirect('/users')->with('message','User updated!');
+    }
+
+    public function becomeManager(){
+        if(auth()->user()->role != 'user'){
+            abort(403);
+        }
+        return view('users.becomeManager',
+        [
+            'user_id'=>auth()->user()->id,
+        ]
+    );
+    }
+    public function updateBecomeManager(){
+        if(auth()->user()->role != 'user'){
+            abort(403);
+        }
+        $user = User::findOrFail(auth()->user()->id);
+        $user->role = 'restaurantManager';
+        $user->save();
+        return redirect('/business/create')->with('message','User updated! Create your restaurant');
+    }
+}

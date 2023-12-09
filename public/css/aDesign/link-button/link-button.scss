@@ -1,0 +1,20 @@
+      //COLORS
+@import "../colors/colors.scss"; 
+      //FONT
+@import "../typography/fonts.scss";
+   //General css for links
+a{
+    text-decoration: none;
+    font-family: $primaryFont;
+    padding: 4px 35px;
+    background-color: $actionColor;
+    color:  $textColorWhite;
+    border-radius: 4px;
+    transition: 0.4s;
+    box-shadow:  2px 2px 5px #918c83,
+     -2px -2px 5px #f4f4f5; 
+}
+a:hover{
+      box-shadow: 0 0 5px 2.5px #00000033;
+      transform: translate(-5px, -5px);
+  } 

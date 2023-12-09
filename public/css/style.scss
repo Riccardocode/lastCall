@@ -1,0 +1,136 @@
+//COLORS
+@import "../css/aDesign/colors/colors.scss";
+//FONT
+@import "../css/aDesign/typography/fonts.scss";
+       // GENERAL CSS FOR ALL PAGES
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    // border: 1px solid red; //helps to see all the boxes correctly in the page
+}   
+//.......................
+//COUNTER TAILWIND !!!!
+html{
+    line-height: 1.2 !important;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight:600 !important;
+} 
+//........................
+
+
+ul{         //Delete the ° list
+    list-style: none;
+}
+        //LAYOUT HEADER
+header{
+    position: absolute;   //to keep the header inside the main in the top 
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0.3rem 1.5rem;
+    background: rgba(0, 0, 0, 0.185);
+    .navLink:hover{
+        text-decoration: underline;
+    }
+    .logo { // the container with the logo image and About Us link
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        a{
+            color:$textColorWhite;
+            width: 20%;
+        }
+        .about-us{
+            font-size: 20px;
+            font-weight: bold; 
+        }
+    }
+    img{ // logo image
+        width: 100%;
+    }
+    nav{
+        ul{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            .welcome {
+                color: $textColorWhite
+            }
+            a{
+                font-family: $primaryFont;
+                font-size: 20px;
+                color: $textColorWhite;
+                font-weight: bold; 
+            }
+        }
+        button {  // Logout Button
+            text-decoration: none;
+            font-family: $primaryFont;
+            padding: .4rem 1rem;
+            background-color: rgba(0, 0, 0, 0.76);
+            color:  $textColorWhite;
+            border-radius: 4px;
+            transition: 1s;
+            border:none;
+            font-size: 1rem;
+        }
+        button:hover{
+            background-color: $textColorWhite;
+            color:  rgba(0, 0, 0, 0.76);
+
+        }
+    }
+}
+        //MAINS
+main{
+        //MAIN HOME PAGE CSS
+    @import 'homePage/homePage.scss';
+        //MAIN BUSINESS CLIENT VIEW CSS
+    @import 'businessClientView/businessClientView.scss';   
+        // MAIN LOGIN PAGE
+    @import 'loginPage/loginPage.scss';
+        // MAIN REGISTER PAGE
+    @import 'registerPage/registerPage.scss';
+        //MAIN CHOOSING PAGE CSS
+    @import 'choosing/choosing.scss';
+    
+    // ADMIN DASHBOARD
+
+    @import 'adminDashboard/adminDashboard.scss';
+}
+
+// FOOTER
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $backgroundColor;
+    color: rgba(0, 0, 0, 0.747);
+    padding: 1rem;
+    line-height: 1.4;
+    a {
+        text-decoration: none;
+        color:$primaryColor;
+        span {
+            color: rgba(0, 0, 0, 0.747);
+        }
+        :hover {
+            text-decoration: underline;
+        }
+    }
+}
+.credentials {
+    text-align: center;
+    padding-top: 1rem;
+    background-color: $backgroundColor;
+    color: $palceholdersColor;
+}
+
+
