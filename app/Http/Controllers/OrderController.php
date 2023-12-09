@@ -117,44 +117,35 @@ class OrderController extends Controller
     }
 
     public function paymentCrediCardDetails(Request $request)
-    {   
+    {
 
-        return view('orders.creditCardDetails',[
-            'totalAmount'=>$request['totalAmount'],
-            'order_id'=>$request['order_id'],
+        return view('orders.creditCardDetails', [
+            'totalAmount' => $request['totalAmount'],
+            'order_id' => $request['order_id'],
         ]);
     }
 
-   
-
-    $order_id = $request->input('order_id');
-    $order = Order::find($order_id);
-    $order->update(['status' => 'ordered']);
-    return redirect("/")->with('message', 'Payment successful. Go and pick up your order.');
-}
-
-
-    public function checkoutCart($userId)
+    public function paymentConfirmation(Request $request)
     {
-        $order = Order::where('user_id', $userId)
-            ->where('status', 'cart')
-            ->first();
+        $request->validate([
+            'cardNumber' => [
+                'required',
+                'string',
+                'regex:/^(?:\d{4}[\s]?){3}\d{4}$/'
+            ],
+            'expiryMonth' => 'required|digits:2',
+            'expiryYear' => 'required|digits:4',
+            'cardCVC' => 'required|digits:3',
+        ]);
 
+        $order_id = $request['order_id'];
+        $order = Order::find($order_id);
         if ($order) {
-            // Update the status of the order to indicate checkout
-            // The new status depends on your application's workflow (e.g., 'pending', 'completed')
-            $order->update(['status' => 'pending']);
-
-            // Further processing like payment handling can be added here
-
-        } else {
-            // Handle the case where the user does not have a cart
+            $order->update(['status' => 'ordered']);
         }
+        //here should be redirected to order page
+        return redirect("/")->with('message', 'Payment successfull. Go and pickup your order.');
     }
-
-
-
-
 
 
 
