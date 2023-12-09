@@ -11,9 +11,10 @@
   font-family: "Roboto", sans-serif;
   font-size: 24px;
   padding-bottom: 50px;
-  font-weight: normal;
+  font-weight: normal !important;
 }
 .choosingSection .chooPt1 .chooBuis, .choosingSection .chooPt1 .chooPro {
+  font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -99,7 +100,6 @@
   box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
 }
 .choosingSection #chooSearch {
-  color: lightgray;
   margin: 50px 10px;
   box-shadow: 2px 2px 5px #292826, -2px -2px 5px white;
   max-width: 100%;
@@ -113,6 +113,7 @@
   font-size: 14px;
 }
 .choosingSection #chooSearch input, .choosingSection #chooSearch select, .choosingSection #chooSearch button {
+  color: lightgray;
   padding: 20px;
   outline: none;
   border: 0.5px solid lightgray;
