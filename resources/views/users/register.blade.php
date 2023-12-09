@@ -8,7 +8,7 @@
             <h2>
                 Register
             </h2>
-            <p>Create an account to post jobs</p>
+            <p>Create an account</p>
             {{-- <label for="profileImg">
                 Profile Image
             </label> --}}

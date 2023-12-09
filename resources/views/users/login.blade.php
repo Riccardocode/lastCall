@@ -9,7 +9,7 @@
             <h2>
                 Login
             </h2>
-            <p>Log into your account to post jobs</p>
+            <p>Log into your account</p>
             {{-- <label for="email">Email</label> --}}
             <input type="email" name="email" value="{{ old('email') }}" placeholder="Your Email" />
             @error('email')

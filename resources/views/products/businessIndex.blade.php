@@ -28,7 +28,7 @@
                                     <img src="/storage/{{ $product->picture }}" alt="image for {{ $product->name }}"
                                         >
                                 @else
-                                    <img src="/storage/productPictures/Z2uAYTQh4nUqT4HTSjbClgMvDu0F9Sw2kRlN3NcR.png"
+                                    <img src="/storage/productPictures/generalProduct.png"
                                         alt="image for {{ $product->name }}" class="w-full h-auto rounded-md">
                                 @endif
                             </a>

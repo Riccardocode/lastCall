@@ -15,44 +15,41 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
             //! Pizza items (Business ID 1)
-            ['name' => 'Pizza Margherita', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, basil', 'allergyString' => 'Gluten, lactose', 'picture' => '', 'business_id' => 1],
-            ['name' => 'Pizza Capricciosa', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, ham, mushrooms, artichokes, olives', 'allergyString' => 'Gluten, lactose', 'picture' => '', 'business_id' => 1],
-            ['name' => 'Pepperoni Pizza', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, pepperoni', 'allergyString' => 'Gluten, lactose', 'picture' => '', 'business_id' => 1],
-            ['name' => 'Veggie Pizza', 'category' => "Vegan",  'ingredientString' => 'Tomato sauce, mozzarella, bell peppers, onions, olives, mushrooms', 'allergyString' => 'Gluten, lactose', 'picture' => '', 'business_id' => 1],
-            ['name' => 'BBQ Chicken Pizza', 'category' => "Non-Vegetarian",  'ingredientString' => 'BBQ sauce, chicken, red onions, cilantro', 'allergyString' => 'Gluten', 'picture' => '', 'business_id' => 1],
-            ['name' => 'Hawaiian Pizza', 'category' => "Vegan",  'ingredientString' => 'Tomato sauce, mozzarella, ham, pineapple', 'allergyString' => 'Gluten, lactose', 'picture' => '', 'business_id' => 1],
-            ['name' => 'Four Cheese Pizza', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, parmesan, gorgonzola, ricotta', 'allergyString' => 'Gluten, lactose', 'picture' => '', 'business_id' => 1],
-            ['name' => 'Meat Lover’s Pizza', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, pepperoni, sausage, bacon, ham', 'allergyString' => 'Gluten, lactose', 'picture' => '', 'business_id' => 1],
+            ['name' => 'Pizza Margherita', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, basil', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/1.png', 'business_id' => 1],
+            ['name' => 'Pizza Capricciosa', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, ham, mushrooms, artichokes, olives', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/2.png', 'business_id' => 1],
+            ['name' => 'Pepperoni Pizza', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, pepperoni', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/3.png', 'business_id' => 1],
+            ['name' => 'Veggie Pizza', 'category' => "Vegan",  'ingredientString' => 'Tomato sauce, mozzarella, bell peppers, onions, olives, mushrooms', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/4.png', 'business_id' => 1],
+            ['name' => 'BBQ Chicken Pizza', 'category' => "Non-Vegetarian",  'ingredientString' => 'BBQ sauce, chicken, red onions, cilantro', 'allergyString' => 'Gluten', 'picture' => 'productPictures/5.png', 'business_id' => 1],
 
             //! Cake items (Business ID 2)
-            ['name' => 'Magic Cake', 'category' => "Vegan",  'ingredientString' => 'Flour, sugar, eggs, vanilla extract', 'allergyString' => 'Gluten, eggs', 'picture' => '', 'business_id' => 2],
-            ['name' => 'Chocolate Cake', 'category' => "vegetarian",  'ingredientString' => 'Flour, sugar, eggs, cocoa powder', 'allergyString' => 'Gluten, eggs', 'picture' => '', 'business_id' => 2],
-            ['name' => 'Red Velvet Cake', 'category' => "vegetarian",  'ingredientString' => 'Flour, sugar, buttermilk, cocoa powder, red food coloring', 'allergyString' => 'Gluten, eggs', 'picture' => '', 'business_id' => 2],
-            ['name' => 'Carrot Cake', 'category' => "Vegan",  'ingredientString' => 'Flour, sugar, carrots, eggs, spices', 'allergyString' => 'Gluten, eggs', 'picture' => '', 'business_id' => 2],
-            ['name' => 'Lemon Cake', 'category' => "Vegan",  'ingredientString' => 'Flour, sugar, eggs, lemon zest, lemon juice', 'allergyString' => 'Gluten, eggs', 'picture' => '', 'business_id' => 2],
+            ['name' => 'Magic Cake', 'category' => "Vegan",  'ingredientString' => 'Flour, sugar, eggs, vanilla extract', 'allergyString' => 'Gluten, eggs', 'picture' => 'productPictures/6.png', 'business_id' => 2],
+            ['name' => 'Chocolate Cake', 'category' => "vegetarian",  'ingredientString' => 'Flour, sugar, eggs, cocoa powder', 'allergyString' => 'Gluten, eggs', 'picture' => 'productPictures/7.png', 'business_id' => 2],
+            ['name' => 'Red Velvet Cake', 'category' => "vegetarian",  'ingredientString' => 'Flour, sugar, buttermilk, cocoa powder, red food coloring', 'allergyString' => 'Gluten, eggs', 'picture' => 'productPictures/8.png', 'business_id' => 2],
+            ['name' => 'Carrot Cake', 'category' => "Vegan",  'ingredientString' => 'Flour, sugar, carrots, eggs, spices', 'allergyString' => 'Gluten, eggs', 'picture' => 'productPictures/9.png', 'business_id' => 2],
+            ['name' => 'Lemon Cake', 'category' => "Vegan",  'ingredientString' => 'Flour, sugar, eggs, lemon zest, lemon juice', 'allergyString' => 'Gluten, eggs', 'picture' => 'productPictures/10.png', 'business_id' => 2],
 
             //! Athena Restaurant Grec (Business ID 3)
-            ['name' => 'Assiette «Athena»', 'category' => "Non-Vegetarian",  'ingredientString' => 'Fillet of chicken, beef, lamb ,tzatziki, potatoes', 'allergyString' => 'Milk', 'picture' => '', 'business_id' => 3],
-            ['name' => 'Gyros', 'category' => "Non-Vegetarian",  'ingredientString' => 'Pork gyros, tzatziki, sautéed potatoes', 'allergyString' => 'Milk', 'picture' => '', 'business_id' => 3],
-            ['name' => 'Espadon', 'category' => "Vegan",  'ingredientString' => 'Swordfish', 'allergyString' => 'Fish, Sulfur', 'picture' => '', 'business_id' => 3],
-            ['name' => 'Gemista', 'category' => "Non-Vegetarian",  'ingredientString' => 'Peppers ,tomatoes ,meat ,rice ,potatoes', 'allergyString' => 'Milk', 'picture' => '', 'business_id' => 3],
-            ['name' => 'Solomos', 'category' => "Vegan",  'ingredientString' => 'salmon ,olive oil ,lemon', 'allergyString' => 'Fish, Sulfur', 'picture' => '', 'business_id' => 3],
+            ['name' => 'Assiette «Athena»', 'category' => "Non-Vegetarian",  'ingredientString' => 'Fillet of chicken, beef, lamb ,tzatziki, potatoes', 'allergyString' => 'Milk', 'picture' => 'productPictures/11.png', 'business_id' => 3],
+            ['name' => 'Gyros', 'category' => "Non-Vegetarian",  'ingredientString' => 'Pork gyros, tzatziki, sautéed potatoes', 'allergyString' => 'Milk', 'picture' => 'productPictures/12.png', 'business_id' => 3],
+            ['name' => 'Espadon', 'category' => "Non-vegeterian",  'ingredientString' => 'Swordfish', 'allergyString' => 'Fish, Sulfur', 'picture' => 'productPictures/13.png', 'business_id' => 3],
+            ['name' => 'Gemista', 'category' => "Non-vegetarian",  'ingredientString' => 'Peppers ,tomatoes ,meat ,rice ,potatoes', 'allergyString' => 'Milk', 'picture' => 'productPictures/14.png', 'business_id' => 3],
+            ['name' => 'Solomos', 'category' => "Vegan",  'ingredientString' => 'salmon ,olive oil ,lemon', 'allergyString' => 'Fish, Sulfur', 'picture' => 'productPictures/15.png', 'business_id' => 3],
 
             //! Fu Lu Shou Inn (Business ID 4)
-            ['name' => 'Duck with Chinese spices and vegetables in seven colours', 'category' => "Non-Vegetarian",  'ingredientString' => 'Duck, potatoes,', 'allergyString' => 'Soy', 'picture' => '', 'business_id' => 4],
-            ['name' => 'Prawns in special ‘Royal’ style', 'category' => "Vegetarian",  'ingredientString' => 'Scampi, Soy Sauce, rice, vegetables', 'allergyString' => 'Soy', 'picture' => '', 'business_id' => 4],
-            ['name' => 'Stir-fried squids with vegetables', 'category' => "Vegetarian",  'ingredientString' => 'Squid, rice, tomatoes, cucumber', 'allergyString' => 'Fish, Sulfur', 'picture' => '', 'business_id' => 4],
-            ['name' => 'Gemista', 'category' => "Non-Vegetarian",  'ingredientString' => 'Peppers ,tomatoes ,meat ,rice ,potatoes', 'allergyString' => 'Milk', 'picture' => '', 'business_id' => 3],
-            ['name' => 'Solomos', 'category' => "Vegan",  'ingredientString' => 'salmon ,olive oil ,lemon', 'allergyString' => 'Fish, Sulfur', 'picture' => '', 'business_id' => 3],
+            ['name' => 'Duck and Veggie', 'category' => "Non-Vegetarian",  'ingredientString' => 'Duck, potatoes,', 'allergyString' => 'Soy', 'picture' => 'productPictures/16.png', 'business_id' => 4],
+            ['name' => 'Prawns Royal', 'category' => "Vegetarian",  'ingredientString' => 'Scampi, Soy Sauce, rice, vegetables', 'allergyString' => 'Soy', 'picture' => 'productPictures/17.png', 'business_id' => 4],
+            ['name' => 'Stir-fried squids', 'category' => "Vegetarian",  'ingredientString' => 'Squid, rice, tomatoes, cucumber', 'allergyString' => 'Fish, Sulfur', 'picture' => 'productPictures/18.png', 'business_id' => 4],
+            ['name' => 'Gemista', 'category' => "Non-Vegetarian",  'ingredientString' => 'Peppers ,tomatoes ,meat ,rice ,potatoes', 'allergyString' => 'Milk', 'picture' => 'productPictures/19.png', 'business_id' => 3],
+            ['name' => 'Solomos', 'category' => "Vegan",  'ingredientString' => 'salmon ,olive oil ,lemon', 'allergyString' => 'Fish, Sulfur', 'picture' => 'productPictures/20.png', 'business_id' => 3],
 
             //! Radici (Business ID 5)
-            ["name" => "Antipasto Misto", "category" => "Non-Vegetarian", "ingredientString" => "Prosciutto Crudo, Salame di Milano, Mozzarella di Bufala, Pomodori Confit, Olive Ascolane, Funghi Porcini, Gamberi Bianchi, Carpaccio di Manzo, Rucola, Aceto Balsamico Tradizionale di Modena, Olio Extra Vergine di Oliva", "allergyString" => "Dairy, Gluten, Shellfish, Tree Nuts", "picture" => "", 'business_id' => 4],
+            ["name" => "Antipasto Misto", "category" => "Non-Vegetarian", "ingredientString" => "Prosciutto Crudo, Salame di Milano, Mozzarella di Bufala, Pomodori Confit, Olive Ascolane, Funghi Porcini, Gamberi Bianchi, Carpaccio di Manzo, Rucola, Aceto Balsamico Tradizionale di Modena, Olio Extra Vergine di Oliva", "allergyString" => "Dairy, Gluten, Shellfish, Tree Nuts", "picture" => "productPictures/21.png", 'business_id' => 4],
             [
                 "name" => "Carpaccio di Pesce Spada",
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Pesce Spada, Capperi, Limone, Olio Extra Vergine di Oliva",
                 "allergyString" => "Fish, Sulfites",
-                "picture" => "",
+                "picture" => "productPictures/22.png",
                 'business_id' => 5
             ],
             [
@@ -60,7 +57,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Tagliatelle, Grana Padano, Burro, Salvia",
                 "allergyString" => "Dairy",
-                "picture" => "",
+                "picture" => "productPictures/23.png",
                 'business_id' => 5
             ],
             [
@@ -68,7 +65,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Gnocchi,Mozzarella, basil",
                 "allergyString" => "Dairy",
-                "picture" => "",
+                "picture" => "productPictures/24.png",
                 'business_id' => 5
             ],
             [
@@ -76,7 +73,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Guanciale, egg, pecorino",
                 "allergyString" => "Dairy",
-                "picture" => "",
+                "picture" => "productPictures/25.png",
                 'business_id' => 5
             ],
 
@@ -86,7 +83,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegan",
                 "ingredientString" => "chickpeas, tahini, olive oil, lemon juice, garlic, salt",
                 "allergyString" => "None",
-                "picture" => "",
+                "picture" => "productPictures/26.png",
                 "business_id" => 6
             ],
             [
@@ -94,7 +91,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegan",
                 "ingredientString" => "eggplant, tahini, lemon juice, olive oil, garlic, salt",
                 "allergyString" => "None",
-                "picture" => "",
+                "picture" => "productPictures/27.png",
                 "business_id" => 6
             ],
             [
@@ -102,15 +99,15 @@ class ProductSeeder extends Seeder
                 "category" => "Vegan",
                 "ingredientString" => "tomatoes, onions, peppers, eggs, chickpeas, spices",
                 "allergyString" => "None",
-                "picture" => "",
+                "picture" => "productPictures/28.png",
                 "business_id" => 6
             ],
             [
-                "name" => "Shakshuka",
+                "name" => "Shakshuka-super",
                 "category" => "Vegan",
                 "ingredientString" => "tomatoes, onions, peppers, eggs, chickpeas, spices",
                 "allergyString" => "None",
-                "picture" => "",
+                "picture" => "productPictures/29.png",
                 "business_id" => 6
             ],
             [
@@ -118,7 +115,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegan",
                 "ingredientString" => "bulgur wheat, parsley, mint, tomatoes, lemon juice, olive oil, salt",
                 "allergyString" => "None",
-                "picture" => "",
+                "picture" => "productPictures/30.png",
                 "business_id" => 6
             ],
 
@@ -128,7 +125,7 @@ class ProductSeeder extends Seeder
                 "category" => "Appetizers",
                 "ingredientString" => "calamari, flour, breadcrumbs, olive oil, lemon, salt",
                 "allergyString" => "Seafood, Gluten",
-                "picture" => "https://media-cdn.tripadvisor.com/media/photo-s/16/a0/6d/45/calamari-fritti-.jpg",
+                "picture" => "productPictures/31.png",
                 "business_id" => 7
             ],
             [
@@ -136,7 +133,7 @@ class ProductSeeder extends Seeder
                 "category" => "Appetizers",
                 "ingredientString" => "mozzarella cheese, flour, breadcrumbs, olive oil, tomato sauce, salt",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "https://www.allrecipes.com/recipe/233246/mozzarella-sticks/",
+                "picture" => "productPictures/32.png",
                 "business_id" => 7
             ],
             [
@@ -144,7 +141,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "cod, flour, breadcrumbs, olive oil, vinegar, salt, potatoes",
                 "allergyString" => "Seafood, Gluten",
-                "picture" => "https://www.bbcgoodfood.com/recipes/11435/classic-fish-chips",
+                "picture" => "productPictures/33.png",
                 "business_id" => 7
             ],
             [
@@ -152,7 +149,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "salmon, olive oil, lemon, salt, pepper",
                 "allergyString" => "Fish, Sulfur",
-                "picture" => "https://www.thekitchn.com/how-to-grill-salmon-302430",
+                "picture" => "productPictures/34.png",
                 "business_id" => 7
             ],
             [
@@ -160,7 +157,7 @@ class ProductSeeder extends Seeder
                 "category" => "Sides",
                 "ingredientString" => "tomatoes, cream, flour, butter, salt, pepper, basil",
                 "allergyString" => "Dairy",
-                "picture" => "https://www.justapinch.com/recipes/soup/creamy-tomato-soup.html",
+                "picture" => "productPictures/35.png",
                 "business_id" => 7
             ],
 
@@ -170,7 +167,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "tomato sauce, mozzarella cheese, basil",
                 "allergyString" => "Dairy",
-                "picture" => "",
+                "picture" => "productPictures/36.png",
                 "business_id" => 8
             ],
             [
@@ -178,7 +175,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "tomato sauce, garlic, oregano",
                 "allergyString" => "None",
-                "picture" => "",
+                "picture" => "productPictures/37.png",
                 "business_id" => 8
             ],
             [
@@ -186,7 +183,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "tomato sauce, mozzarella cheese, ham, mushrooms, artichokes, olives",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/38.png",
                 "business_id" => 8
             ],
             [
@@ -194,7 +191,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "tomato sauce, mozzarella cheese, gorgonzola cheese, parmesan cheese, fontina cheese",
                 "allergyString" => "Dairy",
-                "picture" => "",
+                "picture" => "productPictures/39.png",
                 "business_id" => 8
             ],
             [
@@ -202,7 +199,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "tomato sauce, mozzarella cheese, prosciutto ham, mushrooms",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/40.png",
                 "business_id" => 8
             ],
 
@@ -212,7 +209,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegan",
                 "ingredientString" => "gnocchi, tomato sauce, mozzarella cheese, basil, salt, pepper",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/41.png",
                 "business_id" => 9
             ],
             [
@@ -220,7 +217,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegan",
                 "ingredientString" => "penne pasta, tomato sauce, chili flakes, garlic, olive oil, salt, pepper",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/42.png",
                 "business_id" => 9
             ],
             [
@@ -228,7 +225,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "lasagna noodles, meat sauce, béchamel sauce, parmesan cheese, salt, pepper",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/43.png",
                 "business_id" => 9
             ],
             [
@@ -236,7 +233,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "chicken breast, breadcrumbs, marinara sauce, mozzarella cheese, basil, salt, pepper",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/44.png",
                 "business_id" => 9
             ],
             [
@@ -244,7 +241,7 @@ class ProductSeeder extends Seeder
                 "category" => "Dessert",
                 "ingredientString" => "ladyfingers, espresso, mascarpone cheese, cocoa powder, sugar",
                 "allergyString" => "Dairy",
-                "picture" => "",
+                "picture" => "productPictures/45.png",
                 "business_id" => 9
             ],
 
@@ -254,7 +251,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Beef patty, sesame seed bun, lettuce, tomato, onion, pickles, cheese",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "https://www.tripadvisor.com/LocationPhotoDirectLink-g189592-d1065256-i153010427-Lux-Burgers-Luxembourg.jpg",
+                "picture" => "productPictures/46.png",
                 "business_id" => 10
             ],
             [
@@ -262,7 +259,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Two beef patties, sesame seed bun, lettuce, tomato, onion, pickles, cheese",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "https://media-cdn.tripadvisor.com/media/photo-s/16/a0/6d/45/double-cheeseburger.jpg",
+                "picture" => "productPictures/46.png",
                 "business_id" => 10
             ],
             [
@@ -270,7 +267,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Grilled chicken patty, sesame seed bun, lettuce, tomato, onion, pickles",
                 "allergyString" => "Gluten",
-                "picture" => "https://cdn.pixabay.com/photo/2015/02/15/14/51/grilled-chicken-burger-657444_1280.jpg",
+                "picture" => "productPictures/48.png",
                 "business_id" => 10
             ],
             [
@@ -278,7 +275,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Black bean patty, sesame seed bun, lettuce, tomato, onion, pickles",
                 "allergyString" => "None",
-                "picture" => "https://www.tasteofhome.com/recipes/vegetarian-black-bean-burgers/",
+                "picture" => "productPictures/49.png",
                 "business_id" => 10
             ],
             [
@@ -286,7 +283,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Falafel patty, sesame seed bun, hummus, tahini, lettuce, tomato, onion",
                 "allergyString" => "Gluten",
-                "picture" => "https://www.thespruceeats.com/falafel-burgers-3378279",
+                "picture" => "productPictures/50.png",
                 "business_id" => 10
             ],
 
@@ -296,7 +293,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Pasta, lemon juice, olive oil, butter, salt, pepper",
                 "allergyString" => "Dairy",
-                "picture" => "https://www.simplyrecipes.com/wp-content/uploads/2018/02/lemon-pasta-2-2.jpg",
+                "picture" => "productPictures/51.png",
                 "business_id" => 11
             ],
             [
@@ -304,7 +301,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Pasta, meat sauce, parmesan cheese, salt, pepper",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "https://www.seriouseats.com/images/2016/09/20160915-pasta-dishes-best-ever-alligator-farfalle.jpg",
+                "picture" => "productPictures/52.png",
                 "business_id" => 11
             ],
             [
@@ -312,7 +309,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Pasta, shrimp, mussels, clams, white wine, garlic, parsley, salt, pepper",
                 "allergyString" => "Shellfish, Dairy, Gluten",
-                "picture" => "https://www.bonappetit.com/recipe/linguine-with-shrimp-mussels-and-clams",
+                "picture" => "productPictures/53.png",
                 "business_id" => 11
             ],
             [
@@ -320,7 +317,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Tomato sauce, mozzarella cheese, basil",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "https://www.pizzatoday.com/recipes/the-original-pizza-margherita/",
+                "picture" => "productPictures/54.png",
                 "business_id" => 11
             ],
             [
@@ -328,7 +325,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegan",
                 "ingredientString" => "Mozzarella cheese, tomatoes, basil, olive oil, salt, pepper",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "https://www.giallozafferano.it/en/recipes/salads/insalata-caprese/",
+                "picture" => "productPictures/55.png",
                 "business_id" => 11
             ],
 
@@ -338,7 +335,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Gruyère cheese, Emmental cheese, white wine, garlic, kirsch, bread",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "https://www.allrecipes.com/recipe/23035/classic-swiss-cheese-fondue/",
+                "picture" => "productPictures/56.png",
                 "business_id" => 12
             ],
             [
@@ -346,7 +343,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Raclette cheese, potatoes, onions, pickles, cornichons, gherkins, mustard, bread",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "https://www.bbcgoodfood.com/recipes/raclette-with-potatoes-and-pickles",
+                "picture" => "productPictures/57.png",
                 "business_id" => 12
             ],
             [
@@ -354,7 +351,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegetarian",
                 "ingredientString" => "Ladyfingers, espresso, mascarpone cheese, cocoa powder, sugar",
                 "allergyString" => "Dairy",
-                "picture" => "https://www.allrecipes.com/recipe/23035/classic-swiss-cheese-fondue/",
+                "picture" => "productPictures/58.png",
                 "business_id" => 12
             ],
             [
@@ -362,7 +359,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegetarian",
                 "ingredientString" => "Strudel dough, apples, cinnamon, sugar, raisins, walnuts, butter, apricot jam",
                 "allergyString" => "Gluten, Dairy",
-                "picture" => "https://www.allrecipes.com/recipe/23035/classic-swiss-cheese-fondue/",
+                "picture" => "productPictures/59.png",
                 "business_id" => 12
             ],
             [
@@ -370,7 +367,7 @@ class ProductSeeder extends Seeder
                 "category" => "Breads",
                 "ingredientString" => "Flour, yeast, milk, sugar, eggs, butter, salt",
                 "allergyString" => "Gluten",
-                "picture" => "https://www.allrecipes.com/recipe/23035/classic-swiss-cheese-fondue/",
+                "picture" => "productPictures/60.png",
                 "business_id" => 12
             ],
 
@@ -380,7 +377,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Chicken, tomato puree, cream, spices, garlic, ginger, garam masala",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "https://www.bbcgoodfood.com/recipes/chicken-tikka-masala",
+                "picture" => "productPictures/61.png",
                 "business_id" => 13
             ],
             [
@@ -388,7 +385,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegan",
                 "ingredientString" => "Pastry, potatoes, peas, onions, spices, tamarind chutney",
                 "allergyString" => "Gluten",
-                "picture" => "https://www.delish.com/cooking/recipe-ideas/a24143134/chicken-samosas/",
+                "picture" => "productPictures/62.png",
                 "business_id" => 13
             ],
             [
@@ -396,7 +393,7 @@ class ProductSeeder extends Seeder
                 "category" => "Accompaniments",
                 "ingredientString" => "Flour, yeast, milk, butter, sugar, salt",
                 "allergyString" => "Gluten",
-                "picture" => "https://www.allrecipes.com/recipe/25629/naan-bread/",
+                "picture" => "productPictures/63.png",
                 "business_id" => 13
             ],
             [
@@ -404,7 +401,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegetarian",
                 "ingredientString" => "Carrot, butter, milk, cream, sugar, nuts, spices",
                 "allergyString" => "Milk, Dairy",
-                "picture" => "https://www.indianhealthyrecipes.com/gajar-halwa-recipe/",
+                "picture" => "productPictures/64.png",
                 "business_id" => 13
             ],
             [
@@ -412,7 +409,7 @@ class ProductSeeder extends Seeder
                 "category" => "Drinks",
                 "ingredientString" => "Yogurt, water, sugar, flavorings",
                 "allergyString" => "Dairy, Milk",
-                "picture" => "https://www.foodnetwork.com/recipes/aarti-sequeira/mango-lassi-recipe-2102830",
+                "picture" => "productPictures/65.png",
                 "business_id" => 13
             ],
 
@@ -422,7 +419,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Lentils, rice, spices",
                 "allergyString" => "None",
-                "picture" => "",
+                "picture" => "productPictures/66.png",
                 "business_id" => 14
             ],
             [
@@ -430,7 +427,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegan",
                 "ingredientString" => "Chicken, dough, spices, vegetables",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/67.png",
                 "business_id" => 14
             ],
             [
@@ -438,7 +435,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Vegetables, spices, coconut milk",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/68.png",
                 "business_id" => 14
             ],
             [
@@ -446,15 +443,15 @@ class ProductSeeder extends Seeder
                 "category" => "Vegan",
                 "ingredientString" => "Lentil flour, spices",
                 "allergyString" => "Gluten",
-                "picture" => "",
+                "picture" => "productPictures/69.png",
                 "business_id" => 14
             ],
             [
-                "name" => "Papadum",
+                "name" => "Papadum-premium",
                 "category" => "Vegan",
                 "ingredientString" => "Lentil flour, spices",
                 "allergyString" => "Gluten",
-                "picture" => "",
+                "picture" => "productPictures/70.png",
                 "business_id" => 14
             ],
 
@@ -464,7 +461,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Tomato sauce, mozzarella cheese, basil",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/71.png",
                 "business_id" => 15
             ],
             [
@@ -472,7 +469,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Tomato sauce, garlic, oregano",
                 "allergyString" => "None",
-                "picture" => "",
+                "picture" => "productPictures/72.png",
                 "business_id" => 15
             ],
             [
@@ -480,7 +477,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Penne pasta, tomato sauce, chili flakes, garlic, olive oil, salt, pepper",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/73.png",
                 "business_id" => 15
             ],
             [
@@ -488,7 +485,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Pasta, shrimp, mussels, clams, tomato sauce, white wine, garlic, parsley",
                 "allergyString" => "Shellfish, Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/74.png",
                 "business_id" => 15
             ],
             [
@@ -496,7 +493,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegetarian",
                 "ingredientString" => "Ladyfingers, espresso, mascarpone cheese, cocoa powder, sugar",
                 "allergyString" => "Dairy",
-                "picture" => "",
+                "picture" => "productPictures/75.png",
                 "business_id" => 15
             ],
 
@@ -506,7 +503,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Salmon, lettuce, tomato, cucumber, dill, lemon",
                 "allergyString" => "Fish, Sulfur",
-                "picture" => "",
+                "picture" => "productPictures/76.png",
                 "business_id" => 16
             ],
             [
@@ -514,7 +511,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Falafel, hummus, tahini, lettuce, tomato, cucumber",
                 "allergyString" => "Gluten",
-                "picture" => "",
+                "picture" => "productPictures/77.png",
                 "business_id" => 16
             ],
             [
@@ -522,7 +519,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegan",
                 "ingredientString" => "Hummus, pita bread, olive oil, parsley",
                 "allergyString" => "None",
-                "picture" => "",
+                "picture" => "productPictures/78.png",
                 "business_id" => 16
             ],
             [
@@ -530,7 +527,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Shawarma meat, hummus, tahini, lettuce, tomato, cucumber",
                 "allergyString" => "Gluten",
-                "picture" => "",
+                "picture" => "productPictures/79.png",
                 "business_id" => 16
             ],
             [
@@ -538,7 +535,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegetarian",
                 "ingredientString" => "Phyllo dough, nuts, honey, syrup",
                 "allergyString" => "Gluten",
-                "picture" => "",
+                "picture" => "productPictures/80.png",
                 "business_id" => 16
             ],
 
@@ -548,7 +545,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Beef patty, sesame seed bun, lettuce, tomato, onion, pickles, cheese",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/81.png",
                 "business_id" => 17
             ],
             [
@@ -556,7 +553,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Two beef patties, sesame seed bun, lettuce, tomato, onion, pickles, two cheese",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/82.png",
                 "business_id" => 17
             ],
             [
@@ -564,7 +561,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Grilled chicken patty, sesame seed bun, lettuce, tomato, onion, pickles",
                 "allergyString" => "Gluten",
-                "picture" => "",
+                "picture" => "productPictures/83.png",
                 "business_id" => 17
             ],
             [
@@ -572,7 +569,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Falafel patty, sesame seed bun, hummus, tahini, lettuce, tomato, cucumber",
                 "allergyString" => "Gluten",
-                "picture" => "",
+                "picture" => "productPictures/84.png",
                 "business_id" => 17
             ],
             [
@@ -580,7 +577,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Fish, fries, tartar sauce",
                 "allergyString" => "Fish, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/85.png",
                 "business_id" => 17
             ],
 
@@ -590,7 +587,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Ribeye steak, fries, béarnaise sauce",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/86.png",
                 "business_id" => 18
             ],
             [
@@ -598,7 +595,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "New York strip steak, fries, béarnaise sauce",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/87.png",
                 "business_id" => 18
             ],
             [
@@ -606,7 +603,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Filet Mignon, fries, béarnaise sauce",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/88.png",
                 "business_id" => 18
             ],
             [
@@ -614,7 +611,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "T-bone steak, fries, béarnaise sauce",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/89.png",
                 "business_id" => 18
             ],
             [
@@ -622,17 +619,17 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Porterhouse steak, fries, béarnaise sauce",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/90.png",
                 "business_id" => 18
             ],
 
             //!  Churrasqueria Portugalia (Business ID 19)
             [
-                "name" => "Carne de Porco à Alentejana",
+                "name" => "Porco à Alentejana",
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Pork, clams, white wine, garlic, parsley, bay leaf, olive oil",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/91.png",
                 "business_id" => 19
             ],
             [
@@ -640,7 +637,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Salt cod, potatoes, onions, eggs, olive oil",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/92.png",
                 "business_id" => 19
             ],
             [
@@ -648,7 +645,7 @@ class ProductSeeder extends Seeder
                 "category" => "Non-Vegetarian",
                 "ingredientString" => "Ham, sausage, steak, cheese, beer, bread",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/93.png",
                 "business_id" => 19
             ],
             [
@@ -656,7 +653,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegetarian",
                 "ingredientString" => "Custard, puff pastry",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/94.png",
                 "business_id" => 19
             ],
             [
@@ -664,17 +661,17 @@ class ProductSeeder extends Seeder
                 "category" => "Vegan",
                 "ingredientString" => "Olives, garlic, parsley, olive oil",
                 "allergyString" => "None",
-                "picture" => "",
+                "picture" => "productPictures/95.png",
                 "business_id" => 19
             ],
 
-            //!  Churrasqueria Portugalia (Business ID 19)
+            //!  Churrasqueria Portugalia (Business ID 20)
             [
                 "name" => "Classic Cheesesteak",
                 "category" => "Vegetarian",
                 "ingredientString" => "Steak, grilled onions, green peppers, cheese, on a sub roll",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/96.png",
                 "business_id" => 20
             ],
             [
@@ -682,7 +679,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegetarian",
                 "ingredientString" => "Vegetable patty, lettuce, tomato, onion, cucumbers, on a sub roll",
                 "allergyString" => "None",
-                "picture" => "",
+                "picture" => "productPictures/97.png",
                 "business_id" => 20
             ],
             [
@@ -690,7 +687,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegetarian",
                 "ingredientString" => "Grilled chicken, teriyaki sauce, lettuce, tomato, cucumber, on a sub roll",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/98.png",
                 "business_id" => 20
             ],
             [
@@ -698,7 +695,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegetarian",
                 "ingredientString" => "Black forest ham, lettuce, tomato, onion, pickles, on a sub roll",
                 "allergyString" => "Dairy, Gluten",
-                "picture" => "",
+                "picture" => "productPictures/99.png",
                 "business_id" => 20
             ],
             [
@@ -706,7 +703,7 @@ class ProductSeeder extends Seeder
                 "category" => "Vegan",
                 "ingredientString" => "12 inch sub roll",
                 "allergyString" => "None",
-                "picture" => "",
+                "picture" => "productPictures/100.png",
                 "business_id" => 20
             ],
         ]);

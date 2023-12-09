@@ -1,6 +1,20 @@
 @props(['product'])
+<?php
+$productImg = $product->picture ? asset("storage/$product->picture") : asset('storage/productPictures/generalProduct.png');
+?>
+
+<style>
+    /* adding random number to the class to make sure it does not clash with some other class */
+    #articleBackground{{$product->id}} {
+        background-image: url('{{ $productImg }}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
 <a href="/business/{{ $product->business_id }}">
-    <article style="background-image: url('{{ asset("storage/$product->picture") }}');">
+
+    <article id="articleBackground{{$product->id}}">
         <div class="reduction">
             <p>50% <br>OFF</p>
         </div>
