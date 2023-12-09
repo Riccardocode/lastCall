@@ -23,7 +23,7 @@ class ProductController extends Controller
         $products = Product::where("business_id", $business_id)
             ->with(['saleslots' => function ($query) {
                 $query->where('current_quantity', '>', 0) // Filter by current_quantity > 0
-                    ->whereDate('end_date', '>', now()) // Filter by end_date > current date
+                    ->where('end_date', '>', now()) // Filter by end_date > current date
                     ->latest('created_at'); // Order Saleslot records by created_at in descending order
             }])
             ->get();
