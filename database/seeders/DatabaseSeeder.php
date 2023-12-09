@@ -27,8 +27,8 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create(); using the seeders instead
         $this->call(BusinessSeeder::class);
         $this->call(ProductSeeder::class);
-        $this->call(OrderSeeder::class);
+        // $this->call(OrderSeeder::class);
         $this->call(SalesLotSeeder::class);
-        $this->call(OrderItemSeeder::class);
+        // $this->call(OrderItemSeeder::class);
     }
 }
