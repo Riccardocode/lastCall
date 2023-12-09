@@ -185,7 +185,7 @@ class BusinessSeeder extends Seeder
                 'name' => 'Churrasqueria Portugalia',
                 'address' => '10 Rue Large, 4204 Esch-sur-Alzette, Luxemburg',
                 'manager_id' => 24,
-                'category_id' => 25,
+                'category_id' => 24,
                 "lat" => "49.49767552102095",
                 "lon" => "5.980383211933216",
                 "businessImg" => "/businessImages/churrasqueria.png"
