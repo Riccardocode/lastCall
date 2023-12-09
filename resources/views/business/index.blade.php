@@ -18,10 +18,6 @@
 </html>
 <section class="adminSection">
 
-
-<button class="buyBtn">Buy</button>
-<button class="logoutBtn">Logout</button>
-
  <h1>All Businesses</h1>
 
 <div class="allCardsContainer">
@@ -39,8 +35,6 @@
                         @endif
                         <h2>Name: {{ $bus->name }}</h2>
                         <h3>Address: {{ $bus->address }}</h3>
-                        <p>The manager is: {{ $bus->manager->firstname }}
-                            {{ $bus->manager->lastname }}</p>
                         <p>The Category is: {{ $bus->category->name }}</p>
                         </div>
 
@@ -62,15 +56,46 @@
                         </div>
                         </a>
                     </li>
-              
-            @endforeach
+        
+            @endforeach 
         </ul>
 
+                <ul class="allManagersRest">
+            @foreach ($business as $bus)
+                    <li class="cardManagersRest">
+                        <a href="/business/{{ $bus->id }}">
+                             <p>The manager is: {{ $bus->manager->firstname }}
+                            {{ $bus->manager->lastname }}</p>
+                              <h2>Name: {{ $bus->name }}</h2>
 
+                                {{-- Managing Icons --}}
+                        <div class="iconsDashboard">  
+                        {{-- Edit button container --}}
+                            <div>
+                        <a href=""><i class="fa-solid fa-pen-to-square icon"></i>
+                        <br><span 
+                        class="iconLabel">Edit</span></a></div>
 
+                        {{-- View button container --}}
+                        <div>
+                        <a href=""><i class="fa-solid fa-eye icon"></i> <br><span class="iconLabel">View</span></a> </div>
 
-
-    </div>
+                        {{-- Delete button container --}}
+                        <div>
+                        <a href=""><i class="fa-solid fa-trash icon"></i> <br><span class="iconLabel">Delete</span></a></div>
+                        </div>
+                                 </li>         
+                <br>
+        
+            @endforeach 
+        </ul>
+                     
+        <div class="btnsDashboard">
+           <button class="buyBtn">Buy</button>
+            <button class="logoutBtn">Logout</button>       
+</div>
+  
+</div>
     </div>
     </section>
 @endsection

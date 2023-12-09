@@ -121,7 +121,7 @@ footer {
         span {
             color: rgba(0, 0, 0, 0.747);
         }
-        :hover {
+        &:hover {
             text-decoration: underline;
         }
     }
@@ -132,6 +132,21 @@ footer {
     background-color: $backgroundColor;
     color: $palceholdersColor;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
