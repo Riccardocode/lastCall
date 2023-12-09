@@ -58,7 +58,7 @@ class BotManController extends Controller
 
     //* Displays Message about Website
     public function test($botman){
-        $botman->reply("The Mission of this Website is to reduce waste by selling the food that has been cooked by Businesses but not sold.");
+        $botman->reply("The Mission of this Website is to reduce waste by selling the food that has been cooked by Businesses but not sold." , ['parse_mode' => 'HTML']);
     }
 
     //* Creates dynamic Regex for Categories
