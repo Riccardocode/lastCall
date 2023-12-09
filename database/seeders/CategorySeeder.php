@@ -18,6 +18,30 @@ class CategorySeeder extends Seeder
                 'name' => 'Pizza',
             ],
             [
+                "name" => "French Cuisine"
+            ],
+            [
+                "name" => "Japanese"
+            ],
+            [
+                "name" => "Greek"
+            ],
+            [
+                "name" => "Chinese"
+            ],
+            [
+                "name" => "Regional"
+            ],
+            [
+                "name" => "Mediterranean"
+            ],
+            [
+                "name" => "Bistro"
+            ],
+            [
+                "name" => "Italian"
+            ],
+            [
                 'name' => 'Dessert',
             ],
             [
@@ -41,6 +65,27 @@ class CategorySeeder extends Seeder
             [
                 'name' => 'Other',
             ],
+            [
+                "name" => "Luxembourgish"
+            ],
+            [
+                "name" => "Indian"
+            ],
+            [
+                "name" => "Nepalese"
+            ],
+            [
+                "name" => "European"
+            ],
+            [
+                "name" => "Mexican"
+            ],
+            [
+                "name" => "Steakhouse"
+            ],
+            [
+                "name" => "Portugese"
+            ]
         ]);
     }
 }
