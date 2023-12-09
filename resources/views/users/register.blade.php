@@ -1,95 +1,73 @@
-<header class="text-center">
-    <h2 class="text-2xl font-bold uppercase mb-1">
-        Register
-    </h2>
-    <p class="mb-4">Create an account to post jobs</p>
-</header>
+@extends('layout')
 
-<form action='/users' method="post" enctype="multipart/form-data">
-    @csrf
+@section('content')
+    <section class="loginSection">
+        <form class="form" action='/users' method="post" enctype="multipart/form-data" class="form">
+            @csrf
 
-    <div class="mb-6">
-        <label for="profileImg" class="inline-block text-lg mb-2">
-            Profile Image
-        </label>
-        <input type="file" class="border border-gray-200 rounded p-2 w-full" name="profileImg" />
-        @error('profileImg')
-            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-        @enderror
-    </div>
-    <div class="mb-6">
-        <label for="firstname" class="inline-block text-lg mb-2">
-            First Name
-        </label>
-        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="firstname"
-            value="{{ old('firstname') }}" />
-        @error('firstname')
-            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-        @enderror
-    </div>
-    <div class="mb-6">
-        <label for="lastname" class="inline-block text-lg mb-2">
-            Last Name
-        </label>
-        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="lastname"
-            value="{{ old('lastname') }}" />
-        @error('lastname')
-            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-        @enderror
-    </div>
+            <h2>
+                Register
+            </h2>
+            <p>Create an account to post jobs</p>
+            {{-- <label for="profileImg">
+                Profile Image
+            </label> --}}
+            <input type="file" name="profileImg" />
+            @error('profileImg')
+                <p>{{ $message }}</p>
+            @enderror
+            {{-- <label for="firstname">
+                First Name
+            </label>
+            --}}
+            <input type="text" name="firstname" value="{{ old('firstname') }}" placeholder="First Name" />
+            @error('firstname')
+                <p>{{ $message }}</p>
+            @enderror
+            {{-- <label for="lastname">
+                Last Name
+            </label> --}}
+            <input type="text" name="lastname" value="{{ old('lastname') }}" placeholder="Last Name" />
+            @error('lastname')
+                <p>{{ $message }}</p>
+            @enderror
 
-    <div class="mb-6">
-        <label for="email" class="inline-block text-lg mb-2">Email</label>
-        <input type="email" class="border border-gray-200 rounded p-2 w-full" name="email"
-            value="{{ old('email') }}" />
-        @error('email')
-            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-        @enderror
-    </div>
+            {{-- <label for="email">Email</label> --}}
+            <input type="email" name="email" value="{{ old('email') }}" placeholder="Your Email" />
+            @error('email')
+                <p>{{ $message }}</p>
+            @enderror
+            {{-- <label for="password">
+                Password
+            </label> --}}
+            <input type="password" name="password" value="{{ old('password') }}" placeholder="Your Password" />
+            @error('password')
+                <p>{{ $message }}</p>
+            @enderror
+            {{-- <label for="password_confermation">
+                Confirm Password
+            </label> --}}
+            <input type="password" name="password_confirmation" placeholder="Confirm Your Password" />
+            @error('password_confirmation')
+                <p>{{ $message }}</p>
+            @enderror
 
-    <div class="mb-6">
-        <label for="password" class="inline-block text-lg mb-2">
-            Password
-        </label>
-        <input type="password" class="border border-gray-200 rounded p-2 w-full" name="password"
-            value="{{ old('password') }}" />
-        @error('password')
-            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-        @enderror
-    </div>
-
-    <div class="mb-6">
-        <label for="password_confermation" class="inline-block text-lg mb-2">
-            Confirm Password
-        </label>
-        <input type="password" class="border border-gray-200 rounded p-2 w-full" name="password_confirmation" />
-        @error('password_confirmation')
-            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-        @enderror
-    </div>
-
-    <div class="mb-6">
-        <label for="phonenumber" class="inline-block text-lg mb-2">
-            Phone Number
-        </label>
-        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="phonenumber"
-            value="{{ old('phonenumber') }}"  placeholder="+1 256 25425698"/>
-        @error('phonenumber')
-            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-        @enderror
-    </div>
-
-    <div class="mb-6">
-        <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
-            Sign Up
-        </button>
-    </div>
-
-    <div class="mt-8">
-        <p>
-            Already have an account?
-            <a href="/login" class="text-laravel">Login</a>
-        </p>
-    </div>
-
-</form>
+            {{-- <label for="phonenumber">
+                Phone Number
+            </label> --}}
+            <input type="text" name="phonenumber" value="{{ old('phonenumber') }}" placeholder="+352 254 256 198" />
+            @error('phonenumber')
+                <p>{{ $message }}</p>
+            @enderror
+            <button class="loginBtn">
+                Sign Up
+            </button>
+        </form>
+        <div id="register">
+            <p>
+                Already have an account?
+                <a href="/login" class="text-laravel">Login</a>
+            </p>
+        </div>
+    </section>
+@endsection

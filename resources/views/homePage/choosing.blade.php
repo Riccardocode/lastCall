@@ -7,25 +7,26 @@
         {{-- Restaurant  --}}
         <section class="chooPt1">
             <h2>Popular Restaurant</h2>
-        
-            @foreach ($businesses as $business)
-                <x-business-card :business="$business"/>
-            @endforeach
+            <section class="chooBuis"> 
+                @foreach ($businesses as $business)
+                    <x-business-card :business="$business"/>
+                @endforeach
+            </section>
             {{-- <div >
                 {{$businesses->links()}}
             </div> --}}
         </section>
         {{-- search abr --}}
-        <section class="chooSearch">
-            @include('partials._searchChoosing')
-        </section>
+        @include('partials._searchChoosing')
         {{-- Product --}}
         <section  class="chooPt1">
             <h2>Best Deals Nearby</h2>
             
-            @foreach ($products as $product)
-                <x-product-card :product="$product"/>
-            @endforeach
+            <section class="chooPro">
+                @foreach ($products as $product)
+                    <x-product-card :product="$product"/>
+                @endforeach
+            </section>
             {{-- <div>
                 {{$products->links()}}
             </div> --}}

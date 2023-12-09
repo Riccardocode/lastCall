@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/9823a17fbf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
     <title>last call to order your food</title>
 </head>
 
@@ -14,19 +16,21 @@
     {{-- Header layout --}}
     <header>
         <div class="logo">
-            <a href="/"> 
+            <a href="/">
                 <img src="{{ asset('images/logo.png') }}" alt="LastCall logo">
             </a>
 
             <div class="about-us">
-                <a href="/">About us</a>
+                <a class="navLink" href="/">About us</a>
             </div>
         </div>
-
 
         <nav>
             <ul>
                 @auth
+                    <li>
+                        <a  class="navLink" href="/orders/cart">Cart</a>
+                    </li>
                     <li>
                         <span class="welcome">
                             Welcome {{ auth()->user()->firstname }}
@@ -40,10 +44,10 @@
                     </li>
                 @else
                     <li>
-                        <a href="/register">Register</a>
+                        <a  class="navLink" href="/register">Register</a>
                     </li>
                     <li>
-                        <a href="/login">Login</a>
+                        <a  class="navLink" href="/login">Login</a>
                     </li>
                 @endauth
             </ul>
@@ -55,7 +59,7 @@
     </main>
 
     <x-flash-message />
-   {{-- FOOTER for every pages --}}
+    {{-- FOOTER for every pages --}}
     <footer>
 
         <div class="left-side">
@@ -72,7 +76,6 @@
                     <a href=""><i class="fa-brands fa-linkedin"></i> &nbsp; <span>LinkedIn</span></a>
                 </li>
             </ul>
-
         </div>
         <div class="footer">
             <div class="right-side">
@@ -83,14 +86,15 @@
                     <li>lastcall@example.com</li>
                 </ul>
             </div>
-
+        </div>
     </footer>
     <div class="credentials">
         <p>LastCall 2023&copy;</p>
         <p>The website coded by 11111</p>
     </div>
 
-    </div>
+
 </body>
+
 
 </html>

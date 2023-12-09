@@ -1,73 +1,53 @@
-@extends('layout2')
+@extends('layout')
 
 
 @section('content')
-
-        <header class="text-center">
-            <h2 class="text-2xl font-bold uppercase mb-1">
+    <section class="loginSection">
+        <form class="form" action="/business/{{ $business_id }}/products/{{ $product_id }}" method="post"
+            enctype="multipart/form-data">
+            @csrf
+            <h2>
                 Edit a new Product
             </h2>
-        </header>
 
-    <form action="/business/{{$business_id}}/products/{{$product_id}}" method="post" enctype="multipart/form-data" >
-      
-        @csrf
-        @method('PUT')
-        <div class="mb-6">
-            <label for="name" class="inline-block text-lg mb-2">Product Name</label>
-            <input type="text" value="{{ $product->name }}" class="border border-gray-200 rounded p-2 w-full" name="name" />
-            @error('name')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
-        </div>
-        <div class="mb-6">
-            <label for="category" class="inline-block text-lg mb-2">Product Category</label>
-            
-            <select name="category">
-                <option value="Vegan" <?php echo ($product->category == 'Vegan') ? 'selected' : ''; ?>>Vegan</option>
-                <option value="Vegetarian" <?php echo ($product->category == 'Vegetarian') ? 'selected' : ''; ?>>Vegetarian</option>
-                <option value="Non-Vegetarian" <?php echo ($product->category == 'Non-Vegetarian') ? 'selected' : ''; ?>>Non-Vegetarian</option>
-            </select>
-            
-            @error('category')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
-        </div>
-        <div class="mb-6">
-            <label for="ingredientString" class="inline-block text-lg mb-2">Ingredients</label>
-            <input type="text" value="{{ $product->ingredientString }}" class="border border-gray-200 rounded p-2 w-full" name="ingredientString" />
-            @error('ingredientString')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
-        </div>
-        <div class="mb-6">
-            <label for="allergyString" class="inline-block text-lg mb-2">Allergies</label>
-            <input type="text" value="{{ $product->allergyString }}" class="border border-gray-200 rounded p-2 w-full" name="allergyString" />
-            @error('allergyString')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div class="mb-6">
-            <img src="{{$product->picture}}" alt="">
-            <label for="picture" class="inline-block text-lg mb-2">
-                Product Image
-            </label>
-
-            <input type="file" class="border border-gray-200 rounded p-2 w-full" name="picture" />
+            <img src="{{ $product->picture }}" alt="">
+            @method('PUT')
+            <div class="formFlex">
+                <input type="text" value="{{ $product->name }}" name="name" />
+                @error('name')
+                    <p>{{ $message }}</p>
+                @enderror
+                <select name="category">
+                    <option value="Vegan" <?php echo $product->category == 'Vegan' ? 'selected' : ''; ?>>Vegan</option>
+                    <option value="Vegetarian" <?php echo $product->category == 'Vegetarian' ? 'selected' : ''; ?>>Vegetarian</option>
+                    <option value="Non-Vegetarian" <?php echo $product->category == 'Non-Vegetarian' ? 'selected' : ''; ?>>Non-Vegetarian</option>
+                </select>
+                @error('category')
+                    <p>{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="formFlex">
+                <input type="text" value="{{ $product->ingredientString }}" name="ingredientString" />
+                @error('ingredientString')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
+                <input type="text" value="{{ $product->allergyString }}" name="allergyString" />
+                @error('allergyString')
+                    <p>{{ $message }}</p>
+                @enderror
+            </div>
+            <input type="file" name="picture" />
             @error('picture')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                <p>{{ $message }}</p>
             @enderror
-        </div>
-       
-
-        <div class="mb-6">
-            <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
+            <button class="loginBtn">
                 Update product
             </button>
-
-            <a href="/" class="text-black ml-4"> Back </a>
+        </form>
+        <div id="register">
+            <p>
+                <a href="/" class="text-laravel"> Back </a>
+            </p>
         </div>
-    </form>
-
+    </section>
 @endsection

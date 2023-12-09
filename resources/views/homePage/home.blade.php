@@ -1,6 +1,6 @@
 @extends('layout')
 
-    {{-- home page content --}}
+{{-- home page content --}}
 @section('content')
     {{-- Title part --}}
     <section id="homeSection">
@@ -16,9 +16,12 @@
                 <a href="/choosing/sell" id="buttonSell">Sell</a>
             </div>
             <p>
-                LastCall is a revolutionary website that enables users to enjoy a delicious dining experience while promoting sustainability and reducing food waste.
-                This platform focuses on allowing users to pick up food orders from their favorite restaurants one hour before they close while offering an enticing a discount for these last-minute orders.
-             </p>
+                LastCall is a revolutionary website that enables users to enjoy a delicious dining experience while
+                promoting sustainability and reducing food waste.
+                This platform focuses on allowing users to pick up food orders from their favorite restaurants one hour
+                before they close while offering an enticing a discount for these last-minute orders.
+            </p>
         </article>
     </section>
+    @include('partials._chatbot')
 @endsection

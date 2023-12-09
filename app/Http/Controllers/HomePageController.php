@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Choosing\ChoosingLogic;
 use App\Models\Product;
 use App\Models\Business;
 use Illuminate\Http\Request;
+use App\Domain\Map\CustomRouting;
+
 
 class HomePageController extends Controller
 {
@@ -15,12 +18,25 @@ class HomePageController extends Controller
     
     public function choosing()
     {
+        
         return view('homePage.choosing', [
-            "businesses" => Business::latest()->paginate(5),
+            "businesses" => ChoosingLogic::orderBusinessesbyProximity(),
             "products" => Product::latest()->paginate(5),
         ]); 
     }
 
+    public function getBy2kmRadius(Request $request){
+        $address = $request->validate([
+            "address" => "required"
+        ]);
+        $businesses = CustomRouting::filterByAddress($address["address"],Business::all());
+        CustomRouting::walkingTime($businesses);
+        
+        return redirect("/choosing");
+
+        // {{-- @dd($businesses->first(function($business) use($key) {return $business->id == $key;})); --}}
+    }
+    
     public function sellPath()
     {
         if (auth()->user() && auth()->user()->role == 'admin') {
@@ -28,7 +44,7 @@ class HomePageController extends Controller
         }
         if (auth()->user() && auth()->user()->role == 'restaurantManager') {
             $business = Business::where('manager_id', auth()->user()->id)->first();
-            return redirect('/business/' . $business->id);
+            return redirect('/business/' . $business->id . "/products");
         }
         if (auth()->user() && auth()->user()->role == 'user') {
             return view('users.becomeManager',[

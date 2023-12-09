@@ -1,74 +1,47 @@
-@extends('layout2')
+@extends('layout')
 
 
 @section('content')
-    <header class="text-center">
-        <h2 class="text-2xl font-bold uppercase mb-1">
-            Edit your User information
-        </h2>
-        <p class="mb-4">Edit: id:{{ $user->id }} {{ $user->firstname }} {{ $user->lastname }}</p>
-    </header>
-
-    <form action="/users/{{ $user->id }}" method="post" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
-
-        
-        <div class="mb-6">
+    <section class="loginSection">
+        <form class="form" action="/users/{{ $user->id }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <h2>
+                Edit your User information
+            </h2>
+            <p>Edit: id:{{ $user->id }} {{ $user->firstname }} {{ $user->lastname }}</p>
+            @method('PUT')
             @if ($user->profileImg)
-                <img class="w-24" src="/storage/{{ $user->profileImg }}" alt="">
+                <img src="/storage/{{ $user->profileImg }}" alt="">
             @else
-                <img class="w-24" src="/storage/profileImages/default.png" alt="">
+                <img src="/storage/profileImages/default.png" alt="">
             @endif
             <input type="file" name='profileImg'>
             @error('profileImg')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                <p>{{ $message }}</p>
             @enderror
-        </div>
-        {{-- Update Firstname --}}
-        <div class="mb-6">
-            <label for="firstname" class="inline-block text-lg mb-2">First Name</label>
-            <input type="text" value="{{ $user->firstname }}" class="border border-gray-200 rounded p-2 w-full"
-                name="firstname" />
+            {{-- Update Firstname --}}
+            <input type="text" value="{{ $user->firstname }}" name="firstname" />
             @error('firstname')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                <p>{{ $message }}</p>
             @enderror
-        </div>
-
-        {{-- Update Lastname --}}
-        <div class="mb-6">
-            <label for="lastname" class="inline-block text-lg mb-2">Last Name</label>
-            <input type="text" value="{{ $user->lastname }}" class="border border-gray-200 rounded p-2 w-full"
-                name="lastname" />
+            {{-- Update Lastname --}}
+            <input type="text" value="{{ $user->lastname }}" name="lastname" />
             @error('lastname')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                <p>{{ $message }}</p>
             @enderror
-        </div>
-
-        {{-- update Email --}}
-        <div class="mb-6">
-            <label for="email" class="inline-block text-lg mb-2">Email</label>
-            <input type="text" value="{{ $user->email }}" class="border border-gray-200 rounded p-2 w-full"
-                name="email" />
+            {{-- update Email --}}
+            <input type="text" value="{{ $user->email }}" name="email" />
             @error('email')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                <p>{{ $message }}</p>
             @enderror
-        </div>
-
-        {{-- Update phone --}}
-        <div class="mb-6">
-            <label for="phonenumber" class="inline-block text-lg mb-2">Phone Number</label>
-            <input type="text" value="{{ $user->phonenumber }}" class="border border-gray-200 rounded p-2 w-full"
-                name="phonenumber" />
+            {{-- Update phone --}}
+            <input type="text" value="{{ $user->phonenumber }}"name="phonenumber" />
             @error('phonenumber')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                <p>{{ $message }}</p>
             @enderror
-        </div>
-
-        {{-- Role Selection --}}
-        @if (auth()->user()->role == 'admin')
-            <div class="mb-6">
-                <label for="role" class="inline-block text-lg mb-2">Role</label>
+            {{-- ! have to check --}}
+            {{-- Role Selection --}}
+            @if (auth()->user()->role == 'admin')
                 {{-- Select the current role of the user --}}
                 <select name="role" id="role" value="{{ $user->role }}  ">
                     <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Admin</option>
@@ -78,24 +51,20 @@
                 </select>
 
                 @error('role')
-                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                    <p>{{ $message }}</p>
                 @enderror
-            </div>
-        @endif
-
-        {{-- Update Password
+            @endif
+            {{-- Update Password
                 Make a reset password procedure    
             --}}
-
-
-
-
-        <div class="mb-6">
-            <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
+            <button class="loginBtn">
                 Update User
             </button>
-
-            <a href="/users" class="text-black ml-4"> Back </a>
+        </form>
+        <div id="register">
+            <p>
+                <a href="/users" class="text-laravel"> Back </a>
+            </p>
         </div>
-    </form>
+    </section>
 @endsection
