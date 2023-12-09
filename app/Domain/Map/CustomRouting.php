@@ -10,6 +10,11 @@ class CustomRouting{
         $coords = CustomMap::addressToCoords($address);
         $lat1 = $coords[0]["lat"];
         $lon1 = $coords[0]["lon"];
+        $userCoords = [
+            "lat" => $lat1,
+            "lon" => $lon1
+        ];
+        session()->put("userCoords",$userCoords);
         foreach($businesses as $key => $business){
             if(CustomRouting::haversineDistance($lat1,$lon1,$business->lat,$business->lon)>=2){
                 $businesses->forget($key);
@@ -20,16 +25,25 @@ class CustomRouting{
         return $businesses;
     }
 
-    public static function walkingTime(string $address, $businesses){
-        $coords = CustomMap::addressToCoords($address);
-        $lat1 = $coords[0]["lat"];
-        $lon1 = $coords[0]["lon"];
+    public static function walkingTime($businesses ,$address = "none"){
+        if($address = "none"){
+            $lat1 = session()->get("userCoords")["lat"];
+            $lon1 = session()->get("userCoords")["lon"];
+        }
+        else{
+            $coords = CustomMap::addressToCoords($address);
+            $lat1 = $coords[0]["lat"];
+            $lon1 = $coords[0]["lon"];
+        }
+        
 
         $nearbyBusiness = [];
 
         foreach($businesses as $business){
-            $geoData = Http::get("http://localhost:8080/ors/v2/directions/foot-walking?start=$lon1,$lat1&end=$business->lon,$business->lat")->json();
-            $nearbyBusiness[$business->id] = ["duration" => $geoData["features"][0]["properties"]["summary"]["duration"]];
+            if(($lat1!= $business->lat)&&($lon1 != $business->lon)){
+                $geoData = Http::get("http://localhost:8080/ors/v2/directions/foot-walking?start=$lon1,$lat1&end=$business->lon,$business->lat")->json();
+                $nearbyBusiness[$business->id] = ["duration" => $geoData["features"][0]["properties"]["summary"]["duration"]];
+            }
         }
         asort($nearbyBusiness);
         session()->put("nearbyBusiness",$nearbyBusiness);

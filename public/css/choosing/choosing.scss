@@ -22,8 +22,10 @@
         .chooBuis, .chooPro{
             font-family: $primaryFont;
             display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
+            // justify-content: space-evenly;
+            flex-wrap: nowrap;
+            overflow-y: hidden;
+            gap: 20px;
             a{
                 gap: 20px;
                 margin-bottom: 30px;
@@ -46,17 +48,19 @@
         .chooBuis{
             a{
                 article{
-                    h3{
+                    .bottom{
                         position: absolute;
                         bottom: 0;
                         left: 0;
                         width: 100%;
-                        font-size: 17px;
                         background: $overlayBlackGradientCards;
                         padding: 40px 0px 5px 10px;
                         border-radius: 0px 0px 5px 5px;
+                        h3{
+                            font-size: 17px;
+                        }
                     }
-                    div{
+                    .imgBus{
                         width: 200px;
                         height: 200px;
                         img{
