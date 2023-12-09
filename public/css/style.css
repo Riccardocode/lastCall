@@ -341,7 +341,7 @@ main .loginSection .form .btnContainer {
   display: flex;
   align-content: center;
   justify-content: left;
-  margin-left: 1rem;
+  margin: 1rem 0 0 1rem;
 }
 main .loginSection .form .btnContainer .loginBtn {
   font-size: 1.2rem;
@@ -490,11 +490,11 @@ main .choosingSection #chooSearch button {
   color: #FFF;
   border-radius: 0px 10px 10px 0px;
 }
-main section {
+main .adminSection {
   padding-top: 5rem;
   background-color: #f8f7f2;
 }
-main section ul {
+main .adminSection .adminCards {
   background-color: rgba(249, 115, 22, 0.231372549);
   display: grid;
   grid-template-columns: repeat(2, minmax(100px, 1fr));
@@ -502,7 +502,7 @@ main section ul {
   width: 100%;
   padding: 2rem;
 }
-main section ul li {
+main .adminSection .adminCards .adminContent {
   background-color: #FFF;
   display: flex;
   flex-wrap: wrap;
@@ -511,12 +511,12 @@ main section ul li {
   height: 100%;
   aspect-ratio: 1/1;
 }
-main section ul li .iconsDashboard {
+main .adminSection .adminCards .adminContent .iconsDashboard {
   display: flex;
   flex-direction: row;
   gap: 5px;
 }
-main section ul li .iconsDashboard .icon {
+main .adminSection .adminCards .adminContent .iconsDashboard .icon {
   color: #FFF;
   background-color: #F97316;
   font-size: 1.2rem;

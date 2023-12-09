@@ -14,9 +14,9 @@
 </head>
 <body>
     
-</body>
+</body> 
 </html>
-<section>
+<section class="adminSection">
 
 
 <button class="buyBtn">Buy</button>
@@ -26,9 +26,9 @@
 
 <div class="allCardsContainer">
     <div class="restCard">
-        <ul>
+        <ul class="adminCards">
             @foreach ($business as $bus)
-                    <li>
+                    <li class="adminContent">
                         <a href="/business/{{ $bus->id }}">
                         <div>
                         @if ($bus->businessImg)

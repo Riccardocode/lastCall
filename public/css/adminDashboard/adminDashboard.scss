@@ -3,11 +3,11 @@
     //FONT
 @import '../aDesign/typography/fonts.scss'; 
 
-section {
+.adminSection {
     padding-top: 5rem;
     background-color: $backgroundColor;
 
-ul{
+    .adminCards {
         background-color: $formsBackground;
         display: grid;
         grid-template-columns: repeat(2, minmax(100px, 1fr));
@@ -15,7 +15,7 @@ ul{
         width: 100%;
         padding: 2rem;
 
-    li {
+    .adminContent {
             background-color: $textColorWhite;
             display: flex;
             flex-wrap: wrap;
