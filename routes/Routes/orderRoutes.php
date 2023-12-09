@@ -22,6 +22,12 @@ Route::post("/orders", [OrderController::class, "addToCart"])->middleware("auth"
 // View Carts
 Route::get("/orders/cart", [OrderController::class, "viewCart"])->middleware("auth");
 
+// get payment view
+// Route::get("/orders/cart/payment", [OrderController::class, "paymentCrediCardDetails"])->middleware("auth");
+
+Route::post("/orders/cart/payment", [OrderController::class, "paymentCrediCardDetails"])->middleware("auth");
+Route::post("/orders/cart/payment/confirmation", [OrderController::class, "paymentConfirmation"])->middleware("auth");
+
 //Show all orders of related to user
 Route::get("/myOrders", [OrderController::class, "orders"])->middleware("auth");
 

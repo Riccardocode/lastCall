@@ -76,7 +76,7 @@ class OrderController extends Controller
                 $cart['totalAmount'] = $totalAmount;
                 $cart['businessName'] = Business::find($cart->business_id)->name;
             }
-            
+
             // Pass the cart and total amount to the view
             return view('orders.viewCart', ['carts' => $carts]);
         } else {
@@ -115,6 +115,24 @@ class OrderController extends Controller
         }
         return redirect("/orders/cart")->with('message', 'Item removed from cart');
     }
+
+    public function paymentCrediCardDetails(Request $request)
+    {   
+
+        return view('orders.creditCardDetails',[
+            'totalAmount'=>$request['totalAmount'],
+            'order_id'=>$request['order_id'],
+        ]);
+    }
+
+   
+
+    $order_id = $request->input('order_id');
+    $order = Order::find($order_id);
+    $order->update(['status' => 'ordered']);
+    return redirect("/")->with('message', 'Payment successful. Go and pick up your order.');
+}
+
 
     public function checkoutCart($userId)
     {
