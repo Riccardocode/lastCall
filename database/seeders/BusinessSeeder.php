@@ -122,7 +122,7 @@ class BusinessSeeder extends Seeder
                 'name' => 'Postkutsch',
                 'address' => '8 Rue Xavier Brasseur, 4040 Esch-sur-Alzette, Luxemburg',
                 'manager_id' => 17,
-                'category_id' => 19,
+                'category_id' => 18,
                 "lat" => "49.493037948137804",
                 "lon" => "5.9799507638896525",
                 "businessImg" => "/businessImages/postkutsch.jpg"
@@ -131,7 +131,7 @@ class BusinessSeeder extends Seeder
                 'name' => 'Bombay Inn',
                 'address' => '8 rue Le Bataclan L, 4374 Esch an der Alzette, Luxemburg',
                 'manager_id' => 18,
-                'category_id' => 20,
+                'category_id' => 19,
                 "lat" => "49.50255563070919",
                 "lon" => "5.943837650364909",
                 "businessImg" => "/businessImages/bombayinn.jpeg"
@@ -140,7 +140,7 @@ class BusinessSeeder extends Seeder
                 'name' => 'Pokhara',
                 'address' => '39 Av. Dr Gaasch, 4818 Rodange Pétange, Luxemburg',
                 'manager_id' => 19,
-                'category_id' => 21,
+                'category_id' => 20,
                 "lat" => "49.548705823912634",
                 "lon" => "5.8429106580920305",
                 "businessImg" => "/businessImages/pokhara.jpeg"
@@ -158,7 +158,7 @@ class BusinessSeeder extends Seeder
                 'name' => 'Loxalis',
                 'address' => '150 Rue de la Libération, 3511 Dudelange, Luxemburg',
                 'manager_id' => 21,
-                'category_id' => 22,
+                'category_id' => 21,
                 "lat" => "49.47194159976815",
                 "lon" => "6.0830541353101",
                 "businessImg" => "/businessImages/loxalis.jpg"
@@ -167,7 +167,7 @@ class BusinessSeeder extends Seeder
                 'name' => 'Cafe Coyote Belval',
                 'address' => '10-12 Av. du Swing, 4367 Esch-Belval Esch-sur-Alzette, Luxemburg',
                 'manager_id' => 22,
-                'category_id' => 23,
+                'category_id' => 22,
                 "lat" => "49.50239610085061",
                 "lon" => "5.941459368290862",
                 "businessImg" => "/businessImages/coyote.jpg"
@@ -176,7 +176,7 @@ class BusinessSeeder extends Seeder
                 'name' => 'Beef & Stones Steakhouse',
                 'address' => '23 Rue du Brill, 4041 Esch-sur-Alzette, Luxemburg',
                 'manager_id' => 23,
-                'category_id' => 24,
+                'category_id' => 23,
                 "lat" => "49.49093322814254",
                 "lon" => "5.978781600163057",
                 "businessImg" => "/businessImages/beff&stones.JPG"
