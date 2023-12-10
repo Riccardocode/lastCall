@@ -9,7 +9,7 @@
         <section class="mb-8">
             <h2 class="text-xl font-semibold text-blue-600 mb-4">Orders to be picked up</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                @if ($ordered)
+                @if (count($ordered)>0)
                     @foreach ($ordered as $order)
                         <div class="bg-white p-4 shadow rounded-lg">
                             <p><strong>Order ID:</strong> {{ $order->id }}</p>
@@ -40,36 +40,60 @@
 
             </div>
         </section>
-        <h2>Order History</h2>
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Order History</h2>
 
         {{-- Picked up --}}
-        {{-- <section class="mb-8">
-                <h2 class="text-xl font-semibold text-green-600 mb-4">Delivered Orders</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    @forelse($delivered as $order)
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-blue-600 mb-4">Orders picked up</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                @if (count($delivered)>0)
+                    @foreach ($delivered as $order)
                         <div class="bg-white p-4 shadow rounded-lg">
                             <p><strong>Order ID:</strong> {{ $order->id }}</p>
-                            {{-- Add more order details here --}}
-        {{-- </div>
-    @empty
-        <p class="text-gray-600">No delivered orders found.</p>
-        @endforelse
-        </div>
-        </section> --}}
+                            <ul>
+                                @foreach ($order->order_items as $item)
+                                    <li>
+                                        {{ $item->saleslot->product->name }}
+                                        Qty: {{ $item->quantity }}
+                                        Price: {{ $item->discounted_price }}
+                                    </li>
+                                @endforeach
+                            </ul>
+                            <p>Total Amount {{ $order->totalAmount }}</p>
+                            <p>Delivered at {{ $order->pickedupDateTime->format('M d, Y') }}</p>
+                        </div>
+                    @endforeach
+                @else
+                    <p class="text-gray-600">No orders found.</p>
+                @endif
 
-        {{-- Cancelled  --}}
-        {{-- <section class="mb-8">
-                <h2 class="text-xl font-semibold text-red-600 mb-4">Cancelled Orders</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    @forelse($cancelled as $order)
+            </div>
+        </section>
+
+        {{-- Cancelled orders --}}
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-blue-600 mb-4">Orders Cancelled</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                @if (count($cancelled)>0)
+                    @foreach ($cancelled as $order)
                         <div class="bg-white p-4 shadow rounded-lg">
                             <p><strong>Order ID:</strong> {{ $order->id }}</p>
-                            {{-- Add more order details here --}}
-        {{-- </div>
-        @empty
-            <p class="text-gray-600">No cancelled orders found.</p>
-            @endforelse
+                            <ul>
+                                @foreach ($order->order_items as $item)
+                                    <li>
+                                        {{ $item->saleslot->product->name }}
+                                        Qty: {{ $item->quantity }}
+                                        Price: {{ $item->discounted_price }}
+                                    </li>
+                                @endforeach
+                            </ul>
+                            <p>Total Amount {{ $order->totalAmount }}</p>
+                            <p>Delivered at {{ $order->pickedupDateTime->format('M d, Y') }}</p>
+                        </div>
+                    @endforeach
+                @else
+                    <p class="text-gray-600">No orders found.</p>
+                @endif
+
             </div>
-            </section> --}}
-        {{-- </div>
-        @endsection --}}
+        </section>
