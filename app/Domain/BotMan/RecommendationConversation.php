@@ -9,6 +9,7 @@ use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Question;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Conversations\Conversation;
+use Illuminate\Support\Facades\Http;
 
 class RecommendationConversation extends Conversation
 {
@@ -27,6 +28,30 @@ class RecommendationConversation extends Conversation
         return $buttons;
     }
 
+    public function showPlaces($btns){
+        $question = Question::create('These are the best Places that I would recommend! <hr>')
+        ->fallback('Error')
+        ->addButtons($btns);
+
+        $this->ask($question, function (Answer $answer) {
+            if ($answer->isInteractiveMessageReply()) {
+                $response = Category::find($answer->getValue())->business->take($this->amount);
+                // dd($response);
+                // $ans = 'These are the best Places that I would recommend! <hr>';
+                // $this->say('These are the best Places that I would recommend! <hr>', ['parse_mode' => 'HTML']);
+                foreach ($response as $key => $res) {
+                    $buttons[] = Button::create($key+1 .'. ' . $res->name)->value($res->id);
+                    // $ans = $ans ."<button>". $key+1 .'. ' . $res->name . '</button><br>'
+                    // $this->say($res->name , ['parse_mode' => 'HTML']);
+                    // Http::post()
+                }
+                $this->showPlaces($buttons);
+                // $this->say($ans);
+
+            }
+        });
+    }
+
     public function askRecommendation($btns){
         $question = Question::create('What type of Food are you craving for?')
             ->fallback('Error')
@@ -35,13 +60,17 @@ class RecommendationConversation extends Conversation
         $this->ask($question, function (Answer $answer) {
             if ($answer->isInteractiveMessageReply()) {
                 $response = Category::find($answer->getValue())->business->take($this->amount);
+                // dd($response);
                 $ans = 'These are the best Places that I would recommend! <hr>';
                 // $this->say('These are the best Places that I would recommend! <hr>', ['parse_mode' => 'HTML']);
                 foreach ($response as $key => $res) {
-                    $ans = $ans . $key+1 .'. ' . $res->name . '<br>';
+                    $buttons[] = Button::create($key+1 .'. ' . $res->name)->value($res->id);
+                    // $ans = $ans ."<button>". $key+1 .'. ' . $res->name . '</button><br>'
                     // $this->say($res->name , ['parse_mode' => 'HTML']);
+                    // Http::post()
                 }
                 $this->say($ans);
+
             }
         });
     }
