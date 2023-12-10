@@ -25,10 +25,11 @@
                     <section class="productClientViewS">
                             <a href="/business/{{ $business->id }}/products/{{ $product->id }}">
                                 @if ($product->picture)
-                                <img src="/storage/{{ $product->picture }}" alt="image for {{ $product->name }}">
+                                    <img src="/storage/{{ $product->picture }}" alt="image for {{ $product->name }}"
+                                        >
                                 @else
-                                <img src="/storage/productPictures/Z2uAYTQh4nUqT4HTSjbClgMvDu0F9Sw2kRlN3NcR.png"
-                                alt="image for {{ $product->name }}">
+                                    <img src="/storage/productPictures/generalProduct.png"
+                                        alt="image for {{ $product->name }}" class="w-full h-auto rounded-md">
                                 @endif
                             </a>
                         <h2>{{ $product->name }}</h2>
@@ -53,8 +54,9 @@
                                 <h4 id="countdown-timer-{{ $product->id }}"></h4>
                                 @if (auth()->check() && (auth()->user()->id == $business->manager_id || auth()->user()->role == 'admin'))
                                     <div>
-                                        
-                                        <a href="/business/{{$product->business_id}}/products/{{$product->id}}/saleslot/{{$product->saleslots[0]->id}}/edit">Edit</a>
+
+                                        <a
+                                            href="/business/{{ $product->business_id }}/products/{{ $product->id }}/saleslot/{{ $product->saleslots[0]->id }}/edit">Edit</a>
                                         {{-- <a href="">Delete</a> --}}
                                         <a href="">End-Sales</a>
                                     </div>
@@ -133,7 +135,9 @@
                                         {{-- <button type="button" class="quantity-increase">+</button> --}}
                                     </div>
                                     <input type="hidden" name="salesLotId" value="{{ $product->saleslots[0]->id }}">
+                                    @if(auth()->check())
                                     <input type="hidden" name="userId" value="{{ auth()->user()->id }}">
+                                    @endif
                                     <input type="hidden" name="discountedPrice"
                                         value="{{ $product->saleslots[0]->price - ($product->saleslots[0]->price * $product->saleslots[0]->discount) / 100 }}">
                                     <button type="submit" class="add-to-cart">Add <i

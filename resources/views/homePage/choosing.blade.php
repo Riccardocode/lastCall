@@ -7,7 +7,7 @@
         {{-- Restaurant  --}}
         <section class="chooPt1">
             <h2>Popular Restaurant</h2>
-            <section class="chooBuis">
+            <section class="chooBuis"> 
                 @foreach ($businesses as $business)
                     <x-business-card :business="$business"/>
                 @endforeach
@@ -21,7 +21,6 @@
         {{-- Product --}}
         <section  class="chooPt1">
             <h2>Best Deals Nearby</h2>
-            
             <section class="chooPro">
                 @foreach ($products as $product)
                     <x-product-card :product="$product"/>

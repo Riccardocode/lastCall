@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->date("orderDate");
+            $table->dateTime("orderDate");
             $table->enum("status", ['cart', 'ordered', 'delivered', 'cancelled']);
             $table->foreignId("user_id")->constrained(table:'users')->onDelete("cascade");
             $table->foreignId("business_id")->constrained(table:'business')->onDelete("cascade");
+            $table->decimal("totalAmount", 8, 2)->nullable(true);
+            $table->string("pickupToken", 6)->nullable(true);
+            $table->dateTime('pickedupDateTime')->nullable(true);
             $table->timestamps();
         });
     }
