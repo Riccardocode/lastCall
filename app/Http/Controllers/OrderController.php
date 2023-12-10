@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Business;
 use App\Models\SalesLot;
 use App\Models\OrderItem;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -136,19 +138,26 @@ class OrderController extends Controller
             'expiryMonth' => 'required|digits:2',
             'expiryYear' => 'required|digits:4',
             'cardCVC' => 'required|digits:3',
+            'totalAmount' => 'required|numeric|gt:0',
         ]);
 
         $order_id = $request['order_id'];
         $order = Order::find($order_id);
-        if ($order) {
-            $order->update(['status' => 'ordered']);
+        if ($order && $order->status == 'cart' && $order->user_id == auth()->user()->id ) {
+            //generate pickup token
+            $pickupToken = Str::random(6);
+            $order->update([
+                'status' => 'ordered',
+                'totalAmount' => $request['totalAmount'],
+                'pickupToken' => $pickupToken,
+            ]);
         }
         //here should be redirected to order page
-        return redirect("/")->with('message', 'Payment successfull. Go and pickup your order.');
+        return redirect("/myorders")->with('message', 'Payment successfull. Go and pickup your order.');
     }
 
 
-
+    //***************** Not used so far ****************************/
     public function checkCart()
     {
         $order = Order::where("user_id", auth()->user()->id)->where("status", "cart")->first();
@@ -163,7 +172,7 @@ class OrderController extends Controller
         }
     }
 
-    //order by id
+    //***************** Not used so far ****************************/
     public function show($id)
     {
         return view("orders.show", [
@@ -171,7 +180,7 @@ class OrderController extends Controller
         ]);
     }
 
-    //add order
+    //******************** Not Used so far ************************/
     public function store(Request $request)
     {
         $formFields = $request->validate([
@@ -188,11 +197,73 @@ class OrderController extends Controller
         return redirect("/")->with("message", "Order successfull");
     }
 
-    //orders of a user
+    //*************** Manage User Orders View ************************/
     public function myOrders()
     {
+        $user = auth()->user();
+        
+        // Orders to pick up
+        $ordersToPickup = Order::with(['business', 'order_items'])
+            ->where('user_id', $user->id)
+            ->where('status', 'ordered')
+            ->get()
+            ->map(function ($order) {
+                // Calculate the total amount for each order
+                $totalAmount = $order->order_items->sum(function ($item) {
+                    return $item->discounted_price * $item->quantity; // Assuming you have 'price' and 'quantity' fields
+                });
+                // Append the total amount to the order object
+                $order->totalAmount = $totalAmount;
+                return $order;
+            });
+
+        // Delivered orders
+        $ordersDelivered = Order::with(['business', 'order_items'])
+            ->where('user_id', $user->id)
+            ->where('status', 'delivered')
+            ->get()
+            ->map(function ($order) {
+                // Calculate the total amount for each order
+                $totalAmount = $order->order_items->sum(function ($item) {
+                    return $item->discounted_price * $item->quantity; // Assuming you have 'price' and 'quantity' fields
+                });
+                // Append the total amount to the order object
+                $order->totalAmount = $totalAmount;
+                return $order;
+            });
+            
         return view("orders.myOrders", [
-            "orders" => auth()->user()->orders
+            'user' => $user,
+            "ordersToPickup" => $ordersToPickup,
+            "ordersDelivered" => $ordersDelivered,
+        ]);
+    }
+
+
+    //*************** Manage Business Manager Orders View ************************/
+    public function businessManagerOrders(){
+        //First I want to check for the manager Id
+        $businessManager = User::find(auth()->user()->id);
+
+        //than I retrieve the business of the manager
+        $business = Business::where('manager_id', $businessManager->id)->first();
+       
+        //than I retrieve all the orders related to the business of the manager
+        $orders = Order::with(['order_items.saleslot.product'])->where('business_id', $business->id)->get();
+           
+       
+        //than I want to check the status of the orders and display them in the right view
+        //status can be ordered, delivered, cancelled
+        $ordered = $orders->where('status', 'ordered');
+        $delivered = $orders->where('status', 'delivered');
+        $cancelled = $orders->where('status', 'cancelled');
+
+        //I create 3 variables to hold the orders with the right status and pass it to the view
+
+        return view('orders.businessManagerOrders', [
+            'ordered' => $ordered,
+            'delivered' => $delivered,
+            'cancelled' => $cancelled,
         ]);
     }
 }

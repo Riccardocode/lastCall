@@ -14,6 +14,9 @@ class Order extends Model
         "status",
         "user_id",
         "business_id",
+        'totalAmount',
+        'pickupToken',
+        'pickedupDateTime',
     ];
 
     public function user(){

@@ -33,6 +33,8 @@
             <input type="text" id="cardCVC" name="cardCVC" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="123" required>
         </div>
         <input type="hidden" name="order_id" value="{{ $order_id }}">
+        <input type="hidden" name="totalAmount" value="{{ $totalAmount }}">
+       
 
         <!-- Submit Button -->
         <div>
