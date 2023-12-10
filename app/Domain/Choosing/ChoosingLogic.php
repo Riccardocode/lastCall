@@ -11,20 +11,23 @@ class ChoosingLogic{
         $nearById = session()->get("nearbyBusiness");
         $all = Business::all();
         $businesses = new Collection();
-        foreach ($nearById as $key => $duration){
-            $nearby = Business::find($key);
-            $businesses->push($nearby);
-            foreach ($all as $key => $business){
-                if($business->id == $nearby->id ){
-                    $all->forget($key);
-                    break;
+        if(session()->get("nearbyBusiness") != null){
+            foreach ($nearById as $key => $duration){
+                $nearby = Business::find($key);
+                $businesses->push($nearby);
+                foreach ($all as $key => $business){
+                    if($business->id == $nearby->id ){
+                        $all->forget($key);
+                        break;
+                    }
                 }
             }
+            foreach($all as $business){
+                $businesses->push($business);
+            }
+            return $businesses;
+        }else{
+            return  $all;
         }
-        foreach($all as $business){
-            $businesses->push($business);
-        }
-
-        return $businesses;
     }
 }
