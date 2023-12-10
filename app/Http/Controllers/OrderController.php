@@ -282,7 +282,7 @@ class OrderController extends Controller
             return redirect('/businessmanagerorders') -> with('message', 'Wrong pickup token');
         }
         $order->status = 'delivered';
-        $order->pickupDateTime = now(); // Assuming you want to set the current date and time as the pickupDateTime
+        $order->pickedupDateTime = now(); // Assuming you want to set the current date and time as the pickupDateTime
         $order->save();
         return redirect('/businessmanagerorders')->with('message', 'Order confirmed as picked up');
 
