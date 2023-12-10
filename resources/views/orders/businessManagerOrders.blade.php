@@ -23,10 +23,12 @@
                                 @endforeach
                             </ul>
                             <p>Total Amount {{ $order->totalAmount }}</p>
-                            <form action="" method='POST' class="flex items-center gap-2 mt-2">
+                            <form action="/businessmanagerorders" method='POST' class="flex items-center gap-2 mt-2">
+                                @csrf
                                 <div class="flex-grow">
-                                    <input type="text" name="pickupCode" placeholder="Pickup Code"
+                                    <input type="text" name="pickupToken" placeholder="Pickup Token"
                                         class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                    <input type="hidden" name="order_id" value="{{ $order->id }}">
                                 </div>
 
                                 <button type="submit"
@@ -60,7 +62,7 @@
                                 @endforeach
                             </ul>
                             <p>Total Amount {{ $order->totalAmount }}</p>
-                            <p>Delivered at {{ $order->pickedupDateTime->format('M d, Y') }}</p>
+                            <p>Delivered at {{ $order->pickedupDateTime }}</p>
                         </div>
                     @endforeach
                 @else

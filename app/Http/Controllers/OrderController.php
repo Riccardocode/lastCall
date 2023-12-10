@@ -266,4 +266,25 @@ class OrderController extends Controller
             'cancelled' => $cancelled,
         ]);
     }
+
+    public function managerConfirmPickedupOrder(Request $request){
+        $order = Order::find($request->order_id);
+       
+        $business = Business::find($order->business_id);
+        if(auth()->user()->id != $business->manager_id){
+            abort(403);
+        }
+        if($order->status != 'ordered'){
+            return redirect('/businessmanagerorders') -> with('message', 'Order not in picked up status');
+        }
+        
+        if($order->pickupToken != $request->pickupToken){
+            return redirect('/businessmanagerorders') -> with('message', 'Wrong pickup token');
+        }
+        $order->status = 'delivered';
+        $order->pickupDateTime = now(); // Assuming you want to set the current date and time as the pickupDateTime
+        $order->save();
+        return redirect('/businessmanagerorders')->with('message', 'Order confirmed as picked up');
+
+    }
 }
