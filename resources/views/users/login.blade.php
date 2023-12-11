@@ -23,10 +23,12 @@
             @error('password')
                 <p>{{ $message }}</p>
             @enderror
-
+        <div class="btnContainer">
             <button class="loginBtn">
                 Sign In
             </button>
+        </div>
+       
         </form>
         <div id="register">
             <p>

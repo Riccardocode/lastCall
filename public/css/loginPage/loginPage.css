@@ -25,7 +25,7 @@
   height: auto;
   border: 3px solid rgba(249, 116, 22, 0.8352941176);
   background-color: white;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -63,19 +63,20 @@
 .loginSection .form input:focus, .loginSection .form select:focus {
   border: 1.5px solid #F97316;
 }
-.loginSection .form .loginBtn {
-  background-color: rgba(249, 116, 22, 0.8352941176);
-  padding: 0.7rem;
-  font-size: 1rem;
-  color: #FFF;
-  font-family: "Roboto", sans-serif bold;
-  width: 20%;
+.loginSection .form .btnContainer {
+  display: flex;
+  align-content: center;
+  justify-content: left;
+  margin: 1rem 0 0 1rem;
+}
+.loginSection .form .btnContainer .loginBtn {
+  font-size: 1.2rem;
+  padding: 0.7rem 1.2rem;
   border: none;
   border-radius: 10px;
-  margin: 1rem;
-}
-.loginSection .form .loginBtn:hover {
+  color: white;
   background-color: #F97316;
+  outline: none;
 }
 .loginSection #register {
   display: flex;

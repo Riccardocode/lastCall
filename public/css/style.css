@@ -299,7 +299,7 @@ main .loginSection .form {
   height: auto;
   border: 3px solid rgba(249, 116, 22, 0.8352941176);
   background-color: white;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -337,19 +337,20 @@ main .loginSection .form input, main .loginSection .form select {
 main .loginSection .form input:focus, main .loginSection .form select:focus {
   border: 1.5px solid #F97316;
 }
-main .loginSection .form .loginBtn {
-  background-color: rgba(249, 116, 22, 0.8352941176);
-  padding: 0.7rem;
-  font-size: 1rem;
-  color: #FFF;
-  font-family: "Roboto", sans-serif bold;
-  width: 20%;
+main .loginSection .form .btnContainer {
+  display: flex;
+  align-content: center;
+  justify-content: left;
+  margin: 1rem 0 0 1rem;
+}
+main .loginSection .form .btnContainer .loginBtn {
+  font-size: 1.2rem;
+  padding: 0.7rem 1.2rem;
   border: none;
   border-radius: 10px;
-  margin: 1rem;
-}
-main .loginSection .form .loginBtn:hover {
+  color: white;
   background-color: #F97316;
+  outline: none;
 }
 main .loginSection #register {
   display: flex;
@@ -489,11 +490,42 @@ main .choosingSection #chooSearch button {
   color: #FFF;
   border-radius: 0px 10px 10px 0px;
 }
-main section {
+main .adminSection {
   padding-top: 5rem;
   background-color: #f8f7f2;
 }
-main section ul {
+main .adminSection h1 {
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin: 3rem 0;
+}
+main .adminSection .buyBtn {
+  font-size: 1.2rem;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #F97316;
+  outline: none;
+}
+main .adminSection .buyBtn:hover {
+  filter: contrast(150%);
+}
+main .adminSection .logoutBtn {
+  font-size: 1.2rem;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #D63030;
+  outline: none;
+}
+main .adminSection .logoutBtn:hover {
+  filter: contrast(150%);
+}
+main .adminSection .adminCards {
   background-color: rgba(249, 115, 22, 0.231372549);
   display: grid;
   grid-template-columns: repeat(2, minmax(100px, 1fr));
@@ -501,7 +533,7 @@ main section ul {
   width: 100%;
   padding: 2rem;
 }
-main section ul li {
+main .adminSection .adminCards .adminContent {
   background-color: #FFF;
   display: flex;
   flex-wrap: wrap;
@@ -510,17 +542,43 @@ main section ul li {
   height: 100%;
   aspect-ratio: 1/1;
 }
-main section ul li .iconsDashboard {
+main .adminSection .btnsDashboard {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 1.5rem;
+}
+main .adminSection .allManagersRest {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 2rem;
+}
+main .adminSection .allManagersRest .cardManagersRest {
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  padding: 2rem;
+}
+main .adminSection .iconsDashboard {
   display: flex;
   flex-direction: row;
   gap: 5px;
+  margin-left: 2rem;
+  padding-top: 1.5rem;
 }
-main section ul li .iconsDashboard .icon {
+main .adminSection .iconsDashboard .icon {
   color: #FFF;
   background-color: #F97316;
   font-size: 1.2rem;
   padding: 0.5rem;
   border-radius: 5px;
+}
+main .adminSection .iconsDashboard .icon:hover {
+  filter: contrast(150%);
+}
+main .adminSection .iconsDashboard .iconLabel:hover {
+  color: #D63030;
 }
 
 footer {
@@ -540,7 +598,7 @@ footer a {
 footer a span {
   color: rgba(0, 0, 0, 0.747);
 }
-footer a :hover {
+footer a:hover {
   text-decoration: underline;
 }
 

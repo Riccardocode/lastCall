@@ -3,11 +3,48 @@
     //FONT
 @import '../aDesign/typography/fonts.scss'; 
 
-section {
+.adminSection {
     padding-top: 5rem;
     background-color: $backgroundColor;
 
-ul{
+    h1 {
+        font-size: 2rem;
+        font-family: $primaryFont;
+        font-weight: 600;
+        text-align: center;
+        margin: 3rem 0;
+    }
+
+    .buyBtn {
+    font-size: 1.2rem;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: $primaryColor;
+    outline:none;  
+    
+    &:hover {
+    filter: contrast(150%);
+        }
+    }
+
+    .logoutBtn {
+    font-size: 1.2rem;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: $actionColor;
+    outline:none;  
+
+        &:hover {
+        filter: contrast(150%);
+        }
+    }
+
+
+    .adminCards {
         background-color: $formsBackground;
         display: grid;
         grid-template-columns: repeat(2, minmax(100px, 1fr));
@@ -15,7 +52,7 @@ ul{
         width: 100%;
         padding: 2rem;
 
-    li {
+    .adminContent {
             background-color: $textColorWhite;
             display: flex;
             flex-wrap: wrap;
@@ -23,22 +60,54 @@ ul{
             justify-content: center;
             height: 100%; 
             aspect-ratio: 1/1;
-       
+        } 
+    }
 
-        .iconsDashboard {
+    
+    .btnsDashboard {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        gap: 1rem;
+        margin-right:1.5rem;
+    }
+
+        .allManagersRest {
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        margin: 1rem 2rem;
+    
+        .cardManagersRest {
+        background-color: white;
+        font-family: $primaryFont;
+        font-weight: 400;
+        padding: 2rem;
+        }
+    }
+
+     .iconsDashboard {
             display: flex;
             flex-direction: row;
             gap:5px;
-            
+            margin-left: 2rem;
+            padding-top:1.5rem;
             .icon {
                 color: $textColorWhite;
                 background-color: $primaryColor;
                 font-size: 1.2rem;
                 padding: 0.5rem;
                 border-radius: 5px;
+
+                    &:hover {
+                    filter: contrast(150%);
+                    }   
                 }
+                 .iconLabel {
+                     &:hover {
+                        color:$actionColor;
+                     }
+                    }
             }
-        } 
-    }
 }
 

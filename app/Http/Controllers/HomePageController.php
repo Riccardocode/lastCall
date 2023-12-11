@@ -15,6 +15,11 @@ class HomePageController extends Controller
     {
         return view('homePage.home');
     }
+
+    public function aboutUs() 
+    {
+        return view('homePage.aboutUs');
+    }
     
     public function choosing()
     {
