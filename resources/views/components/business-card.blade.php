@@ -9,7 +9,7 @@
             @endif
         </div>
         <div  class="imgBus">
-            <img  src="/storage/{{$business->businessImg}}" alt="restaurant">
+            <img style="height: 100%"  src="/storage/{{$business->businessImg}}" alt="restaurant">
         </div>
     </article>
 </a>

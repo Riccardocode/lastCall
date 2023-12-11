@@ -15,7 +15,7 @@ $productImg = $saleslot->product->picture ? asset("storage/$product->picture") :
 </style>
 <a href="/business/{{ $saleslot->product->business_id }}">
 
-    <article id="articleBackground{{$saleslot->product->id}}">
+    <article id="articleBackground{{$saleslot->id}}">
         <div class="reduction">
             <p>{{$saleslot->discount}}% <br>OFF</p>
         </div>

@@ -10,9 +10,10 @@ use Illuminate\Database\Eloquent\Collection;
 class ChoosingLogic{
     public static function orderBusinessesbyProximity(){
         $nearById = session()->get("nearbyBusiness");
-        $all = Business::all();
+        $all = Business::latest()->select("business.name", "business.category_id", "business.id", "business.businessImg","business.manager_id")->filter(request(['search',"category"]))->get();
+        // dd($all);
         $businesses = new Collection();
-        if(session()->get("nearbyBusiness") != null){
+        if(session()->get("nearbyBusiness") != null && request(["search"]) == null){
             foreach ($nearById as $key => $duration){
                 $nearby = Business::find($key);
                 $businesses->push($nearby);
