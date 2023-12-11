@@ -7,6 +7,7 @@ use App\Models\Category;
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;
 use App\Domain\BotMan\Middle;
+use App\Domain\BotMan\ProximityConversation;
 use BotMan\BotMan\BotManFactory;
 use Illuminate\Support\Facades\Log;
 use BotMan\BotMan\Cache\LaravelCache;
@@ -120,6 +121,22 @@ class BotManController extends Controller
                 $this->fileTest("Error");
                 // $this->dummy($botman);
                 $botman->startConversation(new RecommendationConversation());
+            }
+        });
+    }
+
+    //*Recommendation with Location
+    public function locationRecommend($botman)
+    {
+        Log::info("Before Pattern Hear loc");
+        $pattern7 = '.*(?:location|proximity).*\?';
+        $botman->hears($pattern7, function ($botman) {
+            if ($this->checkFile("Command")) {
+                Log::info("Inside Hear loc");
+                $this->fileTest("Command");
+                $this->fileTest("Error");
+                // $this->dummy($botman);
+                $botman->startConversation(new ProximityConversation());
             }
         });
     }
@@ -267,6 +284,13 @@ class BotManController extends Controller
             Log::info("Login Issues");
             // $botman->reply('test');
             $this->LoginProblems($botman);
+        }
+
+        //* Login Issues
+        if ($this->checkFile("Command")) {
+            Log::info("Location");
+            // $botman->reply('test');
+            $this->locationRecommend($botman);
         }
 
         //* Register Issues
