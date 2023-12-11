@@ -4,10 +4,12 @@ namespace App\Domain\Choosing;
 
 use App\Models\Business;
 use Illuminate\Database\Eloquent\Collection;
-
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Request;
 
 class ChoosingLogic{
-    public static function orderBusinessesbyProximity(){
+    public static function orderBusinessesbyProximity($perPage = 10, $page = null, $options = []){
+        $page = $page ?: (LengthAwarePaginator::resolveCurrentPage() ?: 1);
         $nearById = session()->get("nearbyBusiness");
         $all = Business::all();
         $businesses = new Collection();
@@ -24,7 +26,13 @@ class ChoosingLogic{
         foreach($all as $business){
             $businesses->push($business);
         }
-
-        return $businesses;
+        $businesses = $businesses->forPage($page, $perPage);
+        return new LengthAwarePaginator(
+            $businesses,
+            count($all), 
+            $perPage, 
+            $page, 
+            $options
+        );
     }
 }

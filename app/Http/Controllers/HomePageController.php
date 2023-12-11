@@ -7,7 +7,7 @@ use App\Models\Product;
 use App\Models\Business;
 use Illuminate\Http\Request;
 use App\Domain\Map\CustomRouting;
-
+// use Illuminate\Support\Facades\Request;
 
 class HomePageController extends Controller
 {
@@ -16,11 +16,12 @@ class HomePageController extends Controller
         return view('homePage.home');
     }
     
-    public function choosing()
+    public function choosing(Request $request)
     {
-        
+        $page = $request->get('page', 1); // Get current page from request, default is 1
+        $perPage = 5; // Set how many items you want per page
         return view('homePage.choosing', [
-            "businesses" => ChoosingLogic::orderBusinessesbyProximity(),
+            "businesses" => ChoosingLogic::orderBusinessesbyProximity($perPage,$page),
             "products" => Product::latest()->paginate(5),
         ]); 
     }

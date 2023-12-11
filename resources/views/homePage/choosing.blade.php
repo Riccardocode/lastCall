@@ -12,9 +12,11 @@
                     <x-business-card :business="$business"/>
                 @endforeach
             </section>
-            {{-- <div >
-                {{$businesses->links()}}
-            </div> --}}
+            <div >
+                {{-- {{$businesses->links()}} --}}
+                <a href="/choosing/?page=1">1</a>
+                <a href="/choosing/?page=2">2</a>
+            </div>
         </section>
         {{-- search abr --}}
         @include('partials._searchChoosing')
