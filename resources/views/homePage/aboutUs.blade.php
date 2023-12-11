@@ -15,7 +15,7 @@
 </body>
 </html>
 {{-- About us page structure--}}
-    <div class="choosingSection">
+    <div class="choosingSection ">
 
       {{-- The main container for all the cards --}}
 <div class="imgSection">
@@ -23,7 +23,7 @@
 {{--The individial card, consisting of the image and text --}}
   <div class="heroSection">
     <div class="imgAbout">
-    <img src="{{ asset('images/Riccardo.jpeg') }}" alt="Riccardo Scalia" class="heroImage">
+    <img src="{{ asset('images/Riccardo.png') }}" alt="Riccardo Scalia" class="heroImage">
     </div>
     <div class="aboutInfo">
       <h2>Riccardo Scalia</h2>
@@ -51,7 +51,7 @@
   {{--The individial card, consisting of the image and text --}}
   <div class="heroSection">
      <div class="imgAbout">
-    <img src="{{ asset('images/Brandon.jpeg') }}" alt="Brandon Steffan" class="heroImage">
+    <img src="{{ asset('images/Brandon.png') }}" alt="Brandon Steffan" class="heroImage">
     </div>
     <div class="aboutInfo">
     <h2>Brandon Steffan</h2>
@@ -80,7 +80,7 @@
  {{--The individial card, consisting of the image and text --}}
   <div class="heroSection">
      <div class="imgAbout">
-    <img src="{{ asset('images/Luiza.jpeg') }}"alt="Luiza Moshkin" class="heroImage">
+    <img src="{{ asset('images/Luiza.png') }}"alt="Luiza Moshkin" class="heroImage">
     </div>
     <div class="aboutInfo">
       <h2>Luiza Moshkin</h2>
@@ -105,15 +105,17 @@
     </div>
   </div>
 
+
+
    {{--The individial card, consisting of the image and text --}}
   <div class="heroSection">
      <div class="imgAbout">
-    <img src="{{ asset('images/Antoine.jpeg') }}" alt="Antoine Martin" class="heroImage">
+    <img src="{{ asset('images/Dany.png') }}" alt="Dany Lopes" class="heroImage">
     </div>
     <div class="aboutInfo">
-      <h2>Antoine Martin</h2>
+      <h2>Dany Lopes</h2>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus dolor quae, omnis beatae recusandae dolores, inventore veniam eaque fugit quaerat sint minus tempora modi doloremque hic iusto sequi fuga amet.</p>
-     {{-- Social Media Links --}}
+      {{-- Social Media Links --}}
       <div class="socialMediaLinks">
         <ul>
                    <li>
@@ -134,15 +136,15 @@
   </div>
 
 
-   {{--The individial card, consisting of the image and text --}}
+ {{--The individial card, consisting of the image and text --}}
   <div class="heroSection">
      <div class="imgAbout">
-    <img src="{{ asset('images/Dany.jpeg') }}" alt="Dany Lopes" class="heroImage">
+    <img src="{{ asset('images/Antoine.png') }}" alt="Antoine Martin" class="heroImage">
     </div>
     <div class="aboutInfo">
-      <h2>Dany Lopes</h2>
+      <h2>Antoine Martin</h2>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus dolor quae, omnis beatae recusandae dolores, inventore veniam eaque fugit quaerat sint minus tempora modi doloremque hic iusto sequi fuga amet.</p>
-      {{-- Social Media Links --}}
+     {{-- Social Media Links --}}
       <div class="socialMediaLinks">
         <ul>
                    <li>

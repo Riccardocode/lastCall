@@ -584,12 +584,40 @@ main .adminSection .iconsDashboard .icon:hover {
 main .adminSection .iconsDashboard .iconLabel:hover {
   color: #D63030;
 }
-main .imgAbout .heroImage {
+main .imgSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  flex-wrap: wrap;
+}
+main .imgSection .heroSection {
+  margin-right: 3rem;
+  width: 25%;
+}
+main .imgSection .heroSection .imgAbout {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+main .imgSection .heroSection .imgAbout .heroImage {
   border: 3px solid rgba(249, 116, 22, 0.6117647059);
   border-radius: 50%;
-  width: 230px;
+  width: 250px;
 }
-main h2 {
+main .imgSection .heroSection .aboutInfo {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.664);
+  padding: 1.5rem;
+  border-radius: 7px;
+}
+main .imgSection .heroSection .aboutInfo h2 {
+  color: #F97316;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+main .socialMediaLinks {
+  display: flex;
+  flex-direction: column;
   color: #F97316;
 }
 
