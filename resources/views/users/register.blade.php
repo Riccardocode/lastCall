@@ -2,13 +2,13 @@
 
 @section('content')
     <section class="loginSection">
-        <form class="form" action='/users' method="post" enctype="multipart/form-data" class="form">
+        <form class="form reveal animationScale" action='/users' method="post" enctype="multipart/form-data" class="form">
             @csrf
 
             <h2>
                 Register
             </h2>
-            <p>Create an account to post jobs</p>
+            <p>Create an account</p>
             {{-- <label for="profileImg">
                 Profile Image
             </label> --}}

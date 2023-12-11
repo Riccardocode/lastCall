@@ -80,7 +80,15 @@
                 @endforeach
                 <div class="mt-6 flex justify-between items-center">
                     <h3 class="text-xl font-semibold">Total Cost: ${{ number_format($cart['totalAmount'], 2) }}</h3>
-                    <a href="" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Checkout</a>
+                    {{-- <a href="" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Checkout</a> --}}
+                    <form action="/orders/cart/payment" method="POST">
+                        @csrf
+                        {{-- Pass cart ID or any other required information as hidden inputs --}}
+                        <input type="hidden" name="order_id" value="{{ $cart->id }}">
+                        <input type="hidden" name="totalAmount" value="{{ number_format($cart['totalAmount'], 2) }}">
+                        {{-- Add any other necessary data as hidden inputs here --}}
+                        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Checkout</button>
+                    </form>
                 </div>
 
                 <hr class="mt-20">

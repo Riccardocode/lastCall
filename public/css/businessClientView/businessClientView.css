@@ -78,6 +78,9 @@
 .businessClientView .businessProduts .productClientViewS div h4 {
   font-size: 12px;
 }
+.businessClientView .businessProduts .productClientViewS div div {
+  display: flex;
+}
 .businessClientView .businessProduts .productClientViewS button {
   background-color: transparent;
   font-size: 20px;

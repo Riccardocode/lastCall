@@ -41,7 +41,7 @@
 #homeSection #homeSearch button {
   background: transparent;
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 5px;
   color: #D63030;
   border: none;
@@ -69,7 +69,7 @@
 #homeArticle article div a {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-  padding: 4px 35px;
+  padding: 10px 35px;
   background-color: #D63030;
   color: #FFF;
   border-radius: 4px;

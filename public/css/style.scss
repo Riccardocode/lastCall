@@ -101,8 +101,10 @@ main{
     @import 'choosing/choosing.scss';
     
     // ADMIN DASHBOARD
-
     @import 'adminDashboard/adminDashboard.scss';
+
+    //ABOOUT US PAGE
+    @import 'aboutUs/aboutUsPage.scss';
 }
 
 // FOOTER
@@ -121,7 +123,7 @@ footer {
         span {
             color: rgba(0, 0, 0, 0.747);
         }
-        :hover {
+        &:hover {
             text-decoration: underline;
         }
     }
@@ -133,4 +135,89 @@ footer {
     color: $palceholdersColor;
 }
 
+    //ANIMATION 
+.reveal{
+    position: relative;
+    opacity: 0;
+}
+.reveal.active{
+    opacity: 1;
+}
+.active.animationDown{           //annimation Down
+    animation: animationDown  1.5s ease-in;
+}
+.active.animationUp{          //annimation Up
+    animation: animationUp 1.5s ease-in;
+}
+.active.animationLeft{           //annimation Left
+    animation: animationLeft  1.5s ease-in;
+}
+.active.animationRight{           //annimation Right
+    animation: animationRight   1.5s ease-in;
+}
+.active.animationScale{           //annimation Scale
+    animation: animationScale 1.5s ease-in;
+}
+.active.animationShow{           //annimation Show
+    animation: animationShow 1.5s ease-in;
+}                     
+    //KEYFRAMES 
+@keyframes animationDown{           //annimation Down  
+    from{
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}                     
+@keyframes animationUp{           //annimation Up
+    from{
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes animationLeft{           //annimation Left
+    from{
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
 
+}  
+@keyframes animationRight{           //annimation Right
+    from{
+        transform: translateX(10px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}  
+@keyframes animationScale{           //annimation Scale 
+    from{
+        transform:scale(0.93, 0.93);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1, 1);
+        opacity: 0.8;
+    }
+} 
+@keyframes animationShow{           //annimation just Show 
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;   
+    }
+}  

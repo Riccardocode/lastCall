@@ -22,8 +22,19 @@ Route::post("/orders", [OrderController::class, "addToCart"])->middleware("auth"
 // View Carts
 Route::get("/orders/cart", [OrderController::class, "viewCart"])->middleware("auth");
 
+// get payment view
+// Route::get("/orders/cart/payment", [OrderController::class, "paymentCrediCardDetails"])->middleware("auth");
+
+Route::post("/orders/cart/payment", [OrderController::class, "paymentCrediCardDetails"])->middleware("auth");
+Route::post("/orders/cart/payment/confirmation", [OrderController::class, "paymentConfirmation"])->middleware("auth");
+
 //Show all orders of related to user
-Route::get("/myOrders", [OrderController::class, "orders"])->middleware("auth");
+Route::get("/myorders", [OrderController::class, "myOrders"])->middleware("auth");
+//Show and manage the orders related to a business manager
+Route::get("/businessmanagerorders", [OrderController::class, "businessManagerOrders"])->middleware("auth");
+
+//Confirm Order
+Route::post("/businessmanagerorders", [OrderController::class, "managerConfirmPickedupOrder"])->middleware("auth");
 
 //Remove OrderItem from Cart
 Route::delete("/orders/{order_id}/{order_item_id}", [OrderController::class, "removeFromCart"])->where("id", "[0-9]+")->middleware("auth");

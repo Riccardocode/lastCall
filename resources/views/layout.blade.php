@@ -21,7 +21,7 @@
             </a>
 
             <div class="about-us">
-                <a class="navLink" href="/">About us</a>
+                <a class="navLink" href="/aboutUs">About us</a>
             </div>
         </div>
 
@@ -92,9 +92,7 @@
         <p>LastCall 2023&copy;</p>
         <p>The website coded by 11111</p>
     </div>
-
-
+    {{--to trigger the animation when it's only on your screen script --}}
+    <script  src="{{ asset('js/animation.js') }}"></script>
 </body>
-
-
 </html>

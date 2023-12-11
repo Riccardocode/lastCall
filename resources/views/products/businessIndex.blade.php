@@ -8,7 +8,7 @@
                 {{-- manage image in business --}}
                 <h1 class="nameRest">{{ $business->name }}</h1>
         </section>
-
+        {{-- products section --}}
         <section class="businessProduts">
             {{-- <?php dd($products[0]); ?> --}}
 
@@ -22,13 +22,13 @@
                 <h1>Products</h1>
 
                 @foreach ($products as $product)
-                    <section class="productClientViewS">
+                    <section class="productClientViewS reveal animationUp">
                             <a href="/business/{{ $business->id }}/products/{{ $product->id }}">
                                 @if ($product->picture)
                                     <img src="/storage/{{ $product->picture }}" alt="image for {{ $product->name }}"
                                         >
                                 @else
-                                    <img src="/storage/productPictures/Z2uAYTQh4nUqT4HTSjbClgMvDu0F9Sw2kRlN3NcR.png"
+                                    <img src="/storage/productPictures/generalProduct.png"
                                         alt="image for {{ $product->name }}" class="w-full h-auto rounded-md">
                                 @endif
                             </a>
@@ -43,8 +43,8 @@
                         @if ($product->saleslots->count() > 0)
                             <div>
                                 <h4>Active Saleslot</h4>
-                                <h5>Price: {{ $product->saleslots->last()->price }}€</h5>
-                                <h5>Quantity: {{ $product->saleslots->last()->current_quantity }}</h5>
+                                {{-- <h5>Price: {{ $product->saleslots->last()->price }}€</h5> --}}
+                                {{-- <h5>Quantity: {{ $product->saleslots->last()->current_quantity }}</h5> --}}
                                 <h5>Start: {{ $product->saleslots->last()->start_date }}</h5>
                                 <h5>End: {{ $product->saleslots->last()->end_date }}</h5>
                             </div>
