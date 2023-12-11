@@ -60,12 +60,12 @@
                 <p>{{ $message }}</p>
             @enderror
             <div class="btnContainer">
-                <button class="loginBtn">
+                <button type="submit" class="loginBtn">
                     Sign Up
                 </button>
             </div>
         </form>
-        <div id="register">
+        <div id="register" class="reveal animationUp">
             <p>
                 Already have an account?
                 <a href="/login" class="text-laravel">Login</a>

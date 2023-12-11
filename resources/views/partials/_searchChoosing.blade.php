@@ -1,5 +1,5 @@
 {{-- Search --}}
-<form id="chooSearch" action="#">
+<form id="chooSearch" class="reveal animationScale" action="#">
     <input type="text" placeholder="Search">
     <select name="" id="">
         {{-- !back-end again, your time to shine here we need to show every business in this selction --}}

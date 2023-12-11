@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout2')
 
 @section('content')
     <div class="container mx-auto p-4 mt-20">

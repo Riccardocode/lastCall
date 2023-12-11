@@ -1,8 +1,8 @@
-@extends('layout2')
+@extends('layout')
 
 @section('content')
     <section class="loginSection">
-        <form class="form" action="/users/{{ $user_id }}/becomeManager" method="POST">
+        <form class="form reveal animationScale" action="/users/{{ $user_id }}/becomeManager" method="POST">
             @csrf
 
             <h2>Do you want to be a restaurant Manager?</h2>

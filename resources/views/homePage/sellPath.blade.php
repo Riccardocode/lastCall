@@ -5,16 +5,16 @@
 @section('content')
 
 <section class="loginSection">
-    <h2>We care about sustainability, do you?</h2><br>
-    <h3> if you manage a restaurant and you would love to be a part of our community, please register</h3><br>
+    <h2 class="reveal animationDown">We care about sustainability, do you?</h2><br>
+    <h3 class="reveal animationShow"> if you manage a restaurant and you would love to be a part of our community, please register</h3><br>
 
-    <h2>Our Mission</h2><br>
-    <p>Our mission is to help restaurants to be more sustainable and to help people to find sustainable restaurants</p>
+    <h2 class="reveal animationShow">Our Mission</h2><br>
+    <p class="reveal animationScale">Our mission is to help restaurants to be more sustainable and to help people to find sustainable restaurants</p>
     <br>
-    <h2>How it works</h2><br>
-    <p>Register a profile and become a restaurant manager</p>
-    <p>Than create your restaurant and add your products to our website. People can search for restaurants and products and buy them</p>
-    <div id="sellLogin">
+    <h2 class="reveal animationShow">How it works</h2><br>
+    <p class="reveal animationScale">Register a profile and become a restaurant manager</p>
+    <p class="reveal animationScale">Than create your restaurant and add your products to our website. People can search for restaurants and products and buy them</p>
+    <div id="sellLogin" class="reveal animationUp">
         <button href="/register">Register</button>
         <button  href="/login">Login</button>
     </div>

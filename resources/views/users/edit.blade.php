@@ -3,7 +3,7 @@
 
 @section('content')
     <section class="loginSection">
-        <form class="form" action="/users/{{ $user->id }}" method="post" enctype="multipart/form-data">
+        <form class="form reveal animationScale" action="/users/{{ $user->id }}" method="post" enctype="multipart/form-data">
             @csrf
             <h2>
                 Edit your User information
@@ -58,12 +58,12 @@
                 Make a reset password procedure    
             --}}
             <div class="btnContainer">
-                <button class="loginBtn">
+                <button type="submit" class="loginBtn">
                     Update User
                 </button>
             </div>
         </form>
-        <div id="register">
+        <div id="register" calss="reveal animationUp">
             <p>
                 <a href="/users" class="text-laravel"> Back </a>
             </p>
