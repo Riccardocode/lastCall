@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
     <section class="loginSection">
-        <form class="form" action="/login" method="POST">
+        <form class="form reveal animationScale" action="/login" method="POST">
             @csrf
             @error('loginError')
                 <p>{{ $message }}</p>
@@ -30,7 +30,7 @@
         </div>
        
         </form>
-        <div id="register">
+        <div id="register" class="reveal animationShow">
             <p>
                 Don't have an account?
                 <a href="/register" class="text-laravel">Register</a>
