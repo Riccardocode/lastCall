@@ -11,10 +11,11 @@ function reveal(){  //function to show animation on screen when u scroll
         // console.log(windowHeight);
         // console.log(elementTop);
         //   else {
-        //     reveals[i].classList.remove("active");
+        //     reveals[i].classList.remove("ac tive");
         //   }
     }
 }
 window.addEventListener("scroll", reveal);
 // To check the scroll position on page load
 reveal();
+

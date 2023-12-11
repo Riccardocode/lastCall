@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="loginSection">
-        <form class="form" action='/users' method="post" enctype="multipart/form-data" class="form">
+        <form class="form reveal animationScale" action='/users' method="post" enctype="multipart/form-data" class="form">
             @csrf
 
             <h2>

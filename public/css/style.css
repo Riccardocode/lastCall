@@ -128,7 +128,7 @@ main #homeSection #homeSearch input {
 main #homeSection #homeSearch button {
   background: transparent;
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 5px;
   color: #D63030;
   border: none;
@@ -254,6 +254,9 @@ main .businessClientView .businessProduts .productClientViewS div h3 {
 }
 main .businessClientView .businessProduts .productClientViewS div h4 {
   font-size: 12px;
+}
+main .businessClientView .businessProduts .productClientViewS div div {
+  display: flex;
 }
 main .businessClientView .businessProduts .productClientViewS button {
   background-color: transparent;
@@ -549,4 +552,96 @@ footer a :hover {
   padding-top: 1rem;
   background-color: #f8f7f2;
   color: rgba(0, 0, 0, 0.52);
+}
+
+.reveal {
+  position: relative;
+  opacity: 0;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+
+.active.animationDown {
+  animation: animationDown 1.5s ease-in;
+}
+
+.active.animationUp {
+  animation: animationUp 1.5s ease-in;
+}
+
+.active.animationLeft {
+  animation: animationLeft 1.5s ease-in;
+}
+
+.active.animationRight {
+  animation: animationRight 1.5s ease-in;
+}
+
+.active.animationScale {
+  animation: animationScale 1.5s ease-in;
+}
+
+.active.animationShow {
+  animation: animationShow 1.5s ease-in;
+}
+
+@keyframes animationDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes animationUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes animationLeft {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes animationRight {
+  from {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes animationScale {
+  from {
+    transform: scale(0.93, 0.93);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 0.8;
+  }
+}
+@keyframes animationShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */
