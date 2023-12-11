@@ -59,9 +59,11 @@
             @error('phonenumber')
                 <p>{{ $message }}</p>
             @enderror
-            <button class="loginBtn">
-                Sign Up
-            </button>
+            <div class="btnContainer">
+                <button class="loginBtn">
+                    Sign Up
+                </button>
+            </div>
         </form>
         <div id="register">
             <p>

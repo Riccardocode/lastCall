@@ -31,8 +31,8 @@
                 @error('ingredientString')
                     <p>{{ $message }}</p>
                 @enderror
-                <input type="text" value="{{ old('allergyString') ? old('allergyString') : '' }}"
-                    placeholder="Allergies" name="allergyString" />
+                <input type="text" value="{{ old('allergyString') ? old('allergyString') : '' }}" placeholder="Allergies"
+                    name="allergyString" />
                 @error('allergyString')
                     <p>{{ $message }}</p>
                 @enderror
@@ -41,10 +41,11 @@
             @error('picture')
                 <p>{{ $message }}</p>
             @enderror
-
-            <button class="loginBtn">
-                Add Product
-            </button>
+            <div class="btnContainer">
+                <button class="loginBtn">
+                    Add Product
+                </button>
+            </div>
         </form>
         <div id="register">
             <p>

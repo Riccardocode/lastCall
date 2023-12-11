@@ -40,9 +40,11 @@
             @error('end_date')
                 <p>{{ $message }}</p>
             @enderror
-            <button class="loginBtn">
-                Update Sales Lot
-            </button>
+            <div class="btnContainer">
+                <button class="loginBtn">
+                    Update Sales Lot
+                </button>
+            </div>
         </form>
         <div id="register">
             <p>

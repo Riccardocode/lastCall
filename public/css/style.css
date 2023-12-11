@@ -9,6 +9,10 @@ html {
   line-height: 1.2 !important;
 }
 
+body {
+  background-color: #f8f7f2;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600 !important;
 }
@@ -79,6 +83,8 @@ header nav button:hover {
 }
 
 main {
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
@@ -164,7 +170,7 @@ main #homeArticle article div a {
 }
 main #homeArticle article div a:hover {
   box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
-  transform: translate(-5px, -5px);
+  transform: scale(1.3, 1.3);
 }
 main #homeArticle article div #buttonSell {
   background-color: #FFF;
@@ -184,7 +190,7 @@ main .businessClientView {
   background-color: #f8f7f2;
   display: flex;
   flex-direction: column;
-  padding: 12.5% 50px 0px 50px;
+  padding: 10% 50px 0px 50px;
 }
 main .businessClientView .logoAdd {
   width: 100%;
@@ -219,6 +225,23 @@ main .businessClientView .businessProduts h1 {
   font-size: 20px;
   font-weight: bold !important;
 }
+main .businessClientView .businessProduts #addProd {
+  text-align: center;
+  width: 10%;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main .businessClientView .businessProduts #addProd:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
+}
 main .businessClientView .businessProduts .productClientViewS {
   display: flex;
   justify-content: space-between;
@@ -229,7 +252,52 @@ main .businessClientView .businessProduts .productClientViewS {
   box-shadow: 3px 3px 5px #292826, -3px -3px 5px #f8f7f2;
   transition: ease-out 0.5s;
   background-color: rgba(255, 255, 255, 0.689);
+  width: 100%;
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+main .businessClientView .businessProduts .productClientViewS .smallInfo {
+  font-size: 10px;
+}
+main .businessClientView .businessProduts .productClientViewS span {
+  font-weight: bold;
+}
+main .businessClientView .businessProduts .productClientViewS #salesManage {
+  margin-top: 10px;
+}
+main .businessClientView .businessProduts .productClientViewS #salesManage a {
+  background-color: transparent;
+  font-size: 15px;
+  padding: 5px;
+  margin: 0 10px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main .businessClientView .businessProduts .productClientViewS #salesManage a:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
+}
+main .businessClientView .businessProduts .productClientViewS #manage {
+  display: flex;
+}
+main .businessClientView .businessProduts .productClientViewS #manage a {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px 5px;
+  margin: 0 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main .businessClientView .businessProduts .productClientViewS #manage a:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
 }
 main .businessClientView .businessProduts .productClientViewS a {
   text-decoration: none;
@@ -255,13 +323,10 @@ main .businessClientView .businessProduts .productClientViewS div h3 {
 main .businessClientView .businessProduts .productClientViewS div h4 {
   font-size: 12px;
 }
-main .businessClientView .businessProduts .productClientViewS div div {
-  display: flex;
-}
 main .businessClientView .businessProduts .productClientViewS button {
   background-color: transparent;
   font-size: 20px;
-  padding: 10px;
+  padding: 10 15px;
   transition: 0.5s;
   border: 1px solid #F97316;
   color: #F97316;
@@ -272,6 +337,22 @@ main .businessClientView .businessProduts .productClientViewS button:hover {
   box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
   background-color: #F97316;
   color: #0E0000;
+}
+main .businessClientView .businessProduts .productClientViewS #AddCart {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  margin-right: 10px;
+}
+main .businessClientView .businessProduts .productClientViewS #AddCart input {
+  background-color: rgb(255, 251, 245);
+  border: 1px solid #F97316;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+main .businessClientView .businessProduts .productClientViewS #emptyProd {
+  margin-right: 10px;
 }
 main .businessClientView .businessProduts .productClientViewS:hover {
   transform: scale(1.06, 1.3);
@@ -286,7 +367,32 @@ main .loginSection {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 200px 100px;
+  padding: 200px 100px 160px 100px;
+}
+main .loginSection #sellLogin {
+  display: flex;
+  gap: 100px;
+  margin-top: 50px;
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+main .loginSection #sellLogin button {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main .loginSection #sellLogin button:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
+}
+main .loginSection #sellLogin button {
+  width: 120px;
+  padding: 10px;
 }
 main .loginSection h2 {
   font-size: 25px;
@@ -583,6 +689,124 @@ main .adminSection .iconsDashboard .icon:hover {
 main .adminSection .iconsDashboard .iconLabel:hover {
   color: #D63030;
 }
+main .cartPage {
+  background-image: url("../../images/backgroundDots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #f8f7f2;
+  display: flex;
+  flex-direction: column;
+  padding: 10% 50px 0px 50px;
+}
+main .cartPage h1 {
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+}
+main .cartPage .productCart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 1.25%;
+  font-size: 20px;
+}
+main .cartPage .productCart article {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #000000, -2px -2px 5px #f4f4f5;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.689);
+}
+main .cartPage .productCart article .manageQuantity {
+  border: 1px solid #F97316;
+  border-radius: 10px;
+  padding: 10px;
+}
+main .cartPage .productCart article .manageQuantity input {
+  border: none;
+  width: 40px;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  text-align: center;
+}
+main .cartPage .productCart article #totalOf1Prod {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+main .cartPage .productCart article img {
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #000000, -2px -2px 5px #f4f4f5;
+}
+main .cartPage .productCart article .priceCart {
+  text-align: right;
+  margin-right: 10px;
+}
+main .cartPage .productCart form {
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+main .cartPage .productCart form button {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main .cartPage .productCart form button:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
+}
+main .cartPage .productCart form button {
+  font-size: 15px;
+}
+main .cartPage .totalAllProd {
+  text-align: right;
+}
+main .cartPage .totalAllProd h3 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+main .cartPage .totalAllProd form {
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+main .cartPage .totalAllProd form button {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main .cartPage .totalAllProd form button:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
+}
+main .cartPage .totalAllProd form button {
+  background-color: #F97316;
+  color: #0E0000;
+}
+main .cartPage .totalAllProd form button:hover {
+  background-color: transparent;
+  color: #F97316;
+}
+
+hr {
+  margin: 2.5% 20% 1.25% 20% !important;
+  border: solid 1px #F97316;
+  opacity: 0.4;
+}
 
 footer {
   display: flex;
@@ -622,27 +846,27 @@ footer a:hover {
 }
 
 .active.animationDown {
-  animation: animationDown 1.5s ease-in;
+  animation: animationDown 1s ease-in;
 }
 
 .active.animationUp {
-  animation: animationUp 1.5s ease-in;
+  animation: animationUp 1s ease-in;
 }
 
 .active.animationLeft {
-  animation: animationLeft 1.5s ease-in;
+  animation: animationLeft 1s ease-in;
 }
 
 .active.animationRight {
-  animation: animationRight 1.5s ease-in;
+  animation: animationRight 1s ease-in;
 }
 
 .active.animationScale {
-  animation: animationScale 1.5s ease-in;
+  animation: animationScale 1s ease-in;
 }
 
 .active.animationShow {
-  animation: animationShow 1.5s ease-in;
+  animation: animationShow 1s ease-in;
 }
 
 @keyframes animationDown {

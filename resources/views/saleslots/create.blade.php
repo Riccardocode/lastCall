@@ -19,7 +19,7 @@
             @error('price')
                 <p>{{ $message }}</p>
             @enderror
-            <input type="text" value="{{ old('initial_quantity') ? old('initial_quantity') :  ''}}"
+            <input type="text" value="{{ old('initial_quantity') ? old('initial_quantity') : '' }}"
                 placeholder="Quantity" name="initial_quantity" />
             @error('initial_quantity')
                 <p>{{ $message }}</p>
@@ -49,9 +49,11 @@
             @error('end_date')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
-            <button class="loginBtn">
-                Create new Sales Lot
-            </button>
+            <div class="btnContainer">
+                <button class="loginBtn">
+                    Create new Sales Lot
+                </button>
+            </div>
         </form>
         <div id="register">
             <p>

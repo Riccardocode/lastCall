@@ -14,6 +14,10 @@
 html{
     line-height: 1.2 !important;
 }
+body{
+    background-color: $backgroundColor;
+
+}
 h1, h2, h3, h4, h5, h6 {
     font-weight:600 !important;
 } 
@@ -105,8 +109,15 @@ main{
 
     //ABOOUT US PAGE
     @import 'aboutUs/aboutUsPage.scss';
+        //MAIN CART PAGE CSS
+   @import 'cart/cart.scss';
 }
 
+hr{
+    margin: 2.5% 20% 1.25% 20%!important;
+    border: solid 1px $primaryColor;
+    opacity: 0.4;
+}
 // FOOTER
 footer {
     display: flex;
@@ -144,22 +155,22 @@ footer {
     opacity: 1;
 }
 .active.animationDown{           //annimation Down
-    animation: animationDown  1.5s ease-in;
+    animation: animationDown  1s ease-in;
 }
 .active.animationUp{          //annimation Up
-    animation: animationUp 1.5s ease-in;
+    animation: animationUp 1s ease-in;
 }
 .active.animationLeft{           //annimation Left
-    animation: animationLeft  1.5s ease-in;
+    animation: animationLeft  1s ease-in;
 }
 .active.animationRight{           //annimation Right
-    animation: animationRight   1.5s ease-in;
+    animation: animationRight   1s ease-in;
 }
 .active.animationScale{           //annimation Scale
-    animation: animationScale 1.5s ease-in;
+    animation: animationScale 1s ease-in;
 }
 .active.animationShow{           //annimation Show
-    animation: animationShow 1.5s ease-in;
+    animation: animationShow 1s ease-in;
 }                     
     //KEYFRAMES 
 @keyframes animationDown{           //annimation Down  
@@ -221,3 +232,6 @@ footer {
         opacity: 1;   
     }
 }  
+
+
+

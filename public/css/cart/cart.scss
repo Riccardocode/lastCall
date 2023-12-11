@@ -1,0 +1,92 @@
+    // COLORS
+@import '../aDesign/colors/colors.scss'; 
+    //FONT
+@import '../aDesign/typography/fonts.scss';
+
+
+.cartPage{
+    background-image: url("../../images/backgroundDots.svg"); ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: $backgroundColor;
+    display: flex;
+    flex-direction: column;
+    padding: 10% 50px 0px 50px;
+    h1{
+        font-size: 30px;
+        font-family: $primaryFont;
+    }
+    .productCart{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 1.25%;
+        font-size: 20px;
+        article{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            border-radius: 10px;
+            box-shadow:  2px 2px 5px #000000,
+            -2px -2px 5px #f4f4f5; 
+            position: relative; 
+            background-color: rgba(255, 255, 255, 0.689);
+            .manageQuantity{
+                border: 1px solid #F97316;
+                border-radius: 10px;
+                padding: 10px;
+                input{
+                    border: none;
+                    width: 40px;
+                    font-family: $primaryFont;
+                    outline:none;
+                    text-align: center;
+                }
+            }
+            #totalOf1Prod{
+                position: absolute;
+                bottom: 5px;
+                right: 10px;
+            }           
+            img{
+                border-radius: 10px;
+                box-shadow:  2px 2px 5px #000000,
+                -2px -2px 5px #f4f4f5; 
+
+            }
+            .priceCart{
+                text-align: right;
+                margin-right: 10px;
+            }
+        }
+        form{
+            @import '../aDesign/link-orange-button/link-orange-button.scss';
+            button{
+                font-size: 15px;
+            }
+        }
+    }
+    .totalAllProd{
+        text-align: right;
+        h3{
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        form{
+            @import '../aDesign/link-orange-button/link-orange-button.scss';
+            button{
+                background-color: $primaryColor;
+                color: $textColorBlack;
+            }
+            button:hover{
+                background-color: transparent;
+                color: $primaryColor;
+            }
+        }
+    }
+
+}

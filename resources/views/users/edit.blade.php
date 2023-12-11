@@ -57,9 +57,11 @@
             {{-- Update Password
                 Make a reset password procedure    
             --}}
-            <button class="loginBtn">
-                Update User
-            </button>
+            <div class="btnContainer">
+                <button class="loginBtn">
+                    Update User
+                </button>
+            </div>
         </form>
         <div id="register">
             <p>

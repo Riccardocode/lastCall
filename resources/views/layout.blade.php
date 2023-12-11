@@ -60,7 +60,8 @@
 
     <x-flash-message />
     {{-- FOOTER for every pages --}}
-    <footer>
+    <hr>
+    <footer class="reveal animationUp">
 
         <div class="left-side">
 

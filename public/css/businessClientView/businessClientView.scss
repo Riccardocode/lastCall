@@ -11,7 +11,7 @@
     background-color: $backgroundColor;
     display: flex;
     flex-direction: column;
-    padding: 12.5% 50px 0px 50px;
+    padding: 10% 50px 0px 50px;
         //Restaurant image 
     .logoAdd{
         width: 100%;
@@ -47,6 +47,24 @@
             font-size: 20px;
             font-weight: bold !important;
         }
+        #addProd{
+            text-align: center;
+            width: 10%;
+            background-color: transparent;
+            font-size: 20px;
+            padding: 10 15px;
+            transition: 0.5s;
+            border:1px solid $primaryColor;
+            color: $primaryColor;
+            border-radius: 4px;
+            box-shadow:  2px 2px 5px #918c83,
+            -2px -2px 5px #f4f4f5; 
+        }
+        #addProd:hover{
+            box-shadow: 0 0 5px 2.5px #00000033;
+            background-color: $primaryColor;
+            color: $textColorBlack;
+        }
         .productClientViewS{
             display: flex;
             justify-content: space-between;
@@ -58,6 +76,53 @@
             -3px -3px 5px $backgroundColor;
             transition: ease-out 0.5s;
             background-color: rgba(255, 255, 255, 0.689);
+            width: 100%;
+            .smallInfo{
+                font-size: 10px;
+            }
+            span{
+                font-weight: bold;
+            }
+            #salesManage{
+                margin-top: 10px;
+                a{
+                    background-color: transparent;
+                    font-size: 15px;
+                    padding: 5px;
+                    margin: 0  10px;
+                    transition: 0.5s;
+                    border:1px solid $primaryColor;
+                    color: $primaryColor;
+                    border-radius: 4px;
+                    box-shadow:  2px 2px 5px #918c83,
+                    -2px -2px 5px #f4f4f5; 
+                }
+                a:hover{
+                    box-shadow: 0 0 5px 2.5px #00000033;
+                    background-color: $primaryColor;
+                    color: $textColorBlack;
+                }
+            }
+            #manage{
+                display: flex;
+                a{
+                    background-color: transparent;
+                    font-size: 20px;
+                    padding: 10px 5px;
+                    margin: 0  15px;
+                    transition: 0.5s;
+                    border:1px solid $primaryColor;
+                    color: $primaryColor;
+                    border-radius: 4px;
+                    box-shadow:  2px 2px 5px #918c83,
+                    -2px -2px 5px #f4f4f5; 
+                }
+                a:hover{
+                    box-shadow: 0 0 5px 2.5px #00000033;
+                    background-color: $primaryColor;
+                    color: $textColorBlack;
+                }
+            }
             a{
                 text-decoration: none;
                 color: $textColorBlack;     
@@ -81,12 +146,24 @@
                 h4{
                     font-size: 12px;
                 }
-                div{
-                    display: flex;
-
-                }
             }
             @import '../aDesign/link-orange-button/link-orange-button.scss';
+            #AddCart{
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                gap: 10px;
+                margin-right: 10px;
+                input{
+                    background-color: rgb(255, 251, 245);
+                    border: 1px solid $primaryColor;
+                    border-radius: 5px;
+                    padding-left: 5px;
+                }
+            }
+            #emptyProd{
+                margin-right: 10px;
+            }
         }
         .productClientViewS:hover{
             transform:scale(1.06, 1.3);

@@ -14,7 +14,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 200px 100px;
+    padding: 200px 100px 160px 100px;
+    #sellLogin{
+        display: flex;
+        gap: 100px ;
+        margin-top: 50px;
+        @import '../aDesign/link-orange-button/link-orange-button.scss';
+        button{
+            width: 120px;
+            padding: 10px;
+        }
+    }
     h2{
         font-size: 25px;
     } 
@@ -55,35 +65,33 @@
              -3px -3px 5px $backgroundColor; 
         }
         input, select{ // stylings for the inputs //styling the selcts tag with the option
-        font-size: 1rem;
-        padding:.5rem;
-        margin: 1rem;  
-        width:94%;
-        justify-self: right;
-        background-color: $backgroundColor;
-        outline:none;
-        border: 1.5px solid $palceholdersColor;
-        border-radius:5px;
-        &:focus { // the inputs' outline color changes when the input is clicked
-            border: 1.5px solid $primaryColor; 
-            }   
+            font-size: 1rem;
+            padding:.5rem;
+            margin: 1rem;  
+            width:94%;
+            justify-self: right;
+            background-color: $backgroundColor;
+            outline:none;
+            border: 1.5px solid $palceholdersColor;
+            border-radius:5px;
+            &:focus { // the inputs' outline color changes when the input is clicked
+                border: 1.5px solid $primaryColor; 
+                }   
         }
-
         .btnContainer {
         display: flex;
         align-content: center;
         justify-content: left;
         margin: 1rem 0 0 1rem;
-
-        .loginBtn {
-        font-size: 1.2rem;
-        padding: 0.7rem 1.2rem;
-        border: none;
-        border-radius: 10px;
-        color: white;
-        background-color: $primaryColor;
-        outline:none;
-        }
+            .loginBtn {
+            font-size: 1.2rem;
+            padding: 0.7rem 1.2rem;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            background-color: $primaryColor;
+            outline:none;
+            }
     }
 }
 

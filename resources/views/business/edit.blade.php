@@ -38,9 +38,11 @@
             @error('businessCategory')
                 <p>{{ $message }}</p>
             @enderror
+            <div class="btnContainer">
             <button class="loginBtn">
                 Update Business
             </button>
+            </div>
         </form>
         <div id="register">
             <p>

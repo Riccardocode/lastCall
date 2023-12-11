@@ -40,9 +40,11 @@
             @error('picture')
                 <p>{{ $message }}</p>
             @enderror
-            <button class="loginBtn">
-                Update product
-            </button>
+            <div class="btnContainer">
+                <button class="loginBtn">
+                    Update product
+                </button>
+            </div>
         </form>
         <div id="register">
             <p>
