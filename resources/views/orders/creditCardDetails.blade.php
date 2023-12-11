@@ -4,11 +4,11 @@
     <section  class="loginSection">
 
         {{-- <h3>Order id: {{ $order_id }}</h3> --}}
-        <form lass="form reveal animationScale" method="POST" action="/orders/cart/payment/confirmation">
-            <h2>Total Amount: {{ $totalAmount }}</h2>
+        <form class="form reveal animationScale" method="POST" action="/orders/cart/payment/confirmation">
             @csrf
+            <h2>Total Amount : {{ $totalAmount }} €</h2>
                 <!-- Card Number -->
-                    <input type="text" id="cardNumber-number" name="cardNumber" placeholder="1234 1234 1234 1234" required>
+                <input type="text" id="cardNumber-number" name="cardNumber" placeholder="1234 1234 1234 1234" required>
                 <!-- Expiry Date -->
                 <div class="formFlex">
                         <input type="text" id="expiryMonth" name="expiryMonth" placeholder="MM" required>
