@@ -1,113 +1,75 @@
     // COLORS
-@import '../aDesign/colors/colors.scss'; 
+    @import '../aDesign/colors/colors.scss';
     //FONT
-@import '../aDesign/typography/fonts.scss'; 
+    @import '../aDesign/typography/fonts.scss';
 
-.adminSection {
-    padding-top: 5rem;
-    background-color: $backgroundColor;
-
-    h1 {
-        font-size: 2rem;
-        font-family: $primaryFont;
-        font-weight: 600;
-        text-align: center;
-        margin: 3rem 0;
-    }
-
-    .buyBtn {
-    font-size: 1.2rem;
-    padding: 0.7rem 1.2rem;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    background-color: $primaryColor;
-    outline:none;  
-    
-    &:hover {
-    filter: contrast(150%);
+    .adminSection {
+        background-image: url("../../images/backgroundDots.svg");
+        ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-color: $backgroundColor;
+        padding: 10% 50px 0px 50px;
+        h1,h2,h3,p{
+            font-family: $primaryFont;
         }
-    }
-
-    .logoutBtn {
-    font-size: 1.2rem;
-    padding: 0.7rem 1.2rem;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    background-color: $actionColor;
-    outline:none;  
-
-        &:hover {
-        filter: contrast(150%);
+        h1 {
+            font-size: 2rem;
+            font-family: $primaryFont;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
         }
-    }
+        .allCardsContainer {
+            ul {
+                gap: 40px;
 
+                .adminContent {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 20px;
+                    background-color: rgba(255, 255, 255, 0.689);
+                    border-radius: 10px;
+                    box-shadow: 3px 3px 5px #292826,
+                    -3px -3px 5px $backgroundColor;
+                    .busiImg {
+                        a {
+                            img {
+                                width: 500px;
+                                height: 170px;
+                                border-radius: 10px;
+                                box-shadow: 3px 3px 5px #292826,
+                                    -3px -3px 5px $backgroundColor;
 
-    .adminCards {
-        background-color: $formsBackground;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(100px, 1fr));
-        grid-gap: 20px;
-        width: 100%;
-        padding: 2rem;
-
-    .adminContent {
-            background-color: $textColorWhite;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            height: 100%; 
-            aspect-ratio: 1/1;
-        } 
-    }
-
-    
-    .btnsDashboard {
-        display: flex;
-        justify-content: right;
-        align-items: center;
-        gap: 1rem;
-        margin-right:1.5rem;
-    }
-
-        .allManagersRest {
-        display: flex;
-        flex-direction: column;
-        // align-items: center;
-        margin: 1rem 2rem;
-    
-        .cardManagersRest {
-        background-color: white;
-        font-family: $primaryFont;
-        font-weight: 400;
-        padding: 2rem;
-        }
-    }
-
-     .iconsDashboard {
-            display: flex;
-            flex-direction: row;
-            gap:5px;
-            margin-left: 2rem;
-            padding-top:1.5rem;
-            .icon {
-                color: $textColorWhite;
-                background-color: $primaryColor;
-                font-size: 1.2rem;
-                padding: 0.5rem;
-                border-radius: 5px;
-
-                    &:hover {
-                    filter: contrast(150%);
-                    }   
-                }
-                 .iconLabel {
-                     &:hover {
-                        color:$actionColor;
-                     }
+                            }
+                        }
                     }
+                    .buisName{
+                        margin-left: 1rem;
+                    }
+                    .iconsDashboard {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 5px;
+                        margin-right: 1rem;
+                        .icon {
+                            color: $textColorWhite;
+                            background-color: $primaryColor;
+                            font-size: 1.2rem;
+                            padding: 0.5rem;
+                            border-radius: 5px;
+            
+                            &:hover {
+                                filter: contrast(150%);
+                            }
+                        }
+                    }
+                }
+                #busiMana{
+                    padding: 30px 0;
+                }
             }
-}
-
+        }
+    }

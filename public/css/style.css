@@ -600,94 +600,62 @@ main .choosingSection #chooSearch button {
   border-radius: 0px 10px 10px 0px;
 }
 main .adminSection {
-  padding-top: 5rem;
+  background-image: url("../../images/backgroundDots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   background-color: #f8f7f2;
+  padding: 10% 50px 0px 50px;
+}
+main .adminSection h1, main .adminSection h2, main .adminSection h3, main .adminSection p {
+  font-family: "Roboto", sans-serif;
 }
 main .adminSection h1 {
   font-size: 2rem;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   text-align: center;
-  margin: 3rem 0;
+  margin-bottom: 3rem;
 }
-main .adminSection .buyBtn {
-  font-size: 1.2rem;
-  padding: 0.7rem 1.2rem;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  background-color: #F97316;
-  outline: none;
+main .adminSection .allCardsContainer ul {
+  gap: 40px;
 }
-main .adminSection .buyBtn:hover {
-  filter: contrast(150%);
-}
-main .adminSection .logoutBtn {
-  font-size: 1.2rem;
-  padding: 0.7rem 1.2rem;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  background-color: #D63030;
-  outline: none;
-}
-main .adminSection .logoutBtn:hover {
-  filter: contrast(150%);
-}
-main .adminSection .adminCards {
-  background-color: rgba(249, 115, 22, 0.231372549);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(100px, 1fr));
-  grid-gap: 20px;
-  width: 100%;
-  padding: 2rem;
-}
-main .adminSection .adminCards .adminContent {
-  background-color: #FFF;
+main .adminSection .allCardsContainer ul .adminContent {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  height: 100%;
-  aspect-ratio: 1/1;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.689);
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #292826, -3px -3px 5px #f8f7f2;
 }
-main .adminSection .btnsDashboard {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  gap: 1rem;
-  margin-right: 1.5rem;
+main .adminSection .allCardsContainer ul .adminContent .busiImg a img {
+  width: 500px;
+  height: 170px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #292826, -3px -3px 5px #f8f7f2;
 }
-main .adminSection .allManagersRest {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem 2rem;
+main .adminSection .allCardsContainer ul .adminContent .buisName {
+  margin-left: 1rem;
 }
-main .adminSection .allManagersRest .cardManagersRest {
-  background-color: white;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  padding: 2rem;
-}
-main .adminSection .iconsDashboard {
+main .adminSection .allCardsContainer ul .adminContent .iconsDashboard {
   display: flex;
   flex-direction: row;
   gap: 5px;
-  margin-left: 2rem;
-  padding-top: 1.5rem;
+  margin-right: 1rem;
 }
-main .adminSection .iconsDashboard .icon {
+main .adminSection .allCardsContainer ul .adminContent .iconsDashboard .icon {
   color: #FFF;
   background-color: #F97316;
   font-size: 1.2rem;
   padding: 0.5rem;
   border-radius: 5px;
 }
-main .adminSection .iconsDashboard .icon:hover {
+main .adminSection .allCardsContainer ul .adminContent .iconsDashboard .icon:hover {
   filter: contrast(150%);
 }
-main .adminSection .iconsDashboard .iconLabel:hover {
-  color: #D63030;
+main .adminSection .allCardsContainer ul #busiMana {
+  padding: 30px 0;
 }
 main .cartPage {
   background-image: url("../../images/backgroundDots.svg");
