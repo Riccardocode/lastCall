@@ -3,6 +3,7 @@
 namespace App\Domain\Choosing;
 
 use App\Models\Business;
+use App\Models\SalesLot;
 use Illuminate\Database\Eloquent\Collection;
 
 
@@ -26,6 +27,34 @@ class ChoosingLogic{
                 $businesses->push($business);
             }
             return $businesses;
+        }else{
+            return  $all;
+        }
+    }
+
+
+    public static function orderSaleslotsByProximity(){
+        $nearById = session()->get("nearbyBusiness");
+        $current_date = date("Y-m-d H:i:s");
+        // dd($current_date);
+        // $current_date = strtotime($current_date1);
+        $all = SalesLot::where("end_date", ">", $current_date)->get();
+        // dd($all);
+        $saleslots= new Collection();
+        if(session()->get("nearbyBusiness") != null){
+            foreach ($nearById as $key => $duration){
+                foreach($all as $key2 => $saleslot){
+                    if($saleslot->product->business_id == $key){
+                        $saleslots->push($saleslot);
+                        $all->forget($key2);
+                    }
+                }
+                
+            }
+            foreach($all as $saleslot){
+                $saleslots->push($saleslot);
+            }
+            return $saleslots;
         }else{
             return  $all;
         }

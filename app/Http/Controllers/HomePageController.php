@@ -7,7 +7,7 @@ use App\Models\Product;
 use App\Models\Business;
 use Illuminate\Http\Request;
 use App\Domain\Map\CustomRouting;
-
+use App\Models\SalesLot;
 
 class HomePageController extends Controller
 {
@@ -26,7 +26,7 @@ class HomePageController extends Controller
         
         return view('homePage.choosing', [
             "businesses" => ChoosingLogic::orderBusinessesbyProximity(),
-            "products" => Product::latest()->paginate(5),
+            "saleslots" => ChoosingLogic::orderSaleslotsByProximity(),
         ]); 
     }
 

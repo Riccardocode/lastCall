@@ -22,8 +22,8 @@
         <section  class="chooPt1">
             <h2>Best Deals Nearby</h2>
             <section class="chooPro">
-                @foreach ($products as $product)
-                    <x-product-card :product="$product"/>
+                @foreach ($saleslots as $saleslot)
+                    <x-product-card :saleslot="$saleslot"/>
                 @endforeach
             </section>
             {{-- <div>
