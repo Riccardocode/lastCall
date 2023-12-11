@@ -1,5 +1,18 @@
-//COLORS
-@import "../css/aDesign/colors/colors.scss";
-//FONT
-@import "../css/aDesign/typography/fonts.scss";
+    // COLORS
+@import '../aDesign/colors/colors.scss'; 
+    //FONT
+@import '../aDesign/typography/fonts.scss'; 
+
+.imgAbout {
+
+    .heroImage {
+    border: 3px solid #f974169c;
+    border-radius: 50%;
+    width:230px;
+    }
+}
+
+h2 {
+    color:$primaryColor;
+}
 
