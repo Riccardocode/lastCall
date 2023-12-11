@@ -6,17 +6,23 @@ use App\Models\Business;
 use Illuminate\Http\Request;
 use App\Domain\Map\CustomMap;
 use App\Domain\Map\CustomRouting;
+use App\Models\Category;
 use Illuminate\Support\Facades\Http;
 
 class BotApiController extends Controller
 {
-    protected $userCoords = [];
+    // protected $userCoords = [];
     public function proximity(Request $request){
         $address = $request->validate([
             "address" => "required"
         ]);
         $businesses = CustomRouting::filterByAddress($address["address"],Business::all());
         CustomRouting::walkingTime($businesses);
+        return ["hello", "test"];
+    }
+
+    public function testy(){
+        return Category::all()->toJson();
     }
 
     // public function filterByAddress(string $address, $businesses){

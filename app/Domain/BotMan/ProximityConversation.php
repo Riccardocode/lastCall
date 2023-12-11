@@ -21,7 +21,8 @@ class ProximityConversation extends Conversation
 
         $this->ask($question, function (Answer $answer) {
             // dd($answer->getValue());
-            dd(Http::post("http://localhost/api/proximity",$answer->getValue()));
+            dd($this);
+            dd(Http::post("http://localhost:8000/api/proximity",$answer->getValue()));
             // dd(session());
             $response = Category::find($answer->getValue())->business->take();
             $ans = "These are the best Places that I would recommend! <hr>";
