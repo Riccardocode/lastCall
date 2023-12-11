@@ -1,51 +1,91 @@
-    // COLORS
-@import '../aDesign/colors/colors.scss'; 
-    //FONT
-@import '../aDesign/typography/fonts.scss'; 
-
+// COLORS
+@import "../aDesign/colors/colors.scss";
+//FONT
+@import "../aDesign/typography/fonts.scss";
 
 .imgSection {
-display: flex;
-justify-content: center;
-align-items:center;
-font-family: $primaryFont;
-flex-wrap:wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $primaryFont;
+    flex-wrap: wrap;
 
+    .card {
+        margin-right: 3rem;
+        width: 25%;
+        perspective: 150rem;
+        -moz-perspective: 150rem;
+        position: relative;
+        height: 15rem;
 
-    .heroSection {
-    margin-right: 3rem;
-    width: 25%;
+        &__side {
+            margin-bottom: 1rem;
+            cursor: pointer;
+            height: 15rem;
 
-    .imgAbout {
-    margin-bottom: 1rem;
-    cursor: pointer;
-    
-    .heroImage {
-    border: 3px solid #f974169c;
-    border-radius: 50%;
-  
-    width:250px;
-    }    
-}
-    .aboutInfo {
-        text-align: center;
-        background-color: $overlayColorLogin;
-        padding: 1.5rem;
-        border-radius: 7px;
-   
+            transition: all 0.8s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 90%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 1.5rem 4rem rgba(black, 0.15);
 
-h2 {
-    color:$primaryColor;
-    font-size: 1.5rem;
-    margin-bottom:1rem;
-}
- }
+            .heroImage {
+                border: 3px solid #f974169c;
+                border-radius: 50%;
+                width: 250px;
+            }
 
-}
-}
+            &--front {
+                background-color: #fef2f2;
+                background-size: 100% 100%;
 
- .socialMediaLinks {
-        display: flex;
-        flex-direction: column;
-        color: $primaryColor;
+                &:hover {
+                    transform: rotateY(-180deg);
+                }
+            }
+            &--back {
+                transform: rotateY(180deg);
+                box-shadow: 0 0 20px #ef00e3a8, 0 0 10px #ef00e3a8 inset;
+                background-size: 100% 100%;
+                background-color: red;
+                visibility: visible;
+
+                &:hover {
+                    transform: rotateY(180);
+                }
+                &__cta {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 90%;
+                    text-align: center;
+                }
+            }
+        }
     }
+}
+
+.aboutInfo {
+    text-align: center;
+    background-color: $overlayColorLogin;
+    padding: 1.5rem;
+    border-radius: 7px;
+
+    h2 {
+        color: $primaryColor;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.socialMediaLinks {
+    display: flex;
+    flex-direction: column;
+    color: $primaryColor;
+}

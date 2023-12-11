@@ -6,26 +6,67 @@
   font-family: "Roboto", sans-serif;
   flex-wrap: wrap;
 }
-.imgSection .heroSection {
+.imgSection .card {
   margin-right: 3rem;
   width: 25%;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 15rem;
 }
-.imgSection .heroSection .imgAbout {
+.imgSection .card__side {
   margin-bottom: 1rem;
   cursor: pointer;
+  height: 15rem;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 }
-.imgSection .heroSection .imgAbout .heroImage {
+.imgSection .card__side .heroImage {
   border: 3px solid rgba(249, 116, 22, 0.6117647059);
   border-radius: 50%;
   width: 250px;
 }
-.imgSection .heroSection .aboutInfo {
+.imgSection .card__side--front {
+  background-color: #fef2f2;
+  background-size: 100% 100%;
+}
+.imgSection .card__side--front:hover {
+  transform: rotateY(-180deg);
+}
+.imgSection .card__side--back {
+  transform: rotateY(180deg);
+  box-shadow: 0 0 20px rgba(239, 0, 227, 0.6588235294), 0 0 10px rgba(239, 0, 227, 0.6588235294) inset;
+  background-size: 100% 100%;
+  background-color: red;
+  visibility: visible;
+}
+.imgSection .card__side--back:hover {
+  transform: rotateY(180);
+}
+.imgSection .card__side--back__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+}
+
+.aboutInfo {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.664);
   padding: 1.5rem;
   border-radius: 7px;
 }
-.imgSection .heroSection .aboutInfo h2 {
+.aboutInfo h2 {
   color: #F97316;
   font-size: 1.5rem;
   margin-bottom: 1rem;
