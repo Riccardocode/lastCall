@@ -24,7 +24,7 @@
             </a>
 
             <div class="about-us">
-                <a class="navLink" href="aboutUs.blade.php">About us</a>
+                <a class="navLink" href="/aboutUs">About us</a>
             </div>
         </div>
 
