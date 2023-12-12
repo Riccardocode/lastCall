@@ -860,8 +860,27 @@ main .showProd .showProdDetails {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
 }
-main .showProd .showProdDetails h2, main .showProd .showProdDetails h3, main .showProd .showProdDetails h4 {
+main .showProd .showProdDetails h2,
+main .showProd .showProdDetails h3,
+main .showProd .showProdDetails h4 {
   padding: 15px;
+}
+main #iconBtn {
+  color: #FFF;
+  background-color: #F97316;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-left: 12px;
+}
+main #iconBtn:hover {
+  filter: contrast(150%);
+}
+main #userSection {
+  margin: 20PX 0;
+}
+main #userSection img {
+  height: 400px;
 }
 main .sectionOrder {
   background-image: url("../../images/backgroundDots.svg");
