@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/9823a17fbf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
+    <script src="//unpkg.com/alpinejs" defer></script>
     <title>last call to order your food</title>
 </head>
 
