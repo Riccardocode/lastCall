@@ -1,49 +1,59 @@
-@extends('layout2')
+@extends('layout')
 
 @section('content')
-    
-<header>
-    <h1 class="text-3xl text-center font-bold my-6 uppercase">
-        Manage Users
-    </h1>
-</header>
-<table class="w-full table-auto rounded-sm">
-    <tbody>
-        @unless ($users->isEmpty())
-            @foreach ($users as $user)
-                <tr class="border-gray-300">
-                    <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-                        <a href="/users/{{ $user->id }}">
-                            {{ $user->firstname }} {{ $user->lastname }}
-                        </a>
-                    </td>
-                    <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-                        <a href="/users/{{ $user->id }}/edit">
+
+    <section class="adminSection">
+        <h1 class="reveal animationShow">
+            Manage Users
+        </h1>
+        <div class="allCardsContainer">
+            <ul class="lg:grid lg:grid-cols-2">
+                @unless ($users->isEmpty())
+                    @foreach ($users as $user)
+                        <li id="userLi" class="adminContent reveal animationScale">
+                            <a id="nameUser" href="/users/{{ $user->id }}">
+                                {{ $user->firstname }} {{ $user->lastname }}
+                            </a>
+                            {{-- <a href="/users/{{ $user->id }}/edit">
                             <i class="fa-solid fa-pencil"></i> Edit
-                        </a>
-                    </td>
-                    <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-                      
-                        <form action="/users/{{ $user->id }}" method="POST">
+                        </a> --}}
+
+                            {{-- <form action="/users/{{ $user->id }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button
                                 class="text-red-500">
                                 <i class="fa-solid fa-trash"></i>Delete
                             </button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-        @else
-            <tr class="border-grey-300">
-                <td class="px-4 py-8 border-t border-b border-grey-300 text-lg">
+                        </form> --}}
+
+                            <section class="iconsDashboard">
+                                {{-- Edit button container --}}
+                                <div>
+                                    <a href=""><i class="fa-solid fa-pen-to-square icon"></i></a>
+                                </div>
+
+                                {{-- View button container
+                                <div>
+                                    <a href=""><i class="fa-solid fa-pencil icon"></i></a>
+                                </div> --}}
+
+                                {{-- Delete button container --}}
+                                <div>
+                                    <a href=""><i class="fa-solid fa-trash icon"></i></a>
+                                </div>
+                            </section>
+                        </li>
+                    @endforeach
+            </ul>
+                @else
                     <p class="text-center">No Users found</p>
-                </td>
-            </tr>
-        @endUnless
-    </tbody>
-</table>
+                @endUnless
+                <div class="mt-6 p-4 reveal animationLeft">
+                    {{ $users->links() }}
+                </div>
+    </section>
 
 
-@endsection 
+
+@endsection

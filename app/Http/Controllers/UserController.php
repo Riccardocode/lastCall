@@ -96,7 +96,7 @@ class UserController extends Controller
         if (auth()->user()->role != 'admin') {
             abort(403);
         }
-        $users = User::all();
+        $users = User::orderBy('Lastname')->paginate(12);
         return view('users.manage', compact('users'));
     }
     //Display Single User

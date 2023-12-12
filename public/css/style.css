@@ -658,6 +658,9 @@ main .adminSection h1 {
   text-align: center;
   margin-bottom: 3rem;
 }
+main .adminSection #userLi {
+  padding: 40px 10px;
+}
 main .adminSection .allCardsContainer ul {
   gap: 40px;
 }
@@ -694,6 +697,10 @@ main .adminSection .allCardsContainer ul .adminContent .iconsDashboard .icon {
 }
 main .adminSection .allCardsContainer ul .adminContent .iconsDashboard .icon:hover {
   filter: contrast(150%);
+}
+main .adminSection .allCardsContainer ul .adminContent #nameUser {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
 }
 main .adminSection .allCardsContainer ul #busiMana {
   padding: 30px 0;
