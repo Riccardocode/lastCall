@@ -7,16 +7,18 @@ use App\Models\Category;
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;
 use App\Domain\BotMan\Middle;
-use App\Domain\BotMan\ProximityConversation;
 use BotMan\BotMan\BotManFactory;
 use Illuminate\Support\Facades\Log;
 use BotMan\BotMan\Cache\LaravelCache;
+use App\Domain\BotMan\MealConversation;
 use function PHPUnit\Framework\isEmpty;
 use BotMan\BotMan\Messages\Incoming\Answer;
-use BotMan\BotMan\Messages\Outgoing\Question;
+use App\Domain\BotMan\ProximityConversation;
 
+use BotMan\BotMan\Messages\Outgoing\Question;
 use App\Domain\BotMan\SpecificFoodConversation;
 use App\Domain\BotMan\RecommendationConversation;
+use App\Models\Product;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 
 class BotManController extends Controller
@@ -167,6 +169,51 @@ class BotManController extends Controller
         });
     }
 
+
+    public function MealHear($botman, $message)
+    {
+        $meals = Product::all();
+        $count = 0;
+        foreach ($meals as $meal) {
+            if (str_contains(strtolower($message), strtolower($meal->category)) && $count== 0) {
+                // if (strtolower($message) == strtolower($meal->category) && $count== 0) {
+                $count = $count +1 ;
+                $botman->startConversation(new MealConversation($meal->category));
+            }
+        }
+    }
+    
+    //*Recommendation with Amount Logic
+    public function recommendMeal($botman){
+        Log::info("Before Pattern Hear rec with amount");
+        $pattern31 = '.*(?:recommendation|reco|recom|recommend).*(?:vegan|Vegan|vegetarian|Vegetarian|non-vegetarian|non-Vegetarian).*\?';
+        $pattern32 = '.*(?:vegan|Vegan|vegetarian|Vegetarian|non-vegetarian|non-Vegetarian).*(?:recommendation|reco|recom|recommend).*\?';
+        $botman->hears($pattern31, function ($botman) {
+            if ($this->checkFile("Command")) {
+
+                Log::info("Inside Hear rec with amount 1");
+                $this->fileTest("Command");
+                $this->fileTest("Error");
+                $this->MealHear($botman, $botman->getMessage()->getPayload()["message"]);
+                // $this->dummy($botman);
+                // $botman->startConversation(new MealConversation($number));
+            }
+        });
+        $botman->hears($pattern32, function ($botman) {
+            if ($this->checkFile("Command")) {
+
+                Log::info("Inside Hear rec with amount 2");
+                $this->fileTest("Command");
+                $this->fileTest("Error");
+                // $this->dummy($botman);
+                $this->MealHear($botman, $botman->getMessage()->getPayload()["message"]);
+                // $botman->startConversation(new MealConversation($number));
+            }
+        });
+    }
+
+
+
     //*Recommendation Dish Logic
     public function recommendDish($botman){
         Log::info("Before Pattern Hear dish");
@@ -298,6 +345,13 @@ class BotManController extends Controller
         $botman = BotManFactory::create(['driver' => 'web'], new LaravelCache());
         Log::info("Input Start");
         $this->resetFile();
+
+        //* recommend Dish
+        if ($this->checkFile("Command")) {
+            Log::info("Login Issues");
+            // $botman->reply('test');
+            $this->recommendMeal($botman);
+        }
 
         //* Login Issues
         if ($this->checkFile("Command")) {
