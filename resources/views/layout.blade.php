@@ -13,20 +13,11 @@
 
     <?php
     if (auth()->check()) {
-        auth()->user()->profileImg ? ($userImg = asset('/storage/' . auth()->user()->profileImg)) : ($userImg = asset('/storage/profileImages/default.png'));
+        $user= auth()->user();
+        $user->profileImg ? ($userImg = asset('/storage/' . $user->profileImg)) : ($userImg = asset('/storage/profileImages/default.png'));
     }
     ?>
-    <style>
-        #profileUserImg254 {
-            width: 45px;
-            height: 45px;
-            background-image: url('{{ $userImg }}');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border-radius: 50%;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -45,7 +36,7 @@
         <nav>
             <ul>
                 @if (auth()->check())
-                    @if (auth()->user()->role == 'admin')
+                    @if ($user->role == 'admin')
                         <li>
                             <div id="dropdown">
                                 <button class="navLink" id="dropbtn">Manage Clients</button>
@@ -57,30 +48,44 @@
                             </div>
                         </li>
                     @endif
-                    @if (auth()->user()->role == 'user' || auth()->user()->role == 'restaurantManager')
+                    @if ($user->role == 'user' || $user->role == 'restaurantManager')
                         <li>
                             <a class="navLink" href="/orders/cart">Cart</a>
                         </li>
                     @endif
-                    @if (auth()->user()->role == 'user')
+                    {{-- also the restaurant manager should see his orders as he can also buy from other restaurant --}}
+                    @if ($user->role == 'user')
                         <li>
                             <a class="navLink" href="/myorders">My Orders</a>
                         </li>
                     @endif
-                    @if (auth()->user()->role == 'restaurantManager')
+
+                    @if ($user->role == 'restaurantManager')
                         <li>
                             <a class="navLink" href="/businessmanagerorders">Business Orders</a>
                         </li>
                     @endif
                     <li>
-                        <a href="/users/{{ auth()->user()->id }}">
+                        {{-- Styles are here just because I don't want mess up anything --}}
+                        <a href="/users/{{$user->id }}">
+                            <style>
+                                #profileUserImg254 {
+                                    width: 45px;
+                                    height: 45px;
+                                    background-image: url('{{ $userImg }}');
+                                    background-size: cover;
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    border-radius: 50%;
+                                }
+                            </style>
                             <div id="profileUserImg254">
                             </div>
                         </a>
                     </li>
                     <li>
                         <span class="welcome">
-                            Welcome {{ auth()->user()->firstname }}
+                            Welcome {{ $user->firstname }}
                         </span>
                     </li>
                     <li>
