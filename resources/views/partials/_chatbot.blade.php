@@ -7,7 +7,8 @@
         introMessage: "How can I help you today?",
         title: "David Bot",
         mainColor: "#F97316",
-        bubbleBackground: "#F97316",
+        bubbleBackground: "#fff",
+        bubbleAvatarUrl: '/storage/chatbotImages/RobotBot.png'
     };
     // botmanWidget.open();
     // console.log(botmanWidget);
