@@ -1,0 +1,36 @@
+    // COLORS
+@import '../aDesign/colors/colors.scss'; 
+    //FONT
+@import '../aDesign/typography/fonts.scss'; 
+
+.showProd{
+    background-image: url("../../images/backgroundDots.svg"); ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: $backgroundColor;
+    padding: 10% 50px 2.5% 5%;
+    h1{
+        font-size: 30px;
+        font-weight: bold;
+        font-family: $primaryFont;
+        padding-bottom: 20px;
+
+    }
+    .showProdArt{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: 20px;
+        img{
+            border-radius: 10px; 
+        }
+    }
+    .showProdDetails{
+        font-size: 20px;
+        font-family: $primaryFont;
+        h2,h3,h4{
+            padding: 15px;
+        }
+    }
+}
