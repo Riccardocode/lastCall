@@ -13,7 +13,12 @@ body {
   background-color: #f8f7f2;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600 !important;
 }
 
@@ -65,6 +70,35 @@ header nav ul a {
   font-size: 20px;
   color: #FFF;
   font-weight: bold;
+}
+header nav #dropdown {
+  position: relative;
+  display: inline-block;
+}
+header nav #dropdown #dropbtn {
+  background: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: #FFF;
+  font-weight: bold;
+}
+header nav #dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  color: #0E0000;
+  min-width: 160px;
+  z-index: 1;
+  text-align: center;
+}
+header nav #dropdown .dropdown-content a {
+  width: 160px;
+  text-align: center;
+  padding: 0px 30px;
+  font-weight: normal;
+  font-size: 17px;
+}
+header nav #dropdown:hover .dropdown-content {
+  display: block;
 }
 header nav button {
   text-decoration: none;

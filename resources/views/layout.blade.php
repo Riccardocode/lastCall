@@ -28,6 +28,16 @@
         <nav>
             <ul>
                 @auth
+                  <li>
+                        <div id="dropdown">
+                            <button class="navLink" id="dropbtn">Manage Clients</button>
+                            <div class="dropdown-content">
+
+                            <a  class="navLink" href="/orders/cart">Business</a>
+                            <a  class="navLink" href="/orders/cart">User</a>
+                            </div>
+                        </div>
+                    </li>
                     <li>
                         <a  class="navLink" href="/orders/cart">Cart</a>
                     </li>
