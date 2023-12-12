@@ -112,10 +112,9 @@ class BotManController extends Controller
     public function singleRecommend($botman)
     {
         Log::info("Before Pattern Hear rec without amount");
-        $pattern3 = '\b(?:recommendation|reco|recom|recommend)(?:(?!pizza|dessert|sushi|burger|pasta|salad|sandwich|drink|other).)*\?';
+        $pattern3 = '.*(?:recommendation|reco|recom|recommend)*\?';
         $botman->hears($pattern3, function ($botman) {
             if ($this->checkFile("Command")) {
-
                 Log::info("Inside Hear rec without amount");
                 $this->fileTest("Command");
                 $this->fileTest("Error");
@@ -142,8 +141,7 @@ class BotManController extends Controller
     // }
 
     //*Recommendation with Amount Logic
-    public function recommendMultiple($botman)
-    {
+    public function recommendMultiple($botman){
         Log::info("Before Pattern Hear rec with amount");
         $pattern21 = '.*(?:recommendation|reco|recom|recommend).*(\d+).*\?';
         $pattern22 = '.*(\d+).*(?:recommendation|reco|recom|recommend).*\?';
@@ -170,8 +168,7 @@ class BotManController extends Controller
     }
 
     //*Recommendation Dish Logic
-    public function recommendDish($botman)
-    {
+    public function recommendDish($botman){
         Log::info("Before Pattern Hear dish");
         $cats = Category::all();
         $pattern4 = $this->returnRegex($cats);
@@ -189,15 +186,33 @@ class BotManController extends Controller
         });
     }
 
-    public function paymentIssues($botman)
-    {
-        $botman->reply("So the Main Issues with Payment are usually due to a couple of things. Check That Your Credit Card is still Valid and that you have enough Funds. ", [
-            'parse_mode' => 'HTML'
-        ]);
+    public function paymentIssues($botman){
+        $pattern = '.*(?:payment|Payment).*\?';
+        $botman->hears($pattern, function ($botman) {
+            if ($this->checkFile("Command")) {
+                $this->fileTest("Command");
+                $this->fileTest("Error");
+                $botman->reply("So the Main Issues with Payment are usually due to a couple of things. Check That Your Credit Card is still Valid and that you have enough Funds. ", [
+                    'parse_mode' => 'HTML'
+                ]);
+            }
+        });
     }
 
-    public function CashPayment($botman)
-    {
+    public function help($botman){
+        $pattern = '.*(?:help|Help).*\?';
+        $botman->hears($pattern, function ($botman) {
+            if ($this->checkFile("Command")) {
+                $this->fileTest("Command");
+                $this->fileTest("Error");
+                $botman->reply("Hello, I am a Web Chatbot that can give you suggestions and recommendations for Foods. As well as help you with any struggles you are having. For example ask me 'What can you recommend?'", [
+                    'parse_mode' => 'HTML'
+                ]);
+            }
+        });
+    }
+
+    public function CashPayment($botman){
         $pattern6 = '.*(?:Cash|cash).*\?';
         $botman->hears($pattern6, function ($botman) {
             if ($this->checkFile("Command")) {
@@ -211,15 +226,21 @@ class BotManController extends Controller
         
     }
 
-    public function CheckoutProblems($botman)
-    {
-        $botman->reply("", [
-            'parse_mode' => 'HTML'
-        ]);
+    public function CheckoutProblems($botman){
+        $pattern = '.*(?:Cash|cash).*\?';
+        $botman->hears($pattern, function ($botman) {
+            if ($this->checkFile("Command")) {
+                $this->fileTest("Command");
+                $this->fileTest("Error");
+                $botman->reply("The Main Issues that can appear when you try to checkout is that your Information didn't get inserted correctly or the Server had Problems processing the Data.", [
+                    'parse_mode' => 'HTML'
+                ]);
+            }
+        });
+        
     }
 
-    public function LoginProblems($botman)
-    {
+    public function LoginProblems($botman){
         $pattern5 = '.*(?:login|Login).*\?';
         $botman->hears($pattern5, function ($botman) {
             if ($this->checkFile("Command")) {
@@ -232,8 +253,7 @@ class BotManController extends Controller
         });
     }
 
-    public function RegisterProblems($botman)
-    {
+    public function RegisterProblems($botman){
         $pattern5 = '.*(?:register|Register).*\?';
         $botman->hears($pattern5, function ($botman) {
             if ($this->checkFile("Command")) {
@@ -298,6 +318,13 @@ class BotManController extends Controller
             Log::info("Register Issues");
             // $botman->reply('test');
             $this->RegisterProblems($botman);
+        }
+
+        //* Help
+        if ($this->checkFile("Command")) {
+            Log::info("Help");
+            // $botman->reply('test');
+            $this->help($botman);
         }
 
         //* Cash Issues
