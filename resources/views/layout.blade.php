@@ -56,6 +56,9 @@
                         </li>
                     @endif
                     <li>
+                        <a href="/users/{{auth()->user()->id}}"><i class="fa-solid fa-user"></i></a>
+                    </li>
+                    <li>
                         <span class="welcome">
                             Welcome {{ auth()->user()->firstname }}
                         </span>

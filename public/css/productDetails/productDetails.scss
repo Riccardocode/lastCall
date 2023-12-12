@@ -1,36 +1,56 @@
-    // COLORS
-@import '../aDesign/colors/colors.scss'; 
-    //FONT
-@import '../aDesign/typography/fonts.scss'; 
+// COLORS
+@import "../aDesign/colors/colors.scss";
+//FONT
+@import "../aDesign/typography/fonts.scss";
 
-.showProd{
-    background-image: url("../../images/backgroundDots.svg"); ;
+.showProd {
+    background-image: url("../../images/backgroundDots.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     background-color: $backgroundColor;
     padding: 10% 50px 2.5% 5%;
-    h1{
+    h1 {
         font-size: 30px;
         font-weight: bold;
         font-family: $primaryFont;
         padding-bottom: 20px;
-
     }
-    .showProdArt{
+    .showProdArt {
         display: flex;
         justify-content: left;
         align-items: center;
         gap: 20px;
-        img{
-            border-radius: 10px; 
+        img {
+            border-radius: 10px;
         }
     }
-    .showProdDetails{
+    .showProdDetails {
         font-size: 20px;
         font-family: $primaryFont;
-        h2,h3,h4{
+        h2,
+        h3,
+        h4 {
             padding: 15px;
         }
+    }
+}
+
+#iconBtn {
+    color: $textColorWhite;
+    background-color: $primaryColor;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-left: 12px;
+    &:hover {
+        filter: contrast(150%);
+    }
+}
+
+#userSection{
+    margin: 20PX 0;
+    img{
+        height: 400px;
     }
 }
