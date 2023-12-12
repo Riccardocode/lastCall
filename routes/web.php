@@ -43,3 +43,12 @@ require __DIR__."/Routes/mapRoutes.php";
 
 //Routes for category management
 require __DIR__.'/Routes/chatbotRoutes.php';
+
+// Place this at the very end of your web.php file
+
+
+//if route is not found redirect to 404 page
+Route::get('/{any}', function() {
+    // Handle the unmatched route
+    return view('errors.404'); // Or any other response you want
+})->where('any', '.*');
