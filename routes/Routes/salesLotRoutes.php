@@ -32,7 +32,7 @@ Route::get("business/{business_id}/products/{product_id}/saleslot/create", [Sale
 Route::post('/business/{business_id}/products/{product_id}/saleslot', [SalesLotController::class, 'store'])->where("business_id","[0-9]+")->where("product_id","[0-9]+")->middleware('auth');
 
 // - Edit a Sales Lot (this is related to a specific product. Only if the Sales Lot is active)
-Route::get("/business/{business_id}/products/{product_id}/saleslot/{saleslot_id}/edit", [SalesLotController::class, "edit"])->where("business_id","[0-9]+")->where("product_id","[0-9]+")->where("saleslot_id","[0-9]+")->middleware('auth')->middleware("auth");
+Route::get("/business/{business_id}/products/{product_id}/saleslot/{saleslot_id}/edit", [SalesLotController::class, "edit"])->where("business_id","[0-9]+")->where("product_id","[0-9]+")->where("saleslot_id","[0-9]+")->middleware('auth');
 
 // - Update a Sales Lot (this is related to a specific product. Only if the Sales Lot is active)
 Route::put("/products/{product_id}/saleslot/{salesLot_id}", [SalesLotController::class, "update"])->middleware("auth");
