@@ -11,8 +11,8 @@
     <div class="space-y-4">
         <!-- Card Number -->
         <div>
-            <label for="card-cardNumber" class="block text-sm font-medium text-gray-700">Card Number</label>
-            <input type="text" id="cardNumber-number" name="cardNumber" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="1234 1234 1234 1234" required>
+            <label for="cardNumber" class="block text-sm font-medium text-gray-700">Card Number</label>
+            <input type="text" id="cardNumber" name="cardNumber" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="1234 1234 1234 1234" required>
         </div>
 
         <!-- Expiry Date -->
