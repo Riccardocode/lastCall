@@ -62,7 +62,7 @@ class SalesLotController extends Controller
 
         SalesLot::create($formFields);
 
-        return redirect("business/$business_id/products/$product_id")->with("message", "Saleslot created Successfully!");
+        return redirect("business/$business_id/products")->with("message", "Saleslot created Successfully!");
     }
 
     public function edit($business_id,$product_id, $salesLot_id)
@@ -100,7 +100,7 @@ class SalesLotController extends Controller
 
         $salesLot->update($formFields);
 
-        return redirect("/products/$product_id/saleslot")->with("message", "Saleslot updated Successfully!");
+        return redirect("/business/$product->business_id/products")->with("message", "Saleslot updated Successfully!");
     }
 
     public function destroy($product_id, $salesLot_id)
