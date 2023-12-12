@@ -24,13 +24,13 @@
                 <p>{{ $message }}</p>
             @enderror
         <div class="btnContainer">
-            <button class="loginBtn">
+            <button type="submit" class="loginBtn">
                 Sign In
             </button>
         </div>
        
         </form>
-        <div id="register" class="reveal animationShow">
+        <div id="register" class="reveal animationUp">
             <p>
                 Don't have an account?
                 <a href="/register" class="text-laravel">Register</a>

@@ -1,6 +1,6 @@
 {{-- Search --}}
 @props(['categories'])
-<form id="chooSearch" action="/choosing" method="GET">
+<form id="chooSearch" class="reveal animationScale" action="/choosing" method="GET">
     <input type="text" placeholder="Search" name="search">
     <select name="category" id="">
         {{-- !back-end again, your time to shine here we need to show every business in this selction --}}

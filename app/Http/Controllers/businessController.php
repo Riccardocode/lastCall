@@ -18,7 +18,7 @@ class BusinessController extends Controller
         if (!auth()->check() || !(auth()->user()->role == 'admin')) {
             abort(403, 'Unauthorized action.');
         }
-        $businesses = Business::with(['manager', 'category'])->get();
+        $businesses = Business::with(['manager', 'category'])->paginate(4);
 
         return view('business.index', [
             'business' => $businesses,

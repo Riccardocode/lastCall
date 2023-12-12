@@ -3,7 +3,7 @@
 
 @section('content')
     <section class="loginSection">
-        <form class="form" action="/business/{{ $id }}" method="post" enctype="multipart/form-data">
+        <form class="form reveal animationScale" action="/business/{{ $id }}" method="post" enctype="multipart/form-data">
 
             @csrf
             <h2>
@@ -39,12 +39,12 @@
                 <p>{{ $message }}</p>
             @enderror
             <div class="btnContainer">
-            <button class="loginBtn">
+            <button type="submit" class="loginBtn">
                 Update Business
             </button>
             </div>
         </form>
-        <div id="register">
+        <div id="register" class="reveal animationUp">
             <p>
                 <a href="/business/{{ $business->id }}" class="text-laravel"> Back </a>
             </p>
