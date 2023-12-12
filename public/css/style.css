@@ -129,7 +129,7 @@ main #homeSection {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  padding: 12.5% 0px;
+  padding: 11% 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -930,10 +930,11 @@ hr {
   opacity: 0.4;
 }
 
-#backContainer {
-  margin-top: 30px;
-}
-#backContainer #backBut {
+#backButt {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  display: inline-block;
   background-color: transparent;
   font-size: 20px;
   padding: 10px 15px;
@@ -943,7 +944,8 @@ hr {
   border-radius: 4px;
   box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
 }
-#backContainer #backBut:hover {
+
+#backButt:hover {
   box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
   background-color: #F97316;
   color: #0E0000;

@@ -10,7 +10,6 @@
     margin: 0;
     // border: 1px solid red; //helps to see all the boxes correctly in the page
 }
-
 //.......................
 //COUNTER TAILWIND !!!!
 html {
@@ -50,46 +49,37 @@ header {
         display: flex;
         justify-content: left;
         align-items: center;
-
         a {
             color: $textColorWhite;
             width: 20%;
         }
-
         .about-us {
             font-size: 20px;
             font-weight: bold;
         }
     }
-
     img {
         // logo image
         width: 100%;
     }
-
-    nav {
+    nav { //NAVIGATION BAR
         ul {
             display: flex;
             gap: 20px;
             align-items: center;
-
             .welcome {
                 color: $textColorWhite
             }
-
             a {
                 font-family: $primaryFont;
                 font-size: 20px;
                 color: $textColorWhite;
                 font-weight: bold;
-
             }
         }
-
         #dropdown {
             position: relative;
             display: inline-block;
-
             #dropbtn {
                 background: none;
                 font-family: $primaryFont;
@@ -105,7 +95,6 @@ header {
                 min-width: 160px;
                 z-index: 1;
                 text-align: center;
-
                 a {
                     width: 160px;
                     text-align: center;
@@ -119,7 +108,6 @@ header {
         #dropdown:hover .dropdown-content {
             display: block;
         }
-
         button {
             // Logout Button
             text-decoration: none;
@@ -132,15 +120,12 @@ header {
             border: none;
             font-size: 1rem;
         }
-
         button:hover {
             background-color: $textColorWhite;
             color: rgba(0, 0, 0, 0.76);
-
         }
     }
 }
-
 //MAINS
 main {
     //MAIN HOME PAGE CSS
@@ -169,29 +154,26 @@ hr {
     border: solid 1px $primaryColor;
     opacity: 0.4;
 }
-#backContainer {
-    margin-top: 30px;
-
-    #backBut {
-        //Button for the back action
-        background-color: transparent;
-        font-size: 20px;
-        padding: 10px 15px;
-        transition: 0.5s;
-        border: 1px solid $primaryColor;
-        color: $primaryColor;
-        border-radius: 4px;
-        box-shadow: 2px 2px 5px #918c83,
-            -2px -2px 5px #f4f4f5;
-    }
-
-    #backBut:hover {
-        box-shadow: 0 0 5px 2.5px #00000033;
-        background-color: $primaryColor;
-        color: $textColorBlack;
-    }
+#backButt { //Button for the back action
+    position: absolute;
+    top: 100px;
+    left: 40px; 
+    display: inline-block; 
+    background-color: transparent;
+    font-size: 20px;
+    padding: 10px 15px;
+    transition: 0.5s;
+    border: 1px solid $primaryColor;
+    color: $primaryColor;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px #918c83,
+        -2px -2px 5px #f4f4f5;
 }
-
+#backButt:hover {
+    box-shadow: 0 0 5px 2.5px #00000033;
+    background-color: $primaryColor;
+    color: $textColorBlack;
+}
 // FOOTER
 footer {
     display: flex;
@@ -216,7 +198,6 @@ footer {
         }
     }
 }
-
 .credentials {
     text-align: center;
     padding-top: 1rem;
@@ -333,3 +314,5 @@ footer {
         opacity: 1;
     }
 }
+
+
