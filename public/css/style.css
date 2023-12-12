@@ -149,6 +149,22 @@ main #homeSection #homePageP {
   font-size: 25px;
   color: #FFF;
 }
+main #homeSection #mapLink {
+  margin-bottom: 20px;
+}
+main #homeSection #mapLink a #insMapLink {
+  display: flex;
+  align-items: center;
+}
+main #homeSection #mapLink a #insMapLink img {
+  width: 55px;
+  height: 45px;
+}
+main #homeSection #mapLink a #insMapLink p {
+  color: aliceblue;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
 main #homeSection #homeSearch {
   width: 100%;
   max-width: 350px;

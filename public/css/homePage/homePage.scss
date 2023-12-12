@@ -26,6 +26,24 @@
         color: $textColorWhite;
 
     }
+    #mapLink{
+        margin-bottom: 20px;
+        a{
+          #insMapLink{
+                display: flex;
+                align-items: center;
+              img{
+                  width: 55px;
+                  height: 45px;
+              }
+              p{
+                color: aliceblue;
+                font-size: 1.5rem;
+                margin-top: 1rem;
+              }
+          }  
+        }
+    }
     #homeSearch{
         width: 100%;
         max-width: 350px;

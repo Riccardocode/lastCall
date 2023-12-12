@@ -21,6 +21,22 @@
   font-size: 25px;
   color: #FFF;
 }
+#homeSection #mapLink {
+  margin-bottom: 20px;
+}
+#homeSection #mapLink a #insMapLink {
+  display: flex;
+  align-items: center;
+}
+#homeSection #mapLink a #insMapLink img {
+  width: 55px;
+  height: 45px;
+}
+#homeSection #mapLink a #insMapLink p {
+  color: aliceblue;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
 #homeSection #homeSearch {
   width: 100%;
   max-width: 350px;
