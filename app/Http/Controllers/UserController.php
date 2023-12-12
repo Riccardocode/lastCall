@@ -116,7 +116,7 @@ class UserController extends Controller
         }
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect('/users')->with('message', 'User deleted!');
+        return back()->with('message', 'User deleted!');
     }
 
     public function edit($id)
