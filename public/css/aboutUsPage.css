@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.aboutUsBody {
+  background: url("../images/backgroundPattern.png");
+  padding: 0 0;
+  margin: 0 auto;
+}
+.aboutUsBody .logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 150px;
+}
+.aboutUsBody footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f8f7f2;
+  color: rgba(0, 0, 0, 0.747);
+  padding: 1rem 1rem 0 1rem;
+  width: 100%;
+  line-height: 1.4;
+}
+.aboutUsBody footer ul {
+  list-style-type: none;
+}
+.aboutUsBody footer ul a {
+  text-decoration: none;
+  color: #f97316;
+}
+.aboutUsBody footer ul a span {
+  color: rgba(0, 0, 0, 0.747);
+}
+.aboutUsBody footer ul a:hover {
+  text-decoration: underline;
+}
+.aboutUsBody .credentials {
+  text-align: center;
+  padding-top: 1rem;
+  background-color: #f8f7f2;
+  color: rgba(0, 0, 0, 0.52);
+}
+.aboutUsBody .credentials p {
+  margin: 0;
+}
+
+.imgSection {
+  display: flex;
+  gap: 4.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 3.5em 5rem 11rem 5rem;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 2rem;
+  color: rgba(0, 0, 0, 0.85);
+  font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  font-family: "Fugaz One", sans-serif;
+}
+
+.card {
+  position: relative;
+  height: 18rem;
+  width: 18rem;
+}
+.card__side {
+  height: 18rem;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+.card__side .heroImage {
+  border: 3px solid rgba(249, 116, 22, 0.6117647059);
+  border-radius: 50%;
+  width: 270px;
+}
+.card__side--front {
+  background-color: transparent;
+  background-size: 100% 100%;
+  border-radius: 50%;
+  height: 17.2rem;
+  width: 17.2rem;
+}
+.card__side--back {
+  transform: rotateY(180deg);
+  box-shadow: inset;
+  background-size: 100% 100%;
+  height: 22rem;
+  width: 18rem;
+  background-color: rgba(255, 255, 255, 0.795);
+  box-shadow: 0 0 20px #f97316, 0 0 10px #f97316 inset;
+}
+.card__side--back p {
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1rem !important;
+}
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+.card:hover .card__side--back {
+  transform: rotateY(0);
+}
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+}
+.card .socialMediaLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -1.5rem;
+}
+.card .socialMediaLinks ul {
+  list-style-type: none;
+}
+.card .socialMediaLinks ul a {
+  text-decoration: none;
+  color: #f97316;
+}
+.card .socialMediaLinks ul a span {
+  color: rgba(0, 0, 0, 0.74);
+}
+.card .socialMediaLinks ul a span:hover {
+  color: #f97316;
+}/*# sourceMappingURL=aboutUsPage.css.map */

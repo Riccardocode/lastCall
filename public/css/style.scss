@@ -15,6 +15,7 @@
 //.......................
 //COUNTER TAILWIND !!!!
 html {
+html {
     line-height: 1.2 !important;
 }
 
@@ -27,6 +28,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 //........................
 
+ul {
+    //Delete the ° list
 ul {
     //Delete the ° list
     list-style: none;
@@ -44,6 +47,7 @@ header {
     padding: 0.3rem 1.5rem;
     background: rgba(0, 0, 0, 0.185);
     .navLink:hover {
+    .navLink:hover {
         text-decoration: underline;
     }    
     .logo {
@@ -60,6 +64,7 @@ header {
         .about-us {
             font-size: 20px;
             font-weight: bold;
+            font-weight: bold;
         }
     }
 
@@ -75,7 +80,7 @@ header {
             align-items: center;
 
             .welcome {
-                color: $textColorWhite
+                color: $textColorWhite;
             }
 
             a {
@@ -96,6 +101,7 @@ header {
                 font-family: $primaryFont;
                 font-size: 20px;
                 color: $textColorWhite;
+                font-weight: bold;
                 font-weight: bold;
             }
             .dropdown-content {
@@ -125,11 +131,13 @@ header {
             // Logout Button
             text-decoration: none;
             font-family: $primaryFont;
-            padding: .4rem 1rem;
+            padding: 0.4rem 1rem;
             background-color: rgba(0, 0, 0, 0.76);
+            color: $textColorWhite;
             color: $textColorWhite;
             border-radius: 4px;
             transition: 1s;
+            border: none;
             border: none;
             font-size: 1rem;
         }
@@ -229,6 +237,7 @@ footer {
     position: relative;
     opacity: 0;
 }
+.reveal.active {
 .reveal.active {
     opacity: 1;
 }

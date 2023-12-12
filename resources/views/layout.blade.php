@@ -72,8 +72,10 @@
                 @else
                     <li>
                         <a class="navLink" href="/register">Register</a>
+                        <a class="navLink" href="/register">Register</a>
                     </li>
                     <li>
+                        <a class="navLink" href="/login">Login</a>
                         <a class="navLink" href="/login">Login</a>
                     </li>
                 @endif
@@ -122,6 +124,9 @@
     </div>
     {{-- to trigger the animation when it's only on your screen script --}}
     <script src="{{ asset('js/animation.js') }}"></script>
+    {{-- to trigger the animation when it's only on your screen script --}}
+    <script src="{{ asset('js/animation.js') }}"></script>
 </body>
+
 
 </html>
