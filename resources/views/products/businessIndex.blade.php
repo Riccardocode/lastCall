@@ -3,6 +3,14 @@
 @extends('layout')
 
 @section('content')
+    <style>
+        .disabled {
+            pointer-events: none;
+            opacity: 0.5;
+            cursor: default;
+        }
+    </style>
+
     <div class="businessClientView">
         <section class="logoAdd reveal animationScale"
             style="background-image: url('/storage/businessImages/restaurantGeneral.png');">
@@ -14,7 +22,8 @@
             {{-- <?php dd($products[0]); ?> --}}
 
             @if (auth()->check() && (auth()->user()->id == $business->manager_id || auth()->user()->role == 'admin'))
-                <a id="addProd" class="reveal animationShow" href="/business/{{ $business->id }}/products/create">Add product</a>
+                <a id="addProd" class="reveal animationShow" href="/business/{{ $business->id }}/products/create">Add
+                    product</a>
             @endif
 
             @if ($business->products->count() == 0)
@@ -59,8 +68,9 @@
                                         <a
                                             href="/business/{{ $product->business_id }}/products/{{ $product->id }}/saleslot/{{ $product->saleslots[0]->id }}/edit">
                                             <i class="fa-solid fa-pencil"></i></a>
+                                        {{-- To use the delete and the end sales buttons the controller needs to be in place --}}
                                         {{-- <a href="">Delete</a> --}}
-                                        <a href=""><i class="fa-solid fa-hand"></i></a>
+                                        {{-- <a href=""><i class="fa-solid fa-hand"></i></a> --}}
                                     </div>
                                 @endif
                             </div>
@@ -102,7 +112,9 @@
                                 {{-- change this with pen icon for edit --}}
                                 <div id="manage">
                                     <a href="/business/{{ $business->id }}/products/{{ $product->id }}/edit">
+
                                         <i class="fa-solid fa-pencil"></i>
+
                                     </a>
 
                                     <form action="/business/{{ $business->id }}/products/{{ $product->id }}"
@@ -117,10 +129,14 @@
                                     </form>
 
                                     {{-- Change this with Saleslot Icon --}}
-                                    <a href="/business/{{ $business->id }}/products/{{ $product->id }}/saleslot/create">
+
+                                    <a href="/business/{{ $business->id }}/products/{{ $product->id }}/saleslot/create"
+                                        class="{{ $product->saleslots->count() > 0 ? 'disabled' : '' }}">
                                         {{-- new sales lot --}}
                                         <i class="fa-solid fa-tags"></i>
                                     </a>
+
+
                                 </div>
                             </div>
                             {{-- if user or not logged in --}}
@@ -130,7 +146,7 @@
                                 <form id="AddCart" action="/orders" method="POST">
                                     @csrf
                                     <p>
-                                        {{ $product->saleslots[0]->price }}  <i class="fa-solid fa-euro-sign"></i>
+                                        {{ $product->saleslots[0]->price }} <i class="fa-solid fa-euro-sign"></i>
                                     </p>
                                     <div class="quantity-controls">
                                         {{-- <button type="button" class="quantity-decrease">-</button> --}}
@@ -158,8 +174,6 @@
             @endif
         </section>
     </div>
-
-
 @endsection
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.36/moment-timezone-with-data.min.js"></script>
