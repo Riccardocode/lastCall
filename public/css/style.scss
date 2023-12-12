@@ -19,27 +19,18 @@ html {
 }
 
 body {
-    background-color: $backgroundColor;
-
+    background-color: $backgroundColor !important;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
     font-weight: 600 !important;
 }
-
 //........................
-
 
 ul {
     //Delete the ° list
     list-style: none;
 }
-
 //LAYOUT HEADER
 header {
     position: absolute; //to keep the header inside the main in the top 
@@ -52,11 +43,9 @@ header {
     margin: 0;
     padding: 0.3rem 1.5rem;
     background: rgba(0, 0, 0, 0.185);
-
     .navLink:hover {
         text-decoration: underline;
-    }
-
+    }    
     .logo {
         // the container with the logo image and About Us link
         display: flex;
@@ -94,6 +83,7 @@ header {
                 font-size: 20px;
                 color: $textColorWhite;
                 font-weight: bold;
+
             }
         }
 
@@ -123,6 +113,7 @@ header {
                     padding: 0px 30px;
                     font-weight: normal;
                     font-size: 17px;
+                    text-shadow: 2px 2px 1px #000000;
                 }
             }
         }
@@ -171,14 +162,14 @@ main {
     @import 'cart/cart.scss';
     //MAIN PRODUCTDETAILS PAGE CSS
     @import 'productDetails/productDetails.scss';
+    //MAIN MYORDERSPAGE CSS
+    @import 'myOrders/myOrders.scss';
 }
-
 hr {
     margin: 2.5% 20% 1.25% 20% !important;
     border: solid 1px $primaryColor;
     opacity: 0.4;
 }
-
 #backContainer {
     margin-top: 30px;
 
@@ -233,47 +224,38 @@ footer {
     background-color: $backgroundColor;
     color: $palceholdersColor;
 }
-
 //ANIMATION 
 .reveal {
     position: relative;
     opacity: 0;
 }
-
 .reveal.active {
     opacity: 1;
 }
-
 .active.animationDown {
     //annimation Down
     animation: animationDown 1s ease-in;
 }
-
 .active.animationUp {
     //annimation Up
     animation: animationUp 1s ease-in;
 }
-
 .active.animationLeft {
     //annimation Left
     animation: animationLeft 1s ease-in;
 }
-
 .active.animationRight {
     //annimation Right
     animation: animationRight 1s ease-in;
 }
-
 .active.animationScale {
     //annimation Scale
     animation: animationScale 1s ease-in;
 }
-
 .active.animationShow {
     //annimation Show
     animation: animationShow 1s ease-in;
 }
-
 //KEYFRAMES 
 @keyframes animationDown {
 
@@ -288,7 +270,6 @@ footer {
         opacity: 1;
     }
 }
-
 @keyframes animationUp {
 
     //annimation Up
@@ -302,7 +283,6 @@ footer {
         opacity: 1;
     }
 }
-
 @keyframes animationLeft {
 
     //annimation Left
@@ -317,7 +297,6 @@ footer {
     }
 
 }
-
 @keyframes animationRight {
 
     //annimation Right
@@ -331,7 +310,6 @@ footer {
         opacity: 1;
     }
 }
-
 @keyframes animationScale {
 
     //annimation Scale 
@@ -345,7 +323,6 @@ footer {
         opacity: 0.8;
     }
 }
-
 @keyframes animationShow {
 
     //annimation just Show 

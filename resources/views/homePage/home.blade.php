@@ -17,6 +17,7 @@
             </a>
         </div>
         @include('partials._searchHomePage')
+        
     </section>
     {{-- bottom of main page --}}
     <section id="homeArticle">

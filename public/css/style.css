@@ -10,15 +10,10 @@ html {
 }
 
 body {
-  background-color: #f8f7f2;
+  background-color: #f8f7f2 !important;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 600 !important;
 }
 
@@ -96,6 +91,7 @@ header nav #dropdown .dropdown-content a {
   padding: 0px 30px;
   font-weight: normal;
   font-size: 17px;
+  text-shadow: 2px 2px 1px #000000;
 }
 header nav #dropdown:hover .dropdown-content {
   display: block;
@@ -117,6 +113,7 @@ header nav button:hover {
 }
 
 main {
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
@@ -540,7 +537,6 @@ main .choosingSection {
 main .choosingSection .chooPt1 h2 {
   font-family: "Roboto", sans-serif;
   font-size: 24px;
-  padding-bottom: 50px;
   font-weight: normal !important;
 }
 main .choosingSection .chooPt1 .chooBuis, main .choosingSection .chooPt1 .chooPro {
@@ -549,6 +545,7 @@ main .choosingSection .chooPt1 .chooBuis, main .choosingSection .chooPt1 .chooPr
   flex-wrap: nowrap;
   overflow-y: hidden;
   gap: 20px;
+  padding-top: 70px;
 }
 main .choosingSection .chooPt1 .chooBuis a, main .choosingSection .chooPt1 .chooPro a {
   gap: 20px;
@@ -563,6 +560,7 @@ main .choosingSection .chooPt1 .chooBuis a article, main .choosingSection .chooP
   position: relative;
 }
 main .choosingSection .chooPt1 a:hover {
+  z-index: 10;
   box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
   transform: translateY(-20px);
 }
@@ -603,6 +601,7 @@ main .choosingSection .chooPt1 .chooPro a article .reduction {
   border-radius: 50%;
   font-size: 19px;
   font-weight: bold;
+  z-index: 10;
 }
 main .choosingSection .chooPt1 .chooPro a article .detailsPro {
   color: #0E0000;
@@ -614,6 +613,7 @@ main .choosingSection .chooPt1 .chooPro a article .detailsPro {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, #F8F5F2 28.65%);
   padding: 25px 3px 10px 15px;
   gap: 10px;
+  z-index: 0;
 }
 main .choosingSection .chooPt1 .chooPro a article .detailsPro .detailsPro1 {
   display: flex;
@@ -862,6 +862,39 @@ main .showProd .showProdDetails {
 }
 main .showProd .showProdDetails h2, main .showProd .showProdDetails h3, main .showProd .showProdDetails h4 {
   padding: 15px;
+}
+main .sectionOrder {
+  background-image: url("../../images/backgroundDots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #f8f7f2;
+  padding: 10% 50px 0px 50px;
+}
+main .sectionOrder h1 {
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+}
+main .sectionOrder h2 {
+  margin-left: 2.5%;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  padding: 20px 0;
+}
+main .sectionOrder article {
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: rgba(255, 255, 255, 0.689);
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+  padding: 15px;
+  border-radius: 15px;
+}
+main .sectionOrder article div p {
+  padding: 2px 0;
+}
+main .sectionOrder article div .code {
+  color: blue;
+  font-weight: bold;
 }
 
 hr {
