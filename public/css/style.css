@@ -48,6 +48,7 @@ header .logo a {
 header .logo .about-us {
   font-size: 20px;
   font-weight: bold;
+  font-weight: bold;
 }
 header img {
   width: 100%;
@@ -76,6 +77,7 @@ header nav #dropdown #dropbtn {
   font-size: 20px;
   color: #FFF;
   font-weight: bold;
+  font-weight: bold;
 }
 header nav #dropdown .dropdown-content {
   display: none;
@@ -102,8 +104,10 @@ header nav button {
   padding: 0.4rem 1rem;
   background-color: rgba(0, 0, 0, 0.76);
   color: #FFF;
+  color: #FFF;
   border-radius: 4px;
   transition: 1s;
+  border: none;
   border: none;
   font-size: 1rem;
 }
@@ -531,7 +535,7 @@ main .choosingSection {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-color: #f8f7f2;
+  background-color: #FFF;
   padding: 12.5% 5% 0px 5%;
 }
 main .choosingSection .chooPt1 h2 {
@@ -646,7 +650,7 @@ main .choosingSection #chooSearch input {
   font-size: 14px;
 }
 main .choosingSection #chooSearch input, main .choosingSection #chooSearch select, main .choosingSection #chooSearch button {
-  color: lightgray;
+  color: black;
   padding: 20px;
   outline: none;
   border: 0.5px solid lightgray;

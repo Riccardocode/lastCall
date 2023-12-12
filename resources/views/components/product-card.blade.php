@@ -23,8 +23,8 @@ $productImg = $saleslot->product->picture ? asset("storage/$product->picture") :
         <section class="detailsPro">
             <div class="detailsPro1">
                 <h4>{{ $saleslot->product->name }}</h4>
-                <p>Star stuff</p>
-                <button>Add</button>
+                <h3><span style="font-size: 24px;color:green;">€{{$saleslot->price - ($saleslot->price*$saleslot->discount)/100}}<span></h3>
+                {{-- <button>Add</button> --}}
             </div>
             <div class="detailsPro2">
                 @if (!empty(session()->get("nearbyBusiness")) && isset(session()->get("nearbyBusiness")[$saleslot->product->business_id]))   

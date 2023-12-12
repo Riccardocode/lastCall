@@ -119,7 +119,7 @@
   font-size: 14px;
 }
 .choosingSection #chooSearch input, .choosingSection #chooSearch select, .choosingSection #chooSearch button {
-  color: lightgray;
+  color: black;
   padding: 20px;
   outline: none;
   border: 0.5px solid lightgray;

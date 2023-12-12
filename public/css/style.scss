@@ -14,7 +14,7 @@
 
 //.......................
 //COUNTER TAILWIND !!!!
-html {
+
 html {
     line-height: 1.2 !important;
 }
@@ -28,8 +28,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 //........................
 
-ul {
-    //Delete the ° list
+
 ul {
     //Delete the ° list
     list-style: none;
@@ -46,7 +45,6 @@ header {
     margin: 0;
     padding: 0.3rem 1.5rem;
     background: rgba(0, 0, 0, 0.185);
-    .navLink:hover {
     .navLink:hover {
         text-decoration: underline;
     }    
@@ -150,6 +148,7 @@ header {
     }
 }
 
+
 //MAINS
 main {
     //MAIN HOME PAGE CSS
@@ -173,6 +172,7 @@ main {
     //MAIN MYORDERSPAGE CSS
     @import 'myOrders/myOrders.scss';
 }
+
 hr {
     margin: 2.5% 20% 1.25% 20% !important;
     border: solid 1px $primaryColor;
@@ -237,7 +237,6 @@ footer {
     position: relative;
     opacity: 0;
 }
-.reveal.active {
 .reveal.active {
     opacity: 1;
 }
@@ -343,11 +342,3 @@ footer {
         opacity: 1;
     }
 }
-
-
-
-
-
-
-
-
