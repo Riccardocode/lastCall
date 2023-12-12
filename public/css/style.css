@@ -13,7 +13,12 @@ body {
   background-color: #f8f7f2;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600 !important;
 }
 
@@ -66,6 +71,35 @@ header nav ul a {
   color: #FFF;
   font-weight: bold;
 }
+header nav #dropdown {
+  position: relative;
+  display: inline-block;
+}
+header nav #dropdown #dropbtn {
+  background: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: #FFF;
+  font-weight: bold;
+}
+header nav #dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  color: #0E0000;
+  min-width: 160px;
+  z-index: 1;
+  text-align: center;
+}
+header nav #dropdown .dropdown-content a {
+  width: 160px;
+  text-align: center;
+  padding: 0px 30px;
+  font-weight: normal;
+  font-size: 17px;
+}
+header nav #dropdown:hover .dropdown-content {
+  display: block;
+}
 header nav button {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
@@ -83,6 +117,7 @@ header nav button:hover {
 }
 
 main {
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
@@ -326,7 +361,7 @@ main .businessClientView .businessProduts .productClientViewS div h4 {
 main .businessClientView .businessProduts .productClientViewS button {
   background-color: transparent;
   font-size: 20px;
-  padding: 10 15px;
+  padding: 10px 15px;
   transition: 0.5s;
   border: 1px solid #F97316;
   color: #F97316;
@@ -378,7 +413,7 @@ main .loginSection #sellLogin {
 main .loginSection #sellLogin button {
   background-color: transparent;
   font-size: 20px;
-  padding: 10 15px;
+  padding: 10px 15px;
   transition: 0.5s;
   border: 1px solid #F97316;
   color: #F97316;
@@ -623,6 +658,9 @@ main .adminSection h1 {
   text-align: center;
   margin-bottom: 3rem;
 }
+main .adminSection #userLi {
+  padding: 40px 10px;
+}
 main .adminSection .allCardsContainer ul {
   gap: 40px;
 }
@@ -659,6 +697,10 @@ main .adminSection .allCardsContainer ul .adminContent .iconsDashboard .icon {
 }
 main .adminSection .allCardsContainer ul .adminContent .iconsDashboard .icon:hover {
   filter: contrast(150%);
+}
+main .adminSection .allCardsContainer ul .adminContent #nameUser {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
 }
 main .adminSection .allCardsContainer ul #busiMana {
   padding: 30px 0;
@@ -726,7 +768,7 @@ main .cartPage .productCart form {
 main .cartPage .productCart form button {
   background-color: transparent;
   font-size: 20px;
-  padding: 10 15px;
+  padding: 10px 15px;
   transition: 0.5s;
   border: 1px solid #F97316;
   color: #F97316;
@@ -755,7 +797,7 @@ main .cartPage .totalAllProd form {
 main .cartPage .totalAllProd form button {
   background-color: transparent;
   font-size: 20px;
-  padding: 10 15px;
+  padding: 10px 15px;
   transition: 0.5s;
   border: 1px solid #F97316;
   color: #F97316;
@@ -775,11 +817,60 @@ main .cartPage .totalAllProd form button:hover {
   background-color: transparent;
   color: #F97316;
 }
+main .showProd {
+  background-image: url("../../images/backgroundDots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #f8f7f2;
+  padding: 10% 50px 2.5% 5%;
+}
+main .showProd h1 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 20px;
+}
+main .showProd .showProdArt {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+}
+main .showProd .showProdArt img {
+  border-radius: 10px;
+}
+main .showProd .showProdDetails {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+main .showProd .showProdDetails h2, main .showProd .showProdDetails h3, main .showProd .showProdDetails h4 {
+  padding: 15px;
+}
 
 hr {
   margin: 2.5% 20% 1.25% 20% !important;
   border: solid 1px #F97316;
   opacity: 0.4;
+}
+
+#backContainer {
+  margin-top: 30px;
+}
+#backContainer #backBut {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+#backContainer #backBut:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
 }
 
 footer {
