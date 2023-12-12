@@ -24,15 +24,12 @@ body {
 h1,h2,h3,h4,h5,h6 {
     font-weight: 600 !important;
 }
-
 //........................
-
 
 ul {
     //Delete the ° list
     list-style: none;
 }
-
 //LAYOUT HEADER
 header {
     position: absolute; //to keep the header inside the main in the top 
@@ -336,5 +333,6 @@ footer {
         opacity: 1;
     }
 }
+
 
 

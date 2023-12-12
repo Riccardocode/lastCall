@@ -5,3 +5,39 @@
 
 
 
+.sectionOrder{
+    background-image: url("../../images/backgroundDots.svg"); ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: $backgroundColor;
+    padding: 10% 50px 0px 50px;
+    h1{
+        font-size: 30px;
+        font-family: $primaryFont;
+    }
+    h2{
+        margin-left: 2.5%;
+        font-size: 20px;
+        font-family: $primaryFont;
+        padding: 20px 0;
+    }
+    article{
+        margin-left: 5%;
+        margin-right: 5%;
+        background-color: rgba(255, 255, 255, 0.689);
+        box-shadow:  2px 2px 5px #918c83,
+        -2px -2px 5px #f4f4f5; 
+        padding: 15px;
+        border-radius: 15px;
+        div{
+            p{
+                padding: 2px 0;
+            }
+            .code{
+                color: blue;
+                font-weight: bold;
+            }
+        }
+    }
+}
