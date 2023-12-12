@@ -10,6 +10,23 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="//unpkg.com/alpinejs" defer></script>
     <title>last call to order your food</title>
+
+    <?php
+    if (auth()->check()) {
+        auth()->user()->profileImg ? ($userImg = asset('/storage/' . auth()->user()->profileImg)) : ($userImg = asset('/storage/profileImages/default.png'));
+    }
+    ?>
+    <style>
+        #profileUserImg254 {
+            width: 45px;
+            height: 45px;
+            background-image: url('{{ $userImg }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +73,10 @@
                         </li>
                     @endif
                     <li>
-                        <a href="/users/{{auth()->user()->id}}"><i class="fa-solid fa-user"></i></a>
+                        <a href="/users/{{ auth()->user()->id }}">
+                            <div id="profileUserImg254">
+                            </div>
+                        </a>
                     </li>
                     <li>
                         <span class="welcome">
