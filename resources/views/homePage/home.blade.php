@@ -7,6 +7,7 @@
         <h1 class="reveal animationDown">Last Call</h1>
         <p id="homePageP" class="reveal animationShow">Join us in being a hero against food waste.</p>
         @include('partials._searchHomePage')
+        
     </section>
     {{-- bottom of main page --}}
     <section id="homeArticle">

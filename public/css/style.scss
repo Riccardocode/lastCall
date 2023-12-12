@@ -18,16 +18,10 @@ html {
 }
 
 body {
-    background-color: $backgroundColor;
-
+    background-color: $backgroundColor !important;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
     font-weight: 600 !important;
 }
 
@@ -51,11 +45,9 @@ header {
     margin: 0;
     padding: 0.3rem 1.5rem;
     background: rgba(0, 0, 0, 0.185);
-
     .navLink:hover {
         text-decoration: underline;
-    }
-
+    }    
     .logo {
         // the container with the logo image and About Us link
         display: flex;
@@ -93,6 +85,7 @@ header {
                 font-size: 20px;
                 color: $textColorWhite;
                 font-weight: bold;
+
             }
         }
 
@@ -122,6 +115,7 @@ header {
                     padding: 0px 30px;
                     font-weight: normal;
                     font-size: 17px;
+                    text-shadow: 2px 2px 1px #000000;
                 }
             }
         }

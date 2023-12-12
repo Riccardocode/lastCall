@@ -10,15 +10,10 @@ html {
 }
 
 body {
-  background-color: #f8f7f2;
+  background-color: #f8f7f2 !important;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 600 !important;
 }
 
@@ -96,6 +91,7 @@ header nav #dropdown .dropdown-content a {
   padding: 0px 30px;
   font-weight: normal;
   font-size: 17px;
+  text-shadow: 2px 2px 1px #000000;
 }
 header nav #dropdown:hover .dropdown-content {
   display: block;

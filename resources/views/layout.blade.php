@@ -28,6 +28,7 @@
         <nav>
             <ul>
                 @auth
+                <li></li>
                   <li>
                         <div id="dropdown">
                             <button class="navLink" id="dropbtn">Manage Clients</button>

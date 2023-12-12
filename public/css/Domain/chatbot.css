@@ -2,7 +2,7 @@
 body,
 html {
     background-color: #f9f9f9;
-    background-image: url('/storage/chatbotImages/david.jpg');
+    /* background-image: url('/storage/chatbotImages/david.jpg'); */
     background-size: cover ;
     background-position: center;
     /* background-image: url('../../'); */
