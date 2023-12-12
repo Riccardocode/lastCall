@@ -15,8 +15,8 @@
     <p>Register a profile and become a restaurant manager</p>
     <p>Than create your restaurant and add your products to our website. People can search for restaurants and products and buy them</p>
     <div id="sellLogin">
-        <button href="/register">Register</button>
-        <button  href="/login">Login</button>
+        <a href="/register"><button >Register</button></a>
+        <a href="/login"><button >Login</button></a>
     </div>
 </section>
 @endsection
