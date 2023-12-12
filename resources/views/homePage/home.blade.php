@@ -6,6 +6,16 @@
     <section id="homeSection">
         <h1 class="reveal animationDown">Last Call</h1>
         <p id="homePageP" class="reveal animationShow">Join us in being a hero against food waste.</p>
+        <div id="mapLink" class="reveal animationShow">
+            <a href="/map">
+                <div id="insMapLink">
+                    <img src="/storage/homeImages/locationIcon.png" alt="">
+                    <p>
+                        View Map
+                    </p>
+                </div>
+            </a>
+        </div>
         @include('partials._searchHomePage')
         
     </section>
