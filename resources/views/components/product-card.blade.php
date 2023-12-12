@@ -13,7 +13,7 @@ $productImg = $saleslot->product->picture ? asset("storage/$product->picture") :
         background-repeat: no-repeat;
     }
 </style>
-<a href="/business/{{ $saleslot->product->business_id }}">
+<a href="/business/{{ $saleslot->product->business_id }}/products">
 
     <article id="articleBackground{{$saleslot->id}}">
         <div class="reduction">
