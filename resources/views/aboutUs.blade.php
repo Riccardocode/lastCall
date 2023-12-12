@@ -37,26 +37,24 @@
                 <div class="card__cta">
                     <h2>Riccardo Scalia</h2>
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
-                        dolor quae, omnis beatae recusandae dolores, inventore veniam
-                        eaque fugit quaerat sint minus tempora modi doloremque hic iusto
-                        sequi fuga amet.
+                        Fullstack Developer and <br> Project Manager
                     </p>
                     {{-- Social Media Links --}}
                     <div class="socialMediaLinks">
                         <ul>
                             <li>
-                                <a href=""><i class="fa-brands fa-linkedin"></i> &nbsp;
+                                <a href="https://www.linkedin.com/in/riccardosc/"><i class="fa-brands fa-linkedin"></i>
+                                    &nbsp;
                                     <span>LinkedIn</span></a>
                             </li>
 
                             <li>
-                                <a href=""><i class="fa-brands fa-github"></i> &nbsp;
+                                <a href="https://github.com/Riccardocode"><i class="fa-brands fa-github"></i> &nbsp;
                                     <span>GitHub</span></a>
                             </li>
 
                             <li>
-                                <a href=""><i class="fa-solid fa-envelope"></i> &nbsp;
+                                <a href="scaliariccardo_89@hotmail.it"><i class="fa-solid fa-envelope"></i> &nbsp;
                                     <span>Email</span></a>
                             </li>
                         </ul>
@@ -77,26 +75,24 @@
                 <div class="card__cta">
                     <h2>Luiza Moshkin</h2>
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
-                        dolor quae, omnis beatae recusandae dolores, inventore veniam
-                        eaque fugit quaerat sint minus tempora modi doloremque hic iusto
-                        sequi fuga amet.
+                        Fullstack Developer and <br> UX / UI Designer
                     </p>
                     {{-- Social Media Links --}}
                     <div class="socialMediaLinks">
                         <ul>
                             <li>
-                                <a href=""><i class="fa-brands fa-linkedin"></i> &nbsp;
+                                <a href="https://www.linkedin.com/in/luiza-moshkin/"><i
+                                        class="fa-brands fa-linkedin"></i> &nbsp;
                                     <span>LinkedIn</span></a>
                             </li>
 
                             <li>
-                                <a href=""><i class="fa-brands fa-github"></i> &nbsp;
+                                <a href="https://github.com/la-viza"><i class="fa-brands fa-github"></i> &nbsp;
                                     <span>GitHub</span></a>
                             </li>
 
                             <li>
-                                <a href=""><i class="fa-solid fa-envelope"></i> &nbsp;
+                                <a href="luiza.moshkin@gmail.com"><i class="fa-solid fa-envelope"></i> &nbsp;
                                     <span>Email</span></a>
                             </li>
                         </ul>
@@ -116,26 +112,24 @@
                 <div class="card__cta">
                     <h2>Brandon Steffan</h2>
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
-                        dolor quae, omnis beatae recusandae dolores, inventore veniam
-                        eaque fugit quaerat sint minus tempora modi doloremque hic iusto
-                        sequi fuga amet.
+                        Fullstack Developer and <br> Api Architect
                     </p>
                     {{-- Social Media Links --}}
                     <div class="socialMediaLinks">
                         <ul>
                             <li>
-                                <a href=""><i class="fa-brands fa-linkedin"></i> &nbsp;
+                                <a href="https://www.linkedin.com/in/brandon-steffan/"><i
+                                        class="fa-brands fa-linkedin"></i> &nbsp;
                                     <span>LinkedIn</span></a>
                             </li>
 
                             <li>
-                                <a href=""><i class="fa-brands fa-github"></i> &nbsp;
+                                <a href="https://github.com/BrandonSteffan"><i class="fa-brands fa-github"></i> &nbsp;
                                     <span>GitHub</span></a>
                             </li>
 
                             <li>
-                                <a href=""><i class="fa-solid fa-envelope"></i> &nbsp;
+                                <a href="brandon.steffan15@gmail.com"><i class="fa-solid fa-envelope"></i> &nbsp;
                                     <span>Email</span></a>
                             </li>
                         </ul>
@@ -159,26 +153,24 @@
                 <div class="card__cta">
                     <h2>Antoine Martin</h2>
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
-                        dolor quae, omnis beatae recusandae dolores, inventore veniam
-                        eaque fugit quaerat sint minus tempora modi doloremque hic iusto
-                        sequi fuga amet.
+                        Fullstack Developer and Business Computing Student
                     </p>
                     {{-- Social Media Links --}}
                     <div class="socialMediaLinks">
                         <ul>
                             <li>
-                                <a href=""><i class="fa-brands fa-linkedin"></i> &nbsp;
+                                <a href="https://www.linkedin.com/in/antomart/"><i class="fa-brands fa-linkedin"></i>
+                                    &nbsp;
                                     <span>LinkedIn</span></a>
                             </li>
 
                             <li>
-                                <a href=""><i class="fa-brands fa-github"></i> &nbsp;
+                                <a href="https://github.com/antomart96"><i class="fa-brands fa-github"></i> &nbsp;
                                     <span>GitHub</span></a>
                             </li>
 
                             <li>
-                                <a href=""><i class="fa-solid fa-envelope"></i> &nbsp;
+                                <a href="martinanto96@hotmail.fr"><i class="fa-solid fa-envelope"></i> &nbsp;
                                     <span>Email</span></a>
                             </li>
                         </ul>
@@ -199,26 +191,24 @@
                 <div class="card__cta">
                     <h2>Dany Lopes</h2>
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus
-                        dolor quae, omnis beatae recusandae dolores, inventore veniam
-                        eaque fugit quaerat sint minus tempora modi doloremque hic iusto
-                        sequi fuga amet.
+                        Fullstack Developer and <br> Backend Architect
                     </p>
                     {{-- Social Media Links --}}
                     <div class="socialMediaLinks">
                         <ul>
                             <li>
-                                <a href=""><i class="fa-brands fa-linkedin"></i> &nbsp;
+                                <a href="https://www.linkedin.com/in/lg-dany/"><i class="fa-brands fa-linkedin"></i>
+                                    &nbsp;
                                     <span>LinkedIn</span></a>
                             </li>
 
                             <li>
-                                <a href=""><i class="fa-brands fa-github"></i> &nbsp;
+                                <a href="https://github.com/LopDa093"><i class="fa-brands fa-github"></i> &nbsp;
                                     <span>GitHub</span></a>
                             </li>
 
                             <li>
-                                <a href=""><i class="fa-solid fa-envelope"></i> &nbsp;
+                                <a href="dany.lopes.goncalves@gmail.com"><i class="fa-solid fa-envelope"></i> &nbsp;
                                     <span>Email</span></a>
                             </li>
                         </ul>

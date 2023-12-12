@@ -27,14 +27,18 @@ $logoFont: "Fugaz One", sans-serif;
         padding: 1rem 1rem 0 1rem;
         width: 100%;
         line-height: 1.4;
-        a {
-            text-decoration: none;
-            color: #f97316;
-            span {
-                color: rgba(0, 0, 0, 0.747);
-            }
-            &:hover {
-                text-decoration: underline;
+        ul {
+            list-style-type: none;
+
+            a {
+                text-decoration: none;
+                color: #f97316;
+                span {
+                    color: rgba(0, 0, 0, 0.747);
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -56,7 +60,7 @@ $logoFont: "Fugaz One", sans-serif;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 5rem 5rem 11rem 5rem;
+    padding: 3.5em 5rem 11rem 5rem;
     font-family: $primaryFont;
 }
 
@@ -111,7 +115,12 @@ h2 {
             width: 18rem;
             background-color: rgba(255, 255, 255, 0.795);
             box-shadow: 0 0 20px #f97316, 0 0 10px #f97316 inset;
-            // box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+
+            p {
+                font-size: 1.2rem;
+                font-family: $primaryFont;
+                line-height: 1rem !important;
+            }
         }
     }
 
@@ -141,7 +150,7 @@ h2 {
         margin-left: -1.5rem;
 
         ul {
-            list-style: none;
+            list-style-type: none;
 
             a {
                 text-decoration: none;
