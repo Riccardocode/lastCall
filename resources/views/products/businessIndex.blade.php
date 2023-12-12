@@ -10,10 +10,11 @@
             cursor: default;
         }
     </style>
+    <?php $business->businessImg ? $business->businessImg : $business->businessImg = '/businessImages/restaurantGeneral.png'; ?>
 
     <div class="businessClientView">
         <section class="logoAdd reveal animationScale"
-            style="background-image: url('/storage/businessImages/restaurantGeneral.png');">
+            style="background-image: url('/storage{{$business->businessImg}}');">
             {{-- manage image in business --}}
             <h1 class="nameRest">{{ $business->name }}</h1>
         </section>
