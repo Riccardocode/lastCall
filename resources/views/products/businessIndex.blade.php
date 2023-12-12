@@ -10,6 +10,7 @@
             cursor: default;
         }
     </style>
+    
     <?php $business->businessImg ? $business->businessImg : $business->businessImg = '/businessImages/restaurantGeneral.png'; ?>
 
     <div class="businessClientView">

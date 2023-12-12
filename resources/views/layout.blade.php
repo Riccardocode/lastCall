@@ -72,10 +72,8 @@
                 @else
                     <li>
                         <a class="navLink" href="/register">Register</a>
-                        <a class="navLink" href="/register">Register</a>
                     </li>
                     <li>
-                        <a class="navLink" href="/login">Login</a>
                         <a class="navLink" href="/login">Login</a>
                     </li>
                 @endif
