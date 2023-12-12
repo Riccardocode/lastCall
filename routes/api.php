@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 require __DIR__."/ApiRoutes/businessApiRoutes.php";
 
-require __DIR__."/ApiRoutes/BotApiRoutes.php";
+// require __DIR__."/ApiRoutes/BotApiRoutes.php";

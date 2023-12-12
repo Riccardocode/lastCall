@@ -126,20 +126,20 @@ class BotManController extends Controller
     }
 
     //*Recommendation with Location
-    public function locationRecommend($botman)
-    {
-        Log::info("Before Pattern Hear loc");
-        $pattern7 = '.*(?:location|proximity).*\?';
-        $botman->hears($pattern7, function ($botman) {
-            if ($this->checkFile("Command")) {
-                Log::info("Inside Hear loc");
-                $this->fileTest("Command");
-                $this->fileTest("Error");
+    // public function locationRecommend($botman)
+    // {
+    //     Log::info("Before Pattern Hear loc");
+    //     $pattern7 = '.*(?:location|proximity).*\?';
+    //     $botman->hears($pattern7, function ($botman) {
+    //         if ($this->checkFile("Command")) {
+    //             Log::info("Inside Hear loc");
+    //             $this->fileTest("Command");
+    //             $this->fileTest("Error");
                 // $this->dummy($botman);
-                $botman->startConversation(new ProximityConversation());
-            }
-        });
-    }
+        //         $botman->startConversation(new ProximityConversation());
+        //     }
+        // });
+    // }
 
     //*Recommendation with Amount Logic
     public function recommendMultiple($botman)
@@ -287,11 +287,11 @@ class BotManController extends Controller
         }
 
         //* Login Issues
-        if ($this->checkFile("Command")) {
-            Log::info("Location");
+        // if ($this->checkFile("Command")) {
+            // Log::info("Location");
             // $botman->reply('test');
-            $this->locationRecommend($botman);
-        }
+            // $this->locationRecommend($botman);
+        // }
 
         //* Register Issues
         if ($this->checkFile("Command")) {
