@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+<<<<<<< Updated upstream
+=======
+// Route::get('/login', function () {
+//     return view('welcome');
+// });
+>>>>>>> Stashed changes
 
 //Show register form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
