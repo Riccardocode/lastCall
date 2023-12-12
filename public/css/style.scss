@@ -170,14 +170,14 @@ main {
     @import 'cart/cart.scss';
     //MAIN PRODUCTDETAILS PAGE CSS
     @import 'productDetails/productDetails.scss';
+    //MAIN MYORDERSPAGE CSS
+    @import 'myOrders/myOrders.scss';
 }
-
 hr {
     margin: 2.5% 20% 1.25% 20% !important;
     border: solid 1px $primaryColor;
     opacity: 0.4;
 }
-
 #backContainer {
     margin-top: 30px;
 
@@ -232,47 +232,38 @@ footer {
     background-color: $backgroundColor;
     color: $palceholdersColor;
 }
-
 //ANIMATION 
 .reveal {
     position: relative;
     opacity: 0;
 }
-
 .reveal.active {
     opacity: 1;
 }
-
 .active.animationDown {
     //annimation Down
     animation: animationDown 1s ease-in;
 }
-
 .active.animationUp {
     //annimation Up
     animation: animationUp 1s ease-in;
 }
-
 .active.animationLeft {
     //annimation Left
     animation: animationLeft 1s ease-in;
 }
-
 .active.animationRight {
     //annimation Right
     animation: animationRight 1s ease-in;
 }
-
 .active.animationScale {
     //annimation Scale
     animation: animationScale 1s ease-in;
 }
-
 .active.animationShow {
     //annimation Show
     animation: animationShow 1s ease-in;
 }
-
 //KEYFRAMES 
 @keyframes animationDown {
 
@@ -287,7 +278,6 @@ footer {
         opacity: 1;
     }
 }
-
 @keyframes animationUp {
 
     //annimation Up
@@ -301,7 +291,6 @@ footer {
         opacity: 1;
     }
 }
-
 @keyframes animationLeft {
 
     //annimation Left
@@ -316,7 +305,6 @@ footer {
     }
 
 }
-
 @keyframes animationRight {
 
     //annimation Right
@@ -330,7 +318,6 @@ footer {
         opacity: 1;
     }
 }
-
 @keyframes animationScale {
 
     //annimation Scale 
@@ -344,7 +331,6 @@ footer {
         opacity: 0.8;
     }
 }
-
 @keyframes animationShow {
 
     //annimation just Show 
@@ -356,8 +342,5 @@ footer {
         opacity: 1;
     }
 }
-
-
-
 
 

@@ -11,8 +11,9 @@ $productImg = $saleslot->product->picture ? asset("storage/$product->picture") :
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        border-radius: 5px;
     }
-</style>
+</style> 
 <a href="/business/{{ $saleslot->product->business_id }}/products">
 
     <article id="articleBackground{{$saleslot->id}}">
