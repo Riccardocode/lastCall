@@ -118,8 +118,24 @@ class OrderController extends Controller
         return redirect("/orders/cart")->with('message', 'Item removed from cart');
     }
 
+    public function getPaymentCrediCardDetails(){
+    //    if session(totalAmount) is not set, redirect to cart
+        if(!session('totalAmount')){
+            return redirect('/orders/cart');
+        }
+        if(!session('order_id')){
+            return redirect('/orders/cart')->with('message', 'Sorry, there is an issue with your cart Order id not set');
+        }
+        return view('orders.creditCardDetails', [
+            'totalAmount' => session('totalAmount'),
+            'order_id' => session('order_id'),
+        ]);
+    }
+
     public function paymentCrediCardDetails(Request $request)
     {
+        session(['totalAmount' => $request['totalAmount']]);
+        session(['order_id' => $request['order_id']]);
 
         return view('orders.creditCardDetails', [
             'totalAmount' => $request['totalAmount'],

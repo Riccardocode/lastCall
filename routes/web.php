@@ -13,7 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Routes for Users and their functions
+Route::get("/", function(){
+    return view("homeage");
+});
+
+//Routes for users management (In case of Routing Issues with users, Refer to Riccardo)
 require __DIR__.'/Routes/userRoutes.php';
 
 

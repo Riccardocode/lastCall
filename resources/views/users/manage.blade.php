@@ -18,19 +18,12 @@
                             <i class="fa-solid fa-pencil"></i> Edit
                         </a> --}}
 
-                            {{-- <form action="/users/{{ $user->id }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button
-                                class="text-red-500">
-                                <i class="fa-solid fa-trash"></i>Delete
-                            </button>
-                        </form> --}}
+
 
                             <section class="iconsDashboard">
                                 {{-- Edit button container --}}
                                 <div>
-                                    <a href=""><i class="fa-solid fa-pen-to-square icon"></i></a>
+                                    <a href="/users/{{ $user->id }}/edit"><i class="fa-solid fa-pen-to-square icon"></i></a>
                                 </div>
 
                                 {{-- View button container
@@ -39,19 +32,24 @@
                                 </div> --}}
 
                                 {{-- Delete button container --}}
-                                <div>
+                                <form action="/users/{{ $user->id }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-red-500 hover:text-red-700 font-medium"><i class="fa-solid fa-trash icon"></i></button>
+                                </form>
+                                {{-- <div>
                                     <a href=""><i class="fa-solid fa-trash icon"></i></a>
-                                </div>
+                                </div> --}}
                             </section>
                         </li>
                     @endforeach
-            </ul>
-                @else
-                    <p class="text-center">No Users found</p>
-                @endUnless
-                <div class="mt-6 p-4 reveal animationLeft">
-                    {{ $users->links() }}
-                </div>
+                </ul>
+            @else
+                <p class="text-center">No Users found</p>
+            @endUnless
+            <div class="mt-6 p-4 reveal animationLeft">
+                {{ $users->links() }}
+            </div>
     </section>
 
 

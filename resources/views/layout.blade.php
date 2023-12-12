@@ -27,21 +27,34 @@
 
         <nav>
             <ul>
-                @auth
-                <li></li>
-                  <li>
-                        <div id="dropdown">
-                            <button class="navLink" id="dropbtn">Manage Clients</button>
-                            <div class="dropdown-content">
+                @if (auth()->check())
+                    @if (auth()->user()->role == 'admin')
+                        <li>
+                            <div id="dropdown">
+                                <button class="navLink" id="dropbtn">Manage Clients</button>
+                                <div class="dropdown-content">
 
-                            <a  class="navLink" href="/orders/cart">Business</a>
-                            <a  class="navLink" href="/orders/cart">User</a>
+                                    <a class="navLink" href="/business">Business</a>
+                                    <a class="navLink" href="/users">User</a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a  class="navLink" href="/orders/cart">Cart</a>
-                    </li>
+                        </li>
+                    @endif
+                    @if (auth()->user()->role == 'user' || auth()->user()->role == 'restaurantManager')
+                        <li>
+                            <a class="navLink" href="/orders/cart">Cart</a>
+                        </li>
+                    @endif
+                    @if (auth()->user()->role == 'user')
+                        <li>
+                            <a class="navLink" href="/myorders">My Orders</a>
+                        </li>
+                    @endif
+                    @if (auth()->user()->role == 'restaurantManager')
+                        <li>
+                            <a class="navLink" href="/businessmanagerorders">Business Orders</a>
+                        </li>
+                    @endif
                     <li>
                         <span class="welcome">
                             Welcome {{ auth()->user()->firstname }}
@@ -55,12 +68,12 @@
                     </li>
                 @else
                     <li>
-                        <a  class="navLink" href="/register">Register</a>
+                        <a class="navLink" href="/register">Register</a>
                     </li>
                     <li>
-                        <a  class="navLink" href="/login">Login</a>
+                        <a class="navLink" href="/login">Login</a>
                     </li>
-                @endauth
+                @endif
             </ul>
         </nav>
     </header>
@@ -104,7 +117,8 @@
         <p>LastCall 2023&copy;</p>
         <p>The website coded by 11111</p>
     </div>
-    {{--to trigger the animation when it's only on your screen script --}}
-    <script  src="{{ asset('js/animation.js') }}"></script>
+    {{-- to trigger the animation when it's only on your screen script --}}
+    <script src="{{ asset('js/animation.js') }}"></script>
 </body>
+
 </html>
