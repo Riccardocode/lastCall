@@ -29,7 +29,7 @@
             <ul>
                 @auth
                     <li>
-                        <a  class="navLink" href="/orders/cart">Cart</a>
+                        <a class="navLink" href="/orders/cart">Cart</a>
                     </li>
                     <li>
                         <span class="welcome">
@@ -44,10 +44,10 @@
                     </li>
                 @else
                     <li>
-                        <a  class="navLink" href="/register">Register</a>
+                        <a class="navLink" href="/register">Register</a>
                     </li>
                     <li>
-                        <a  class="navLink" href="/login">Login</a>
+                        <a class="navLink" href="/login">Login</a>
                     </li>
                 @endauth
             </ul>
@@ -92,7 +92,8 @@
         <p>LastCall 2023&copy;</p>
         <p>The website coded by 11111</p>
     </div>
-    {{--to trigger the animation when it's only on your screen script --}}
-    <script  src="{{ asset('js/animation.js') }}"></script>
+    {{-- to trigger the animation when it's only on your screen script --}}
+    <script src="{{ asset('js/animation.js') }}"></script>
 </body>
+
 </html>

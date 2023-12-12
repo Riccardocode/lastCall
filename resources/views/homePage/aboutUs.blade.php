@@ -5,11 +5,11 @@
         {{-- The main container for all the cards --}}
         <div class="imgSection">
             {{-- The individial card, consisting of the image and text --}}
-            <div class="heroSection card transition">
+            <div class="heroSection">
                 <div class="imgAbout">
                     <img src="{{ asset('images/Riccardo.png') }}" class="heroImage" />
                 </div>
-                <h2 class="transition">Riccardo Scalia</h2>
+                <h2>Riccardo Scalia</h2>
 
                 <div class="aboutInfo">
                     <p>
@@ -167,7 +167,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 @endsection

@@ -18,7 +18,7 @@ class HomePageController extends Controller
 
     public function aboutUs() 
     {
-        return view('homePage.aboutUs');
+        return view('aboutUs');
     }
     
     public function choosing()
