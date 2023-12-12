@@ -154,7 +154,7 @@ class BusinessController extends Controller
         }
 
         $business->delete();
-        return redirect("/");
+        return back()->with("message", "Business deleted");
     }
 
 }

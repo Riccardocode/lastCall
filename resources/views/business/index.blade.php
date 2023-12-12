@@ -26,17 +26,21 @@
                         <section class="iconsDashboard">
                             {{-- Edit button container --}}
                             <div>
-                                <a href=""><i class="fa-solid fa-pen-to-square icon"></i></a>
+                                <a href="/business/{{$bus->id}}/edit"><i class="fa-solid fa-pen-to-square icon"></i></a>
                             </div>
 
                             {{-- View button container --}}
                             <div>
-                                <a href=""><i class="fa-solid fa-eye icon"></i></a>
+                                <a href="/business/{{$bus->id}}"><i class="fa-solid fa-eye icon"></i></a>
                             </div>
 
                             {{-- Delete button container --}}
                             <div>
-                                <a href=""><i class="fa-solid fa-trash icon"></i></a>
+                                <form action="/business/{{ $bus->id }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-red-500 hover:text-red-700 font-medium"><i class="fa-solid fa-trash icon"></i></button>
+                                </form>
                             </div>
                         </section>
 
@@ -61,17 +65,21 @@
                         <section class="iconsDashboard">
                             {{-- Edit button container --}}
                             <div>
-                                <a href=""><i class="fa-solid fa-pen-to-square icon"></i></a>
+                                <a href="/users/{{$bus->manager->id}}/edit"><i class="fa-solid fa-pen-to-square icon"></i></a>
                             </div>
 
                             {{-- View button container --}}
                             <div>
-                                <a href=""><i class="fa-solid fa-eye icon"></i></a>
+                                <a href="/users/{{$bus->manager->id}}"><i class="fa-solid fa-eye icon"></i></a>
                             </div>
 
                             {{-- Delete button container --}}
                             <div>
-                                <a href=""><i class="fa-solid fa-trash icon"></i></a>
+                                <form action="/users/{{ $bus->manager->id }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-red-500 hover:text-red-700 font-medium"><i class="fa-solid fa-trash icon"></i></button>
+                                </form>
                             </div>
                         </section>
                     </li>
