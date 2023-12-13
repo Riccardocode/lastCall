@@ -1,43 +1,99 @@
     // COLORS
-@import '../aDesign/colors/colors.scss'; 
+    @import '../aDesign/colors/colors.scss';
     //FONT
-@import '../aDesign/typography/fonts.scss'; 
+    @import '../aDesign/typography/fonts.scss';
 
 
 
-.sectionOrder{
-    background-image: url("../../images/backgroundDots.svg"); ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-color: $backgroundColor;
-    padding: 10% 50px 0px 50px;
-    h1{
-        font-size: 30px;
-        font-family: $primaryFont;
-    }
-    h2{
-        margin-left: 2.5%;
-        font-size: 20px;
-        font-family: $primaryFont;
-        padding: 20px 0;
-    }
-    article{
-        margin-left: 5%;
-        margin-right: 5%;
-        background-color: rgba(255, 255, 255, 0.689);
-        box-shadow:  2px 2px 5px #918c83,
-        -2px -2px 5px #f4f4f5; 
-        padding: 15px;
-        border-radius: 15px;
-        div{
-            p{
-                padding: 2px 0;
-            }
-            .code{
-                color: blue;
-                font-weight: bold;
+    .sectionOrder {
+        background-image: url("../../images/backgroundDots.svg");
+        ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-color: $backgroundColor;
+        padding: 10% 50px 0px 50px;
+
+        h1 {
+            font-size: 30px;
+            font-family: $primaryFont;
+        }
+
+        h2 {
+            margin-left: 2.5%;
+            font-size: 20px;
+            font-family: $primaryFont;
+            padding: 20px 0;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-family: $primaryFont;
+            padding: 20px 0;
+        }
+
+        article {
+            margin: 20px 5%;
+            background-color: rgba(255, 255, 255, 0.689);
+            box-shadow: 2px 2px 5px #918c83,
+                -2px -2px 5px #f4f4f5;
+            padding: 15px;
+            border-radius: 15px;
+
+            div {
+                p {
+                    padding: 2px 0;
+                }
+
+                .code {
+                    color: blue;
+                    font-weight: bold;
+                }
+
+                ul {
+                    li {
+                        padding: 5px 0px;
+                    }
+                }
+
+                .form {
+                    // the login form with the inputs
+                    width: 40%;
+                    height: auto;
+                    background-color: white;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: left;
+                    border-radius: 5px;
+                    input {
+                        // stylings for the inputs //styling the selcts tag with the option
+                        font-size: 1rem;
+                        padding: .5rem;
+                        width: 94%;
+                        justify-self: right;
+                        background-color: $backgroundColor;
+                        outline: none;
+                        border: 1.5px solid $palceholdersColor;
+                        border-radius: 5px;
+                        border: 3px solid #f97416d5;
+                    }
+                    .btnContainer {
+                        display: flex;
+                        align-content: center;
+                        justify-content: left;
+                        margin-left:1rem;
+                        .loginBtn {
+                            font-size: 1.2rem;
+                            padding: 0.7rem 1.2rem;
+                            border: none;
+                            border-radius: 10px;
+                            color: white;
+                            background-color: $primaryColor;
+                            outline: none;
+                        }
+                    }
+                }
             }
         }
     }
-}

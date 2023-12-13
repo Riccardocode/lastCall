@@ -3,11 +3,11 @@
 @section('content')
     {{-- Hello User name --}}
     <section class="sectionOrder">
-        <h1>Hello {{ $user->firstname }} {{ $user->lastname }}</h1>
+        <h1 class="reveal animationDown">Hello {{ $user->firstname }} {{ $user->lastname }}</h1>
 
         {{-- Order to pickup --}}
-        <h2>Orders to pickup</h2>
-        <article>
+        <h2 class="reveal animationShow">Orders to pickup</h2>
+        <article class="reveal animationLeft">
             @if (!count($ordersToPickup) > 0)
                 <p>You have no orders to pickup</p>
             @else
@@ -30,8 +30,9 @@
             @endif
         </article>
 
-        <h2>Orders History</h2>
-        <article>
+        {{-- Order to pickup --}}
+        <h2 class="reveal animationShow">Orders History</h2>
+        <article class="reveal animationLeft">
             @if (!count($ordersDelivered) > 0)
                 <p>You have no orders history</p>
             @else

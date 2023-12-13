@@ -30,9 +30,8 @@
                 <h4>Ingredients: {{ $product->ingredientString }}</h4>
                 <h4>Allergies: {{ $product->allergyString }}</h4>
             </div>
-        </article>
-        <div id="backContainer reveal animationShow"> 
-            <a id="backBut" href="/business/{{ $product->business->id }}/products"><i class="fa-solid fa-arrow-left-long"></i> Back</a>
-        </div>
+        </article> 
+
     </section>
+    <a id="backButt" href="/business/{{ $product->business->id }}/products"><i class="fa-solid fa-arrow-left-long"></i> Back</a>
 @endsection
