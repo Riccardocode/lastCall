@@ -1,99 +1,115 @@
-    // COLORS
-@import '../aDesign/colors/colors.scss'; 
-    //FONT
-@import '../aDesign/typography/fonts.scss'; 
-
-
+// COLORS
+@import '../aDesign/colors/colors.scss';
+//FONT
+@import '../aDesign/typography/fonts.scss';
 .loginSection {
     background: linear-gradient($overlayColorLogin, $overlayColorLogin), url("../../images/backgroundImage.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-color:$backgroundColor;
+    background-color: $backgroundColor;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 200px 100px;
-    h2{
+    padding: 200px 100px 160px 100px;
+    #sellLogin {
+        display: flex;
+        gap: 100px;
+        margin-top: 50px;
+        @import '../aDesign/link-orange-button/link-orange-button.scss';
+        button {
+            width: 120px;
+            padding: 10px;
+        }
+    }
+    h2 {
         font-size: 25px;
-    } 
-    h3{
+    }
+    h3 {
         font-size: 16px;
     }
-    .formFlex{
+    .formFlex {
         display: flex;
     }
-    .form { // the login form with the inputs
+    .form {
+        // the login form with the inputs
         width: 40%;
-        height:auto;
+        height: auto;
         border: 3px solid #f97416d5;
         background-color: white;
-        padding: 2rem 1rem;
+        padding: 3rem 1rem;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: left;
         border-radius: 5px;
-        h2 { //login form heading
-            margin-left:1rem;
+        h2 {
+            //login form heading
+            margin-left: 1rem;
             color: $textColorBlack;
             font-family: $primaryFont;
         }
-
         p {
-        margin:1rem 1rem .5rem;
+            margin: 1rem 1rem .5rem;
             color: rgba(0, 0, 0, 0.568);
-            font-family: $primaryFont; 
+            font-family: $primaryFont;
         }
-        img{
+        img {
             height: 150px;
             width: 150px;
             margin: 2rem auto;
             border-radius: 10px;
-            box-shadow:  3px 3px 5px #292826,
-             -3px -3px 5px $backgroundColor; 
+            box-shadow: 3px 3px 5px #292826,
+                -3px -3px 5px $backgroundColor;
         }
-        input, select{ // stylings for the inputs //styling the selcts tag with the option
-        font-size: 1rem;
-        padding:.5rem;
-        margin: 1rem;  
-        width:94%;
-        justify-self: right;
-        background-color: $backgroundColor;
-        outline:none;
-        border: 1.5px solid $palceholdersColor;
-        border-radius:5px;
-        &:focus { // the inputs' outline color changes when the input is clicked
-            border: 1.5px solid $primaryColor; 
-            }   
-        }
-
-        .loginBtn { // login button styling
-            background-color: #f97416d5;
-            padding: .7rem;
+        input,
+        select {
+            // stylings for the inputs //styling the selcts tag with the option
             font-size: 1rem;
-            color: $textColorWhite;
-            font-family: $primaryFont bold;
-            width:20%;
-            border: none;
-            border-radius: 10px;
+            padding: .5rem;
             margin: 1rem;
-            &:hover {
-                background-color: $primaryColor; 
+            width: 94%;
+            justify-self: right;
+            background-color: $backgroundColor;
+            outline: none;
+            border: 1.5px solid $palceholdersColor;
+            border-radius: 5px;
+            &:focus {
+                // the inputs' outline color changes when the input is clicked
+                border: 1.5px solid $primaryColor;
             }
-        } 
+        }
+        .btnContainer {
+            display: flex;
+            align-content: center;
+            justify-content: left;
+            margin: 1rem 0 0 1rem;
+            .loginBtn {
+                font-size: 1.2rem;
+                padding: 0.7rem 1.2rem;
+                border: none;
+                border-radius: 10px;
+                color: white;
+                background-color: $primaryColor;
+                outline: none;
+            }
+        }
+        .loginSell {
+            display: flex;
+            justify-content: center;
+        }
     }
-    #register { // register option text
+    #register {
+        // register option text
         display: flex;
         justify-content: flex-start;
         color: rgba(0, 0, 0, 0.856);
         font-size: 1rem;
         font-family: $primaryFont;
-        margin-top: 1rem; 
-        a{
+        margin-top: 1rem;
+        a {
             color: $primaryColor;
         }
-   }
+    }
 }
-

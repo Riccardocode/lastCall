@@ -15,10 +15,10 @@ class BusinessController extends Controller
     //Only admin can see all businesses
     public function index()
     {
-        if (!(auth()->user()->role == 'admin')) {
+        if (!auth()->check() || !(auth()->user()->role == 'admin')) {
             abort(403, 'Unauthorized action.');
         }
-        $businesses = Business::with(['manager', 'category'])->get();
+        $businesses = Business::with(['manager', 'category'])->paginate(4);
 
         return view('business.index', [
             'business' => $businesses,
@@ -30,7 +30,7 @@ class BusinessController extends Controller
     //Manager can see only business with his ID
     public function show($id)
     {
-        if (auth()->user()->id !== Business::find($id)->manager_id && !(auth()->user()->role == 'admin')) {
+        if (!auth()->check() || auth()->user()->id !== Business::find($id)->manager_id && !(auth()->user()->role == 'admin')) {
             abort(403, 'Unauthorized action.');
         }
         return view("business.show", [
@@ -47,7 +47,7 @@ class BusinessController extends Controller
     //only manager can create business
     public function create()
     {
-        if (auth()->user()->role !== 'restaurantManager' and !(auth()->user()->role == 'admin')) {
+        if (!auth() ->check() || auth()->user()->role !== 'restaurantManager' and !(auth()->user()->role == 'admin')) {
             abort(403, 'Unauthorized action.');
         }
         //if the user is a manager and already has a business, redirect to the business page
@@ -70,7 +70,7 @@ class BusinessController extends Controller
     //only manager can create business
     public function store(Request $request)
     {
-        if (auth()->user()->role !== 'restaurantManager' and !(auth()->user()->role == 'admin')) {
+        if (!auth() ->check() || auth()->user()->role !== 'restaurantManager' and !(auth()->user()->role == 'admin')) {
             abort(403, 'Unauthorized action.');
         }
         $formFields = $request->validate([
@@ -146,12 +146,15 @@ class BusinessController extends Controller
     {
 
         $business = Business::find($id);
+        if(!auth() ->check()){
+            abort(403, "Unauthorized action");
+        }
         if ($business->manager_id != auth()->user()->id and !(auth()->user()->role == 'admin')) {
             abort(403, "Unauthorized action");
         }
 
         $business->delete();
-        return redirect("/");
+        return back()->with("message", "Business deleted");
     }
 
 }

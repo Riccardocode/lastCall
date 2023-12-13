@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
     <section class="loginSection">
-        <form class="form" action="/login" method="POST">
+        <form class="form reveal animationScale" action="/login" method="POST">
             @csrf
             @error('loginError')
                 <p>{{ $message }}</p>
@@ -23,12 +23,14 @@
             @error('password')
                 <p>{{ $message }}</p>
             @enderror
-
-            <button class="loginBtn">
+        <div class="btnContainer">
+            <button type="submit" class="loginBtn">
                 Sign In
             </button>
+        </div>
+       
         </form>
-        <div id="register">
+        <div id="register" class="reveal animationUp">
             <p>
                 Don't have an account?
                 <a href="/register" class="text-laravel">Register</a>

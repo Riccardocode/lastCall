@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.showProd {
+  background-image: url("../../images/backgroundDots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #f8f7f2;
+  padding: 10% 50px 2.5% 5%;
+}
+.showProd h1 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 20px;
+}
+.showProd .showProdArt {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+}
+.showProd .showProdArt img {
+  border-radius: 10px;
+}
+.showProd .showProdDetails {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+.showProd .showProdDetails h2,
+.showProd .showProdDetails h3,
+.showProd .showProdDetails h4 {
+  padding: 15px;
+}
+
+#iconBtn {
+  color: #FFF;
+  background-color: #F97316;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-left: 12px;
+}
+#iconBtn:hover {
+  filter: contrast(150%);
+}
+
+#userSection {
+  margin: 20PX 0;
+}
+#userSection img {
+  height: 400px;
+}/*# sourceMappingURL=productDetails.css.map */

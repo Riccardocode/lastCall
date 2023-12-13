@@ -20,6 +20,7 @@ class UserController extends Controller
             'firstname' => 'required',
             'lastname' => 'required',
             'email' => ['required', 'email', Rule::unique('users', 'email')],
+            "phonenumber" => "required",
             //Revert the password verification
             // 'password' => ['required',Password::min(8)
             //                             ->mixedCase()
@@ -42,7 +43,8 @@ class UserController extends Controller
         auth()->login($user);
 
         //redirect to home page
-        return redirect('/')->with('message', 'Thanks for registering, user logged in!');
+        //redirect back to previous page
+        return redirect()->intended('/')->with('message', 'Thanks for registering, user logged in!');
     }
 
     public function logout(Request $request)
@@ -96,7 +98,7 @@ class UserController extends Controller
         if (auth()->user()->role != 'admin') {
             abort(403);
         }
-        $users = User::all();
+        $users = User::orderBy('Lastname')->paginate(12);
         return view('users.manage', compact('users'));
     }
     //Display Single User
@@ -116,7 +118,7 @@ class UserController extends Controller
         }
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect('/users')->with('message', 'User deleted!');
+        return back()->with('message', 'User deleted!');
     }
 
     public function edit($id)
@@ -137,7 +139,7 @@ class UserController extends Controller
             'firstname' => 'required',
             'lastname' => 'required',
             'role' => 'required',
-            'phonenumber' => '',
+            'phonenumber' => 'required',
             'email' => ['required', 'email', Rule::unique('users', 'email')->ignore($id)],
 
             // 'password' => ['required',Password::min(8)
@@ -155,7 +157,13 @@ class UserController extends Controller
         // $formFields['password']=bcrypt($formFields['password']);
         $user = User::findOrFail($id);
         $user->update($formFields);
-        return redirect('/users')->with('message', 'User updated!');
+        if(auth()->user()->role == "admin"){
+
+            return redirect('/users')->with('message', 'User updated!');
+        }
+        else{
+            return redirect('/users/'.$user->id)->with('message', 'User updated!');
+        }
     }
 
     public function becomeManager()

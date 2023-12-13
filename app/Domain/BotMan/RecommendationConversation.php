@@ -4,10 +4,12 @@ namespace App\Domain\BotMan;
 
 use App\Models\Business;
 use App\Models\Category;
+use Illuminate\Support\Facades\Log;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Question;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Conversations\Conversation;
+use Illuminate\Support\Facades\Http;
 
 class RecommendationConversation extends Conversation
 {
@@ -26,6 +28,7 @@ class RecommendationConversation extends Conversation
         return $buttons;
     }
 
+
     public function askRecommendation($btns){
         $question = Question::create('What type of Food are you craving for?')
             ->fallback('Error')
@@ -34,16 +37,17 @@ class RecommendationConversation extends Conversation
         $this->ask($question, function (Answer $answer) {
             if ($answer->isInteractiveMessageReply()) {
                 $response = Category::find($answer->getValue())->business->take($this->amount);
-                $this->say('These are the best Places that I would recommend!');
-                foreach ($response as $res) {
-                    $this->say($res->name);
+                $ans = "These are the best Places that I would recommend! <hr>";
+                foreach ($response as $key => $res) {
+                    $ans = $ans ."<a href='/business/". $res->id ."/products' target='_blank'>". $key+1 .'. ' . $res->name . '</a><br>';
                 }
+                $this->say($ans);
             }
         });
     }
 
-    public function run()
-    {
+    public function run(){
+        Log::info("Inside Recommendation Conversation");
         $this->askRecommendation($this->catArr());
     }
 }

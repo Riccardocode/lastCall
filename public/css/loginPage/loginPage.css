@@ -9,7 +9,32 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 200px 100px;
+  padding: 200px 100px 160px 100px;
+}
+.loginSection #sellLogin {
+  display: flex;
+  gap: 100px;
+  margin-top: 50px;
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+.loginSection #sellLogin button {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+.loginSection #sellLogin button:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
+}
+.loginSection #sellLogin button {
+  width: 120px;
+  padding: 10px;
 }
 .loginSection h2 {
   font-size: 25px;
@@ -25,7 +50,7 @@
   height: auto;
   border: 3px solid rgba(249, 116, 22, 0.8352941176);
   background-color: white;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -49,7 +74,8 @@
   border-radius: 10px;
   box-shadow: 3px 3px 5px #292826, -3px -3px 5px #f8f7f2;
 }
-.loginSection .form input, .loginSection .form select {
+.loginSection .form input,
+.loginSection .form select {
   font-size: 1rem;
   padding: 0.5rem;
   margin: 1rem;
@@ -60,22 +86,28 @@
   border: 1.5px solid rgba(0, 0, 0, 0.52);
   border-radius: 5px;
 }
-.loginSection .form input:focus, .loginSection .form select:focus {
+.loginSection .form input:focus,
+.loginSection .form select:focus {
   border: 1.5px solid #F97316;
 }
-.loginSection .form .loginBtn {
-  background-color: rgba(249, 116, 22, 0.8352941176);
-  padding: 0.7rem;
-  font-size: 1rem;
-  color: #FFF;
-  font-family: "Roboto", sans-serif bold;
-  width: 20%;
+.loginSection .form .btnContainer {
+  display: flex;
+  align-content: center;
+  justify-content: left;
+  margin: 1rem 0 0 1rem;
+}
+.loginSection .form .btnContainer .loginBtn {
+  font-size: 1.2rem;
+  padding: 0.7rem 1.2rem;
   border: none;
   border-radius: 10px;
-  margin: 1rem;
-}
-.loginSection .form .loginBtn:hover {
+  color: white;
   background-color: #F97316;
+  outline: none;
+}
+.loginSection .form .loginSell {
+  display: flex;
+  justify-content: center;
 }
 .loginSection #register {
   display: flex;

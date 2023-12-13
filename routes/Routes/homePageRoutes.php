@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 //Route for the home page
 Route::get("/", [HomePageController::class, "home"]);
 
+//Route for the About Us page
+Route::get('/aboutUs', [HomePageController::class, "aboutUs"]);
+
 //Route for the choosing page
 Route::get("/choosing", [HomePageController::class, "choosing"]);
 

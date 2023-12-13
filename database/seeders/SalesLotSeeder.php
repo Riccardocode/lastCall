@@ -514,6 +514,16 @@ class SalesLotSeeder extends Seeder
                 'discount' => 12,
                 'start_date' => now(),
                 'end_date' => now()->addHours(5),
+            ],
+            [
+                "product_id" => 101,
+                "description" => "David's Deal",
+                "price" => 15,
+                "initial_quantity" => 10,
+                "current_quantity" => 10,
+                "discount" => 30,
+                "start_date" => now(),
+                "end_date" => now()->addHours(5),
             ]
         ]);
     }

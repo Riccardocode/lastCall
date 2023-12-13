@@ -1,44 +1,81 @@
     // COLORS
-@import '../aDesign/colors/colors.scss'; 
+    @import '../aDesign/colors/colors.scss';
     //FONT
-@import '../aDesign/typography/fonts.scss'; 
+    @import '../aDesign/typography/fonts.scss';
 
-section {
-    padding-top: 5rem;
-    background-color: $backgroundColor;
+    .adminSection {
+        background-image: url("../../images/backgroundDots.svg");
+        ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-color: $backgroundColor;
+        padding: 10% 50px 0px 50px;
+        h1,h2,h3,p{
+            font-family: $primaryFont;
+        }
+        h1 {
+            font-size: 2rem;
+            font-family: $primaryFont;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        #userLi{
+            padding: 40px 10px;
+        }
+        .allCardsContainer {
+            ul {
+                gap: 40px;
+                .adminContent {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 20px;
+                    background-color: rgba(255, 255, 255, 0.689);
+                    border-radius: 10px;
+                    box-shadow: 3px 3px 5px #292826,
+                    -3px -3px 5px $backgroundColor;
+                    .busiImg {
+                        a {
+                            img {
+                                width: 500px;
+                                height: 170px;
+                                border-radius: 10px;
+                                box-shadow: 3px 3px 5px #292826,
+                                    -3px -3px 5px $backgroundColor;
 
-ul{
-        background-color: $formsBackground;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(100px, 1fr));
-        grid-gap: 20px;
-        width: 100%;
-        padding: 2rem;
-
-    li {
-            background-color: $textColorWhite;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            height: 100%; 
-            aspect-ratio: 1/1;
-       
-
-        .iconsDashboard {
-            display: flex;
-            flex-direction: row;
-            gap:5px;
-            
-            .icon {
-                color: $textColorWhite;
-                background-color: $primaryColor;
-                font-size: 1.2rem;
-                padding: 0.5rem;
-                border-radius: 5px;
+                            }
+                        }
+                    }
+                    .buisName{
+                        margin-left: 1rem;
+                    }
+                    .iconsDashboard {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 5px;
+                        margin-right: 1rem;
+                        .icon {
+                            color: $textColorWhite;
+                            background-color: $primaryColor;
+                            font-size: 1.2rem;
+                            padding: 0.5rem;
+                            border-radius: 5px;
+                            
+                            &:hover {
+                                filter: contrast(150%);
+                            }
+                        }
+                    }
+                    #nameUser{
+                        font-size: 20px;
+                        font-family: $primaryFont;
+                    }
+                }
+                #busiMana{
+                    padding: 30px 0;
                 }
             }
-        } 
+        }
     }
-}
-

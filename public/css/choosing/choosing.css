@@ -10,7 +10,6 @@
 .choosingSection .chooPt1 h2 {
   font-family: "Roboto", sans-serif;
   font-size: 24px;
-  padding-bottom: 50px;
   font-weight: normal !important;
 }
 .choosingSection .chooPt1 .chooBuis, .choosingSection .chooPt1 .chooPro {
@@ -19,6 +18,7 @@
   flex-wrap: nowrap;
   overflow-y: hidden;
   gap: 20px;
+  padding-top: 70px;
 }
 .choosingSection .chooPt1 .chooBuis a, .choosingSection .chooPt1 .chooPro a {
   gap: 20px;
@@ -33,6 +33,7 @@
   position: relative;
 }
 .choosingSection .chooPt1 a:hover {
+  z-index: 10;
   box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
   transform: translateY(-20px);
 }
@@ -73,6 +74,7 @@
   border-radius: 50%;
   font-size: 19px;
   font-weight: bold;
+  z-index: 10;
 }
 .choosingSection .chooPt1 .chooPro a article .detailsPro {
   color: #0E0000;
@@ -84,6 +86,7 @@
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, #F8F5F2 28.65%);
   padding: 25px 3px 10px 15px;
   gap: 10px;
+  z-index: 0;
 }
 .choosingSection .chooPt1 .chooPro a article .detailsPro .detailsPro1 {
   display: flex;
@@ -116,7 +119,7 @@
   font-size: 14px;
 }
 .choosingSection #chooSearch input, .choosingSection #chooSearch select, .choosingSection #chooSearch button {
-  color: lightgray;
+  color: black;
   padding: 20px;
   outline: none;
   border: 0.5px solid lightgray;

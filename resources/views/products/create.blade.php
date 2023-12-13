@@ -3,7 +3,7 @@
 
 @section('content')
     <section class="loginSection">
-        <form class="form" action="/business/{{ $business_id }}/products" method="post" enctype="multipart/form-data">
+        <form class="form reveal animationScale" action="/business/{{ $business_id }}/products" method="post" enctype="multipart/form-data">
 
             @csrf
             <h2>
@@ -31,8 +31,8 @@
                 @error('ingredientString')
                     <p>{{ $message }}</p>
                 @enderror
-                <input type="text" value="{{ old('allergyString') ? old('allergyString') : '' }}"
-                    placeholder="Allergies" name="allergyString" />
+                <input type="text" value="{{ old('allergyString') ? old('allergyString') : '' }}" placeholder="Allergies"
+                    name="allergyString" />
                 @error('allergyString')
                     <p>{{ $message }}</p>
                 @enderror
@@ -41,12 +41,13 @@
             @error('picture')
                 <p>{{ $message }}</p>
             @enderror
-
-            <button class="loginBtn">
-                Add Product
-            </button>
+            <div class="btnContainer">
+                <button type="submit" class="loginBtn">
+                    Add Product
+                </button>
+            </div>
         </form>
-        <div id="register">
+        <div id="register" class="reveal animationUp">
             <p>
                 <a href="/login" class="text-laravel">Back</a>
             </p>

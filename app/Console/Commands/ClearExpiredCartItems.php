@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
@@ -32,19 +33,21 @@ class ClearExpiredCartItems extends Command
         $cartItems = OrderItem::whereHas('order', function ($query) {
             $query->where('status', 'cart');
         })->get();
+        $orders = Order::with('order_items')->where('status', 'cart')->get();
         
         Log::info('ExpiredItems:', ['variableName' => $cartItems]);
         
         //if there are items in the cart
         if ($cartItems->count() > 0) {
+            
             foreach ($cartItems as $item) {
                 $salesLotEnd = $item->saleslot->end_date;
-                Log::info('ExpiredItems:', ['salesLotExpiration' => $salesLotEnd]);
-                Log::info('ExpiredItems:', ['created_at' => $item->created_at]);
+                // Log::info('ExpiredItems:', ['salesLotExpiration' => $salesLotEnd]);
+                // Log::info('ExpiredItems:', ['created_at' => $item->created_at]);
                 
                 //The time when the item has been added to cart
                 $itemAddedToCartTime = $item->created_at;
-                Log::info('ExpiredItems:', ['itemAddedTime' => $itemAddedToCartTime]);
+                // Log::info('ExpiredItems:', ['itemAddedTime' => $itemAddedToCartTime]);
 
                 if($itemAddedToCartTime){
                     $timeToLeaveCart = $itemAddedToCartTime->addMinutes(20);
@@ -58,6 +61,13 @@ class ClearExpiredCartItems extends Command
                 }
             }
         }
-        Log::info('ClearExpiredCartItems: Finished command execution.');
+        if($orders->count() > 0){
+            foreach($orders as $order){
+                if($order->order_items->count() == 0){
+                    $order->delete();
+                }
+            }
+        }
+        Log::info('ClearExpiredCartItems: Finished execution for Clean Cart Scheduled task.');
     }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="loginSection">
-        <form class="form" action='/users' method="post" enctype="multipart/form-data" class="form">
+        <form class="form reveal animationScale" action='/users' method="post" enctype="multipart/form-data" class="form">
             @csrf
 
             <h2>
@@ -59,11 +59,13 @@
             @error('phonenumber')
                 <p>{{ $message }}</p>
             @enderror
-            <button class="loginBtn">
-                Sign Up
-            </button>
+            <div class="btnContainer">
+                <button type="submit" class="loginBtn">
+                    Sign Up
+                </button>
+            </div>
         </form>
-        <div id="register">
+        <div id="register" class="reveal animationUp">
             <p>
                 Already have an account?
                 <a href="/login" class="text-laravel">Login</a>

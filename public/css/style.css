@@ -9,6 +9,10 @@ html {
   line-height: 1.2 !important;
 }
 
+body {
+  background-color: #f8f7f2 !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600 !important;
 }
@@ -44,6 +48,7 @@ header .logo a {
 header .logo .about-us {
   font-size: 20px;
   font-weight: bold;
+  font-weight: bold;
 }
 header img {
   width: 100%;
@@ -62,14 +67,47 @@ header nav ul a {
   color: #FFF;
   font-weight: bold;
 }
+header nav #dropdown {
+  position: relative;
+  display: inline-block;
+}
+header nav #dropdown #dropbtn {
+  background: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: #FFF;
+  font-weight: bold;
+  font-weight: bold;
+}
+header nav #dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  color: #0E0000;
+  min-width: 160px;
+  z-index: 1;
+  text-align: center;
+}
+header nav #dropdown .dropdown-content a {
+  width: 160px;
+  text-align: center;
+  padding: 0px 30px;
+  font-weight: normal;
+  font-size: 17px;
+  text-shadow: 2px 2px 1px #000000;
+}
+header nav #dropdown:hover .dropdown-content {
+  display: block;
+}
 header nav button {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   padding: 0.4rem 1rem;
   background-color: rgba(0, 0, 0, 0.76);
   color: #FFF;
+  color: #FFF;
   border-radius: 4px;
   transition: 1s;
+  border: none;
   border: none;
   font-size: 1rem;
 }
@@ -85,13 +123,17 @@ main {
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 }
 main #homeSection {
   background: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)), url("../../images/heroImage.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  padding: 12.5% 0px;
+  padding: 11% 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,6 +149,26 @@ main #homeSection #homePageP {
   font-family: "Roboto", sans-serif;
   font-size: 25px;
   color: #FFF;
+}
+main #homeSection #mapLink {
+  margin-bottom: 35px;
+}
+main #homeSection #mapLink a {
+  text-decoration: none;
+}
+main #homeSection #mapLink a #insMapLink {
+  display: flex;
+  align-items: center;
+}
+main #homeSection #mapLink a #insMapLink img {
+  width: 55px;
+  height: 45px;
+}
+main #homeSection #mapLink a #insMapLink p {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
 main #homeSection #homeSearch {
   width: 100%;
@@ -128,7 +190,7 @@ main #homeSection #homeSearch input {
 main #homeSection #homeSearch button {
   background: transparent;
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 5px;
   color: #D63030;
   border: none;
@@ -155,7 +217,7 @@ main #homeArticle article div {
 main #homeArticle article div a {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-  padding: 4px 35px;
+  padding: 10px 35px;
   background-color: #D63030;
   color: #FFF;
   border-radius: 4px;
@@ -164,7 +226,7 @@ main #homeArticle article div a {
 }
 main #homeArticle article div a:hover {
   box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
-  transform: translate(-5px, -5px);
+  transform: scale(1.3, 1.3);
 }
 main #homeArticle article div #buttonSell {
   background-color: #FFF;
@@ -184,7 +246,7 @@ main .businessClientView {
   background-color: #f8f7f2;
   display: flex;
   flex-direction: column;
-  padding: 12.5% 50px 0px 50px;
+  padding: 10% 50px 0px 50px;
 }
 main .businessClientView .logoAdd {
   width: 100%;
@@ -219,6 +281,23 @@ main .businessClientView .businessProduts h1 {
   font-size: 20px;
   font-weight: bold !important;
 }
+main .businessClientView .businessProduts #addProd {
+  text-align: center;
+  width: 10%;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main .businessClientView .businessProduts #addProd:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
+}
 main .businessClientView .businessProduts .productClientViewS {
   display: flex;
   justify-content: space-between;
@@ -229,7 +308,52 @@ main .businessClientView .businessProduts .productClientViewS {
   box-shadow: 3px 3px 5px #292826, -3px -3px 5px #f8f7f2;
   transition: ease-out 0.5s;
   background-color: rgba(255, 255, 255, 0.689);
+  width: 100%;
   @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+main .businessClientView .businessProduts .productClientViewS .smallInfo {
+  font-size: 10px;
+}
+main .businessClientView .businessProduts .productClientViewS span {
+  font-weight: bold;
+}
+main .businessClientView .businessProduts .productClientViewS #salesManage {
+  margin-top: 10px;
+}
+main .businessClientView .businessProduts .productClientViewS #salesManage a {
+  background-color: transparent;
+  font-size: 15px;
+  padding: 5px;
+  margin: 0 10px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main .businessClientView .businessProduts .productClientViewS #salesManage a:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
+}
+main .businessClientView .businessProduts .productClientViewS #manage {
+  display: flex;
+}
+main .businessClientView .businessProduts .productClientViewS #manage a {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px 5px;
+  margin: 0 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main .businessClientView .businessProduts .productClientViewS #manage a:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
 }
 main .businessClientView .businessProduts .productClientViewS a {
   text-decoration: none;
@@ -258,7 +382,7 @@ main .businessClientView .businessProduts .productClientViewS div h4 {
 main .businessClientView .businessProduts .productClientViewS button {
   background-color: transparent;
   font-size: 20px;
-  padding: 10px;
+  padding: 10px 15px;
   transition: 0.5s;
   border: 1px solid #F97316;
   color: #F97316;
@@ -269,6 +393,22 @@ main .businessClientView .businessProduts .productClientViewS button:hover {
   box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
   background-color: #F97316;
   color: #0E0000;
+}
+main .businessClientView .businessProduts .productClientViewS #AddCart {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  margin-right: 10px;
+}
+main .businessClientView .businessProduts .productClientViewS #AddCart input {
+  background-color: rgb(255, 251, 245);
+  border: 1px solid #F97316;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+main .businessClientView .businessProduts .productClientViewS #emptyProd {
+  margin-right: 10px;
 }
 main .businessClientView .businessProduts .productClientViewS:hover {
   transform: scale(1.06, 1.3);
@@ -283,7 +423,32 @@ main .loginSection {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 200px 100px;
+  padding: 200px 100px 160px 100px;
+}
+main .loginSection #sellLogin {
+  display: flex;
+  gap: 100px;
+  margin-top: 50px;
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+main .loginSection #sellLogin button {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main .loginSection #sellLogin button:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
+}
+main .loginSection #sellLogin button {
+  width: 120px;
+  padding: 10px;
 }
 main .loginSection h2 {
   font-size: 25px;
@@ -299,7 +464,7 @@ main .loginSection .form {
   height: auto;
   border: 3px solid rgba(249, 116, 22, 0.8352941176);
   background-color: white;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -323,7 +488,8 @@ main .loginSection .form img {
   border-radius: 10px;
   box-shadow: 3px 3px 5px #292826, -3px -3px 5px #f8f7f2;
 }
-main .loginSection .form input, main .loginSection .form select {
+main .loginSection .form input,
+main .loginSection .form select {
   font-size: 1rem;
   padding: 0.5rem;
   margin: 1rem;
@@ -334,22 +500,28 @@ main .loginSection .form input, main .loginSection .form select {
   border: 1.5px solid rgba(0, 0, 0, 0.52);
   border-radius: 5px;
 }
-main .loginSection .form input:focus, main .loginSection .form select:focus {
+main .loginSection .form input:focus,
+main .loginSection .form select:focus {
   border: 1.5px solid #F97316;
 }
-main .loginSection .form .loginBtn {
-  background-color: rgba(249, 116, 22, 0.8352941176);
-  padding: 0.7rem;
-  font-size: 1rem;
-  color: #FFF;
-  font-family: "Roboto", sans-serif bold;
-  width: 20%;
+main .loginSection .form .btnContainer {
+  display: flex;
+  align-content: center;
+  justify-content: left;
+  margin: 1rem 0 0 1rem;
+}
+main .loginSection .form .btnContainer .loginBtn {
+  font-size: 1.2rem;
+  padding: 0.7rem 1.2rem;
   border: none;
   border-radius: 10px;
-  margin: 1rem;
-}
-main .loginSection .form .loginBtn:hover {
+  color: white;
   background-color: #F97316;
+  outline: none;
+}
+main .loginSection .form .loginSell {
+  display: flex;
+  justify-content: center;
 }
 main .loginSection #register {
   display: flex;
@@ -373,7 +545,6 @@ main .choosingSection {
 main .choosingSection .chooPt1 h2 {
   font-family: "Roboto", sans-serif;
   font-size: 24px;
-  padding-bottom: 50px;
   font-weight: normal !important;
 }
 main .choosingSection .chooPt1 .chooBuis, main .choosingSection .chooPt1 .chooPro {
@@ -382,6 +553,7 @@ main .choosingSection .chooPt1 .chooBuis, main .choosingSection .chooPt1 .chooPr
   flex-wrap: nowrap;
   overflow-y: hidden;
   gap: 20px;
+  padding-top: 70px;
 }
 main .choosingSection .chooPt1 .chooBuis a, main .choosingSection .chooPt1 .chooPro a {
   gap: 20px;
@@ -396,6 +568,7 @@ main .choosingSection .chooPt1 .chooBuis a article, main .choosingSection .chooP
   position: relative;
 }
 main .choosingSection .chooPt1 a:hover {
+  z-index: 10;
   box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
   transform: translateY(-20px);
 }
@@ -436,6 +609,7 @@ main .choosingSection .chooPt1 .chooPro a article .reduction {
   border-radius: 50%;
   font-size: 19px;
   font-weight: bold;
+  z-index: 10;
 }
 main .choosingSection .chooPt1 .chooPro a article .detailsPro {
   color: #0E0000;
@@ -447,6 +621,7 @@ main .choosingSection .chooPt1 .chooPro a article .detailsPro {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, #F8F5F2 28.65%);
   padding: 25px 3px 10px 15px;
   gap: 10px;
+  z-index: 0;
 }
 main .choosingSection .chooPt1 .chooPro a article .detailsPro .detailsPro1 {
   display: flex;
@@ -479,7 +654,7 @@ main .choosingSection #chooSearch input {
   font-size: 14px;
 }
 main .choosingSection #chooSearch input, main .choosingSection #chooSearch select, main .choosingSection #chooSearch button {
-  color: lightgray;
+  color: black;
   padding: 20px;
   outline: none;
   border: 0.5px solid lightgray;
@@ -489,38 +664,334 @@ main .choosingSection #chooSearch button {
   color: #FFF;
   border-radius: 0px 10px 10px 0px;
 }
-main section {
-  padding-top: 5rem;
+main .adminSection {
+  background-image: url("../../images/backgroundDots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   background-color: #f8f7f2;
+  padding: 10% 50px 0px 50px;
 }
-main section ul {
-  background-color: rgba(249, 115, 22, 0.231372549);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(100px, 1fr));
-  grid-gap: 20px;
-  width: 100%;
-  padding: 2rem;
+main .adminSection h1, main .adminSection h2, main .adminSection h3, main .adminSection p {
+  font-family: "Roboto", sans-serif;
 }
-main section ul li {
-  background-color: #FFF;
+main .adminSection h1 {
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+main .adminSection #userLi {
+  padding: 40px 10px;
+}
+main .adminSection .allCardsContainer ul {
+  gap: 40px;
+}
+main .adminSection .allCardsContainer ul .adminContent {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  height: 100%;
-  aspect-ratio: 1/1;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.689);
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #292826, -3px -3px 5px #f8f7f2;
 }
-main section ul li .iconsDashboard {
+main .adminSection .allCardsContainer ul .adminContent .busiImg a img {
+  width: 500px;
+  height: 170px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #292826, -3px -3px 5px #f8f7f2;
+}
+main .adminSection .allCardsContainer ul .adminContent .buisName {
+  margin-left: 1rem;
+}
+main .adminSection .allCardsContainer ul .adminContent .iconsDashboard {
   display: flex;
   flex-direction: row;
   gap: 5px;
+  margin-right: 1rem;
 }
-main section ul li .iconsDashboard .icon {
+main .adminSection .allCardsContainer ul .adminContent .iconsDashboard .icon {
   color: #FFF;
   background-color: #F97316;
   font-size: 1.2rem;
   padding: 0.5rem;
   border-radius: 5px;
+}
+main .adminSection .allCardsContainer ul .adminContent .iconsDashboard .icon:hover {
+  filter: contrast(150%);
+}
+main .adminSection .allCardsContainer ul .adminContent #nameUser {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+main .adminSection .allCardsContainer ul #busiMana {
+  padding: 30px 0;
+}
+main .cartPage {
+  background-image: url("../../images/backgroundDots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #f8f7f2;
+  display: flex;
+  flex-direction: column;
+  padding: 10% 50px 0px 50px;
+}
+main .cartPage h1 {
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+}
+main .cartPage .productCart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 1.25%;
+  font-size: 20px;
+}
+main .cartPage .productCart article {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #000000, -2px -2px 5px #f4f4f5;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.689);
+}
+main .cartPage .productCart article .manageQuantity {
+  border: 1px solid #F97316;
+  border-radius: 10px;
+  padding: 10px;
+}
+main .cartPage .productCart article .manageQuantity input {
+  border: none;
+  width: 40px;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  text-align: center;
+}
+main .cartPage .productCart article #totalOf1Prod {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+main .cartPage .productCart article img {
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #000000, -2px -2px 5px #f4f4f5;
+}
+main .cartPage .productCart article .priceCart {
+  text-align: right;
+  margin-right: 10px;
+}
+main .cartPage .productCart form {
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+main .cartPage .productCart form button {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main .cartPage .productCart form button:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
+}
+main .cartPage .productCart form button {
+  font-size: 15px;
+}
+main .cartPage .totalAllProd {
+  text-align: right;
+}
+main .cartPage .totalAllProd h3 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+main .cartPage .totalAllProd form {
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+main .cartPage .totalAllProd form button {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+main .cartPage .totalAllProd form button:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
+}
+main .cartPage .totalAllProd form button {
+  background-color: #F97316;
+  color: #0E0000;
+}
+main .cartPage .totalAllProd form button:hover {
+  background-color: transparent;
+  color: #F97316;
+}
+main .showProd {
+  background-image: url("../../images/backgroundDots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #f8f7f2;
+  padding: 10% 50px 2.5% 5%;
+}
+main .showProd h1 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 20px;
+}
+main .showProd .showProdArt {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+}
+main .showProd .showProdArt img {
+  border-radius: 10px;
+}
+main .showProd .showProdDetails {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+main .showProd .showProdDetails h2,
+main .showProd .showProdDetails h3,
+main .showProd .showProdDetails h4 {
+  padding: 15px;
+}
+main #iconBtn {
+  color: #FFF;
+  background-color: #F97316;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-left: 12px;
+}
+main #iconBtn:hover {
+  filter: contrast(150%);
+}
+main #userSection {
+  margin: 20PX 0;
+}
+main #userSection img {
+  height: 400px;
+}
+main .sectionOrder {
+  background-image: url("../../images/backgroundDots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #f8f7f2;
+  padding: 10% 50px 0px 50px;
+}
+main .sectionOrder h1 {
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+}
+main .sectionOrder h2 {
+  margin-left: 2.5%;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  padding: 20px 0;
+}
+main .sectionOrder h3 {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  padding: 20px 0;
+}
+main .sectionOrder article {
+  margin: 20px 5%;
+  background-color: rgba(255, 255, 255, 0.689);
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+  padding: 15px;
+  border-radius: 15px;
+}
+main .sectionOrder article div p {
+  padding: 2px 0;
+}
+main .sectionOrder article div .code {
+  color: blue;
+  font-weight: bold;
+}
+main .sectionOrder article div ul li {
+  padding: 5px 0px;
+}
+main .sectionOrder article div .form {
+  width: 40%;
+  height: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: left;
+  border-radius: 5px;
+}
+main .sectionOrder article div .form input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 94%;
+  justify-self: right;
+  background-color: #f8f7f2;
+  outline: none;
+  border: 1.5px solid rgba(0, 0, 0, 0.52);
+  border-radius: 5px;
+  border: 3px solid rgba(249, 116, 22, 0.8352941176);
+}
+main .sectionOrder article div .form .btnContainer {
+  display: flex;
+  align-content: center;
+  justify-content: left;
+  margin-left: 1rem;
+}
+main .sectionOrder article div .form .btnContainer .loginBtn {
+  font-size: 1.2rem;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #F97316;
+  outline: none;
+}
+
+hr {
+  margin: 2.5% 20% 1.25% 20% !important;
+  border: solid 1px #F97316;
+  opacity: 0.4;
+}
+
+#backButt {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  display: inline-block;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+
+#backButt:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
 }
 
 footer {
@@ -540,7 +1011,7 @@ footer a {
 footer a span {
   color: rgba(0, 0, 0, 0.747);
 }
-footer a :hover {
+footer a:hover {
   text-decoration: underline;
 }
 
@@ -549,4 +1020,96 @@ footer a :hover {
   padding-top: 1rem;
   background-color: #f8f7f2;
   color: rgba(0, 0, 0, 0.52);
+}
+
+.reveal {
+  position: relative;
+  opacity: 0;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+
+.active.animationDown {
+  animation: animationDown 1s ease-in;
+}
+
+.active.animationUp {
+  animation: animationUp 1s ease-in;
+}
+
+.active.animationLeft {
+  animation: animationLeft 1s ease-in;
+}
+
+.active.animationRight {
+  animation: animationRight 1s ease-in;
+}
+
+.active.animationScale {
+  animation: animationScale 1s ease-in;
+}
+
+.active.animationShow {
+  animation: animationShow 1s ease-in;
+}
+
+@keyframes animationDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes animationUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes animationLeft {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes animationRight {
+  from {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes animationScale {
+  from {
+    transform: scale(0.93, 0.93);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 0.8;
+  }
+}
+@keyframes animationShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */

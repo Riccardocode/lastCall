@@ -706,6 +706,14 @@ class ProductSeeder extends Seeder
                 "picture" => "productPictures/100.png",
                 "business_id" => 20
             ],
+            [
+                "name" => "David's Special",
+                "category" => "Non-Vegetarian",
+                "ingredientString" => "Chicken fajita, white bread, onions, bbq sauce, peppers",
+                "allergyString" => "Gluten",
+                "picture" => "",
+                "business_id" => 20
+            ]
         ]);
     }
 }

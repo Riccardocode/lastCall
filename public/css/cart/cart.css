@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.cartPage {
+  background-image: url("../../images/backgroundDots.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #f8f7f2;
+  display: flex;
+  flex-direction: column;
+  padding: 10% 50px 0px 50px;
+}
+.cartPage h1 {
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+}
+.cartPage .productCart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 1.25%;
+  font-size: 20px;
+}
+.cartPage .productCart article {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #000000, -2px -2px 5px #f4f4f5;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.689);
+}
+.cartPage .productCart article .manageQuantity {
+  border: 1px solid #F97316;
+  border-radius: 10px;
+  padding: 10px;
+}
+.cartPage .productCart article .manageQuantity input {
+  border: none;
+  width: 40px;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  text-align: center;
+}
+.cartPage .productCart article #totalOf1Prod {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+.cartPage .productCart article img {
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #000000, -2px -2px 5px #f4f4f5;
+}
+.cartPage .productCart article .priceCart {
+  text-align: right;
+  margin-right: 10px;
+}
+.cartPage .productCart form {
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+.cartPage .productCart form button {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+.cartPage .productCart form button:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
+}
+.cartPage .productCart form button {
+  font-size: 15px;
+}
+.cartPage .totalAllProd {
+  text-align: right;
+}
+.cartPage .totalAllProd h3 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.cartPage .totalAllProd form {
+  @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+.cartPage .totalAllProd form button {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px 15px;
+  transition: 0.5s;
+  border: 1px solid #F97316;
+  color: #F97316;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #918c83, -2px -2px 5px #f4f4f5;
+}
+.cartPage .totalAllProd form button:hover {
+  box-shadow: 0 0 5px 2.5px rgba(0, 0, 0, 0.2);
+  background-color: #F97316;
+  color: #0E0000;
+}
+.cartPage .totalAllProd form button {
+  background-color: #F97316;
+  color: #0E0000;
+}
+.cartPage .totalAllProd form button:hover {
+  background-color: transparent;
+  color: #F97316;
+}/*# sourceMappingURL=cart.css.map */

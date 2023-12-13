@@ -3,7 +3,7 @@
 
 @section('content')
     <section class="loginSection">
-        <form class="form" action="/business" method="post" enctype="multipart/form-data">
+        <form class="form reveal animationScale" action="/business" method="post" enctype="multipart/form-data">
 
             @csrf
             <h2>
@@ -32,11 +32,13 @@
             @error('businessCategory')
                 <p>{{ $message }}</p>
             @enderror
-            <button class="loginBtn">
+            <div class="btnContainer">
+            <button type="submit" class="loginBtn">
                 Create new Business
             </button>
+            </div>
         </form>
-        <div id="register">
+        <div id="register" class="reveal animationUp">
             <p>
                 <a href="/" class="text-laravel"> Back </a>
             </p>
