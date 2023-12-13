@@ -31,5 +31,4 @@
             </div> --}}
         </section>      
     </div>
-    <a id="backButt" href=""><i class="fa-solid fa-arrow-left-long"></i> Back</a>
 @endsection
