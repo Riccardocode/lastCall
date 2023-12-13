@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/aboutUsPage.css') }}">
     <script src="https://kit.fontawesome.com/9823a17fbf.js" crossorigin="anonymous"></script>
 
-    <title>Document</title>
+    <title>About Us</title>
 </head>
 
 <body class="aboutUsBody">
