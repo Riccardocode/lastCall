@@ -148,7 +148,7 @@
                                 <form id="AddCart" action="/orders" method="POST">
                                     @csrf
                                     <p>
-                                        {{ $product->saleslots[0]->price }} <i class="fa-solid fa-euro-sign"></i>
+                                        {{ $product->saleslots[0]->price - ($product->saleslots[0]->price * $product->saleslots[0]->discount) / 100  }} <i class="fa-solid fa-euro-sign"></i>
                                     </p>
                                     <div class="quantity-controls">
                                         {{-- <button type="button" class="quantity-decrease">-</button> --}}
