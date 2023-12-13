@@ -43,7 +43,8 @@ class UserController extends Controller
         auth()->login($user);
 
         //redirect to home page
-        return redirect('/')->with('message', 'Thanks for registering, user logged in!');
+        //redirect back to previous page
+        return redirect()->intended('/')->with('message', 'Thanks for registering, user logged in!');
     }
 
     public function logout(Request $request)
