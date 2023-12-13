@@ -8,7 +8,7 @@
         title: "David Bot",
         mainColor: "#F97316",
         bubbleBackground: "#fff",
-        bubbleAvatarUrl: '/storage/chatbotImages/RobotBot.png'
+        bubbleAvatarUrl: '/storage/chatbotImages/RobotBot3.png'
     };
     // botmanWidget.open();
     // console.log(botmanWidget);
