@@ -50,7 +50,7 @@ class ClearExpiredCartItems extends Command
                 // Log::info('ExpiredItems:', ['itemAddedTime' => $itemAddedToCartTime]);
 
                 if($itemAddedToCartTime){
-                    $timeToLeaveCart = $itemAddedToCartTime->addMinutes(1);
+                    $timeToLeaveCart = $itemAddedToCartTime->addMinutes(20);
                     Log::info('ExpiredItems:', ['timeToLeaveCart' => $timeToLeaveCart]);
                 }
                 
