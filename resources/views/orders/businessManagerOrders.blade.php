@@ -21,7 +21,7 @@
                                 </li>
                             @endforeach
                         </ul>
-                        <p>Total Amount {{ $order->totalAmount }}</p>
+                        <p>Total Amount {{ $order->totalAmount }} €</p>
                         <form  class="form" action="/businessmanagerorders" method='POST'>
                             @csrf
                             <input type="text" name="pickupToken" placeholder="Pickup Token">
@@ -49,11 +49,11 @@
                                 <li>
                                     {{ $item->saleslot->product->name }}
                                     Qty: {{ $item->quantity }}
-                                    Price: {{ $item->discounted_price }}
+                                    Price: {{ $item->discounted_price }} €
                                 </li>
                             @endforeach
                         </ul>
-                        <p>Total Amount {{ $order->totalAmount }}</p>
+                        <p>Total Amount {{ $order->totalAmount }} €</p>
                         <p>Delivered at {{ $order->pickedupDateTime }}</p>
                     </div>
                 @endforeach
@@ -76,11 +76,11 @@
                                     <li>
                                         {{ $item->saleslot->product->name }}
                                         Qty: {{ $item->quantity }}
-                                        Price: {{ $item->discounted_price }}
+                                        Price: {{ $item->discounted_price }} €
                                     </li>
                                 @endforeach
                             </ul>
-                            <p>Total Amount {{ $order->totalAmount }}</p>
+                            <p>Total Amount {{ $order->totalAmount }} €</p>
                             <p>Delivered at {{ $order->pickedupDateTime->format('M d, Y') }}</p>
                         </div>
                     @endforeach

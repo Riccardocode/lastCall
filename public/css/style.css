@@ -153,6 +153,9 @@ main #homeSection #homePageP {
 main #homeSection #mapLink {
   margin-bottom: 35px;
 }
+main #homeSection #mapLink a {
+  text-decoration: none;
+}
 main #homeSection #mapLink a #insMapLink {
   display: flex;
   align-items: center;
@@ -162,6 +165,7 @@ main #homeSection #mapLink a #insMapLink img {
   height: 45px;
 }
 main #homeSection #mapLink a #insMapLink p {
+  text-decoration: none;
   color: aliceblue;
   font-size: 1.5rem;
   margin-top: 1rem;
@@ -535,7 +539,7 @@ main .choosingSection {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-color: #FFF;
+  background-color: #f8f7f2;
   padding: 12.5% 5% 0px 5%;
 }
 main .choosingSection .chooPt1 h2 {
