@@ -20,6 +20,7 @@ class UserController extends Controller
             'firstname' => 'required',
             'lastname' => 'required',
             'email' => ['required', 'email', Rule::unique('users', 'email')],
+            "phonenumber" => "required",
             //Revert the password verification
             // 'password' => ['required',Password::min(8)
             //                             ->mixedCase()
@@ -137,7 +138,7 @@ class UserController extends Controller
             'firstname' => 'required',
             'lastname' => 'required',
             'role' => 'required',
-            'phonenumber' => '',
+            'phonenumber' => 'required',
             'email' => ['required', 'email', Rule::unique('users', 'email')->ignore($id)],
 
             // 'password' => ['required',Password::min(8)
@@ -155,7 +156,13 @@ class UserController extends Controller
         // $formFields['password']=bcrypt($formFields['password']);
         $user = User::findOrFail($id);
         $user->update($formFields);
-        return redirect('/users')->with('message', 'User updated!');
+        if(auth()->user()->role == "admin"){
+
+            return redirect('/users')->with('message', 'User updated!');
+        }
+        else{
+            return redirect('/users/'.$user->id)->with('message', 'User updated!');
+        }
     }
 
     public function becomeManager()

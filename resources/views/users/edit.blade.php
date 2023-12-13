@@ -3,7 +3,8 @@
 
 @section('content')
     <section class="loginSection">
-        <form class="form reveal animationScale" action="/users/{{ $user->id }}" method="post" enctype="multipart/form-data">
+        <form class="form reveal animationScale" action="/users/{{ $user->id }}" method="post"
+            enctype="multipart/form-data">
             @csrf
             <h2>
                 Edit your User information
@@ -53,6 +54,8 @@
                 @error('role')
                     <p>{{ $message }}</p>
                 @enderror
+            @else
+                <input type="hidden" name="role" value="{{ $user->role }}">
             @endif
             {{-- Update Password
                 Make a reset password procedure    
@@ -63,10 +66,18 @@
                 </button>
             </div>
         </form>
-        <div id="register" calss="reveal animationUp">
-            <p>
-                <a href="/users" class="text-laravel"> Back </a>
-            </p>
-        </div>
+        @if (auth()->user()->role == 'admin')
+            <div id="register" calss="reveal animationUp">
+                <p>
+                    <a href="/users" class="text-laravel"> Back </a>
+                </p>
+            </div>
+        @else
+            <div id="register" calss="reveal animationUp">
+                <p>
+                    <a href="/users/{{ $user->id }}" class="text-laravel"> Back </a>
+                </p>
+            </div>
+        @endif
     </section>
 @endsection
