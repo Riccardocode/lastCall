@@ -24,6 +24,9 @@
 #homeSection #mapLink {
   margin-bottom: 35px;
 }
+#homeSection #mapLink a {
+  text-decoration: none;
+}
 #homeSection #mapLink a #insMapLink {
   display: flex;
   align-items: center;
@@ -33,6 +36,7 @@
   height: 45px;
 }
 #homeSection #mapLink a #insMapLink p {
+  text-decoration: none;
   color: aliceblue;
   font-size: 1.5rem;
   margin-top: 1rem;
