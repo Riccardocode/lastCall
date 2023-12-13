@@ -30,7 +30,7 @@
                         @enderror
                     </div>
                     <div>
-                        <input type="text" id="expiryYear" name="expiryYear" placeholder="YY" required>
+                        <input type="text" id="expiryYear" name="expiryYear" placeholder="YYYY" required>
                         @error('expiryYear')
                             <p style="color: red">4 digits</p>
                         @enderror
