@@ -143,7 +143,7 @@
     </footer>
     <div class="credentials">
         <p>LastCall 2023&copy;</p>
-        <p>The website coded by 11111</p>
+        <p>The website coded by lastCall Team</p>
     </div>
     {{-- to trigger the animation when it's only on your screen script --}}
     <script src="{{ asset('js/animation.js') }}"></script>

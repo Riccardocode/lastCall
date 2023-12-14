@@ -8,7 +8,9 @@
         {{-- Order to pickup --}}
         <h2 class="reveal animationShow">Orders to pickup</h2>
         @if (!count($ordersToPickup) > 0)
-        <p>You have no orders to pickup</p>
+        <article>
+            <p>You have no orders to pickup</p>
+        </article>
         @else
         @foreach ($ordersToPickup as $order)
         <article class="reveal animationLeft">
