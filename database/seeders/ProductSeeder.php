@@ -32,7 +32,7 @@ class ProductSeeder extends Seeder
             ['name' => 'Assiette «Athena»', 'category' => "Non-Vegetarian",  'ingredientString' => 'Fillet of chicken, beef, lamb ,tzatziki, potatoes', 'allergyString' => 'Milk', 'picture' => 'productPictures/11.png', 'business_id' => 3],
             ['name' => 'Gyros', 'category' => "Non-Vegetarian",  'ingredientString' => 'Pork gyros, tzatziki, sautéed potatoes', 'allergyString' => 'Milk', 'picture' => 'productPictures/12.png', 'business_id' => 3],
             ['name' => 'Espadon', 'category' => "Non-vegeterian",  'ingredientString' => 'Swordfish', 'allergyString' => 'Fish, Sulfur', 'picture' => 'productPictures/13.png', 'business_id' => 3],
-            ['name' => 'Gemista', 'category' => "Non-vegetarian",  'ingredientString' => 'Peppers ,tomatoes ,meat ,rice ,potatoes', 'allergyString' => 'Milk', 'picture' => 'productPictures/14.png', 'business_id' => 3],
+            ['name' => 'Gemista', 'category' => "Non-vegetarian",  'ingredientString' => 'Peppers ,tomatoes ,rice ,potatoes', 'allergyString' => 'Milk', 'picture' => 'productPictures/14.png', 'business_id' => 3],
             ['name' => 'Solomos', 'category' => "Vegan",  'ingredientString' => 'salmon ,olive oil ,lemon', 'allergyString' => 'Fish, Sulfur', 'picture' => 'productPictures/15.png', 'business_id' => 3],
 
             //! Fu Lu Shou Inn (Business ID 4)
