@@ -22,31 +22,17 @@ class MealConversation extends Conversation
         $this->type = $type;
     }
 
-    // public function catArr(){
-
-        // $category = Category::all();
-        // foreach ($category as $cat) {
-        //     $buttons[] = Button::create($cat->name)->value($cat->id);
-        // }
-        // return $buttons;
-    // }
-
-
     public function askMealRecommendation(){
         $question = Question::create('How many '. $this->type .' Meals should I recommend ?')
             ->fallback('Error');
 
         $this->ask($question, function (Answer $answer) {
-            // if ($answer->isInteractiveMessageReply()) {
-                // dd($this->type);
-                // $temp = $this->type;
-                $response = Product::where('category','LIKE', '%'.$this->type.'%')->take($answer->getValue())->get();
+                $response = Product::where('category','=', $this->type)->take($answer->getValue())->get();
                 $ans = "These are the best ".$this->type ." Dishes that I would recommend! <hr>";
                 foreach ($response as $key => $res) {
                     $ans = $ans ."<a href='/business/". $res->business_id ."/products/".$res->id ."' target='_blank'>". $key+1 .'. ' . $res->name . '</a><br>';
                 }
                 $this->say($ans);
-            // }
         });
     }
 

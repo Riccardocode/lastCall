@@ -16,9 +16,9 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert([
             //! Pizza items (Business ID 1)
             ['name' => 'Pizza Margherita', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, basil', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/1.png', 'business_id' => 1],
-            ['name' => 'Pizza Capricciosa', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, ham, mushrooms, artichokes, olives', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/2.png', 'business_id' => 1],
+            ['name' => 'Pizza Caprese', 'category' => "Non-vegeterian",  'ingredientString' => 'Tomato sauce, mozzarella, tomatoes, basil', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/2.png', 'business_id' => 1],
             ['name' => 'Pepperoni Pizza', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, pepperoni', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/3.png', 'business_id' => 1],
-            ['name' => 'Veggie Pizza', 'category' => "Vegan",  'ingredientString' => 'Tomato sauce, mozzarella, bell peppers, onions, olives, mushrooms', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/4.png', 'business_id' => 1],
+            ['name' => 'Veggie Pizza', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, bell peppers, onions, olives, mushrooms', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/4.png', 'business_id' => 1],
             ['name' => 'BBQ Chicken Pizza', 'category' => "Non-Vegetarian",  'ingredientString' => 'BBQ sauce, chicken, red onions, cilantro', 'allergyString' => 'Gluten', 'picture' => 'productPictures/5.png', 'business_id' => 1],
 
             //! Cake items (Business ID 2)
