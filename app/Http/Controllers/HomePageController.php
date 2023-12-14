@@ -51,7 +51,10 @@ class HomePageController extends Controller
         }
         if (auth()->user() && auth()->user()->role == 'restaurantManager') {
             $business = Business::where('manager_id', auth()->user()->id)->first();
-            return redirect('/business/' . $business->id . "/products");
+            if($business){
+                return redirect('/business/' . $business->id . "/products");
+            }
+            return redirect('business/create');
         }
         if (auth()->user() && auth()->user()->role == 'user') {
             return view('users.becomeManager',[

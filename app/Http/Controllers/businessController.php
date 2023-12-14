@@ -90,7 +90,7 @@ class BusinessController extends Controller
         $formFields["manager_id"] = auth()->user()->id;
         Business::create($formFields);
         $business=Business::where('manager_id',auth()->user()->id)->first();
-        return redirect("/business/".$business->id);
+        return redirect("/business/".$business->id ."/products");
     }
 
     //show edit Form
