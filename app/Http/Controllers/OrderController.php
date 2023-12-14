@@ -218,7 +218,6 @@ class OrderController extends Controller
     public function myOrders()
     {
         $user = auth()->user();
-        
         // Orders to pick up
         $ordersToPickup = Order::with(['business', 'order_items'])
             ->where('user_id', $user->id)
@@ -227,7 +226,7 @@ class OrderController extends Controller
             ->map(function ($order) {
                 // Calculate the total amount for each order
                 $totalAmount = $order->order_items->sum(function ($item) {
-                    return $item->discounted_price * $item->quantity; // Assuming you have 'price' and 'quantity' fields
+                    return $item->discounted_price * $item->quantity; 
                 });
                 // Append the total amount to the order object
                 $order->totalAmount = $totalAmount;
@@ -242,7 +241,7 @@ class OrderController extends Controller
             ->map(function ($order) {
                 // Calculate the total amount for each order
                 $totalAmount = $order->order_items->sum(function ($item) {
-                    return $item->discounted_price * $item->quantity; // Assuming you have 'price' and 'quantity' fields
+                    return $item->discounted_price * $item->quantity; 
                 });
                 // Append the total amount to the order object
                 $order->totalAmount = $totalAmount;
