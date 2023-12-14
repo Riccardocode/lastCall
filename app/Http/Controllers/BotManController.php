@@ -162,7 +162,7 @@ class BotManController extends Controller
         $meals = Product::all();
         $count = 0;
         foreach ($meals as $meal) {
-            $temp = " ".$meal->category." ";
+            $temp = " ".$meal->category;
             if (str_contains(strtolower($message), strtolower($temp)) && $count== 0) {
                 // if (strtolower($message) == strtolower($meal->category) && $count== 0) {
                 $count = $count +1 ;
@@ -173,7 +173,7 @@ class BotManController extends Controller
     
     //*Recommendation with Amount Logic
     public function recommendMeal($botman){
-        $pattern31 = '.*(?:recommendation|reco|recom|recommend).*(?:vegan|Vegan|vegetarian|Vegetarian|non-vegetarian|non-Vegetarian).*\?';
+        $pattern31 = '.*(?:recommendation|reco|recom|recommend).*(?:vegan|Vegan|vegetarian|Vegetarian|non-vegetarian|non-Vegetarian|vegeterian|Vegeterian).*\?';
         $pattern32 = '.*(?:vegan|Vegan|vegetarian|Vegetarian|non-vegetarian|non-Vegetarian).*(?:recommendation|reco|recom|recommend).*\?';
         $botman->hears($pattern31, function ($botman) {
             if ($this->checkFile("Command")) {
