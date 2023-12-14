@@ -81,7 +81,7 @@ class BusinessController extends Controller
         ]);
         if($request->hasFile('businessImg'))
         {
-            $formFields['businessImg'] = $request->file('businessImg')->store('businessImages', 'public');
+            $formFields['businessImg'] ="/" . $request->file('businessImg')->store('businessImages', 'public');
         }
 
         $response = CustomMap::addressToCoords($formFields["address"]);
