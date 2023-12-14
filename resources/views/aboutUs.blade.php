@@ -153,7 +153,7 @@
                 <div class="card__cta">
                     <h2>Antoine Martin</h2>
                     <p>
-                        Fullstack Developer and Business Computing Student
+                        Fullstack Developer and Front End Architect
                     </p>
                     {{-- Social Media Links --}}
                     <div class="socialMediaLinks">

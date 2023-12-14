@@ -81,7 +81,7 @@ class BusinessController extends Controller
         ]);
         if($request->hasFile('businessImg'))
         {
-            $formFields['businessImg'] = $request->file('businessImg')->store('businessImages', 'public');
+            $formFields['businessImg'] ="/" . $request->file('businessImg')->store('businessImages', 'public');
         }
 
         $response = CustomMap::addressToCoords($formFields["address"]);
@@ -90,7 +90,7 @@ class BusinessController extends Controller
         $formFields["manager_id"] = auth()->user()->id;
         Business::create($formFields);
         $business=Business::where('manager_id',auth()->user()->id)->first();
-        return redirect("/business/".$business->id);
+        return redirect("/business/".$business->id ."/products");
     }
 
     //show edit Form

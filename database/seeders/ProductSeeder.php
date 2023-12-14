@@ -16,9 +16,9 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert([
             //! Pizza items (Business ID 1)
             ['name' => 'Pizza Margherita', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, basil', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/1.png', 'business_id' => 1],
-            ['name' => 'Pizza Capricciosa', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, ham, mushrooms, artichokes, olives', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/2.png', 'business_id' => 1],
+            ['name' => 'Pizza Caprese', 'category' => "Non-vegeterian",  'ingredientString' => 'Tomato sauce, mozzarella, tomatoes, basil', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/2.png', 'business_id' => 1],
             ['name' => 'Pepperoni Pizza', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, pepperoni', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/3.png', 'business_id' => 1],
-            ['name' => 'Veggie Pizza', 'category' => "Vegan",  'ingredientString' => 'Tomato sauce, mozzarella, bell peppers, onions, olives, mushrooms', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/4.png', 'business_id' => 1],
+            ['name' => 'Veggie Pizza', 'category' => "vegetarian",  'ingredientString' => 'Tomato sauce, mozzarella, bell peppers, onions, olives, mushrooms', 'allergyString' => 'Gluten, lactose', 'picture' => 'productPictures/4.png', 'business_id' => 1],
             ['name' => 'BBQ Chicken Pizza', 'category' => "Non-Vegetarian",  'ingredientString' => 'BBQ sauce, chicken, red onions, cilantro', 'allergyString' => 'Gluten', 'picture' => 'productPictures/5.png', 'business_id' => 1],
 
             //! Cake items (Business ID 2)
@@ -32,7 +32,7 @@ class ProductSeeder extends Seeder
             ['name' => 'Assiette «Athena»', 'category' => "Non-Vegetarian",  'ingredientString' => 'Fillet of chicken, beef, lamb ,tzatziki, potatoes', 'allergyString' => 'Milk', 'picture' => 'productPictures/11.png', 'business_id' => 3],
             ['name' => 'Gyros', 'category' => "Non-Vegetarian",  'ingredientString' => 'Pork gyros, tzatziki, sautéed potatoes', 'allergyString' => 'Milk', 'picture' => 'productPictures/12.png', 'business_id' => 3],
             ['name' => 'Espadon', 'category' => "Non-vegeterian",  'ingredientString' => 'Swordfish', 'allergyString' => 'Fish, Sulfur', 'picture' => 'productPictures/13.png', 'business_id' => 3],
-            ['name' => 'Gemista', 'category' => "Non-vegetarian",  'ingredientString' => 'Peppers ,tomatoes ,meat ,rice ,potatoes', 'allergyString' => 'Milk', 'picture' => 'productPictures/14.png', 'business_id' => 3],
+            ['name' => 'Gemista', 'category' => "Non-vegetarian",  'ingredientString' => 'Peppers ,tomatoes ,rice ,potatoes', 'allergyString' => 'Milk', 'picture' => 'productPictures/14.png', 'business_id' => 3],
             ['name' => 'Solomos', 'category' => "Vegan",  'ingredientString' => 'salmon ,olive oil ,lemon', 'allergyString' => 'Fish, Sulfur', 'picture' => 'productPictures/15.png', 'business_id' => 3],
 
             //! Fu Lu Shou Inn (Business ID 4)
