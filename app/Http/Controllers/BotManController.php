@@ -24,9 +24,8 @@ use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 class BotManController extends Controller
 {
 
-    //* Checks if string exists inside file
-    public function checkFile($value)
-    {
+    // Checks if string exists inside file
+    public function checkFile($value){
         if (str_contains(file_get_contents('variables.txt'), $value)) {
             return true;
         } else {
@@ -34,25 +33,17 @@ class BotManController extends Controller
         }
     }
 
-    //* Replaces or Inserts string inside file 
-    public function fileTest($value)
-    {
+    // Replaces or Inserts string inside file 
+    public function fileTest($value){
         $file = file_get_contents('variables.txt');
         if (empty($file) || !str_contains($file, $value)) {
             file_put_contents('variables.txt', $value, FILE_APPEND);
-            // dd(file_get_contents('variables.txt'));
         } else {
-            // $file = file_get_contents('variables.txt');
             if (str_contains($file, $value)) {
-                // dd($file);
                 $file = str_replace($value, '', $file);
-                // dd($file);
                 file_put_contents('variables.txt', $file);
-                // dd($file);
-                // dd(file_get_contents('variables.txt'));
             }
         }
-        // dd($file);
     }
 
 
@@ -83,7 +74,7 @@ class BotManController extends Controller
     }
 
     //* Checks if string contains dish category
-    public function loopHear($botman, $message)
+    public function dynamicConsversationStarter($botman, $message)
     {
         $cats = Category::all();
         foreach ($cats as $cat) {
@@ -111,16 +102,12 @@ class BotManController extends Controller
     }
 
     //*Recommendation without Amount Logic
-    public function singleRecommend($botman)
-    {
-        Log::info("Before Pattern Hear rec without amount");
-        $pattern3 = '.*(?:recommendation|reco|recom|recommend)*\?';
+    public function singleRecommend($botman){
+        $pattern3 = '.*(?:recommendation|recommend)*\?';
         $botman->hears($pattern3, function ($botman) {
             if ($this->checkFile("Command")) {
-                Log::info("Inside Hear rec without amount");
                 $this->fileTest("Command");
                 $this->fileTest("Error");
-                // $this->dummy($botman);
                 $botman->startConversation(new RecommendationConversation());
             }
         });
@@ -145,7 +132,7 @@ class BotManController extends Controller
     //*Recommendation with Amount Logic
     public function recommendMultiple($botman){
         Log::info("Before Pattern Hear rec with amount");
-        $pattern21 = '.*(?:recommendation|reco|recom|recommend).*(\d+).*\?';
+        $pattern21 = '.*(?:recommendation|recommend).*(\d+).*\?';
         $pattern22 = '.*(\d+).*(?:recommendation|reco|recom|recommend).*\?';
         $botman->hears($pattern21, function ($botman, $number) {
             if ($this->checkFile("Command")) {
@@ -170,12 +157,13 @@ class BotManController extends Controller
     }
 
 
-    public function MealHear($botman, $message)
+    public function dynamicMealConversation($botman, $message)
     {
         $meals = Product::all();
         $count = 0;
         foreach ($meals as $meal) {
-            if (str_contains(strtolower($message), strtolower($meal->category)) && $count== 0) {
+            $temp = " ".$meal->category." ";
+            if (str_contains(strtolower($message), strtolower($temp)) && $count== 0) {
                 // if (strtolower($message) == strtolower($meal->category) && $count== 0) {
                 $count = $count +1 ;
                 $botman->startConversation(new MealConversation($meal->category));
@@ -185,29 +173,21 @@ class BotManController extends Controller
     
     //*Recommendation with Amount Logic
     public function recommendMeal($botman){
-        Log::info("Before Pattern Hear rec with amount");
         $pattern31 = '.*(?:recommendation|reco|recom|recommend).*(?:vegan|Vegan|vegetarian|Vegetarian|non-vegetarian|non-Vegetarian).*\?';
         $pattern32 = '.*(?:vegan|Vegan|vegetarian|Vegetarian|non-vegetarian|non-Vegetarian).*(?:recommendation|reco|recom|recommend).*\?';
         $botman->hears($pattern31, function ($botman) {
             if ($this->checkFile("Command")) {
-
-                Log::info("Inside Hear rec with amount 1");
                 $this->fileTest("Command");
                 $this->fileTest("Error");
-                $this->MealHear($botman, $botman->getMessage()->getPayload()["message"]);
-                // $this->dummy($botman);
-                // $botman->startConversation(new MealConversation($number));
+                $this->dynamicMealConversation($botman, $botman->getMessage()->getPayload()["message"]);
             }
         });
         $botman->hears($pattern32, function ($botman) {
             if ($this->checkFile("Command")) {
-
-                Log::info("Inside Hear rec with amount 2");
                 $this->fileTest("Command");
                 $this->fileTest("Error");
                 // $this->dummy($botman);
-                $this->MealHear($botman, $botman->getMessage()->getPayload()["message"]);
-                // $botman->startConversation(new MealConversation($number));
+                $this->dynamicMealConversation($botman, $botman->getMessage()->getPayload()["message"]);
             }
         });
     }
@@ -216,19 +196,13 @@ class BotManController extends Controller
 
     //*Recommendation Dish Logic
     public function recommendDish($botman){
-        Log::info("Before Pattern Hear dish");
         $cats = Category::all();
         $pattern4 = $this->returnRegex($cats);
-        // dd($pattern4);
         $botman->hears($pattern4, function ($botman) {
-            Log::info("Inside Pattern Hear dish");
             if ($this->checkFile("Command")) {
-
-                Log::info("Inside Hear dish");
                 $this->fileTest("Command");
                 $this->fileTest("Error");
-                // $this->dummy($botman);
-                $this->loopHear($botman, $botman->getMessage()->getPayload()["message"]);
+                $this->dynamicConsversationStarter($botman, $botman->getMessage()->getPayload()["message"]);
             }
         });
     }
@@ -355,8 +329,6 @@ class BotManController extends Controller
 
         //* Login Issues
         if ($this->checkFile("Command")) {
-            Log::info("Login Issues");
-            // $botman->reply('test');
             $this->LoginProblems($botman);
         }
 
