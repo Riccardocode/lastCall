@@ -23,7 +23,6 @@ class OrderController extends Controller
 
     public function addToCart(Request $request)
     {
-
         $userId = $request['userId'];
         $salesLotId = $request['salesLotId'];
         $quantity = $request['quantity'];
@@ -31,24 +30,23 @@ class OrderController extends Controller
         $salesLot = SalesLot::find($salesLotId);
         // Check for SalesLot validity
         if (!$salesLot || $salesLot->current_quantity < $quantity || $salesLot->end_date < now()) {
-            // Handle invalid SalesLot
+            // Invalid SalesLot
             return redirect()->back()->with('error', 'Unable to add item to cart.');
         }
 
-        $businessId = $salesLot->product->business_id; // Assuming SalesLot is related to Product which is related to Business
+        $businessId = $salesLot->product->business_id; 
 
         // Using firstOrCreate with business_id included
         $order = Order::firstOrCreate(
             ['user_id' => $userId, 'status' => 'cart', 'business_id' => $businessId],
-            ['orderDate' => now() /* other default attributes */]
+            ['orderDate' => now()]
         );
 
         $order->order_items()->create([
             'order_id' => $order->id,
             'quantity' => $quantity,
-            'sales_lots_id' => $salesLotId, // Link the order item with the sales lot
+            'sales_lots_id' => $salesLotId, 
             'discounted_price' => $price
-            /* other attributes */
         ]);
 
         // Update SalesLot quantity
@@ -59,14 +57,11 @@ class OrderController extends Controller
     public function viewCart()
     {
         $userId = auth()->id(); // Assuming the user is authenticated
-
         // Retrieve the user's cart
         $carts = Order::with(['order_items.saleslot.product'])
             ->where('user_id', $userId)
             ->where('status', 'cart')
             ->get();
-
-        // dd($carts);
 
         if ($carts) {
             foreach ($carts as $cart) {
@@ -74,12 +69,11 @@ class OrderController extends Controller
                 $totalAmount = 0;
 
                 foreach ($cart->order_items as $item) {
-                    $totalAmount += $item->quantity * $item->discounted_price; // Assuming discounted_price is in OrderItem
+                    $totalAmount += $item->quantity * $item->discounted_price; 
                 }
                 $cart['totalAmount'] = $totalAmount;
                 $cart['businessName'] = Business::find($cart->business_id)->name;
             }
-
             // Pass the cart and total amount to the view
             return view('orders.viewCart', ['carts' => $carts]);
         } else {
