@@ -21,13 +21,12 @@ class UserController extends Controller
             'lastname' => 'required',
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             "phonenumber" => "required",
-            //Revert the password verification
-            // 'password' => ['required',Password::min(8)
-            //                             ->mixedCase()
-            //                             ->letters()
-            //                             ->numbers()
-            //                             ->symbols()
-            //                             ->uncompromised(2),'confirmed'],
+            'password' => ['required',Password::min(8)
+                                        ->mixedCase()
+                                        ->letters()
+                                        ->numbers()
+                                        ->symbols()
+                                        ->uncompromised(2),'confirmed'],
             'password' => ['required', Password::min(8), 'confirmed'],
 
 
